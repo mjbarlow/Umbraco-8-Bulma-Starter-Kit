@@ -1,0 +1,154 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.Home>
+@using ContentModels = Umbraco.Web.PublishedModels;
+@{
+    Layout = "master.cshtml";
+    var backgroundImage = Model.HeroBackgroundImage != null ? Model.HeroBackgroundImage.Url : String.Empty;
+}
+<style>
+    .hero-banner {
+    background-color: powderblue;
+    position: relative;
+   
+    }
+
+
+    .bd-book-tags {
+        margin-bottom: 1.5rem
+    }
+
+        .bd-book-tags .tags .tag {
+            margin-right: 1px
+        }
+
+    .bd-book-buttons .button {
+        height: auto;
+        padding-bottom: calc(1em - 1px);
+        padding-top: calc(1em - 1px)
+    }
+
+        .bd-book-buttons .button > span {
+            font-size: .875em
+        }
+
+            .bd-book-buttons .button > span > em {
+                display: block;
+                font-size: .5em;
+                font-style: normal;
+                line-height: 1em;
+                margin-bottom: .5em;
+                opacity: .5
+            }
+
+        .bd-book-buttons .button img {
+            display: block;
+            max-height: 24px
+        }
+
+        .bd-book-buttons .button.bd-is-bleeding {
+            background-color: #e89d93;
+            border-color: transparent;
+            color: #ffffff;
+        }
+
+            .bd-book-buttons .button.bd-is-bleeding:hover {
+                
+            }
+
+
+    .bd-book-columns {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 1080px
+    }
+    .bd-book-content, .bd-footer-star, .bd-footer-support {
+        background-color: #fff;
+        border-radius: 6px;
+        box-shadow: 0 1.5rem 1.5rem -1.25rem rgba(10,10,10,.05);
+        display: block
+    }
+    .bd-book-content {
+        box-shadow: 0 3rem 3rem -1rem rgba(10,10,10,.2);
+        max-width: 520px;
+        padding: 3rem
+    }
+
+    .hero.is-info.is-bold {
+        background: powderblue !important;
+        color: #454547 !important;
+    }
+    .hero.is-info .title, .hero.is-info .subtitle {
+        color: #454547 !important;
+    }
+
+    .has-spacing-bottom {
+        margin-bottom: 1em;
+    }
+
+</style>
+<section id="hero" class="hero hero-banner is-medium style-7" @*style="background-image: url('@backgroundImage')"*@>
+    <div class="hero-body">
+        <div class="container">
+            <div class="bd-book-column bd-is-content">
+                <div class="bd-book-content">
+                    <header class="block bd-book-header">
+                        @*<strong class="tag is-success">New!</strong>*@
+                        <h3 class="title">@Model.HeroHeader</h3>
+                        <p class="subtitle is-6 has-text-grey"></p>
+                    </header>
+                    <div class="block bd-book-description is-size-5">
+                        <p>@Model.HeroDescription</p>
+                    </div>
+                    @if (Model.HeroCtalink != null)
+                    {
+                        <div class="block bd-book-buttons">
+                            <div class="buttons">
+                                <a class="button bd-is-bleeding is-large" href="@Model.HeroCtalink.Url" target="_blank" rel="nofollow">
+                                    <span>
+                                        <strong>@Model.HeroCtacaption</strong>
+                                    </span>
+                                </a>
+                            </div>
+                            <div class="bd-book-sample">
+                                Or
+                                <a href="http://www.bleedingedgepress.com/book_excerpts/01E9D1/creating_interfaces_with_bulma_sample.pdf" target="_blank" class="is-info" rel="nofollow">
+                                    download a free sample.
+                                </a>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+
+          
+
+
+        </div>
+    </div>
+</section>
+
+<section class="section is-spaced">
+    <div class="container">
+        <div class="columns">
+            <div class="column is-two-thirds-tablet" >
+                @Html.GetGridHtml(Model, "bodyText", "bulma-fluid")
+                
+            </div>
+            <div class="column is-one-third-tablet">
+                
+
+            </div>
+        </div>
+    </div>
+</section>
+<section class="section hero is-info is-spaced is-bold hero-footer">
+    <div class="container">
+        <h2 class="title">@Model.FooterHeader</h2>
+        <p class="subtitle">@Model.FooterDescription</p>
+        <a class="button is-outlined is-dark is-medium" href="@Model.FooterCtalink.Url">
+            @Model.FooterCtacaption
+        </a>
+    </div>
+</section>

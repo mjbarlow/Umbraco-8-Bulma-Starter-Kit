@@ -1,0 +1,36 @@
+@charset "utf-8";
+
+// Customization
+// You can easily customize Bulma with your own variables.
+// Just uncomment the following block to see the result.
+
+// 1. Import the initial variables 
+@import "../node_modules/bulma/sass/utilities/initial-variables";
+
+// 2. Set your own initial variables
+$powder-blue: #a6dce3; 
+$text-dark-brown: #454547;
+
+
+
+$gray-lighter: #f7f7f7;
+$gray-light: #dbdbdd;
+$gray-dark: #aeafb3;
+$gray-darker: #454547;
+$pink: #e89d93;
+$yellow: #eec71a;
+
+// 3. Set the derived variables
+$primary: $powder-blue;
+$link: $pink;
+$info: $cyan;
+$success: $green;
+$warning: $yellow;
+$danger: $red;
+$dark: $grey-darker;
+$text: $text-dark-brown;
+
+// 4. Import the rest of Bulma
+
+@import "../node_modules/bulma/bulma";
+@import "../_sass/u8starterkit.scss";

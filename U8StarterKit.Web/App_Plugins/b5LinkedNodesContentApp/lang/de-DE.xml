@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<language alias="de_de" intName="German (DE)" localName="Deutsch (DE)" lcid="" culture="de-DE">
+  <creator>
+    <name>
+      <![CDATA[S&ouml;ren Deger]]>
+    </name>
+    <link>https://twitter.com/SoerenDeger</link>
+  </creator>
+  <area alias="b5LinkedNodesContentApp">
+    <key alias="title">Verlinkungen zu diesem Knoten</key>
+    <key alias="tableName">Name</key>
+    <key alias="tablePropertyAlias">Property Alias</key>
+    <key alias="tableId">Id</key>
+    <key alias="tablePath">Pfad</key>
+    <key alias="noLinkedNodesFound">Es gibt keine Verlinkungen von anderen Knoten zu diesem Knoten.</key>
+  </area>
+  <area alias="b5LinkedNodesContentAppInstaller">
+    <key alias="title">Vielen Dank für die Installation von Linked Nodes!</key>
+    <key alias="description1">Bitte fügen Sie bei den appSettings in der web.config Datei den folgenden Schlüssel hinzu:</key>
+    <key alias="description2">Wenn der Wert true ist, ist es nicht mehr möglich einen Content Knoten zu löschen, wenn andere Knoten noch auf diesen verlinken.</key>
+  </area>
+</language>

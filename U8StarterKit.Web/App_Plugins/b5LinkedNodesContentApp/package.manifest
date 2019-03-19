@@ -1,0 +1,22 @@
+﻿{
+  // Content App Definition
+  "contentApps": [
+    {
+      "name": "Linked Nodes", 
+      "alias": "b5linkedNodes", 
+      "weight": 0, 
+      "icon": "icon-link", 
+      "view": "~/App_Plugins/b5LinkedNodesContentApp/linkedNodes.html",
+                                                                         
+      "show": [
+        "+content/*", 
+        "+media/*"
+      ] 
+    }
+  ],
+  "javascript": [
+    "~/App_Plugins/b5LinkedNodesContentApp/linkedNodes.controller.js",
+    "~/App_Plugins/b5LinkedNodesContentApp/linkedNodes.resource.js"
+  ]
+}
+

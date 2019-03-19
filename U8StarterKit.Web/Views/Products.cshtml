@@ -1,0 +1,48 @@
+﻿@inherits UmbracoViewPage<ContentModels.Products>
+@using ContentModels = Umbraco.Web.PublishedModels;
+@{
+    Layout = "master.cshtml";
+}
+@Html.Partial("~/Views/Partials/SectionHeader.cshtml")
+<section class="section has-spacing">
+
+    <div class="container">
+        <div class="columns is-multiline is-mobile">
+            @if (Model.FeaturedProducts != null)
+            {
+                foreach (Product product in Model.FeaturedProducts)
+                {
+
+                    <div class="column is-one-third">
+                        <div class="card">
+                            <div class="image-card">
+                                <figure class="image">
+                                    <img src="@product.Photos.Url" alt="Placeholder image">
+                                </figure>
+                            </div>
+                            <div class="card-content">
+                                <div class="content">
+                                    <h4 class="title">@product.ProductName</h4>
+                                    <p class="subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc a dolor condimentum, mattis lorem non, vulputate nisl. Nulla ornare, lorem sed molestie commodo, magna est pharetra dolor, sit amet mollis enim massa vitae sapien. Ut non dolor eleifend, gravida sapien ac, bibendum orci.</p>
+                                    <div class="">@Model.DefaultCurrency @product.Price.ToString("F")</div>
+                                </div>
+                                
+
+                               
+                            </div>
+                            <footer class="card-footer">
+                                <a href="@product.Url" class="card-footer-item">Buy</a>
+                            </footer>
+                        </div>
+                    </div>
+
+
+
+
+
+                }
+            }
+        </div>
+    </div>
+
+</section>

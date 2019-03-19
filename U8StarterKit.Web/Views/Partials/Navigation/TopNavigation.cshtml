@@ -1,0 +1,45 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
+@using Umbraco.Web;
+@{ 
+    var site = Model.Root();
+    var selection = site.Children.Where(x => x.IsVisible());
+}
+<div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-start">
+    
+    @foreach (var item in selection)
+    {
+        var icon = "";
+
+                switch (item.Name)
+                {
+                    case "Products":
+
+                        icon = "fa-shopping-basket";
+                        break;
+                    case "People":
+                        icon = "fa-user";
+                        break;
+                    case "About Us":
+                        icon = "fa-info-circle";
+                        break;
+                    case "Blog":
+                        icon = "fa-rss";
+                        break;
+                    case "Contact":
+                        icon = "fa-envelope";
+                        break;
+                }
+
+        <a class="navbar-item@(item.IsAncestorOrSelf(Model) ? "is-active" : null)" href="@item.Url">
+            @if (icon != "")
+            {
+                <span class="icon has-text-info">
+                    <i class="fas @icon"></i>
+                </span>@:&nbsp;
+            }
+            @item.Name
+        </a>
+    }
+    </div>
+</div>
