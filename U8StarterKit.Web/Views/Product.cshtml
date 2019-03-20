@@ -1,11 +1,10 @@
 ﻿@inherits UmbracoViewPage<Product>
-@using ContentModels = Umbraco.Web.PublishedModels;
+@using U8StarterKit.Web.Models.Umbraco
 @{
     Layout = "master.cshtml";
 }
 <!-- for the section we want to show the shop header -->
 @Html.Partial("~/Views/Partials/SectionHeader.cshtml", Model.Parent)
-
 <section class="section">
     <div class="container">
         <div class="columns">

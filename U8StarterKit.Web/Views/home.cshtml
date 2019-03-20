@@ -1,154 +1,94 @@
-﻿@using U8StarterKit.Web.Models.Umbraco
-
-@inherits Umbraco.Web.Mvc.UmbracoViewPage<Home>
-@using ContentModels = Umbraco.Web.PublishedModels;
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<Home>
+@using U8StarterKit.Web.Models.Umbraco
 @{
     Layout = "master.cshtml";
-    var backgroundImage = Model.HeroBackgroundImage != null ? Model.HeroBackgroundImage.Url : String.Empty;
 }
-<style>
-    .hero-banner {
-    background-color: powderblue;
-    position: relative;
-   
-    }
 
-
-    .bd-book-tags {
-        margin-bottom: 1.5rem
-    }
-
-        .bd-book-tags .tags .tag {
-            margin-right: 1px
-        }
-
-    .bd-book-buttons .button {
-        height: auto;
-        padding-bottom: calc(1em - 1px);
-        padding-top: calc(1em - 1px)
-    }
-
-        .bd-book-buttons .button > span {
-            font-size: .875em
-        }
-
-            .bd-book-buttons .button > span > em {
-                display: block;
-                font-size: .5em;
-                font-style: normal;
-                line-height: 1em;
-                margin-bottom: .5em;
-                opacity: .5
-            }
-
-        .bd-book-buttons .button img {
-            display: block;
-            max-height: 24px
-        }
-
-        .bd-book-buttons .button.bd-is-bleeding {
-            background-color: #e89d93;
-            border-color: transparent;
-            color: #ffffff;
-        }
-
-            .bd-book-buttons .button.bd-is-bleeding:hover {
-                
-            }
-
-
-    .bd-book-columns {
-        align-items: center;
-        display: flex;
-        justify-content: center;
-        margin-left: auto;
-        margin-right: auto;
-        max-width: 1080px
-    }
-    .bd-book-content, .bd-footer-star, .bd-footer-support {
-        background-color: #fff;
-        border-radius: 6px;
-        box-shadow: 0 1.5rem 1.5rem -1.25rem rgba(10,10,10,.05);
-        display: block
-    }
-    .bd-book-content {
-        box-shadow: 0 3rem 3rem -1rem rgba(10,10,10,.2);
-        max-width: 520px;
-        padding: 3rem
-    }
-
-    .hero.is-info.is-bold {
-        background: powderblue !important;
-        color: #454547 !important;
-    }
-    .hero.is-info .title, .hero.is-info .subtitle {
-        color: #454547 !important;
-    }
-
-    .has-spacing-bottom {
-        margin-bottom: 1em;
-    }
-</style>
-
-
-<section id="hero" class="hero hero-banner is-medium" style="background-image: url('@backgroundImage')">
-    <div class="hero-body">
-        <div class="container">
-            <div class="bd-book-column bd-is-content">
-                <div class="bd-book-content">
-                    <header class="block bd-book-header">
-                        <h3 class="title">@Model.HeroHeader</h3>
-                        <p class="subtitle is-6 has-text-grey"></p>
-                    </header>
-                    <div class="block bd-book-description is-size-5">
-                        <p>@Model.HeroDescription</p>
-                    </div>
-                    @if (Model.HeroCtalink != null)
-                    {
-                        <div class="block bd-book-buttons">
-                            <div class="buttons">
-                                <a class="button bd-is-bleeding is-large" href="@Model.HeroCtalink.Url" target="_blank" rel="nofollow">
-                                    <span>
-                                        <strong>@Model.HeroCtacaption</strong>
-                                    </span>
-                                </a>
-                            </div>
-                            
-                                <div class="bd-book-sample">
-                                    Or
-                                    <a href="http://www.bleedingedgepress.com/book_excerpts/01E9D1/creating_interfaces_with_bulma_sample.pdf" target="_blank" class="is-info" rel="nofollow">
-                                        download a free sample.
-                                    </a>
-                                </div>
-                          
-
-                        </div>
-                    }
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+@Html.Partial("~/Views/Partials/HomeHero.cshtml", Model)
 
 <section class="section is-spaced">
     <div class="container">
-        <div class="columns">
-            <div class="column is-two-thirds-tablet" >
-                @Html.GetGridHtml(Model, "bodyText", "bulma-fluid")
-                
+        <div class="columns is-8 is-variable">
+            <div class="column is-two-thirds-tablet">
+                @Html.GetGridHtml(Model, "bodyText", "bulma-fluid-home")
             </div>
             <div class="column is-one-third-tablet">
-                
+                <div class="tile is-ancestor">
+                    <div class="tile is-parent is-vertical">
+                       
+                        <article class="tile is-child notification is-primary">
+                            <p class="title">Sign up</p>
+                            <div class="content">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis lorem ut libero malesuada feugiat. Donec rutrum congue leo eget malesuada.</p>
+                            </div>
+                            <div class="field">
+                                <label class="label">Name</label>
+                                <div class="control">
+                                    <input class="input" type="text" placeholder="e.g Alex Smith">
+                                </div>
+                            </div>
+
+                            <div class="field">
+                                <label class="label is-light">Email</label>
+                                <div class="control">
+                                    <input class="input" type="email" placeholder="e.g. alexsmith@gmail.com">
+                                </div>
+                            </div>
+                            <div class="field">
+                                <div class="control">
+                                    <a class="is-link button">Sign up</a>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="tile is-child notification is-light">
+                            <p class="title">Our services</p>
+                            <div class="content">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis lorem ut libero malesuada feugiat. Donec rutrum congue leo eget malesuada. Donec rutrum congue leo eget malesuada.</p>
+
+                                <ul class="has-spacing-bottom">
+                                    <li>Consectetur adipiscing elit</li>
+                                    <li>Nulla quis lorem ut libero malesuada</li>
+                                    <li>Donec rutrum congue leo eget</li>
+                                    <li>Congue leo eget malesuada</li>
+                                </ul>
+                                <p>Nulla quis lorem ut libero malesuada feugiat</p>
+                                <p>
+
+                                    <a class="is-link button">See all our services</a>
+                                </p>
+                            </div>
+                        </article>
+                        <article class="tile is-child notification is-light">
+                            <p class="title">Featured Products</p>
+                            <div class="content">
+                               
+                                <p class="image has-spacing image is-3by2">
+                                    <img src="/media/662af6ca411a4c93a6c722c4845698e7/00000006000000000000000000000000/16403439029_f500be349b_o.jpg" class="is-background"/>
+
+                                </p>
+                                <h4>Lorem ipsum dolor sit amet, consectetur adipiscing</h4>
+                                <p><a href="/" class="is-link">Buy $40.00</a></p>
+                       
+                                <p class="image has-spacing image is-3by2">
+                                    <img src="/media/662af6ca411a4c93a6c722c4845698e7/00000006000000000000000000000000/16403439029_f500be349b_o.jpg" class="is-background"/>
+
+                                </p>
+                                <h4>Lorem ipsum dolor sit amet, consectetur adipiscing</h4>
+                                <p>Buy $40.00</p>
+                            
+                            </div>
+                        </article>
+                </div>
 
             </div>
         </div>
     </div>
 </section>
-<section class="section hero is-info is-spaced is-bold hero-footer">
+<section class="section hero is-primary is-spaced  hero-footer">
     <div class="container">
         <h2 class="title">@Model.FooterHeader</h2>
         <p class="subtitle">@Model.FooterDescription</p>
-        <a class="button is-outlined is-dark is-medium" href="@Model.FooterCtalink.Url">
+        <a class="button is-outlined is-primary is-inverted is-medium" href="@Model.FooterCtalink.Url">
             @Model.FooterCtacaption
         </a>
     </div>

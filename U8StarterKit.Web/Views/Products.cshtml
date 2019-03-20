@@ -1,5 +1,5 @@
-﻿@inherits UmbracoViewPage<ContentModels.Products>
-@using ContentModels = Umbraco.Web.PublishedModels;
+﻿@inherits UmbracoViewPage<Products>
+@using U8StarterKit.Web.Models.Umbraco
 @{
     Layout = "master.cshtml";
 }
@@ -16,8 +16,10 @@
                     <div class="column is-one-third">
                         <div class="card">
                             <div class="image-card">
-                                <figure class="image">
-                                    <img src="@product.Photos.Url" alt="Placeholder image">
+                                
+                    
+                                <figure class="image image is-3by2 ">
+                                    <img  class="is-background" src="@product.Photos.Url" alt="Placeholder image">
                                 </figure>
                             </div>
                             <div class="card-content">

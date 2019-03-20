@@ -137,6 +137,13 @@ namespace U8StarterKit.Web.Models.Umbraco
 		public string HeroHeader => this.Value<string>("heroHeader");
 
 		///<summary>
+		/// Hero Sublink Before Text
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
+		[ImplementPropertyType("heroSublinkBeforeText")]
+		public string HeroSublinkBeforeText => this.Value<string>("heroSublinkBeforeText");
+
+		///<summary>
 		/// Logo: Optional. If you add a logo it'll be used in the upper left corner instead of the site name. Make sure to use a transparent logo for best results
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]

@@ -1,29 +1,25 @@
-﻿@using ContentModels = Umbraco.Web.PublishedModels;
-@using Umbraco.Web;
+﻿@using ContentModels = U8StarterKit.Web.Models.Umbraco;
+@using U8StarterKit.Web.Extensions
+
 @inherits Umbraco.Web.Macros.PartialViewMacroPage
 @{
     var startNodeId = Model.MacroParameters["startNodeId"] != null ? Model.MacroParameters["startNodeId"] : Model.Content.Id;
-
-
     var numberOfPosts = 3;
     if (Model.MacroParameters["numberOfPosts"] != null)
     {
         int.TryParse((string)Model.MacroParameters["numberOfPosts"], out numberOfPosts);
     }
-
-
 }
+
 @if (startNodeId != null)
 {
     @* Get the starting page *@
     var startNode = Umbraco.Content(startNodeId);
-
     if (startNode == null)
     {
         <div class="blogposts">
             <h1>There are no posts at this time, try again later.</h1>
         </div>
-
         return;
     }
 
@@ -45,21 +41,24 @@
 
     if (pagedBlogposts.Count > 0)
     {
-        <section class="blogposts section">
+        <section class="blogposts ">
             <div class="content">
                 @foreach (ContentModels.Blogpost post in pagedBlogposts)
                 {
-                    <div class="image  has-spacing image is-3by1">
-                        <img src="https://loremflickr.com/720/240/">
+                    <div class="image has-spacing image is-3by1">
+                        @if (post.PostImage.HasValue())
+                        {
+                            <img src="@post.PostImage.Url" class="is-background" />
+                        }
+                    
                     </div>
-                  
                     <h3 class="title">@post.PageTitle</h3>
                     <p class="subtitle">@post.CreateDate.ToShortDateString()</p>
                     <div class="has-spacing-bottom">
                         @Html.Partial("~/Views/Partials/CategoryLinks.cshtml", post.Categories)
                     </div>
                     <p>@post.Excerpt</p>
-                    <a href="@post.Url" class="button is-info" >Read more</a>
+                    <a href="@post.Url" class="button is-link" >Read more</a>
                     <hr/>
                 }
             </div>

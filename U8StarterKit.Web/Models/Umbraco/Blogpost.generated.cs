@@ -74,6 +74,13 @@ namespace U8StarterKit.Web.Models.Umbraco
 		public string PageTitle => this.Value<string>("pageTitle");
 
 		///<summary>
+		/// Post Image
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
+		[ImplementPropertyType("postImage")]
+		public IPublishedContent PostImage => this.Value<IPublishedContent>("postImage");
+
+		///<summary>
 		/// Keywords: Keywords that describe the content of the page. This is considered optional since most modern search engines don't use this anymore
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]

@@ -8,7 +8,6 @@
 @import "../node_modules/bulma/sass/utilities/initial-variables";
 
 // 2. Set your own initial variables
-$powder-blue: #a6dce3; 
 $text-dark-brown: #454547;
 
 
@@ -22,8 +21,7 @@ $yellow: #eec71a;
 $gray-logo: #e8e8e8;
 
 // 3. Set the derived variables
-$primary: $powder-blue;
-$link: $pink;
+$link: $blue;
 $info: $cyan;
 $success: $green;
 $warning: $yellow;
