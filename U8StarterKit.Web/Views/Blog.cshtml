@@ -1,13 +1,11 @@
-﻿@using ContentModels = Umbraco.Web.PublishedModels;
-@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.Blog>
+﻿@inherits UmbracoViewPage<Blog>
+@using U8StarterKit.Web.Models.Umbraco
 @using Umbraco.Web;
 @{
     Layout = "master.cshtml";
 }
 @Html.Partial("~/Views/Partials/SectionHeader.cshtml")
-
 <section class="section">
-
     <div class="container">
         @Umbraco.RenderMacro("latestBlogposts",
             new
@@ -18,5 +16,4 @@
         @{
         }
     </div>
-
 </section>

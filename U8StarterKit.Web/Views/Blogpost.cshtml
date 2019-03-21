@@ -1,10 +1,9 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.Blogpost>
-@using ContentModels = Umbraco.Web.PublishedModels;
-    @{
+﻿@inherits UmbracoViewPage<Blog>
+@using U8StarterKit.Web.Models.Umbraco
+@{
     Layout = "master.cshtml";
 }
 @Html.Partial("~/Views/Partials/SectionHeader.cshtml")
-
 <section class="section">
     <div class="container">
         <article>
