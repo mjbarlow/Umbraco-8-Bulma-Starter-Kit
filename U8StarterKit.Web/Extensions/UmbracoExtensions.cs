@@ -20,10 +20,5 @@ namespace U8StarterKit.Web.Extensions
         {
             return content != null;
         }
-
-        public static bool HasValue(this IEnumerable<IPublishedContent> content)
-        {
-            return content != null && content.Any();
-        }
     }
 }

@@ -1,10 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace U8StarterKit.Web.Extensions
 {
     public static class EnumerableExtensions
     {
+
+        /// <summary>
+        /// Split a collection into equal chunks.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="collection"></param>
+        /// <param name="size"></param>
+        /// <returns></returns>
         public static List<List<T>> Split<T>(this IEnumerable<T> collection, int size)
         {
             var chunks = new List<List<T>>();
@@ -26,6 +35,14 @@ namespace U8StarterKit.Web.Extensions
             return chunks;
         }
 
+        /// <summary>
+        /// Get distinct in a list by a key value.
+        /// </summary>
+        /// <typeparam name="TSource"></typeparam>
+        /// <typeparam name="TKey"></typeparam>
+        /// <param name="source"></param>
+        /// <param name="keySelector"></param>
+        /// <returns></returns>
         public static IEnumerable<TSource> DistinctBy<TSource, TKey>
             (this IEnumerable<TSource> source, Func<TSource, TKey> keySelector)
         {
@@ -38,6 +55,12 @@ namespace U8StarterKit.Web.Extensions
                     yield return element;
                 }
             }
+        }
+
+        //
+        public static bool HasValue<T>(this IEnumerable<T> content)
+        {
+            return content != null && content.Any();
         }
     }
 }

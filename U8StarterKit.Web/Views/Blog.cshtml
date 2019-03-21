@@ -4,16 +4,20 @@
 @{
     Layout = "master.cshtml";
 }
-@Html.Partial("~/Views/Partials/SectionHeader.cshtml")
+@Html.Partial("~/Views/Partials/SectionHeader.cshtml", new U8StarterKit.Web.Models.Umbraco.ContentBase(Model))
 <section class="section">
     <div class="container">
-        @Umbraco.RenderMacro("latestBlogposts",
-            new
-            {
-                numberOfPosts = Model.HowManyPostsShouldBeShown,
-                startNodeId = Model.Id
-            })
-        @{
-        }
+        <div class="columns">
+            <div class="column">
+            @Umbraco.RenderMacro("latestBlogposts",
+                new
+                {
+                    numberOfPosts = Model.HowManyPostsShouldBeShown,
+                    startNodeId = Model.Id
+                })
+            @{
+            }
+            </div>
+        </div>
     </div>
 </section>

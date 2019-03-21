@@ -1,5 +1,6 @@
 ﻿@inherits UmbracoViewPage<People>
 @using U8StarterKit.Web.Models.Umbraco
+@using U8StarterKit.Web.Extensions
 @{
     Layout = "master.cshtml";
 }
@@ -10,26 +11,38 @@
         <a class="employee-grid__item__contact-item" href="http://@(service).com/@content">@service</a>
     }
 }
-@Html.Partial("~/Views/Partials/SectionHeader.cshtml")
-<section class="section">
+@Html.Partial("~/Views/Partials/SectionHeader.cshtml", new U8StarterKit.Web.Models.Umbraco.ContentBase(Model))
+<section class="section section-products has-spacing">
     <div class="container">
-        <div class="employee-grid">
+        <div class="columns is-multiline">
             @foreach (var person in Model.Children.Select(x => new Person(x)))
             {
-
-                <div class="employee-grid__item">
-                    <div class="employee-grid__item__image" style="background-image: url('@person.Photo.Url')"></div>
-                    <div class="employee-grid__item__details">
-                        <h3 class="employee-grid__item__name">@person.Name</h3>
-                        @if (!string.IsNullOrEmpty(person.Email))
+                <div class="column is-one-third">
+                    <div class="card has-spacing-bottom">
+                        @if (person.Photo.HasValue())
                         {
-                            <a href="mailto:@person.Email" class="employee-grid__item__email">@person.Email</a>
+                            <div class="image-card">
+                                <figure class="image image is-3by2 ">
+                                    <img class="is-background" src="@person.Photo.Url" alt="@person.Name">
+                                </figure>
+                            </div>
                         }
-                        <div class="employee-grid__item__contact">
-                            @SocialLink(person.FacebookUsername, "Facebook")
-                            @SocialLink(person.TwitterUsername, "Twitter")
-                            @SocialLink(person.LinkedInUsername, "LinkedIn")
-                            @SocialLink(person.InstagramUsername, "Instagram")
+                        <div class="card-content">
+                            <div class="content">
+                                <h4 class="title has-small-spacing-bottom">@person.Name</h4>
+                          
+                                @if (!string.IsNullOrEmpty(person.Email))
+                                {
+                                    <a href="mailto:@person.Email" class="employee-grid__item__email">@person.Email</a>
+                                }
+                                <div class="employee-grid__item__contact">
+                                    @SocialLink(person.FacebookUsername, "Facebook")
+                                    @SocialLink(person.TwitterUsername, "Twitter")
+                                    @SocialLink(person.LinkedInUsername, "LinkedIn")
+                                    @SocialLink(person.InstagramUsername, "Instagram")
+                                </div>
+                               
+                            </div>
                         </div>
                     </div>
                 </div>

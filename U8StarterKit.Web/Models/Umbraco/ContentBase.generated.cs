@@ -28,6 +28,10 @@ namespace U8StarterKit.Web.Models.Umbraco
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		Newtonsoft.Json.Linq.JToken BodyText { get; }
 
+		/// <summary>Page Subtitle</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
+		string PageSubtitle { get; }
+
 		/// <summary>Page Title</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		string PageTitle { get; }
@@ -68,6 +72,17 @@ namespace U8StarterKit.Web.Models.Umbraco
 		/// <summary>Static getter for Content</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		public static Newtonsoft.Json.Linq.JToken GetBodyText(IContentBase that) => that.Value<Newtonsoft.Json.Linq.JToken>("bodyText");
+
+		///<summary>
+		/// Page Subtitle: Set the page subtitle.
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
+		[ImplementPropertyType("pageSubtitle")]
+		public string PageSubtitle => GetPageSubtitle(this);
+
+		/// <summary>Static getter for Page Subtitle</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
+		public static string GetPageSubtitle(IContentBase that) => that.Value<string>("pageSubtitle");
 
 		///<summary>
 		/// Page Title: The title of the page, this is also the first text in a google search result. The ideal length is between 40 and 60 characters

@@ -41,28 +41,32 @@
 
     if (pagedBlogposts.Count > 0)
     {
-        <section class="blogposts ">
-            <div class="content">
-                @foreach (ContentModels.Blogpost post in pagedBlogposts)
+    
+                foreach (ContentModels.Blogpost post in pagedBlogposts)
                 {
-                    <div class="image has-spacing image is-3by1">
+                    <div class="card has-large-spacing-bottom">
                         @if (post.PostImage.HasValue())
                         {
-                            <img src="@post.PostImage.Url" class="is-background" />
+                            <div class="image-card">
+                            <div class="image has-spacing image is-3by1">
+                                <img src="@post.PostImage.Url" class="is-background"/>
+                            </div>
+                            </div>
                         }
-                    
+                        <div class="card-content">
+                            <div class="content">
+                                <h3 class="title">@post.PageTitle</h3>
+                                <p class="subtitle">@post.CreateDate.ToShortDateString()</p>
+                                <div class="has-spacing-bottom">
+                                    @Html.Partial("~/Views/Partials/CategoryLinks.cshtml", post.Categories)
+                                </div>
+                                <p>@post.Excerpt</p>
+                                <a href="@post.Url" class="button is-link">Read more</a>
+                            </div>
+                        </div>
                     </div>
-                    <h3 class="title">@post.PageTitle</h3>
-                    <p class="subtitle">@post.CreateDate.ToShortDateString()</p>
-                    <div class="has-spacing-bottom">
-                        @Html.Partial("~/Views/Partials/CategoryLinks.cshtml", post.Categories)
-                    </div>
-                    <p>@post.Excerpt</p>
-                    <a href="@post.Url" class="button is-link" >Read more</a>
-                    <hr/>
                 }
-            </div>
-        </section>
+   
     }
 
     if (blogposts.Count > numberOfPosts)

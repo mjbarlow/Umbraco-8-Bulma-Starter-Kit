@@ -13,7 +13,7 @@
     // Build the coordinates string
     var coordinatesString = longitude + "," + latitude + "," + longitude + "," + latitude;
 }
-@Html.Partial("~/Views/Partials/SectionHeader.cshtml")
+@Html.Partial("~/Views/Partials/SectionHeader.cshtml", new U8StarterKit.Web.Models.Umbraco.ContentBase(Model))
 <section class="section">
     <div class="container">
 
@@ -27,8 +27,7 @@
                         marginheight="0"
                         marginwidth="0"
                         src="https://www.openstreetmap.org/export/embed.html?bbox=@coordinatesString&amp;layer=mapnik&amp;marker=@Model.MapCoordinates"
-                        style="border: 1px solid black">
-                </iframe>
+                        style="border: 1px solid black"></iframe>
 
                 <br />
 
@@ -41,13 +40,13 @@
                 <h2>@Model.ContactFormHeader</h2>
                 @Model.ContactIntro
                 <p class="compat-msg">
-        <em>Umbraco Forms</em> is required to render this form.It's a breeze to install, all you have to do is
-        go to the<em> Umbraco Forms</em> section in the back office and click Install, that's it! :) 
-        <br /><br />
-        <a href="/umbraco/#/forms" class="button button--border--solid">Go to Back Office and install Forms</a>
-        <!-- When Umbraco Forms is installed, uncomment this line -->
-        @* @Umbraco.RenderMacro("renderUmbracoForm", new {FormGuid=Model.ContactForm.ToString()}) *@
-        </p>
+                    <em>Umbraco Forms</em> is required to render this form.It's a breeze to install, all you have to do is
+                    go to the<em> Umbraco Forms</em> section in the back office and click Install, that's it! :)
+                    <br /><br />
+                    <a href="/umbraco/#/forms" class="button button--border--solid">Go to Back Office and install Forms</a>
+                    <!-- When Umbraco Forms is installed, uncomment this line -->
+                    @* @Umbraco.RenderMacro("renderUmbracoForm", new {FormGuid=Model.ContactForm.ToString()}) *@
+                </p>
             </div>
 
         </div>

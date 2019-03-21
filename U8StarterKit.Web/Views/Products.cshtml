@@ -1,50 +1,59 @@
 ﻿@inherits UmbracoViewPage<Products>
 @using U8StarterKit.Web.Models.Umbraco
+@using U8StarterKit.Web.Extensions
 @{
     Layout = "master.cshtml";
 }
-@Html.Partial("~/Views/Partials/SectionHeader.cshtml")
-<section class="section has-spacing">
-
+@Html.Partial("~/Views/Partials/SectionHeader.cshtml", new U8StarterKit.Web.Models.Umbraco.ContentBase(Model))
+<section class="section section-products has-spacing">
     <div class="container">
-        <div class="columns is-multiline is-mobile">
+        <div class="columns is-multiline">
             @if (Model.FeaturedProducts != null)
             {
                 foreach (Product product in Model.FeaturedProducts)
                 {
-
                     <div class="column is-one-third">
-                        <div class="card">
-                            <div class="image-card">
-                                
-                    
-                                <figure class="image image is-3by2 ">
-                                    <img  class="is-background" src="@product.Photos.Url" alt="Placeholder image">
-                                </figure>
-                            </div>
+                        <div class="card has-spacing-bottom">
+                            @if (product.Photos.HasValue())
+                            {
+                                <div class="image-card">
+                                    <figure class="image image is-3by2 ">
+                                        <img class="is-background" src="@product.Photos.Url" alt="@product.ProductName">
+                                    </figure>
+                                </div>
+                            }
                             <div class="card-content">
                                 <div class="content">
-                                    <h4 class="title">@product.ProductName</h4>
-                                    <p class="subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc a dolor condimentum, mattis lorem non, vulputate nisl. Nulla ornare, lorem sed molestie commodo, magna est pharetra dolor, sit amet mollis enim massa vitae sapien. Ut non dolor eleifend, gravida sapien ac, bibendum orci.</p>
-                                    <div class="">@Model.DefaultCurrency @product.Price.ToString("F")</div>
+                                    <h4 class="title has-small-spacing-bottom">@product.ProductName</h4>
+                                    @if (product.Category.HasValue())
+                                    {
+                                        <div class="has-spacing-bottom">
+                                            @foreach (var category in product.Category)
+                                            {
+                                             <span class="tag">@category</span>
+                                            }
+                                        </div>
+                                    }
+                                    <p>@product.Description</p>
+                                    <p class="buttons">
+                                        <a class="button is-link has-icons-left" href="@product.Url">
+                                            <span class="icon">
+                                                <i class="fas fa-shopping-cart"></i>
+                                            </span>
+                                            <span>Add to basket</span>
+                                        </a>
+                                    </p>
                                 </div>
-                                
-
-                               
                             </div>
                             <footer class="card-footer">
-                                <a href="@product.Url" class="card-footer-item">Buy</a>
+                                <div class="card-footer-item">@Model.DefaultCurrency @product.Price.ToString("F")</div>
+                                <div class="card-footer-item"><a class="is-bold" href="@product.Url">Full details</a></div>
                             </footer>
+
                         </div>
                     </div>
-
-
-
-
-
                 }
             }
         </div>
     </div>
-
 </section>

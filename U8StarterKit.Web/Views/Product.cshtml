@@ -1,11 +1,12 @@
 ﻿@inherits UmbracoViewPage<Product>
 @using U8StarterKit.Web.Models.Umbraco
+@using U8StarterKit.Web.Extensions
 @{
     Layout = "master.cshtml";
 }
 <!-- for the section we want to show the shop header -->
-@Html.Partial("~/Views/Partials/SectionHeader.cshtml", Model.Parent)
-<section class="section">
+@Html.Partial("~/Views/Partials/SectionHeader.cshtml", new U8StarterKit.Web.Models.Umbraco.ContentBase(Model.Parent))
+<section class="section has-spacing section-products">
     <div class="container">
         <div class="columns">
             <div class="column">
@@ -13,24 +14,47 @@
                     <img class="product-image" src="@Model.Photos.Url" />
                 </div>
             </div>
-            <div class="col-md-6">
-                <h1>@Model.ProductName</h1>
-                <div class="product-price">@Model.Parent.GetProperty("DefaultCurrency").Value() @Model.Price.ToString("F")</div>
-                <div class="product-teaser">@Model.Description</div>
-                <div class="product-button">
-                    <button class="button button--border--solid">Buy</button>
-                </div>
-                <div class="product-advantages">
-                    @if (Model.Features != null)
-                    {
-                        foreach (var feature in Model.Features)
-                        {
-                            <div class="product-advantage">
-                                <h4>@feature.GetProperty("featureName").Value()</h4>
-                                <h5>@feature.GetProperty("featureDetails").Value()</h5>
-                            </div>
-                        }
-                    }
+            <div class="column">
+                <div class="card">
+                    <div class="card-content">
+
+                        <h1 class="title">@Model.ProductName</h1>
+                        <div class="content">
+                            <p class="is-size-5">@Model.Parent.GetProperty("DefaultCurrency").Value() @Model.Price.ToString("F")</p>
+                            @if (Model.Category.HasValue())
+                            {
+                                <div class="has-spacing-bottom">
+                                    @foreach (var category in Model.Category)
+                                    {
+                                        <span class="tag">@category</span>
+                                    }
+                                </div>
+                            }
+                            <p>@Model.Description</p>
+                            <p class="buttons">
+                                <a class="button is-link has-icons-left is-medium" href="#">
+                                    <span class="icon">
+                                        <i class="fas fa-shopping-cart"></i>
+                                    </span>
+                                    <span>Add to basket</span>
+                                </a>
+                            </p>
+                            <hr />
+                            @if (Model.Features.HasValue())
+                            {
+                                foreach (var feature in Model.Features)
+                                {
+                                    <p class="title is-4">@feature.FeatureName</p>
+                                    <p class="subtitle is-5">@feature.FeatureDetails</p>
+                                    if (Model.Features.IndexOf(feature) != Model.Features.Count() - 1)
+                                    {
+                                        <hr />
+                                    }
+
+                                }
+                            }
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

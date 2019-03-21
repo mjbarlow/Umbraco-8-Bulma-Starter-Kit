@@ -3,7 +3,7 @@
 @{
     Layout = "master.cshtml";
 }
-@Html.Partial("~/Views/Partials/SectionHeader.cshtml")
+@Html.Partial("~/Views/Partials/SectionHeader.cshtml", new U8StarterKit.Web.Models.Umbraco.ContentBase(Model))
 <section class="section">
     <div class="container">
         <article>

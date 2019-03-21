@@ -114,5 +114,7 @@ namespace U8StarterKit.Web.Extensions
             // Remove any excess character to meet maxlength criteria
             return maxLength <= 0 || result.Length <= maxLength ? result : result.Substring(0, maxLength);
         }
+
+    
     }
 }

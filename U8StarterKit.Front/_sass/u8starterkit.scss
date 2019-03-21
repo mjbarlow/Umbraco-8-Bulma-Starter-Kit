@@ -10,7 +10,6 @@
                 background: $gray-logo;
                 border-radius: 3em;        
             }
-
         }
     }
 }
@@ -56,12 +55,23 @@
     }
 }
 
-// UTILITY CLASSES
-
-.has-spacing-bottom {
-    margin-bottom: 1em;
+// PRODUCTS
+.section-products {
+    background: $grey-section;
 }
 
+// UTILITY CLASSES
+.has-spacing-bottom {
+    margin-bottom: 1em !important;
+}
+
+.has-small-spacing-bottom {
+    margin-bottom: 0.25em !important;
+}
+
+.has-large-spacing-bottom {
+    margin-bottom: 2em !important;
+}
 .is-background {
     object-fit: cover;
     object-position: center center;
@@ -69,8 +79,11 @@
     width: 100%;
 }
 
-// BACKGROUND STYLES
 
+
+
+
+// BACKGROUND STYLES
 .style-4 {
     background-image: linear-gradient(#f7f7f7, #f7f7f7 7px, #454547 7px, #454547);
     background-size: 100% 14px;
