@@ -1,5 +1,6 @@
 ﻿@using ContentModels = U8StarterKit.Web.Models.Umbraco;
 @using U8StarterKit.Web.Extensions
+@using Umbraco.Web
 
 @inherits Umbraco.Web.Macros.PartialViewMacroPage
 @{
@@ -41,61 +42,69 @@
 
     if (pagedBlogposts.Count > 0)
     {
-    
-                foreach (ContentModels.Blogpost post in pagedBlogposts)
+        if (Model.Content.IsDocumentType("blog")){
+            @:<div class="columns">
+        }
+  
+        foreach (ContentModels.Blogpost post in pagedBlogposts)
+        {
+             if(Model.Content.IsDocumentType("blog")){
+                 @:<div class="column is-half-tablet">
+             }
+            <div class="card has-large-spacing-bottom">
+                @if (post.PostImage.HasValue())
                 {
-                    <div class="card has-large-spacing-bottom">
-                        @if (post.PostImage.HasValue())
-                        {
-                            <div class="image-card">
-                            <div class="image has-spacing image is-3by1">
-                                <img src="@post.PostImage.Url" class="is-background"/>
-                            </div>
-                            </div>
-                        }
-                        <div class="card-content">
-                            <div class="content">
-                                <h3 class="title">@post.PageTitle</h3>
-                                <p class="subtitle">@post.CreateDate.ToShortDateString()</p>
-                                <div class="has-spacing-bottom">
-                                    @Html.Partial("~/Views/Partials/CategoryLinks.cshtml", post.Categories)
-                                </div>
-                                <p>@post.Excerpt</p>
-                                <a href="@post.Url" class="button is-link">Read more</a>
-                            </div>
+                    <div class="image-card">
+                        <div class="image has-spacing image is-3by1">
+                            <img src="@post.PostImage.Url" class="is-background" />
                         </div>
                     </div>
                 }
-   
+                <div class="card-content">
+                    <div class="content">
+                        <h3 class="title">@post.PageTitle</h3>
+                        <p class="subtitle">@post.CreateDate.ToShortDateString()</p>
+                        <div class="has-spacing-bottom">
+                            @Html.Partial("~/Views/Partials/CategoryLinks.cshtml", post.Categories)
+                        </div>
+                        <p>@post.Excerpt</p>
+                        <a href="@post.Url" class="button is-link">Read more</a>
+                    </div>
+                </div>
+            </div>
+            if(Model.Content.IsDocumentType("blog")){
+                @: </div>
+            }
+        }
+        if (Model.Content.IsDocumentType("blog")){
+            @:</div>
+        }
     }
 
-    if (blogposts.Count > numberOfPosts)
+    if (blogposts.Count > numberOfPosts && Model.Content.IsDocumentType("blog"))
     {
-        <div class="pagination">
-            <nav class="nav-bar nav-bar--center">
-                @if (page <= 1)
+        <div class="buttons is-centered">
+                @*@if (page <= 1)
                 {
-                    <span class="nav-link nav-link--black nav-link--disabled">Prev</span>
+                    <span class="button is-light is-disabled is-medium">Prev</span>
                 }
                 else
                 {
-                    <a class="nav-link nav-link--black" href="@(Model.Content.Url + "?page=" + (page - 1))">Prev</a>
-                }
+                    <a class="button is-link is-medium" href="@(Model.Content.Url + "?page=" + (page - 1))">Prev</a>
+                }*@
 
                 @for (int i = 1; i <= pageCount; i++)
                 {
-                    <a class="nav-link nav-link--black @(page == i ? " nav-link--active" : null)" href="@(Model.Content.Url + "?page=" + i)">@i</a>
+                    <a class="button is-medium @(page == i ? "is-light" : "is-link")" href="@(Model.Content.Url + "?page=" + i)">@i</a>
                 }
-                @if (page == pageCount)
+                @*@if (page == pageCount)
                 {
-                    <span class="nav-link nav-link--black nav-link--disabled">Next</span>
+                    <span class="button is-light is-disabled is-medium">Next</span>
                 }
                 else
                 {
-                    <a class="nav-link nav-link--black" href="@(Model.Content.Url + "?page=" + (page + 1))">Next</a>
-                }
-
-            </nav>
+                    <a class="button is-link is-medium " href="@(Model.Content.Url + "?page=" + (page + 1))">Next</a>
+                }*@
         </div>
     }
 }

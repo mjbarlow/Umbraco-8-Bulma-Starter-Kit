@@ -1,10 +1,10 @@
-﻿@inherits UmbracoViewPage<Blog>
+﻿@inherits UmbracoViewPage<Blogpost>
 @using U8StarterKit.Web.Models.Umbraco
 @{
     Layout = "master.cshtml";
 }
-@Html.Partial("~/Views/Partials/SectionHeader.cshtml", new U8StarterKit.Web.Models.Umbraco.ContentBase(Model))
-<section class="section">
+@Html.Partial("~/Views/Partials/SectionHeader.cshtml", new U8StarterKit.Web.Models.Umbraco.HeaderSection(Model))
+<section class="section has-spacing section-gray">
     <div class="container">
         <article>
             <div class="blogpost-meta">
@@ -14,7 +14,7 @@
                 </span>
             </div>
             <h3>@Model.Excerpt</h3>
-            @Html.GetGridHtml(Model, "bodyText", "bootstrap3-fluid")
+            @Html.GetGridHtml(Model, "bodyText", "bulma-fluid")
         </article>
     </div>
 </section>

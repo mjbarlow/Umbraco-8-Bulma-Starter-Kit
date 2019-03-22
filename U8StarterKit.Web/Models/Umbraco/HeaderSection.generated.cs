@@ -20,49 +20,64 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace U8StarterKit.Web.Models.Umbraco
 {
-	// Mixin Content Type with alias "contentBase"
-	/// <summary>Content Base</summary>
-	public partial interface IContentBase : IPublishedContent
+	// Mixin Content Type with alias "headerSection"
+	/// <summary>Header Section</summary>
+	public partial interface IHeaderSection : IPublishedContent
 	{
-		/// <summary>Content</summary>
+		/// <summary>Header Subtitle</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		Newtonsoft.Json.Linq.JToken BodyText { get; }
+		string HeaderSubtitle { get; }
+
+		/// <summary>Header Title</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
+		string HeaderTitle { get; }
 	}
 
-	/// <summary>Content Base</summary>
-	[PublishedModel("contentBase")]
-	public partial class ContentBase : PublishedContentModel, IContentBase
+	/// <summary>Header Section</summary>
+	[PublishedModel("headerSection")]
+	public partial class HeaderSection : PublishedContentModel, IHeaderSection
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		public new const string ModelTypeAlias = "contentBase";
+		public new const string ModelTypeAlias = "headerSection";
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		public new static PublishedContentType GetModelContentType()
 			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<ContentBase, TValue>> selector)
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<HeaderSection, TValue>> selector)
 			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 #pragma warning restore 0109
 
 		// ctor
-		public ContentBase(IPublishedContent content)
+		public HeaderSection(IPublishedContent content)
 			: base(content)
 		{ }
 
 		// properties
 
 		///<summary>
-		/// Content
+		/// Header Subtitle
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("bodyText")]
-		public Newtonsoft.Json.Linq.JToken BodyText => GetBodyText(this);
+		[ImplementPropertyType("headerSubtitle")]
+		public string HeaderSubtitle => GetHeaderSubtitle(this);
 
-		/// <summary>Static getter for Content</summary>
+		/// <summary>Static getter for Header Subtitle</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		public static Newtonsoft.Json.Linq.JToken GetBodyText(IContentBase that) => that.Value<Newtonsoft.Json.Linq.JToken>("bodyText");
+		public static string GetHeaderSubtitle(IHeaderSection that) => that.Value<string>("headerSubtitle");
+
+		///<summary>
+		/// Header Title: The title of the page, this is also the first text in a google search result. The ideal length is between 40 and 60 characters
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
+		[ImplementPropertyType("headerTitle")]
+		public string HeaderTitle => GetHeaderTitle(this);
+
+		/// <summary>Static getter for Header Title</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
+		public static string GetHeaderTitle(IHeaderSection that) => that.Value<string>("headerTitle");
 	}
 }

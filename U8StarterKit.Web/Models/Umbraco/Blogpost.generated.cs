@@ -22,7 +22,7 @@ namespace U8StarterKit.Web.Models.Umbraco
 {
 	/// <summary>Blogpost</summary>
 	[PublishedModel("blogpost")]
-	public partial class Blogpost : PublishedContentModel, INavigationBase
+	public partial class Blogpost : PublishedContentModel, IHeaderSection, INavigationBase
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -79,6 +79,20 @@ namespace U8StarterKit.Web.Models.Umbraco
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		[ImplementPropertyType("postImage")]
 		public IPublishedContent PostImage => this.Value<IPublishedContent>("postImage");
+
+		///<summary>
+		/// Header Subtitle
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
+		[ImplementPropertyType("headerSubtitle")]
+		public string HeaderSubtitle => HeaderSection.GetHeaderSubtitle(this);
+
+		///<summary>
+		/// Header Title: The title of the page, this is also the first text in a google search result. The ideal length is between 40 and 60 characters
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
+		[ImplementPropertyType("headerTitle")]
+		public string HeaderTitle => HeaderSection.GetHeaderTitle(this);
 
 		///<summary>
 		/// Keywords: Keywords that describe the content of the page. This is considered optional since most modern search engines don't use this anymore

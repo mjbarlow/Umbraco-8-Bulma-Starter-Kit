@@ -4,9 +4,8 @@
 @{
     Layout = "master.cshtml";
 }
-<!-- for the section we want to show the shop header -->
-@Html.Partial("~/Views/Partials/SectionHeader.cshtml", new U8StarterKit.Web.Models.Umbraco.ContentBase(Model.Parent))
-<section class="section has-spacing section-products">
+@Html.Partial("~/Views/Partials/SectionHeader.cshtml", new U8StarterKit.Web.Models.Umbraco.HeaderSection(Model.Parent))
+<section class="section has-spacing section-gray">
     <div class="container">
         <div class="columns">
             <div class="column">
@@ -44,7 +43,7 @@
                             {
                                 foreach (var feature in Model.Features)
                                 {
-                                    <p class="title is-4">@feature.FeatureName</p>
+                                    <p class="title is-5">@feature.FeatureName</p>
                                     <p class="subtitle is-5">@feature.FeatureDetails</p>
                                     if (Model.Features.IndexOf(feature) != Model.Features.Count() - 1)
                                     {
@@ -58,11 +57,5 @@
                 </div>
             </div>
         </div>
-    </div>
-</section>
-<section class="section section--sand">
-    <div class="container">
-        <!-- todo: Check if grid is empty via a property value converter -->
-        @Html.GetGridHtml(Model, "bodyText", "bootstrap3-fluid")
     </div>
 </section>

@@ -465,6 +465,9 @@
     <Compile Include="Models\Umbraco\Folder.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Umbraco\HeaderSection.generated.cs">
+      <DependentUpon>Builder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Umbraco\Home.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
@@ -505,7 +508,7 @@
     <Content Include="config\HealthChecks.config" />
     <Content Include="config\BackOfficeTours\getting-started.json" />
     <None Include="packages.config" />
-    <Content Include="Views\Blog.cshtml" />
+    <Content Include="Views\blog.cshtml" />
     <Content Include="Views\Blogpost.cshtml" />
     <Content Include="Views\contact.cshtml" />
     <Content Include="Views\contentPage.cshtml" />
@@ -519,7 +522,7 @@
     <Content Include="Views\Partials\Navigation\TopNavigation.cshtml" />
     <Content Include="Views\Partials\SectionHeader.cshtml" />
     <Content Include="Views\people.cshtml" />
-    <Content Include="Views\Person.cshtml" />
+    <Content Include="Views\person.cshtml" />
     <Content Include="Views\Product.cshtml" />
     <Content Include="Views\Products.cshtml" />
     <Content Include="Views\Web.config" />

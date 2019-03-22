@@ -46,6 +46,13 @@ namespace U8StarterKit.Web.Models.Umbraco
 		// properties
 
 		///<summary>
+		/// Bio
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
+		[ImplementPropertyType("bio")]
+		public IHtmlString Bio => this.Value<IHtmlString>("bio");
+
+		///<summary>
 		/// Department
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]

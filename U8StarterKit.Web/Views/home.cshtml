@@ -6,28 +6,25 @@
 
 @Html.Partial("~/Views/Partials/HomeHero.cshtml", Model)
 
-<section class="section is-spaced section-products">
+<section class="section has-spacing section-gray">
     <div class="container">
         <div class="columns is-8 is-variable">
             <div class="column is-two-thirds-tablet">
                 @Html.GetGridHtml(Model, "bodyText", "bulma-fluid-home")
             </div>
+            <!-- todo - hook up this column-->
             <div class="column is-one-third-tablet">
                 <div class="tile is-ancestor">
                     <div class="tile is-parent is-vertical">
-                       
-                        <article class="tile is-child notification is-primary">
+                        <article class="tile is-child notification is-light">
                             <p class="title">Sign up</p>
-                            <div class="content">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis lorem ut libero malesuada feugiat. Donec rutrum congue leo eget malesuada.</p>
-                            </div>
+                            <p class="subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
                             <div class="field">
                                 <label class="label">Name</label>
                                 <div class="control">
                                     <input class="input" type="text" placeholder="e.g Alex Smith">
                                 </div>
                             </div>
-
                             <div class="field">
                                 <label class="label is-light">Email</label>
                                 <div class="control">
@@ -42,6 +39,7 @@
                         </article>
                         <article class="tile is-child notification is-light">
                             <p class="title">Our services</p>
+                            <p class="subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
                             <div class="content">
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis lorem ut libero malesuada feugiat. Donec rutrum congue leo eget malesuada. Donec rutrum congue leo eget malesuada.</p>
 
@@ -58,38 +56,41 @@
                                 </p>
                             </div>
                         </article>
-                        <article class="tile is-child notification is-light">
-                            <p class="title">Featured Products</p>
-                            <div class="content">
-                               
-                                <p class="image has-spacing image is-3by2">
-                                    <img src="/media/662af6ca411a4c93a6c722c4845698e7/00000006000000000000000000000000/16403439029_f500be349b_o.jpg" class="is-background"/>
-
-                                </p>
-                                <h4>Lorem ipsum dolor sit amet, consectetur adipiscing</h4>
-                                <p><a href="/" class="is-link">Buy $40.00</a></p>
-                       
-                                <p class="image has-spacing image is-3by2">
-                                    <img src="/media/662af6ca411a4c93a6c722c4845698e7/00000006000000000000000000000000/16403439029_f500be349b_o.jpg" class="is-background"/>
-
-                                </p>
-                                <h4>Lorem ipsum dolor sit amet, consectetur adipiscing</h4>
-                                <p>Buy $40.00</p>
-                            
+                        <div class="card has-spacing-bottom">
+                            <div class="image-card">
+                                <figure class="image image is-3by2 ">
+                                    <img class="is-background" src="/media/55514845b8bd487cb3709724852fd6bb/00000006000000000000000000000000/4730684907_8a7f8759cb_b.jpg" alt="Biker Jacket">
+                                </figure>
                             </div>
-                        </article>
+                            <div class="card-content">
+                                <div class="content">
+                                    <h4 class="title has-small-spacing-bottom">Biker Jacket</h4>
+                                    <div class="has-spacing-bottom">
+                                        <span class="tag">Vestibulum</span>
+                                        <span class="tag">cubilia</span>
+                                        <span class="tag">posuere</span>
+                                    </div>
+                                    <p>Vivamus suscipit tortor eget felis porttitor volutpat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Cras ultricies ligula sed magna dictum porta.</p>
+                                    <p class="buttons">
+                                        <a class="button is-link has-icons-left" href="/products/biker-jacket/">
+                                            <span class="icon">
+                                                <i class="fas fa-shopping-cart"></i>   
+                                                </span>
+                                            <span>Add to basket</span>
+                                        </a>
+                                    </p>
+                                </div>
+                            </div>
+                            <footer class="card-footer">
+                                <div class="card-footer-item">€ 199.00</div>
+                                <div class="card-footer-item"><a class="is-bold" href="/products/biker-jacket/">Full details</a></div>
+                            </footer>
+
+                        </div>
+                   
                 </div>
                     </div>
             </div>
         </div>
-    </div>
-</section>
-<section class="section hero is-primary is-spaced  hero-footer">
-    <div class="container">
-        <h2 class="title">@Model.FooterHeader</h2>
-        <p class="subtitle">@Model.FooterDescription</p>
-        <a class="button is-outlined is-primary is-inverted is-medium" href="@Model.FooterCtalink.Url">
-            @Model.FooterCtacaption
-        </a>
     </div>
 </section>

@@ -22,9 +22,18 @@
 
 <body class="">
     @Html.Partial("~/Views/Partials/NavSection.cshtml", home)
-    <main>
-        @RenderBody()
-    </main>
+<main>
+    @RenderBody()
+</main>
+<section class="section hero is-primary is-spaced  hero-footer">
+    <div class="container">
+        <h2 class="title">@home.FooterHeader</h2>
+        <p class="subtitle">@home.FooterDescription</p>
+        <a class="button is-outlined is-primary is-inverted is-medium" href="@home.FooterCtalink.Url">
+            @home.FooterCtacaption
+        </a>
+    </div>
+</section>
     <footer class="footer is-dark">
         <div class="container">
             <div class="content has-text-centered has-text-light">

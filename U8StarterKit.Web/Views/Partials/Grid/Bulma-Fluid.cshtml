@@ -4,11 +4,9 @@
 @* 
     Razor helpers located at the bottom of this file
 *@
-
 @if (Model != null && Model.sections != null)
 {
     var oneColumn = ((System.Collections.ICollection)Model.sections).Count == 1;
-    
     <div class="umb-grid">
         @if (oneColumn)
         {
@@ -38,7 +36,7 @@
 
         <div class="columns" @RenderElementAttributes(row)>
             @foreach ( var area in row.areas ) {
-            <div class="@area.grid column">
+            <div class="is-@area.grid column">
                 <div @RenderElementAttributes(area)>
                     @foreach (var control in area.controls) {
                         if (control !=null && control.editor != null && control.editor.view != null ) {

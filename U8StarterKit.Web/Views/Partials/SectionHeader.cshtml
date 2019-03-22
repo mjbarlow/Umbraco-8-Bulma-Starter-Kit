@@ -1,16 +1,16 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<U8StarterKit.Web.Models.Umbraco.ContentBase>
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<U8StarterKit.Web.Models.Umbraco.HeaderSection>
 @using U8StarterKit.Web.Extensions;
 
-@if (Model.PageTitle.HasValue())
+@if (Model.HeaderTitle.HasValue())
 {
     <section class="hero  is-dark">
         <div class="hero-body">
             <div class="container">
                 <div class="column is-two-thirds-tablet">
-                    <h1 class="title">@Model.PageTitle</h1>
-                    @if (Model.PageSubtitle.HasValue())
+                    <h1 class="title">@Model.HeaderTitle</h1>
+                    @if (Model.HeaderSubtitle.HasValue())
                     {
-                        <h2 class="subtitle">@Model.PageSubtitle</h2>
+                        <h2 class="subtitle">@Model.HeaderSubtitle</h2>
                     }
                 </div>
             </div>

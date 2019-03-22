@@ -7,5 +7,7 @@
 
 @foreach (var item in selection)
 {
-    <a class="nav-link nav-link--black nav-link--air-bottom @(item.IsAncestorOrSelf(Model) ? "nav-link--active" : null)" href="@item.Url">@item.Name</a>
+    <div class="panel-block">
+        <a class="is-link @(item.IsAncestorOrSelf(Model) ? "is--active" : "")" href="@item.Url">@item.Name</a>
+    </div>
 }

@@ -11,8 +11,8 @@
         <a class="employee-grid__item__contact-item" href="http://@(service).com/@content">@service</a>
     }
 }
-@Html.Partial("~/Views/Partials/SectionHeader.cshtml", new U8StarterKit.Web.Models.Umbraco.ContentBase(Model))
-<section class="section section-products has-spacing">
+@Html.Partial("~/Views/Partials/SectionHeader.cshtml", new U8StarterKit.Web.Models.Umbraco.HeaderSection(Model))
+<section class="section has-spacing section-gray">
     <div class="container">
         <div class="columns is-multiline">
             @foreach (var person in Model.Children.Select(x => new Person(x)))
@@ -30,18 +30,58 @@
                         <div class="card-content">
                             <div class="content">
                                 <h4 class="title has-small-spacing-bottom">@person.Name</h4>
-                          
-                                @if (!string.IsNullOrEmpty(person.Email))
+                                @if (person.Bio.HasValue())
                                 {
-                                    <a href="mailto:@person.Email" class="employee-grid__item__email">@person.Email</a>
+                                    @person.Bio
                                 }
-                                <div class="employee-grid__item__contact">
-                                    @SocialLink(person.FacebookUsername, "Facebook")
-                                    @SocialLink(person.TwitterUsername, "Twitter")
-                                    @SocialLink(person.LinkedInUsername, "LinkedIn")
-                                    @SocialLink(person.InstagramUsername, "Instagram")
+                                
+                                <div class="buttons">
+                                @if (person.Email.HasValue())
+                                {
+                                    <a href="mailto:@person.Email" class="button is-light has-icons-left">
+                                        <span class="icon">
+                                            <i class="fas fa-envelope"></i>
+                                        </span>
+                                        <span>@person.Email</span>
+                                    </a>
+                                }
+                                @if (person.FacebookUsername.HasValue())
+                                {
+                                    <a href="http://facebook.com/@person.FacebookUsername" class="button is-light has-icons-left">
+                                        <span class="icon">
+                                            <i class="fab fa-facebook-f"></i>
+                                        </span>
+                                        <span>@("@" + person.FacebookUsername)</span>
+                                    </a>
+                                }
+                                @if (person.TwitterUsername.HasValue())
+                                {
+                                    <a href="http://twitter.com/@person.TwitterUsername" class="button is-light has-icons-left">
+                                        <span class="icon">
+                                            <i class="fab fa-twitter"></i>
+                                        </span>
+                                        <span>@("@" + person.TwitterUsername)</span>
+                                    </a>
+                                }
+                                @if (person.LinkedInUsername.HasValue())
+                                {
+                                    <a href="http://linkedin.com/@person.LinkedInUsername" class="button is-light has-icons-left">
+                                        <span class="icon">
+                                            <i class="fab fa-linkedin"></i>
+                                        </span>
+                                        <span>@("@" + person.LinkedInUsername)</span>
+                                    </a>
+                                }
+                                @if (person.InstagramUsername.HasValue())
+                                {
+                                    <a href="http://linkedin.com/@person.InstagramUsername" class="button is-light has-icons-left">
+                                        <span class="icon">
+                                            <i class="fab fa-instagram"></i>
+                                        </span>
+                                        <span>@("@" + person.InstagramUsername)</span>
+                                    </a>
+                                }
                                 </div>
-                               
                             </div>
                         </div>
                     </div>
