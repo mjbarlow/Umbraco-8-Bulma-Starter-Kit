@@ -92,7 +92,7 @@ namespace U8StarterKit.Web.Models.Umbraco
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		[ImplementPropertyType("photo")]
-		public Image Photo => this.Value<Image>("photo");
+		public IPublishedContent Photo => this.Value<IPublishedContent>("photo");
 
 		///<summary>
 		/// Twitter username

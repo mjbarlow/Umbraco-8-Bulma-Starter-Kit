@@ -1,20 +1,37 @@
 ﻿@inherits UmbracoViewPage<Blogpost>
 @using U8StarterKit.Web.Models.Umbraco
+@using U8StarterKit.Web.Extensions
 @{
     Layout = "master.cshtml";
 }
-@Html.Partial("~/Views/Partials/SectionHeader.cshtml", new U8StarterKit.Web.Models.Umbraco.HeaderSection(Model))
+
+<section id="hero" class="image has-spacing image is-3by1">
+    <img src="@Model.PostImage.Url" class="is-background" />
+</section>
+<section class="hero is-dark">
+    <div class="hero-body">
+        <div class="container">
+            <div class="column is-8-tablet is-offset-2-tablet is-paddingless">
+                <h1 class="title is-2">@Model.HeaderTitle</h1>
+                <h2 class="subtitle is-4">@Model.CreateDate.ToShortDateString()</h2>
+                @if (Model.HeaderSubtitle.HasValue())
+                {
+                    <p class="is-size-4">@Model.HeaderSubtitle</p>
+                }
+            </div>
+        </div>
+    </div>
+</section>
 <section class="section has-spacing section-gray">
     <div class="container">
-        <article>
-            <div class="blogpost-meta">
-                <small class="blogpost-date">@Model.CreateDate.ToShortDateString()</small>
-                <span class="blogpost-cat">
-                    @Html.Partial("~/Views/Partials/CategoryLinks.cshtml", Model.Categories)
-                </span>
+        <div class="columns">
+            <div class="column is-large is-8-tablet is-offset-2-tablet">
+                <article>
+                    <div class="content is-large">
+                        @Html.GetGridHtml(Model, "bodyText", "bulma-fluid")
+                    </div>
+                </article>
             </div>
-            <h3>@Model.Excerpt</h3>
-            @Html.GetGridHtml(Model, "bodyText", "bulma-fluid")
-        </article>
+        </div>
     </div>
 </section>
