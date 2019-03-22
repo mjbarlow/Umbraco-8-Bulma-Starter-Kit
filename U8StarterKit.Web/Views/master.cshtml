@@ -1,5 +1,4 @@
 ﻿@using U8StarterKit.Web.Models.Umbraco
-@using U8StarterKit.Web.Extensions
 @inherits Umbraco.Web.Mvc.UmbracoViewPage
 @{
     Layout = null;
@@ -19,28 +18,12 @@
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     @RenderSection("Header", required: false)
 </head>
-
-<body class="">
+<body>
     @Html.Partial("~/Views/Partials/NavSection.cshtml", home)
-<main>
-    @RenderBody()
-</main>
-<section class="section hero is-primary is-spaced  hero-footer">
-    <div class="container">
-        <h2 class="title">@home.FooterHeader</h2>
-        <p class="subtitle">@home.FooterDescription</p>
-        <a class="button is-outlined is-primary is-inverted is-medium" href="@home.FooterCtalink.Url">
-            @home.FooterCtacaption
-        </a>
-    </div>
-</section>
-    <footer class="footer is-dark">
-        <div class="container">
-            <div class="content has-text-centered has-text-light">
-                @home.FooterAddress
-            </div>
-        </div>
-    </footer>
+    <main>
+        @RenderBody()
+    </main>
+    @Html.Partial("~/Views/Partials/Footer.cshtml", home)
     <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
     <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
     <script src="https://ajax.aspnetcdn.com/ajax/mvc/5.2.3/jquery.validate.unobtrusive.min.js"></script>

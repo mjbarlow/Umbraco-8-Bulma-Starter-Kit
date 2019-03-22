@@ -88,6 +88,13 @@ namespace U8StarterKit.Web.Models.Umbraco
 		public string FooterHeader => this.Value<string>("footerHeader");
 
 		///<summary>
+		/// githubRepo: Add gihub repo for social links,
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
+		[ImplementPropertyType("githubRepo")]
+		public string GithubRepo => this.Value<string>("githubRepo");
+
+		///<summary>
 		/// Hero Background: Spice up the homepage by adding a beautiful photo that relates to your business
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
@@ -156,5 +163,12 @@ namespace U8StarterKit.Web.Models.Umbraco
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		[ImplementPropertyType("sitename")]
 		public string Sitename => this.Value<string>("sitename");
+
+		///<summary>
+		/// twitterUsername: Add twitter username for social links.
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
+		[ImplementPropertyType("twitterUsername")]
+		public string TwitterUsername => this.Value<string>("twitterUsername");
 	}
 }

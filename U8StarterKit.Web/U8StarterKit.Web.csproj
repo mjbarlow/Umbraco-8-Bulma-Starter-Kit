@@ -509,7 +509,7 @@
     <Content Include="config\BackOfficeTours\getting-started.json" />
     <None Include="packages.config" />
     <Content Include="Views\blog.cshtml" />
-    <Content Include="Views\Blogpost.cshtml" />
+    <Content Include="Views\blogPost.cshtml" />
     <Content Include="Views\contact.cshtml" />
     <Content Include="Views\contentPage.cshtml" />
     <Content Include="Views\home.cshtml" />
@@ -523,8 +523,8 @@
     <Content Include="Views\Partials\SectionHeader.cshtml" />
     <Content Include="Views\people.cshtml" />
     <Content Include="Views\person.cshtml" />
-    <Content Include="Views\Product.cshtml" />
-    <Content Include="Views\Products.cshtml" />
+    <Content Include="Views\product.cshtml" />
+    <Content Include="Views\products.cshtml" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\Partials\Grid\Editors\Textstring.cshtml" />
     <Content Include="Views\Partials\Grid\Editors\Rte.cshtml" />
@@ -537,6 +537,7 @@
     <Content Include="Views\Partials\HomeHero.cshtml" />
     <Content Include="Views\Partials\Grid\Bulma-Fluid-Home.cshtml" />
     <Content Include="Views\Partials\NavSection.cshtml" />
+    <Content Include="Views\Partials\Footer.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
