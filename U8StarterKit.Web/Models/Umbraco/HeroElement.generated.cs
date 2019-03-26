@@ -20,85 +20,85 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace U8StarterKit.Web.Models.Umbraco
 {
-	/// <summary>Blog</summary>
-	[PublishedModel("blog")]
-	public partial class Blog : PublishedContentModel, IContentBase, IHeaderSection, INavigationBase
+	/// <summary>Hero Element</summary>
+	[PublishedModel("heroElement")]
+	public partial class HeroElement : PublishedElementModel
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		public new const string ModelTypeAlias = "blog";
+		public new const string ModelTypeAlias = "heroElement";
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		public new static PublishedContentType GetModelContentType()
 			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Blog, TValue>> selector)
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<HeroElement, TValue>> selector)
 			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 #pragma warning restore 0109
 
 		// ctor
-		public Blog(IPublishedContent content)
+		public HeroElement(IPublishedElement content)
 			: base(content)
 		{ }
 
 		// properties
 
 		///<summary>
-		/// Disqus Shortname: To use comments, you'll need to sign up for Disqus and enter your shortname here (more info: https://help.disqus.com/customer/portal/articles/472097-universal-embed-code)
+		/// Hero Background: Spice up the homepage by adding a beautiful photo that relates to your business
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("disqusShortname")]
-		public string DisqusShortname => this.Value<string>("disqusShortname");
+		[ImplementPropertyType("heroBackgroundImage")]
+		public IPublishedContent HeroBackgroundImage => this.Value<IPublishedContent>("heroBackgroundImage");
 
 		///<summary>
-		/// How many posts should be shown?
+		/// Call To Action Caption: The caption on the button
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("howManyPostsShouldBeShown")]
-		public decimal HowManyPostsShouldBeShown => this.Value<decimal>("howManyPostsShouldBeShown");
+		[ImplementPropertyType("heroCTACaption")]
+		public string HeroCtacaption => this.Value<string>("heroCTACaption");
 
 		///<summary>
-		/// Content
+		/// Call To Action Link
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("bodyText")]
-		public Newtonsoft.Json.Linq.JToken BodyText => U8StarterKit.Web.Models.Umbraco.ContentBase.GetBodyText(this);
+		[ImplementPropertyType("heroCTALink")]
+		public IPublishedContent HeroCtalink => this.Value<IPublishedContent>("heroCTALink");
 
 		///<summary>
-		/// Header Subtitle
+		/// Hero CTA Sublink
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("headerSubtitle")]
-		public string HeaderSubtitle => HeaderSection.GetHeaderSubtitle(this);
+		[ImplementPropertyType("heroCTASublink")]
+		public IPublishedContent HeroCtasublink => this.Value<IPublishedContent>("heroCTASublink");
 
 		///<summary>
-		/// Header Title: The title of the page, this is also the first text in a google search result. The ideal length is between 40 and 60 characters
+		/// Hero CTA Sublink Caption
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("headerTitle")]
-		public string HeaderTitle => HeaderSection.GetHeaderTitle(this);
+		[ImplementPropertyType("heroCTASublinkCaption")]
+		public string HeroCtasublinkCaption => this.Value<string>("heroCTASublinkCaption");
 
 		///<summary>
-		/// Keywords: Keywords that describe the content of the page. This is considered optional since most modern search engines don't use this anymore
+		/// Description
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("keywords")]
-		public IEnumerable<string> Keywords => NavigationBase.GetKeywords(this);
+		[ImplementPropertyType("heroDescription")]
+		public IHtmlString HeroDescription => this.Value<IHtmlString>("heroDescription");
 
 		///<summary>
-		/// Description: A brief description of the content on your page. This text is shown below the title in a google search result and also used for Social Sharing Cards. The ideal length is between 130 and 155 characters
+		/// Header: This is the main headline for the hero area on the Homepage
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("seoMetaDescription")]
-		public string SeoMetaDescription => NavigationBase.GetSeoMetaDescription(this);
+		[ImplementPropertyType("heroHeader")]
+		public string HeroHeader => this.Value<string>("heroHeader");
 
 		///<summary>
-		/// Hide in Navigation: If you don't want this page to appear in the navigation, check this box
+		/// Hero Sublink Before Text
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("umbracoNavihide")]
-		public bool UmbracoNavihide => NavigationBase.GetUmbracoNavihide(this);
+		[ImplementPropertyType("heroSublinkBeforeText")]
+		public string HeroSublinkBeforeText => this.Value<string>("heroSublinkBeforeText");
 	}
 }

@@ -419,7 +419,6 @@
     <Content Include="config\Lang\zh-CN.user.xml" />
     <Content Include="config\logviewer.searches.config.js" />
     <Content Include="css\main.css" />
-    <Content Include="css\u8starterkit.css" />
     <Content Include="Global.asax" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -438,6 +437,9 @@
     <Compile Include="Models\Umbraco\Blogpost.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Umbraco\BlogsElement.generated.cs">
+      <DependentUpon>Builder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Umbraco\Builder.cs">
       <Generator>UmbracoModelsBuilder</Generator>
       <LastGenOutput>Builder.generated.cs</LastGenOutput>
@@ -447,6 +449,9 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
+    <Compile Include="Models\Umbraco\CarouselElement.generated.cs">
+      <DependentUpon>Builder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Umbraco\Contact.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
@@ -454,6 +459,9 @@
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Umbraco\ContentPage.generated.cs">
+      <DependentUpon>Builder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Umbraco\ContentSection.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Umbraco\Feature.generated.cs">
@@ -468,6 +476,12 @@
     <Compile Include="Models\Umbraco\HeaderSection.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Umbraco\HeroElement.generated.cs">
+      <DependentUpon>Builder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Umbraco\HeroSection.generated.cs">
+      <DependentUpon>Builder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Umbraco\Home.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
@@ -480,6 +494,9 @@
     <Compile Include="Models\Umbraco\NavigationBase.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Umbraco\PanelElement.generated.cs">
+      <DependentUpon>Builder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Umbraco\People.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
@@ -489,7 +506,16 @@
     <Compile Include="Models\Umbraco\Product.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Umbraco\ProductElement.generated.cs">
+      <DependentUpon>Builder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Umbraco\Products.generated.cs">
+      <DependentUpon>Builder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Umbraco\SidebarSection.generated.cs">
+      <DependentUpon>Builder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Umbraco\SignUpFormElement.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -538,6 +564,12 @@
     <Content Include="Views\Partials\Grid\Bulma-Fluid-Home.cshtml" />
     <Content Include="Views\Partials\NavSection.cshtml" />
     <Content Include="Views\Partials\Footer.cshtml" />
+    <Content Include="Views\Partials\Nested\RenderElements.cshtml" />
+    <Content Include="Views\Partials\Elements\HeroElement.cshtml" />
+    <Content Include="Views\Partials\Elements\BlogsElement.cshtml" />
+    <Content Include="Views\Partials\Elements\SignUpFormElement.cshtml" />
+    <Content Include="Views\Partials\Elements\PanelElement.cshtml" />
+    <Content Include="Views\Partials\Elements\ProductElement.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

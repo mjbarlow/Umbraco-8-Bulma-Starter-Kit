@@ -9,14 +9,16 @@
     <div class="container">
         <div class="columns">
             <div class="column">
-                <div class="product-image-container">
-                    <img class="product-image" src="@Model.Photos.Url" />
+                <div class="image is-5by4">
+                    @if (Model.Photos.HasValue())
+                    {
+                        <img class="product-image" src="@Model.Photos.Url"/>
+                    }
                 </div>
             </div>
             <div class="column">
                 <div class="card">
                     <div class="card-content">
-
                         <h1 class="title">@Model.ProductName</h1>
                         <div class="content">
                             <p class="is-size-5">@Model.Parent.GetProperty("DefaultCurrency").Value() @Model.Price.ToString("F")</p>

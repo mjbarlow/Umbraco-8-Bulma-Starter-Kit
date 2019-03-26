@@ -20,43 +20,36 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace U8StarterKit.Web.Models.Umbraco
 {
-	/// <summary>Feature Element</summary>
-	[PublishedModel("feature")]
-	public partial class Feature : PublishedElementModel
+	/// <summary>Carousel Element</summary>
+	[PublishedModel("carouselElement")]
+	public partial class CarouselElement : PublishedElementModel
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		public new const string ModelTypeAlias = "feature";
+		public new const string ModelTypeAlias = "carouselElement";
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		public new static PublishedContentType GetModelContentType()
 			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Feature, TValue>> selector)
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<CarouselElement, TValue>> selector)
 			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 #pragma warning restore 0109
 
 		// ctor
-		public Feature(IPublishedElement content)
+		public CarouselElement(IPublishedElement content)
 			: base(content)
 		{ }
 
 		// properties
 
 		///<summary>
-		/// Details
+		/// Carousel: Add the carousel
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("featureDetails")]
-		public string FeatureDetails => this.Value<string>("featureDetails");
-
-		///<summary>
-		/// Name
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("featureName")]
-		public string FeatureName => this.Value<string>("featureName");
+		[ImplementPropertyType("carousel")]
+		public string Carousel => this.Value<string>("carousel");
 	}
 }

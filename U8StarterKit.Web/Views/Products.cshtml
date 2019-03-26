@@ -14,14 +14,16 @@
                 {
                     <div class="column is-one-third">
                         <div class="card has-spacing-bottom">
-                            @if (product.Photos.HasValue())
-                            {
-                                <div class="image-card">
-                                    <figure class="image image is-3by2 ">
+                          
+                            <div class="image-card">
+                                <figure class="image image is-3by2 ">
+                                    @if (product.Photos.HasValue())
+                                    {
                                         <img class="is-background" src="@product.Photos.Url" alt="@product.ProductName">
-                                    </figure>
-                                </div>
-                            }
+                                    }
+                                </figure>
+                            </div>
+                            
                             <div class="card-content">
                                 <div class="content">
                                     <h4 class="title has-small-spacing-bottom">@product.ProductName</h4>

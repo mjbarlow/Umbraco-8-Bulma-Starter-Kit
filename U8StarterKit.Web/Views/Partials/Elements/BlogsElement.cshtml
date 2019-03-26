@@ -1,0 +1,110 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<BlogsElement>
+@using U8StarterKit.Web.Models.Umbraco
+@using U8StarterKit.Web.Extensions
+
+@{
+    var startNode = Model.Blog.FirstOrDefault();
+    var numberOfPosts = (int)Model.ItemsToShow;
+}
+
+@{
+    @* Get the starting page *@
+    if (startNode == null)
+    {
+        <div class="blogposts">
+            <h1>There are no posts at this time, try again later.</h1>
+        </div>
+        return;
+    }
+
+    //Gets all blogposts to calculate pages
+    var blogposts = startNode.Children.OrderBy(x => x.CreateDate).ToList();
+    var pageCount = (int)Math.Ceiling((double)blogposts.Count / (double)numberOfPosts);
+    //gets the page from the querystring and sets it to one if it is out of range
+    var page = 1;
+    if (!string.IsNullOrEmpty(Request.QueryString["page"]))
+    {
+        int.TryParse(Request.QueryString["page"], out page);
+        if (page <= 0 || page > pageCount)
+        {
+            page = 1;
+        }
+    }
+    //Gets the blogposts for the current page
+    var pagedBlogposts = blogposts.Skip((page - 1) * numberOfPosts).Take(numberOfPosts).ToList();
+
+    if (pagedBlogposts.Count > 0)
+    {
+        if (Model.IsHalfWidth)
+        {
+            @:<div class="columns">
+            }
+
+            foreach (var postNode in pagedBlogposts)
+            {
+                var post = new Blogpost(postNode);
+                if (Model.IsHalfWidth)
+                {
+                    @:<div class="column is-half-tablet">
+                    }
+                    <div class="card has-large-spacing-bottom">
+                        <div class="image-card">
+                            <div class="image has-spacing image is-3by1">
+                                @if (post.PostImage.HasValue())
+                                {
+
+                                    <img src="@post.PostImage.Url" class="is-background" />
+
+                                }
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <div class="content">
+                                <h3 class="title">@post.PageTitle</h3>
+                                <p class="subtitle">@post.CreateDate.ToShortDateString()</p>
+                                <div class="has-spacing-bottom">
+                                    @Html.Partial("~/Views/Partials/CategoryLinks.cshtml", post.Categories)
+                                </div>
+                                <p>@post.Excerpt</p>
+                                <a href="@post.Url" class="button is-link">Read more</a>
+                            </div>
+                        </div>
+                    </div>
+                    if (Model.IsHalfWidth)
+                    {
+                    @: </div>
+                }
+            }
+            if (Model.IsHalfWidth)
+            {
+            @:</div>
+        }
+    }
+
+    if (blogposts.Count > numberOfPosts && Model.IsHalfWidth)
+    {
+        <div class="buttons is-centered">
+            @*@if (page <= 1)
+                {
+                    <span class="button is-light is-disabled is-medium">Prev</span>
+                }
+                else
+                {
+                    <a class="button is-link is-medium" href="@(Model.Content.Url + "?page=" + (page - 1))">Prev</a>
+                }*@
+
+            @for (int i = 1; i <= pageCount; i++)
+            {
+                <a class="button is-medium @(page == i ? "is-light" : "is-link")" href="@("?page=" + i)">@i</a>
+            }
+            @*@if (page == pageCount)
+                {
+                    <span class="button is-light is-disabled is-medium">Next</span>
+                }
+                else
+                {
+                    <a class="button is-link is-medium " href="@(Model.Content.Url + "?page=" + (page + 1))">Next</a>
+                }*@
+        </div>
+    }
+}

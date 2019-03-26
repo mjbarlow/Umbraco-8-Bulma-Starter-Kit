@@ -6,7 +6,10 @@
 }
 
 <section id="hero" class="image has-spacing image is-3by1">
-    <img src="@Model.PostImage.Url" class="is-background" />
+    @if (Model.PostImage.HasValue())
+    {
+        <img src="@Model.PostImage.Url" class="is-background"/>
+    }
 </section>
 <section class="hero is-dark">
     <div class="hero-body">

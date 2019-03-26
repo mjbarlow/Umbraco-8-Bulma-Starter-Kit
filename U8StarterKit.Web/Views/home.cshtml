@@ -4,92 +4,19 @@
     Layout = "master.cshtml";
 }
 
-@Html.Partial("~/Views/Partials/HomeHero.cshtml", Model)
-
+@Html.Partial("~/Views/Partials/Nested/RenderElements.cshtml", Model.NestedHero)
 <section class="section has-spacing section-gray">
     <div class="container">
         <div class="columns is-8 is-variable">
             <div class="column is-two-thirds-tablet">
-                @Html.GetGridHtml(Model, "bodyText", "bulma-fluid-home")
+                @Html.Partial("~/Views/Partials/Nested/RenderElements.cshtml", Model.NestedContent)
             </div>
-            <!-- todo - hook up this column-->
             <div class="column is-one-third-tablet">
                 <div class="tile is-ancestor">
                     <div class="tile is-parent is-vertical">
-                        <article class="tile is-child notification is-light">
-                            <p class="title">Sign up</p>
-                            <p class="subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-                            <div class="field">
-                                <label class="label">Name</label>
-                                <div class="control">
-                                    <input class="input" type="text" placeholder="e.g Alex Smith">
-                                </div>
-                            </div>
-                            <div class="field">
-                                <label class="label is-light">Email</label>
-                                <div class="control">
-                                    <input class="input" type="email" placeholder="e.g. alexsmith@gmail.com">
-                                </div>
-                            </div>
-                            <div class="field">
-                                <div class="control">
-                                    <a class="is-link button">Sign up</a>
-                                </div>
-                            </div>
-                        </article>
-                        <article class="tile is-child notification is-light">
-                            <p class="title">Our services</p>
-                            <p class="subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-                            <div class="content">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis lorem ut libero malesuada feugiat. Donec rutrum congue leo eget malesuada. Donec rutrum congue leo eget malesuada.</p>
-
-                                <ul class="has-spacing-bottom">
-                                    <li>Consectetur adipiscing elit</li>
-                                    <li>Nulla quis lorem ut libero malesuada</li>
-                                    <li>Donec rutrum congue leo eget</li>
-                                    <li>Congue leo eget malesuada</li>
-                                </ul>
-                                <p>Nulla quis lorem ut libero malesuada feugiat</p>
-                                <p>
-
-                                    <a class="is-link button">See all our services</a>
-                                </p>
-                            </div>
-                        </article>
-                        <div class="card has-spacing-bottom">
-                            <div class="image-card">
-                                <figure class="image image is-3by2 ">
-                                    <img class="is-background" src="/media/55514845b8bd487cb3709724852fd6bb/00000006000000000000000000000000/4730684907_8a7f8759cb_b.jpg" alt="Biker Jacket">
-                                </figure>
-                            </div>
-                            <div class="card-content">
-                                <div class="content">
-                                    <h4 class="title has-small-spacing-bottom">Biker Jacket</h4>
-                                    <div class="has-spacing-bottom">
-                                        <span class="tag">Vestibulum</span>
-                                        <span class="tag">cubilia</span>
-                                        <span class="tag">posuere</span>
-                                    </div>
-                                    <p>Vivamus suscipit tortor eget felis porttitor volutpat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Cras ultricies ligula sed magna dictum porta.</p>
-                                    <p class="buttons">
-                                        <a class="button is-link has-icons-left" href="/products/biker-jacket/">
-                                            <span class="icon">
-                                                <i class="fas fa-shopping-cart"></i>   
-                                                </span>
-                                            <span>Add to basket</span>
-                                        </a>
-                                    </p>
-                                </div>
-                            </div>
-                            <footer class="card-footer">
-                                <div class="card-footer-item">€ 199.00</div>
-                                <div class="card-footer-item"><a class="is-bold" href="/products/biker-jacket/">Full details</a></div>
-                            </footer>
-
-                        </div>
-                   
-                </div>
+                        @Html.Partial("~/Views/Partials/Nested/RenderElements.cshtml", Model.NestedSideBar)
                     </div>
+                </div>
             </div>
         </div>
     </div>

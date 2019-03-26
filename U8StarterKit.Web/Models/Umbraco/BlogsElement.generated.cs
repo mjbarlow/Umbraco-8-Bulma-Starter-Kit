@@ -20,43 +20,50 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace U8StarterKit.Web.Models.Umbraco
 {
-	/// <summary>Feature Element</summary>
-	[PublishedModel("feature")]
-	public partial class Feature : PublishedElementModel
+	/// <summary>Latest Blogs Element</summary>
+	[PublishedModel("blogsElement")]
+	public partial class BlogsElement : PublishedElementModel
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		public new const string ModelTypeAlias = "feature";
+		public new const string ModelTypeAlias = "blogsElement";
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		public new static PublishedContentType GetModelContentType()
 			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Feature, TValue>> selector)
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<BlogsElement, TValue>> selector)
 			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 #pragma warning restore 0109
 
 		// ctor
-		public Feature(IPublishedElement content)
+		public BlogsElement(IPublishedElement content)
 			: base(content)
 		{ }
 
 		// properties
 
 		///<summary>
-		/// Details
+		/// Blog: Where to get the blog posts from,
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("featureDetails")]
-		public string FeatureDetails => this.Value<string>("featureDetails");
+		[ImplementPropertyType("blog")]
+		public IEnumerable<IPublishedContent> Blog => this.Value<IEnumerable<IPublishedContent>>("blog");
 
 		///<summary>
-		/// Name
+		/// Is Half Width: Set the blogs to be side by side (half of container)
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("featureName")]
-		public string FeatureName => this.Value<string>("featureName");
+		[ImplementPropertyType("isHalfWidth")]
+		public bool IsHalfWidth => this.Value<bool>("isHalfWidth");
+
+		///<summary>
+		/// Items To Show: The numbers of blogs items to show.
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
+		[ImplementPropertyType("itemsToShow")]
+		public decimal ItemsToShow => this.Value<decimal>("itemsToShow");
 	}
 }

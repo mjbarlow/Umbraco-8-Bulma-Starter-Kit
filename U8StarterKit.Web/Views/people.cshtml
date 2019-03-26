@@ -19,14 +19,14 @@
             {
                 <div class="column is-one-third">
                     <div class="card has-spacing-bottom">
-                        @if (person.Photo.HasValue())
-                        {
                             <div class="image-card">
                                 <figure class="image image is-3by2 ">
-                                    <img class="is-background" src="@person.Photo.Url" alt="@person.Name">
+                                    @if (person.Photo.HasValue())
+                                    {
+                                        <img class="is-background" src="@person.Photo.Url" alt="@person.Name">
+                                    }
                                 </figure>
                             </div>
-                        }
                         <div class="card-content">
                             <div class="content">
                                 <h4 class="title has-small-spacing-bottom">@person.Name</h4>

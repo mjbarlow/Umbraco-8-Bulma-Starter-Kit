@@ -52,14 +52,16 @@
                  @:<div class="column is-half-tablet">
              }
             <div class="card has-large-spacing-bottom">
-                @if (post.PostImage.HasValue())
-                {
-                    <div class="image-card">
-                        <div class="image has-spacing image is-3by1">
-                            <img src="@post.PostImage.Url" class="is-background" />
-                        </div>
+                <div class="image-card">
+                    <div class="image has-spacing image is-3by1">
+                        @if (post.PostImage.HasValue())
+                        {
+
+                            <img src="@post.PostImage.Url" class="is-background"/>
+                                                                                
+                        }
                     </div>
-                }
+                </div>
                 <div class="card-content">
                     <div class="content">
                         <h3 class="title">@post.PageTitle</h3>

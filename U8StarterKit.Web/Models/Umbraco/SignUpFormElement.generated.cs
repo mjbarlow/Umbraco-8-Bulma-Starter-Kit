@@ -20,43 +20,36 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace U8StarterKit.Web.Models.Umbraco
 {
-	/// <summary>Feature Element</summary>
-	[PublishedModel("feature")]
-	public partial class Feature : PublishedElementModel
+	/// <summary>Sign Up Form Element</summary>
+	[PublishedModel("signUpFormElement")]
+	public partial class SignUpFormElement : PublishedElementModel
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		public new const string ModelTypeAlias = "feature";
+		public new const string ModelTypeAlias = "signUpFormElement";
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		public new static PublishedContentType GetModelContentType()
 			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Feature, TValue>> selector)
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<SignUpFormElement, TValue>> selector)
 			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 #pragma warning restore 0109
 
 		// ctor
-		public Feature(IPublishedElement content)
+		public SignUpFormElement(IPublishedElement content)
 			: base(content)
 		{ }
 
 		// properties
 
 		///<summary>
-		/// Details
+		/// Sign Up
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("featureDetails")]
-		public string FeatureDetails => this.Value<string>("featureDetails");
-
-		///<summary>
-		/// Name
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("featureName")]
-		public string FeatureName => this.Value<string>("featureName");
+		[ImplementPropertyType("signUp")]
+		public string SignUp => this.Value<string>("signUp");
 	}
 }

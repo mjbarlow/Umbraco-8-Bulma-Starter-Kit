@@ -22,7 +22,7 @@ namespace U8StarterKit.Web.Models.Umbraco
 {
 	/// <summary>Home</summary>
 	[PublishedModel("home")]
-	public partial class Home : PublishedContentModel
+	public partial class Home : PublishedContentModel, IContentSection, IHeroSection, ISidebarSection
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -44,13 +44,6 @@ namespace U8StarterKit.Web.Models.Umbraco
 		{ }
 
 		// properties
-
-		///<summary>
-		/// Content
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("bodyText")]
-		public Newtonsoft.Json.Linq.JToken BodyText => this.Value<Newtonsoft.Json.Linq.JToken>("bodyText");
 
 		///<summary>
 		/// Address
@@ -95,62 +88,6 @@ namespace U8StarterKit.Web.Models.Umbraco
 		public string GithubRepo => this.Value<string>("githubRepo");
 
 		///<summary>
-		/// Hero Background: Spice up the homepage by adding a beautiful photo that relates to your business
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("heroBackgroundImage")]
-		public IPublishedContent HeroBackgroundImage => this.Value<IPublishedContent>("heroBackgroundImage");
-
-		///<summary>
-		/// Call To Action Caption: The caption on the button
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("heroCTACaption")]
-		public string HeroCtacaption => this.Value<string>("heroCTACaption");
-
-		///<summary>
-		/// Call To Action Link
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("heroCTALink")]
-		public IPublishedContent HeroCtalink => this.Value<IPublishedContent>("heroCTALink");
-
-		///<summary>
-		/// Hero CTA Sublink
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("heroCTASublink")]
-		public IPublishedContent HeroCtasublink => this.Value<IPublishedContent>("heroCTASublink");
-
-		///<summary>
-		/// Hero CTA Sublink Caption
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("heroCTASublinkCaption")]
-		public string HeroCtasublinkCaption => this.Value<string>("heroCTASublinkCaption");
-
-		///<summary>
-		/// Description
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("heroDescription")]
-		public IHtmlString HeroDescription => this.Value<IHtmlString>("heroDescription");
-
-		///<summary>
-		/// Header: This is the main headline for the hero area on the Homepage
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("heroHeader")]
-		public string HeroHeader => this.Value<string>("heroHeader");
-
-		///<summary>
-		/// Hero Sublink Before Text
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("heroSublinkBeforeText")]
-		public string HeroSublinkBeforeText => this.Value<string>("heroSublinkBeforeText");
-
-		///<summary>
 		/// Logo: Optional. If you add a logo it'll be used in the upper left corner instead of the site name. Make sure to use a transparent logo for best results
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
@@ -170,5 +107,26 @@ namespace U8StarterKit.Web.Models.Umbraco
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		[ImplementPropertyType("twitterUsername")]
 		public string TwitterUsername => this.Value<string>("twitterUsername");
+
+		///<summary>
+		/// Nested Content: The nested content.
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
+		[ImplementPropertyType("nestedContent")]
+		public IEnumerable<IPublishedElement> NestedContent => ContentSection.GetNestedContent(this);
+
+		///<summary>
+		/// Hero Nested Content
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
+		[ImplementPropertyType("nestedHero")]
+		public IEnumerable<IPublishedElement> NestedHero => HeroSection.GetNestedHero(this);
+
+		///<summary>
+		/// Sidebar Nested Content
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
+		[ImplementPropertyType("nestedSideBar")]
+		public IEnumerable<IPublishedElement> NestedSideBar => SidebarSection.GetNestedSideBar(this);
 	}
 }

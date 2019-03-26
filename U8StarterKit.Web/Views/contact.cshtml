@@ -3,11 +3,11 @@
 @using U8StarterKit.Web.Extensions
 @{
     Layout = "master.cshtml";
-    var coordinates = Model.MapCoordinates.ToString().Split(',');
-    var latitude = coordinates[0];
-    var longitude = coordinates[1];
-    var zoomLevel = coordinates[2];
-    var coordinatesString = longitude + "," + latitude + "," + longitude + "," + latitude;
+    //var coordinates = Model.MapCoordinates.ToString().Split(',');
+    //var latitude = coordinates[0];
+    //var longitude = coordinates[1];
+    //var zoomLevel = coordinates[2];
+    //var coordinatesString = longitude + "," + latitude + "," + longitude + "," + latitude;
 }
 @Html.Partial("~/Views/Partials/SectionHeader.cshtml", new U8StarterKit.Web.Models.Umbraco.HeaderSection(Model))
 <section class="section has-spacing section-gray">
@@ -30,13 +30,13 @@
                                 scrolling="no"
                                 marginheight="0"
                                 marginwidth="0"
-                                src="https://www.openstreetmap.org/export/embed.html?bbox=@coordinatesString&amp;layer=mapnik&amp;marker=@Model.MapCoordinates"
+                                src="https://www.openstreetmap.org/export/embed.html?bbox=10.388404726982117,55.40622012982414,10.388404726982117,55.40622012982414&amp;layer=mapnik&amp;marker=55.40622012982414,10.388404726982117,18"
                                 style="height:400px; width:100%">
 
                         </iframe>
                     </p>
                     <p class="buttons">
-                        <a class="button is-link" href="https://www.openstreetmap.org/?mlat=@latitude&amp;mlon=@longitude#map=@zoomLevel/@latitude/@longitude&amp;layers=N">View Larger Map</a>
+                        <a class="button is-link" href="#">View Larger Map</a>
                     </p>
                 </div>
             </div>

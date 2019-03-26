@@ -20,43 +20,49 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace U8StarterKit.Web.Models.Umbraco
 {
-	/// <summary>Feature Element</summary>
-	[PublishedModel("feature")]
-	public partial class Feature : PublishedElementModel
+	// Mixin Content Type with alias "sidebarSection"
+	/// <summary>Sidebar Section</summary>
+	public partial interface ISidebarSection : IPublishedContent
+	{
+		/// <summary>Sidebar Nested Content</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
+		IEnumerable<IPublishedElement> NestedSideBar { get; }
+	}
+
+	/// <summary>Sidebar Section</summary>
+	[PublishedModel("sidebarSection")]
+	public partial class SidebarSection : PublishedContentModel, ISidebarSection
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		public new const string ModelTypeAlias = "feature";
+		public new const string ModelTypeAlias = "sidebarSection";
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		public new static PublishedContentType GetModelContentType()
 			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Feature, TValue>> selector)
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<SidebarSection, TValue>> selector)
 			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 #pragma warning restore 0109
 
 		// ctor
-		public Feature(IPublishedElement content)
+		public SidebarSection(IPublishedContent content)
 			: base(content)
 		{ }
 
 		// properties
 
 		///<summary>
-		/// Details
+		/// Sidebar Nested Content
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("featureDetails")]
-		public string FeatureDetails => this.Value<string>("featureDetails");
+		[ImplementPropertyType("nestedSideBar")]
+		public IEnumerable<IPublishedElement> NestedSideBar => GetNestedSideBar(this);
 
-		///<summary>
-		/// Name
-		///</summary>
+		/// <summary>Static getter for Sidebar Nested Content</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("featureName")]
-		public string FeatureName => this.Value<string>("featureName");
+		public static IEnumerable<IPublishedElement> GetNestedSideBar(ISidebarSection that) => that.Value<IEnumerable<IPublishedElement>>("nestedSideBar");
 	}
 }

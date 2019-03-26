@@ -67,13 +67,6 @@ namespace U8StarterKit.Web.Models.Umbraco
 		public IHtmlString ContactIntro => this.Value<IHtmlString>("contactIntro");
 
 		///<summary>
-		/// Map Coordinates
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("mapCoordinates")]
-		public object MapCoordinates => this.Value("mapCoordinates");
-
-		///<summary>
 		/// Map Header
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
@@ -92,7 +85,7 @@ namespace U8StarterKit.Web.Models.Umbraco
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		[ImplementPropertyType("bodyText")]
-		public Newtonsoft.Json.Linq.JToken BodyText => ContentBase.GetBodyText(this);
+		public Newtonsoft.Json.Linq.JToken BodyText => U8StarterKit.Web.Models.Umbraco.ContentBase.GetBodyText(this);
 
 		///<summary>
 		/// Header Subtitle
