@@ -2,9 +2,19 @@
 @using U8StarterKit.Web.Models.Umbraco
 @using U8StarterKit.Web.Extensions
 
+@{
+   //todo: hook up form
+}
+
 <article class="tile is-child notification is-light">
-    <p class="title">Sign up</p>
-    <p class="subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+    @if (Model.Title.HasValue())
+    {
+        <p class="title">@Model.Title</p>
+    }
+    @if (Model.Subtitle.HasValue())
+    {
+        <p class="subtitle">@Model.Subtitle</p>
+    }
     <div class="field">
         <label class="label">Name</label>
         <div class="control">

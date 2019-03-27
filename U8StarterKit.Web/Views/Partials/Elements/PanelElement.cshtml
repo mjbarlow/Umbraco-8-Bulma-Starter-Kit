@@ -3,21 +3,24 @@
 @using U8StarterKit.Web.Extensions
 
 <article class="tile is-child notification is-light">
-    <p class="title">Our services</p>
-    <p class="subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+    @if (Model.Title.HasValue())
+    {
+        <p class="title">@Model.Title</p>
+    }
+    @if (Model.Subtitle.HasValue())
+    {
+        <p class="subtitle">@Model.Subtitle</p>
+    }
     <div class="content">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis lorem ut libero malesuada feugiat. Donec rutrum congue leo eget malesuada. Donec rutrum congue leo eget malesuada.</p>
-
-        <ul class="has-spacing-bottom">
-            <li>Consectetur adipiscing elit</li>
-            <li>Nulla quis lorem ut libero malesuada</li>
-            <li>Donec rutrum congue leo eget</li>
-            <li>Congue leo eget malesuada</li>
-        </ul>
-        <p>Nulla quis lorem ut libero malesuada feugiat</p>
-        <p>
-
-            <a class="is-link button">See all our services</a>
-        </p>
+        @if (Model.Content.HasValue())
+        {
+            @Model.Content
+        }
+        @if (Model.Link.HasValue())
+        {
+            <p>
+                <a class="is-link button" href="@Model.Link.Url" target="@Model.Link.Target">@Model.Link.Name</a>
+            </p>
+        }
     </div>
 </article>

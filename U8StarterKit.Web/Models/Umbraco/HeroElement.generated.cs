@@ -46,59 +46,45 @@ namespace U8StarterKit.Web.Models.Umbraco
 		// properties
 
 		///<summary>
-		/// Hero Background: Spice up the homepage by adding a beautiful photo that relates to your business
+		/// Background
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("heroBackgroundImage")]
-		public IPublishedContent HeroBackgroundImage => this.Value<IPublishedContent>("heroBackgroundImage");
+		[ImplementPropertyType("background")]
+		public IPublishedContent Background => this.Value<IPublishedContent>("background");
 
 		///<summary>
-		/// Call To Action Caption: The caption on the button
+		/// Primary Link
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("heroCTACaption")]
-		public string HeroCtacaption => this.Value<string>("heroCTACaption");
+		[ImplementPropertyType("primaryLink")]
+		public global::Umbraco.Web.Models.Link PrimaryLink => this.Value<global::Umbraco.Web.Models.Link>("primaryLink");
 
 		///<summary>
-		/// Call To Action Link
+		/// Secondary Link
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("heroCTALink")]
-		public IPublishedContent HeroCtalink => this.Value<IPublishedContent>("heroCTALink");
+		[ImplementPropertyType("secondaryLink")]
+		public global::Umbraco.Web.Models.Link SecondaryLink => this.Value<global::Umbraco.Web.Models.Link>("secondaryLink");
 
 		///<summary>
-		/// Hero CTA Sublink
+		/// Secondary Link Before Text
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("heroCTASublink")]
-		public IPublishedContent HeroCtasublink => this.Value<IPublishedContent>("heroCTASublink");
+		[ImplementPropertyType("secondaryLinkBeforeText")]
+		public string SecondaryLinkBeforeText => this.Value<string>("secondaryLinkBeforeText");
 
 		///<summary>
-		/// Hero CTA Sublink Caption
+		/// Subtitle
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("heroCTASublinkCaption")]
-		public string HeroCtasublinkCaption => this.Value<string>("heroCTASublinkCaption");
+		[ImplementPropertyType("subtitle")]
+		public IHtmlString Subtitle => this.Value<IHtmlString>("subtitle");
 
 		///<summary>
-		/// Description
+		/// Title
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("heroDescription")]
-		public IHtmlString HeroDescription => this.Value<IHtmlString>("heroDescription");
-
-		///<summary>
-		/// Header: This is the main headline for the hero area on the Homepage
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("heroHeader")]
-		public string HeroHeader => this.Value<string>("heroHeader");
-
-		///<summary>
-		/// Hero Sublink Before Text
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("heroSublinkBeforeText")]
-		public string HeroSublinkBeforeText => this.Value<string>("heroSublinkBeforeText");
+		[ImplementPropertyType("title")]
+		public string Title => this.Value<string>("title");
 	}
 }

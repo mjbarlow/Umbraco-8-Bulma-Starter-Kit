@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Umbraco.Core.Models.PublishedContent;
+using Umbraco.Web.Models;
 
 namespace U8StarterKit.Web.Extensions
 {
@@ -20,5 +21,12 @@ namespace U8StarterKit.Web.Extensions
         {
             return content != null;
         }
+
+        public static bool HasValue(this Link content)
+        {
+            return content != null && content.Url != "";
+        }
     }
+
+   
 }
