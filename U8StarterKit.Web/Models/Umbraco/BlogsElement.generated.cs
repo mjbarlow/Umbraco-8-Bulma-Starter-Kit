@@ -53,6 +53,13 @@ namespace U8StarterKit.Web.Models.Umbraco
 		public IEnumerable<IPublishedContent> Blog => this.Value<IEnumerable<IPublishedContent>>("blog");
 
 		///<summary>
+		/// Has Paging: Show the paging buttons.
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
+		[ImplementPropertyType("hasPaging")]
+		public bool HasPaging => this.Value<bool>("hasPaging");
+
+		///<summary>
 		/// Is Half Width: Set the blogs to be side by side (half of container)
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]

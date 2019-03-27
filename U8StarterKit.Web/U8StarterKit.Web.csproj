@@ -570,6 +570,7 @@
     <Content Include="Views\Partials\Elements\SignUpFormElement.cshtml" />
     <Content Include="Views\Partials\Elements\PanelElement.cshtml" />
     <Content Include="Views\Partials\Elements\ProductElement.cshtml" />
+    <Content Include="Views\Partials\Elements\BlogElement.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

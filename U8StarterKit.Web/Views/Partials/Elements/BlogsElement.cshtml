@@ -8,7 +8,6 @@
 }
 
 @{
-    @* Get the starting page *@
     if (startNode == null)
     {
         <div class="blogposts">
@@ -35,53 +34,18 @@
 
     if (pagedBlogposts.Count > 0)
     {
-        if (Model.IsHalfWidth)
-        {
-            @:<div class="columns">
-            }
-
+        @Html.Raw(Model.IsHalfWidth ? "<div class=\"columns is-multiline\">" : "")
             foreach (var postNode in pagedBlogposts)
             {
                 var post = new Blogpost(postNode);
-                if (Model.IsHalfWidth)
-                {
-                    @:<div class="column is-half-tablet">
-                    }
-                    <div class="card has-large-spacing-bottom">
-                        <div class="image-card">
-                            <div class="image has-spacing image is-3by1">
-                                @if (post.PostImage.HasValue())
-                                {
-
-                                    <img src="@post.PostImage.Url" class="is-background" />
-
-                                }
-                            </div>
-                        </div>
-                        <div class="card-content">
-                            <div class="content">
-                                <h3 class="title">@post.PageTitle</h3>
-                                <p class="subtitle">@post.CreateDate.ToShortDateString()</p>
-                                <div class="has-spacing-bottom">
-                                    @Html.Partial("~/Views/Partials/CategoryLinks.cshtml", post.Categories)
-                                </div>
-                                <p>@post.Excerpt</p>
-                                <a href="@post.Url" class="button is-link">Read more</a>
-                            </div>
-                        </div>
-                    </div>
-                    if (Model.IsHalfWidth)
-                    {
-                    @: </div>
-                }
+                @Html.Raw(Model.IsHalfWidth ? "<div class=\"column is-half-tablet\">" : "")
+                    @Html.Partial("~/Views/Partials/Elements/BlogElement.cshtml", post)
+                @Html.Raw(Model.IsHalfWidth ? "</div>" : "")
             }
-            if (Model.IsHalfWidth)
-            {
-            @:</div>
-        }
+        @Html.Raw(Model.IsHalfWidth ? "</div>" : "") 
     }
 
-    if (blogposts.Count > numberOfPosts && Model.IsHalfWidth)
+    if (blogposts.Count > numberOfPosts && Model.HasPaging)
     {
         <div class="buttons is-centered">
             @*@if (page <= 1)

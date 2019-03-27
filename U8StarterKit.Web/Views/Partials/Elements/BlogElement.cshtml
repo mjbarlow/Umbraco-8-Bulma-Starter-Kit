@@ -1,0 +1,33 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<Blogpost>
+@using U8StarterKit.Web.Models.Umbraco
+@using U8StarterKit.Web.Extensions
+
+
+<div class="card has-large-spacing-bottom">
+    <div class="image-card">
+        <div class="image has-spacing image is-3by1">
+            @if(Model.PostImage.HasValue())
+            {
+                <img src="@Model.PostImage.Url" class="is-background" />
+            }
+        </div>
+    </div>
+    <div class="card-content">
+        <div class="content">
+            @if (Model.PageTitle.HasValue())
+            {
+                <h3 class="title">@Model.PageTitle</h3>
+            }
+            <p class="subtitle">@Model.CreateDate.ToShortDateString()</p>
+            <div class="has-spacing-bottom">
+                @Html.Partial("~/Views/Partials/CategoryLinks.cshtml", Model.Categories)
+            </div>
+            @if (Model.Excerpt.HasValue())
+            {
+                <p>@Model.Excerpt</p>
+            }
+            <a href="@Model.Url" class="button is-link">Read more</a>
+        </div>
+    </div>
+</div>
+                   

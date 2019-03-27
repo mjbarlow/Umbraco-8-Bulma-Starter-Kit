@@ -85,7 +85,7 @@ namespace U8StarterKit.Web.Models.Umbraco
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		[ImplementPropertyType("bodyText")]
-		public Newtonsoft.Json.Linq.JToken BodyText => U8StarterKit.Web.Models.Umbraco.ContentBase.GetBodyText(this);
+		public Newtonsoft.Json.Linq.JToken BodyText => ContentBase.GetBodyText(this);
 
 		///<summary>
 		/// Header Subtitle
