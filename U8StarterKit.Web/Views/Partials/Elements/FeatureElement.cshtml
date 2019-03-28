@@ -1,0 +1,22 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<FeatureElement>
+@using U8StarterKit.Web.Models.Umbraco
+@using U8StarterKit.Web.Extensions
+
+<section class="section hero is-primary is-spaced hero-footer">
+    <div class="container">
+        @if (Model.Title.HasValue())
+        {
+            <h2 class="title">@Model.Title</h2>
+        }
+        @if (Model.Content.HasValue())
+        {
+            <div class="subtitle">@Model.Content</div>
+        }
+        @if (Model.Link.HasValue())
+        {
+            <a class="button is-outlined is-primary is-inverted is-medium" target="@Model.Link.Target"  href="@Model.Link.Url">
+                @Model.Link.Name
+            </a>
+        }
+    </div>
+</section>

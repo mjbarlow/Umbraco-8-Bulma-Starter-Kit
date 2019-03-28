@@ -53,13 +53,6 @@ namespace U8StarterKit.Web.Models.Umbraco
 		public string DefaultCurrency => this.Value<string>("defaultCurrency");
 
 		///<summary>
-		/// Featured Products
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("featuredProducts")]
-		public IEnumerable<IPublishedContent> FeaturedProducts => this.Value<IEnumerable<IPublishedContent>>("featuredProducts");
-
-		///<summary>
 		/// Content
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]

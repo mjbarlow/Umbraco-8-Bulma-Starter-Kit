@@ -22,7 +22,7 @@ namespace U8StarterKit.Web.Models.Umbraco
 {
 	/// <summary>Home</summary>
 	[PublishedModel("home")]
-	public partial class Home : PublishedContentModel, IContentSection, IHeroSection, ISidebarSection
+	public partial class Home : PublishedContentModel, IContentSection, IFooterSection, IHeroSection, ISidebarSection
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -44,41 +44,6 @@ namespace U8StarterKit.Web.Models.Umbraco
 		{ }
 
 		// properties
-
-		///<summary>
-		/// Address
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("footerAddress")]
-		public string FooterAddress => this.Value<string>("footerAddress");
-
-		///<summary>
-		/// Call To Action Caption: Caption on the Call To Action Button
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("footerCTACaption")]
-		public string FooterCtacaption => this.Value<string>("footerCTACaption");
-
-		///<summary>
-		/// Call To Action Link
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("footerCtalink")]
-		public IPublishedContent FooterCtalink => this.Value<IPublishedContent>("footerCtalink");
-
-		///<summary>
-		/// Description
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("footerDescription")]
-		public string FooterDescription => this.Value<string>("footerDescription");
-
-		///<summary>
-		/// Header
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("footerHeader")]
-		public string FooterHeader => this.Value<string>("footerHeader");
 
 		///<summary>
 		/// githubRepo: Add gihub repo for social links,
@@ -114,6 +79,13 @@ namespace U8StarterKit.Web.Models.Umbraco
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		[ImplementPropertyType("nestedContent")]
 		public IEnumerable<IPublishedElement> NestedContent => ContentSection.GetNestedContent(this);
+
+		///<summary>
+		/// Nested Footer
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
+		[ImplementPropertyType("nestedFooter")]
+		public IEnumerable<IPublishedElement> NestedFooter => FooterSection.GetNestedFooter(this);
 
 		///<summary>
 		/// Hero Nested Content

@@ -464,13 +464,16 @@
     <Compile Include="Models\Umbraco\ContentSection.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\Umbraco\Feature.generated.cs">
+    <Compile Include="Models\Umbraco\FeatureElement.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Umbraco\File.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Umbraco\Folder.generated.cs">
+      <DependentUpon>Builder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Umbraco\FooterSection.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Umbraco\HeaderSection.generated.cs">
@@ -506,16 +509,19 @@
     <Compile Include="Models\Umbraco\Product.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\Umbraco\ProductElement.generated.cs">
+    <Compile Include="Models\Umbraco\Products.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\Umbraco\Products.generated.cs">
+    <Compile Include="Models\Umbraco\ProductsElement.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Umbraco\SidebarSection.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Umbraco\SignUpFormElement.generated.cs">
+      <DependentUpon>Builder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Umbraco\SingleLineElement.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -569,7 +575,7 @@
     <Content Include="Views\Partials\Elements\BlogsElement.cshtml" />
     <Content Include="Views\Partials\Elements\SignUpFormElement.cshtml" />
     <Content Include="Views\Partials\Elements\PanelElement.cshtml" />
-    <Content Include="Views\Partials\Elements\ProductElement.cshtml" />
+    <Content Include="Views\Partials\Elements\ProductsElement.cshtml" />
     <Content Include="Views\Partials\Elements\BlogElement.cshtml" />
     <Content Include="uSync\v8\ContentTypes\blog.config" />
     <Content Include="uSync\v8\ContentTypes\blogpost.config" />
@@ -661,6 +667,8 @@
     <Content Include="uSync\v8\Templates\person.config" />
     <Content Include="uSync\v8\Templates\product.config" />
     <Content Include="uSync\v8\Templates\products.config" />
+    <Content Include="Views\Partials\Elements\FeatureElement.cshtml" />
+    <Content Include="Views\Partials\Elements\SingleLineElement.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

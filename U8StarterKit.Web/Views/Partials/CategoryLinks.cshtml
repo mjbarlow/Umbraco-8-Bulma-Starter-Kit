@@ -1,5 +1,8 @@
 ﻿@model IEnumerable<string>
-@foreach (var category in Model)
-{
-    <span class="tag">@category</span>
-}
+
+<div class="has-spacing-bottom">
+    @foreach (var category in Model)
+    {
+        <span class="tag">@category</span>
+    }
+</div>

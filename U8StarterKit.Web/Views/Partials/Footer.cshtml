@@ -1,19 +1,7 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<U8StarterKit.Web.Models.Umbraco.Home>
 @using U8StarterKit.Web.Extensions
 
-<section class="section hero is-primary is-spaced  hero-footer">
-    <div class="container">
-        <h2 class="title">@Model.FooterHeader</h2>
-        <p class="subtitle">@Model.FooterDescription</p>
-        <a class="button is-outlined is-primary is-inverted is-medium" href="@Model.FooterCtalink.Url">
-            @Model.FooterCtacaption
-        </a>
-    </div>
-</section>
-<footer class="footer is-dark">
-    <div class="container">
-        <div class="content has-text-centered has-text-light">
-            @Model.FooterAddress
-        </div>
-    </div>
-</footer>
+@Html.Partial("~/Views/Partials/Nested/RenderElements.cshtml", Model.NestedFooter)
+
+
+

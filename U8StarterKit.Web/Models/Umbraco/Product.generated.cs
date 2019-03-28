@@ -53,11 +53,11 @@ namespace U8StarterKit.Web.Models.Umbraco
 		public Newtonsoft.Json.Linq.JToken BodyText => this.Value<Newtonsoft.Json.Linq.JToken>("bodyText");
 
 		///<summary>
-		/// Category
+		/// Categories
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("category")]
-		public IEnumerable<string> Category => this.Value<IEnumerable<string>>("category");
+		[ImplementPropertyType("categories")]
+		public IEnumerable<string> Categories => this.Value<IEnumerable<string>>("categories");
 
 		///<summary>
 		/// Description
@@ -71,14 +71,14 @@ namespace U8StarterKit.Web.Models.Umbraco
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		[ImplementPropertyType("features")]
-		public IEnumerable<Feature> Features => this.Value<IEnumerable<Feature>>("features");
+		public IEnumerable<FeatureElement> Features => this.Value<IEnumerable<FeatureElement>>("features");
 
 		///<summary>
-		/// Photos
+		/// Image
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("photos")]
-		public Image Photos => this.Value<Image>("photos");
+		[ImplementPropertyType("image")]
+		public Image Image => this.Value<Image>("image");
 
 		///<summary>
 		/// Price
