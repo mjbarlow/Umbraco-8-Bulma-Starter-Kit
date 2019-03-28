@@ -509,6 +509,9 @@
     <Compile Include="Models\Umbraco\Product.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Umbraco\ProductFeatureElement.generated.cs">
+      <DependentUpon>Builder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Umbraco\Products.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
@@ -669,6 +672,7 @@
     <Content Include="uSync\v8\Templates\products.config" />
     <Content Include="Views\Partials\Elements\FeatureElement.cshtml" />
     <Content Include="Views\Partials\Elements\SingleLineElement.cshtml" />
+    <Content Include="Views\Partials\Elements\ProductElement.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

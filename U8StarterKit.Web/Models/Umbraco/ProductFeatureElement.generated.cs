@@ -20,64 +20,43 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace U8StarterKit.Web.Models.Umbraco
 {
-	// Mixin Content Type with alias "headerSection"
-	/// <summary>Header Section</summary>
-	public partial interface IHeaderSection : IPublishedContent
-	{
-		/// <summary>Header Subtitle</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		string HeaderSubtitle { get; }
-
-		/// <summary>Header Title</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		string HeaderTitle { get; }
-	}
-
-	/// <summary>Header Section</summary>
-	[PublishedModel("headerSection")]
-	public partial class HeaderSection : PublishedContentModel, IHeaderSection
+	/// <summary>Product Feature Element</summary>
+	[PublishedModel("productFeatureElement")]
+	public partial class ProductFeatureElement : PublishedElementModel
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		public new const string ModelTypeAlias = "headerSection";
+		public new const string ModelTypeAlias = "productFeatureElement";
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		public new static PublishedContentType GetModelContentType()
 			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<HeaderSection, TValue>> selector)
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<ProductFeatureElement, TValue>> selector)
 			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 #pragma warning restore 0109
 
 		// ctor
-		public HeaderSection(IPublishedContent content)
+		public ProductFeatureElement(IPublishedElement content)
 			: base(content)
 		{ }
 
 		// properties
 
 		///<summary>
-		/// Header Subtitle
+		/// Description
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("headerSubtitle")]
-		public string HeaderSubtitle => GetHeaderSubtitle(this);
-
-		/// <summary>Static getter for Header Subtitle</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		public static string GetHeaderSubtitle(IHeaderSection that) => that.Value<string>("headerSubtitle");
+		[ImplementPropertyType("description")]
+		public string Description => this.Value<string>("description");
 
 		///<summary>
-		/// Header Title
+		/// Feature
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("headerTitle")]
-		public string HeaderTitle => GetHeaderTitle(this);
-
-		/// <summary>Static getter for Header Title</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		public static string GetHeaderTitle(IHeaderSection that) => that.Value<string>("headerTitle");
+		[ImplementPropertyType("feature")]
+		public string Feature => this.Value<string>("feature");
 	}
 }

@@ -1,0 +1,42 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<Product>
+@using U8StarterKit.Web.Models.Umbraco
+@using U8StarterKit.Web.Extensions
+
+
+<div class="card has-large-spacing-bottom">
+    <div class="image has-spacing image is-3by2">
+        @if (Model.Image.HasValue())
+        {
+            <img src="@Model.Image.Url" class="is-background"/>
+        }
+    </div>
+    <div class="card-content">
+        <div class="content">
+            @if(Model.ProductName.HasValue())
+            {
+                <h4 class="title has-small-spacing-bottom">@Model.ProductName</h4>
+            }
+            @if(Model.Categories.HasValue())
+            {
+                @Html.Partial("~/Views/Partials/CategoryLinks.cshtml", Model.Categories)
+            }
+            @if(Model.Description.HasValue())
+            {
+                <p>@Model.Description</p>
+            }
+            <p class="buttons">
+                <a class="button is-link has-icons-left" href="@Model.Url">
+                    <span class="icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </span>
+                    <span>Add to basket</span>
+                </a>
+            </p>
+        </div>
+    </div>
+    <footer class="card-footer">
+        <div class="card-footer-item">@Model.Parent.GetProperty("DefaultCurrency").Value() @Model.Price.ToString("F")</div>
+        <div class="card-footer-item"><a class="is-bold" href="@Model.Url">Full details</a></div>
+    </footer>
+</div>
+

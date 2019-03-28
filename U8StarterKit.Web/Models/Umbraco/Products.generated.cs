@@ -22,7 +22,7 @@ namespace U8StarterKit.Web.Models.Umbraco
 {
 	/// <summary>Products</summary>
 	[PublishedModel("products")]
-	public partial class Products : PublishedContentModel, IContentBase, IHeaderSection, INavigationBase
+	public partial class Products : PublishedContentModel, IHeaderSection, INavigationBase
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -53,13 +53,6 @@ namespace U8StarterKit.Web.Models.Umbraco
 		public string DefaultCurrency => this.Value<string>("defaultCurrency");
 
 		///<summary>
-		/// Content
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("bodyText")]
-		public Newtonsoft.Json.Linq.JToken BodyText => ContentBase.GetBodyText(this);
-
-		///<summary>
 		/// Header Subtitle
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
@@ -67,7 +60,7 @@ namespace U8StarterKit.Web.Models.Umbraco
 		public string HeaderSubtitle => HeaderSection.GetHeaderSubtitle(this);
 
 		///<summary>
-		/// Header Title: The title of the page, this is also the first text in a google search result. The ideal length is between 40 and 60 characters
+		/// Header Title
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		[ImplementPropertyType("headerTitle")]

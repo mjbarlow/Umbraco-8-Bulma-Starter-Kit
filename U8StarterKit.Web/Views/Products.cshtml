@@ -3,56 +3,18 @@
 @using U8StarterKit.Web.Extensions
 @{
     Layout = "master.cshtml";
+    var products = Model.Children.Select(x => new Product(x));
 }
 @Html.Partial("~/Views/Partials/SectionHeader.cshtml", new U8StarterKit.Web.Models.Umbraco.HeaderSection(Model))
 <section class="section has-spacing section-gray">
     <div class="container">
         <div class="columns is-multiline">
-            @if (Model.FeaturedProducts != null)
+            @if (products.HasValue())
             {
-                foreach (Product product in Model.FeaturedProducts)
+                foreach (Product product in products)
                 {
                     <div class="column is-one-third">
-                        <div class="card has-spacing-bottom">
-                          
-                            <div class="image-card">
-                                <figure class="image image is-3by2 ">
-                                    @if (product.Photos.HasValue())
-                                    {
-                                        <img class="is-background" src="@product.Photos.Url" alt="@product.ProductName">
-                                    }
-                                </figure>
-                            </div>
-                            
-                            <div class="card-content">
-                                <div class="content">
-                                    <h4 class="title has-small-spacing-bottom">@product.ProductName</h4>
-                                    @if (product.Category.HasValue())
-                                    {
-                                        <div class="has-spacing-bottom">
-                                            @foreach (var category in product.Category)
-                                            {
-                                             <span class="tag">@category</span>
-                                            }
-                                        </div>
-                                    }
-                                    <p>@product.Description</p>
-                                    <p class="buttons">
-                                        <a class="button is-link has-icons-left" href="@product.Url">
-                                            <span class="icon">
-                                                <i class="fas fa-shopping-cart"></i>
-                                            </span>
-                                            <span>Add to basket</span>
-                                        </a>
-                                    </p>
-                                </div>
-                            </div>
-                            <footer class="card-footer">
-                                <div class="card-footer-item">@Model.DefaultCurrency @product.Price.ToString("F")</div>
-                                <div class="card-footer-item"><a class="is-bold" href="@product.Url">Full details</a></div>
-                            </footer>
-
-                        </div>
+                        @Html.Partial("~/Views/Partials/Elements/ProductElement.cshtml", product)
                     </div>
                 }
             }

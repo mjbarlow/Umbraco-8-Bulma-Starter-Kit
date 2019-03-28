@@ -46,13 +46,6 @@ namespace U8StarterKit.Web.Models.Umbraco
 		// properties
 
 		///<summary>
-		/// Content
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("bodyText")]
-		public Newtonsoft.Json.Linq.JToken BodyText => this.Value<Newtonsoft.Json.Linq.JToken>("bodyText");
-
-		///<summary>
 		/// Categories
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
@@ -71,7 +64,14 @@ namespace U8StarterKit.Web.Models.Umbraco
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		[ImplementPropertyType("features")]
-		public IEnumerable<FeatureElement> Features => this.Value<IEnumerable<FeatureElement>>("features");
+		public IEnumerable<ProductFeatureElement> Features => this.Value<IEnumerable<ProductFeatureElement>>("features");
+
+		///<summary>
+		/// Full Description
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
+		[ImplementPropertyType("fullDescription")]
+		public IHtmlString FullDescription => this.Value<IHtmlString>("fullDescription");
 
 		///<summary>
 		/// Image

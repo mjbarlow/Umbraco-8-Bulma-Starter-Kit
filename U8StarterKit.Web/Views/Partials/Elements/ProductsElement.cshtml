@@ -1,45 +1,8 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ProductsElement>
 @using U8StarterKit.Web.Models.Umbraco
-@using U8StarterKit.Web.Extensions
 
 @foreach (var productNode in Model.Products.ToList())
 {
     var product = new Product(productNode);
-    <div class="card has-large-spacing-bottom">
-        <div class="image has-spacing image is-3by2">
-
-            @if (product.Image.HasValue())
-            {
-                <img src="@product.Image.Url" class="is-background"/>
-            }
-        </div>
-        <div class="card-content">
-            <div class="content">
-                @if(product.ProductName.HasValue())
-                {
-                    <h4 class="title has-small-spacing-bottom">@product.ProductName</h4>
-                }
-                @if(product.Categories.HasValue())
-                {
-                    @Html.Partial("~/Views/Partials/CategoryLinks.cshtml", product.Categories)
-                }
-                @if(product.Description.HasValue())
-                {
-                    <p>@product.Description</p>
-                }
-                <p class="buttons">
-                    <a class="button is-link has-icons-left" href="@product.Url">
-                        <span class="icon">
-                            <i class="fas fa-shopping-cart"></i>
-                        </span>
-                        <span>Add to basket</span>
-                    </a>
-                </p>
-            </div>
-        </div>
-        <footer class="card-footer">
-            <div class="card-footer-item">@product.Parent.GetProperty("DefaultCurrency").Value() @product.Price.ToString("F")</div>
-            <div class="card-footer-item"><a class="is-bold" href="@product.Url">Full details</a></div>
-        </footer>
-    </div>
+    @Html.Partial("~/Views/Partials/Elements/ProductElement.cshtml", product)
 }

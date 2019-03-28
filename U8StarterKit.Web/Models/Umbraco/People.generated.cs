@@ -67,7 +67,7 @@ namespace U8StarterKit.Web.Models.Umbraco
 		public string HeaderSubtitle => HeaderSection.GetHeaderSubtitle(this);
 
 		///<summary>
-		/// Header Title: The title of the page, this is also the first text in a google search result. The ideal length is between 40 and 60 characters
+		/// Header Title
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		[ImplementPropertyType("headerTitle")]
