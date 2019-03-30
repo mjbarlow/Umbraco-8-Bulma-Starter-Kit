@@ -420,6 +420,7 @@
     <Content Include="config\logviewer.searches.config.js" />
     <Content Include="css\main.css" />
     <Content Include="Global.asax" />
+    <None Include="Views\Partials\Elements\PersonElement.cshtml" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>

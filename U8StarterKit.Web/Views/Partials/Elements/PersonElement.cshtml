@@ -1,0 +1,55 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<Person>
+@using U8StarterKit.Web.Models.Umbraco
+@using U8StarterKit.Web.Extensions
+
+<div class="card has-spacing-bottom">
+    <div class="image-card">
+        <figure class="image image is-3by2 ">
+            @if (Model.Photo.HasValue())
+            {
+                <img class="is-background" src="@Model.Photo.Url" alt="@Model.Name">
+            }
+        </figure>
+    </div>
+    <div class="card-content">
+        <div class="content">
+            <h4 class="title has-small-spacing-bottom">@Model.Name</h4>
+            @if (Model.Bio.HasValue())
+            {
+                @Model.Bio
+            }
+            <div class="buttons">
+                @if (Model.Email.HasValue())
+                {
+                    @RenderSocialLink($"mailto:{Model.Email}", "fas fa-envelope", Model.Email)
+                }
+                @if (Model.FacebookUsername.HasValue())
+                {
+                    @RenderSocialLink($"http://facebook.com/{Model.Email}", "fab fa-facebook-f", $"@{Model.FacebookUsername}")
+                }
+                @if (Model.TwitterUsername.HasValue())
+                {
+                    @RenderSocialLink($"http://twitter.com/{Model.TwitterUsername}", "fab fa-twitter", $"@{Model.TwitterUsername}")
+                }
+                @if (Model.LinkedInUsername.HasValue())
+                {
+                    @RenderSocialLink($"http://linkedin.com/{Model.LinkedInUsername}", "fab fa-linkedin", $"@{Model.LinkedInUsername}")
+                }
+                @if (Model.InstagramUsername.HasValue())
+                {
+                    @RenderSocialLink($"http://linkedin.com/{Model.InstagramUsername}", "fab fa-instagram", $"@{Model.InstagramUsername}")
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+@helper RenderSocialLink(string href, string iconClass, string value)
+{
+    <a href="@href" class="button is-light has-icons-left">
+        <span class="icon">
+            <i class="@iconClass"></i>
+        </span>
+        <span>@value</span>
+    </a>
+}
