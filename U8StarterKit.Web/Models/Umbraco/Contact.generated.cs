@@ -22,7 +22,7 @@ namespace U8StarterKit.Web.Models.Umbraco
 {
 	/// <summary>Contact</summary>
 	[PublishedModel("contact")]
-	public partial class Contact : PublishedContentModel, IContentBase, IHeaderSection, INavigationBase
+	public partial class Contact : PublishedContentModel, IHeaderSection, INavigationBase
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -67,25 +67,25 @@ namespace U8StarterKit.Web.Models.Umbraco
 		public IHtmlString ContactIntro => this.Value<IHtmlString>("contactIntro");
 
 		///<summary>
-		/// Map Header
+		/// Directions Link
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("mapHeader")]
-		public string MapHeader => this.Value<string>("mapHeader");
+		[ImplementPropertyType("mapDirectionsLink")]
+		public global::Umbraco.Web.Models.Link MapDirectionsLink => this.Value<global::Umbraco.Web.Models.Link>("mapDirectionsLink");
 
 		///<summary>
-		/// Map Subtitle
+		/// Embed Link
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("mapSubtitle")]
-		public IHtmlString MapSubtitle => this.Value<IHtmlString>("mapSubtitle");
+		[ImplementPropertyType("mapEmbedLink")]
+		public string MapEmbedLink => this.Value<string>("mapEmbedLink");
 
 		///<summary>
-		/// Content
+		/// View Larger Link
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("bodyText")]
-		public Newtonsoft.Json.Linq.JToken BodyText => ContentBase.GetBodyText(this);
+		[ImplementPropertyType("mapLargerLink")]
+		public global::Umbraco.Web.Models.Link MapLargerLink => this.Value<global::Umbraco.Web.Models.Link>("mapLargerLink");
 
 		///<summary>
 		/// Header Subtitle

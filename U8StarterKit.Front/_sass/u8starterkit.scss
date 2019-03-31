@@ -84,6 +84,7 @@
     width: 100%;
 }
 
+// VIDEO WRAPPER
 .video-wrapper {
     position: relative;
     padding-bottom: 56.25%; /* 16:9 */
@@ -100,12 +101,18 @@
     height: 100%;
 }
 
-.style-bg {
-    background: 
-      linear-gradient(45deg, $gray-light 50%, transparent 50%),
-      radial-gradient($gray-darker 4px, transparent 4px),
-      radial-gradient($gray-darker 4px, transparent 4px),
-      transparent;
-    background-size: 100%, 24px 24px, 24px 24px, 100%;
-    background-position: 0 0, -2px 6px, 10px 18px, 0 0;
-  }
+// MAP IFRAME
+.iframe-container {
+    overflow: hidden;
+    padding-top: 56.25%;
+    position: relative;
+}
+
+    .iframe-container iframe {
+        border: 0;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+    }

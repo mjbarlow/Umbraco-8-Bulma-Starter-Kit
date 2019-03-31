@@ -3,43 +3,45 @@
 @using U8StarterKit.Web.Extensions
 @{
     Layout = "master.cshtml";
-    //var coordinates = Model.MapCoordinates.ToString().Split(',');
-    //var latitude = coordinates[0];
-    //var longitude = coordinates[1];
-    //var zoomLevel = coordinates[2];
-    //var coordinatesString = longitude + "," + latitude + "," + longitude + "," + latitude;
 }
-@Html.Partial("~/Views/Partials/SectionHeader.cshtml", new U8StarterKit.Web.Models.Umbraco.HeaderSection(Model))
-<section class="section is-paddingless section-gray">
-    <div class="container is-fluid is-marginless">
-        <div class="columns">
-            <div class="column is-paddingless is-full">
-            <iframe width="600"
-                                height="400"
-                                frameborder="0"
-                                scrolling="no"
-                                marginheight="0"
-                                marginwidth="0"
-                                src="https://www.openstreetmap.org/export/embed.html?bbox=10.388404726982117,55.40622012982414,10.388404726982117,55.40622012982414&amp;layer=mapnik&amp;marker=55.40622012982414,10.388404726982117,18"
-                                style="height:400px; width:100%">
 
-             </iframe>
+@Html.Partial("~/Views/Partials/SectionHeader.cshtml", new U8StarterKit.Web.Models.Umbraco.HeaderSection(Model))
+<style>
+   
+</style>
+
+@if (Model.MapEmbedLink.HasValue())
+{
+    <section class="section is-paddingless section-gray">
+        <div class="container is-fluid is-marginless">
+            <div class="columns">
+                <div class="column is-paddingless is-full">
+                    <div class="iframe-container image is-3by1">
+                        <iframe
+                            frameborder="0"
+                            scrolling="no"
+                            marginheight="0"
+                            marginwidth="0"
+                            src="@Model.MapEmbedLink">
+                        </iframe>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</section>
-<section class="hero section is-primary">
-    <div class="container">
-        <div class="columns">
-            <div class="column">
-                <p class="buttons">
-                    <a class="button is-outlined is-primary is-inverted is-medium" href="#">View Larger Map</a>
-                    <a class="button is-medium is-primary is-inverted" href="#">Get Directions</a>
-                </p>
+    </section>
+    <section class="hero section is-light">
+        <div class="container">
+            <div class="columns">
+                <div class="column">
+                    <p class="buttons">
+                        <a class="button is-outlined is-primary is-medium" href="#">View Larger Map</a>
+                        <a class="button is-medium is-primary" href="#">Get Directions</a>
+                    </p>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+}
 <section class="section section-gray">
     <div class="container">
         <div class="columns">
