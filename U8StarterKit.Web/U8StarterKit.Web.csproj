@@ -504,6 +504,9 @@
     <Compile Include="Models\Umbraco\People.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Umbraco\PeopleElement.generated.cs">
+      <DependentUpon>Builder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Umbraco\Person.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
@@ -674,6 +677,7 @@
     <Content Include="Views\Partials\Elements\FeatureElement.cshtml" />
     <Content Include="Views\Partials\Elements\SingleLineElement.cshtml" />
     <Content Include="Views\Partials\Elements\ProductElement.cshtml" />
+    <Content Include="Views\Partials\Elements\PeopleElement.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

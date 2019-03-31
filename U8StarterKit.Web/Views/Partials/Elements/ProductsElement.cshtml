@@ -1,7 +1,7 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ProductsElement>
 @using U8StarterKit.Web.Models.Umbraco
 
-@foreach (var productNode in Model.Products.ToList())
+@foreach (var productNode in Model.Products)
 {
     var product = new Product(productNode);
     @Html.Partial("~/Views/Partials/Elements/ProductElement.cshtml", product)

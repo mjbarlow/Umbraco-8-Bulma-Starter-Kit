@@ -1,0 +1,8 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<PeopleElement>
+@using U8StarterKit.Web.Models.Umbraco
+
+@foreach (var personNode in Model.People)
+{
+    var person = new Person(personNode);
+    @Html.Partial("~/Views/Partials/Elements/PersonElement.cshtml", person)
+}

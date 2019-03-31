@@ -22,7 +22,7 @@ namespace U8StarterKit.Web.Models.Umbraco
 {
 	/// <summary>People</summary>
 	[PublishedModel("people")]
-	public partial class People : PublishedContentModel, IContentBase, IHeaderSection, INavigationBase
+	public partial class People : PublishedContentModel, IHeaderSection, INavigationBase
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -44,20 +44,6 @@ namespace U8StarterKit.Web.Models.Umbraco
 		{ }
 
 		// properties
-
-		///<summary>
-		/// Featured People
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("featuredPeople")]
-		public IEnumerable<IPublishedContent> FeaturedPeople => this.Value<IEnumerable<IPublishedContent>>("featuredPeople");
-
-		///<summary>
-		/// Content
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("bodyText")]
-		public Newtonsoft.Json.Linq.JToken BodyText => ContentBase.GetBodyText(this);
 
 		///<summary>
 		/// Header Subtitle
