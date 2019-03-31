@@ -1,17 +1,21 @@
 ﻿@inherits UmbracoViewPage<Blog>
 @using U8StarterKit.Web.Models.Umbraco
 @using Umbraco.Web;
+@using U8StarterKit.Web.Models.ViewModels;
 @{
     Layout = "master.cshtml";
+    var blog = new BlogsViewModel()
+    {
+        Blog = Model,
+        BlogsPosts = Model.Children.Select(x => new Blogpost(x)).ToList(),
+        HasPaging = true,
+        IsHalfWidth = false,
+        ItemsToShow = 0
+    };
 }
 @Html.Partial("~/Views/Partials/SectionHeader.cshtml", new U8StarterKit.Web.Models.Umbraco.HeaderSection(Model))
 <section class="section has-spacing section-gray">
     <div class="container">
-            @Umbraco.RenderMacro("latestBlogposts",
-                new
-                {
-                    numberOfPosts = Model.HowManyPostsShouldBeShown,
-                    startNodeId = Model.Id
-                })
+            @Html.Partial("~/Views/Partials/Blogs.cshtml", blog)
     </div>
 </section>

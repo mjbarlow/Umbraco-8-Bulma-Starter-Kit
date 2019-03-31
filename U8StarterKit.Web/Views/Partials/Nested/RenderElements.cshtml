@@ -1,6 +1,6 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<IEnumerable<IPublishedElement>>
 
 @foreach (var node in Model)
-{
+{ 
     @Html.Partial($"~/Views/Partials/Elements/{node.ContentType.Alias}.cshtml", node)
 }

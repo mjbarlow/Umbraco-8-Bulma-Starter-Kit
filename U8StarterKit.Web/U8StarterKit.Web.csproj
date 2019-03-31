@@ -420,6 +420,7 @@
     <Content Include="config\logviewer.searches.config.js" />
     <Content Include="css\main.css" />
     <Content Include="Global.asax" />
+    <Content Include="Views\Partials\Elements\BlogsElement.cshtml" />
     <None Include="Views\Partials\Elements\PersonElement.cshtml" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -531,6 +532,7 @@
     <Compile Include="Models\Umbraco\SingleLineElement.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\ViewModels\BlogsViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -579,7 +581,7 @@
     <Content Include="Views\Partials\Footer.cshtml" />
     <Content Include="Views\Partials\Nested\RenderElements.cshtml" />
     <Content Include="Views\Partials\Elements\HeroElement.cshtml" />
-    <Content Include="Views\Partials\Elements\BlogsElement.cshtml" />
+    <Content Include="Views\Partials\Blogs.cshtml" />
     <Content Include="Views\Partials\Elements\SignUpFormElement.cshtml" />
     <Content Include="Views\Partials\Elements\PanelElement.cshtml" />
     <Content Include="Views\Partials\Elements\ProductsElement.cshtml" />
