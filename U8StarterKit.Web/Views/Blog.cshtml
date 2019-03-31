@@ -1,6 +1,5 @@
 ﻿@inherits UmbracoViewPage<Blog>
 @using U8StarterKit.Web.Models.Umbraco
-@using Umbraco.Web;
 @using U8StarterKit.Web.Models.ViewModels;
 @{
     Layout = "master.cshtml";
@@ -9,8 +8,8 @@
         Blog = Model,
         BlogsPosts = Model.Children.Select(x => new Blogpost(x)).ToList(),
         HasPaging = true,
-        IsHalfWidth = false,
-        ItemsToShow = 0
+        IsHalfWidth = true,
+        ItemsToShow = 4
     };
 }
 @Html.Partial("~/Views/Partials/SectionHeader.cshtml", new U8StarterKit.Web.Models.Umbraco.HeaderSection(Model))

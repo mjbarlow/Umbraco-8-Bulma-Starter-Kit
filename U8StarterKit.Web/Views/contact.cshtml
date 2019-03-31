@@ -10,21 +10,11 @@
     //var coordinatesString = longitude + "," + latitude + "," + longitude + "," + latitude;
 }
 @Html.Partial("~/Views/Partials/SectionHeader.cshtml", new U8StarterKit.Web.Models.Umbraco.HeaderSection(Model))
-<section class="section has-spacing section-gray">
-    <div class="container">
-        <div class="columns is-8 is-variable">
-            <div class="column is-half-tablet">
-                <div class="content">
-                    @if (Model.MapHeader.HasValue())
-                    {
-                        <h2 class="title">@Model.MapHeader</h2>
-                    }
-                    @if (Model.MapSubtitle.HasValue())
-                    {
-                        @Model.MapSubtitle
-                    }
-                    <p class="buttons">
-                        <iframe width="600"
+<section class="section is-paddingless section-gray">
+    <div class="container is-fluid is-marginless">
+        <div class="columns">
+            <div class="column is-paddingless is-full">
+            <iframe width="600"
                                 height="400"
                                 frameborder="0"
                                 scrolling="no"
@@ -33,14 +23,27 @@
                                 src="https://www.openstreetmap.org/export/embed.html?bbox=10.388404726982117,55.40622012982414,10.388404726982117,55.40622012982414&amp;layer=mapnik&amp;marker=55.40622012982414,10.388404726982117,18"
                                 style="height:400px; width:100%">
 
-                        </iframe>
-                    </p>
-                    <p class="buttons">
-                        <a class="button is-link" href="#">View Larger Map</a>
-                    </p>
-                </div>
+             </iframe>
             </div>
-            <div class="column is-half-tablet">
+        </div>
+    </div>
+</section>
+<section class="hero section is-primary">
+    <div class="container">
+        <div class="columns">
+            <div class="column">
+                <p class="buttons">
+                    <a class="button is-outlined is-primary is-inverted is-medium" href="#">View Larger Map</a>
+                    <a class="button is-medium is-primary is-inverted" href="#">Get Directions</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="section section-gray">
+    <div class="container">
+        <div class="columns">
+            <div class="column is-full">
                 <div class="card">
                     <div class="card-content">
                         <h2 class="title">@Model.ContactFormHeader</h2>
@@ -52,10 +55,13 @@
                             <p class="compat-msg">
                                 <em>Umbraco Forms</em> is required to render this form.It's a breeze to install, all you have to do is
                                 go to the<em> Umbraco Forms</em> section in the back office and click Install, that's it! :)
-                                <br/><br/>
+                                <br /><br />
                                 <a href="/umbraco/#/forms" class="button button--border--solid">Go to Back Office and install Forms</a>
                                 <!-- When Umbraco Forms is installed, uncomment this line -->
                                 @* @Umbraco.RenderMacro("renderUmbracoForm", new {FormGuid=Model.ContactForm.ToString()}) *@
+                                <br /><br />
+                                <br /><br />
+                                <br /><br />
                             </p>
                         </div>
                     </div>
