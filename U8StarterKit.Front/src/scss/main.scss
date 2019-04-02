@@ -5,7 +5,7 @@
 // Just uncomment the following block to see the result.
 
 // 1. Import the initial variables 
-@import "../node_modules/bulma/sass/utilities/initial-variables";
+@import "../../node_modules/bulma/sass/utilities/initial-variables";
 
 // 2. Set your own initial variables
 $text-dark-brown: #454547;
@@ -40,5 +40,5 @@ $panel-heading-radius:0;
     background: $white;
 }
 
-@import "../node_modules/bulma/bulma";
-@import "../_sass/u8starterkit.scss";
+@import "../../node_modules/bulma/bulma";
+@import "../../src/scss/u8starterkit.scss";

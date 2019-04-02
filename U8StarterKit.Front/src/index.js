@@ -8,5 +8,5 @@ $(document).ready(function(){
 
 
 document.addEventListener('DOMContentLoaded', () => {
-  console.log('Hello Bulma!');
+  console.log('Umbraco Bulma Starter Kit - Started.');
 });
