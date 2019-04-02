@@ -42,7 +42,9 @@
     "bulma": "^0.7.2",
     "node-sass": "^4.11.0",
     "npm-run-all": "^4.1.5",
-    "postcss-cli": "^6.1.1"
+    "postcss-cli": "^6.1.1",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0"
   },
   "homepage": "https://github.com/jgthms/bulma-start#readme",
   "keywords": [
@@ -65,7 +67,11 @@
     "deploy": "npm run css-deploy && npm run js-build",
     "js-build": "babel _javascript --out-dir ../U8StarterKit.Web/scripts",
     "js-watch": "npm run js-build -- --watch",
-    "start": "npm-run-all --parallel css-watch js-watch"
+    "start": "npm-run-all --parallel css-watch js-watch",
+    "js-webpack": "webpack"
   },
-  "version": "0.0.3"
+  "version": "0.0.3",
+  "dependencies": {
+    "@babel/polyfill": "^7.4.0"
+  }
 }
