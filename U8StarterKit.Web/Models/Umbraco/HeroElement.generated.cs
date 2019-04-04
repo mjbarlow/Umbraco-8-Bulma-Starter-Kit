@@ -53,6 +53,13 @@ namespace U8StarterKit.Web.Models.Umbraco
 		public IPublishedContent Background => this.Value<IPublishedContent>("background");
 
 		///<summary>
+		/// Hide Text Panel: Hide the text panel, shows the background image only.
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
+		[ImplementPropertyType("hideTextPanel")]
+		public bool HideTextPanel => this.Value<bool>("hideTextPanel");
+
+		///<summary>
 		/// Primary Link
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]

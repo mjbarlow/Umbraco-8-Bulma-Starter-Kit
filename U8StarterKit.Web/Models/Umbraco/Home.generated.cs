@@ -74,11 +74,11 @@ namespace U8StarterKit.Web.Models.Umbraco
 		public string TwitterUsername => this.Value<string>("twitterUsername");
 
 		///<summary>
-		/// Nested Content: The nested content.
+		/// Nested Content
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		[ImplementPropertyType("nestedContent")]
-		public IEnumerable<IPublishedElement> NestedContent => ContentSection.GetNestedContent(this);
+		public IEnumerable<RowElement> NestedContent => ContentSection.GetNestedContent(this);
 
 		///<summary>
 		/// Nested Footer
@@ -93,6 +93,13 @@ namespace U8StarterKit.Web.Models.Umbraco
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		[ImplementPropertyType("nestedHero")]
 		public IEnumerable<IPublishedElement> NestedHero => HeroSection.GetNestedHero(this);
+
+		///<summary>
+		/// hideSidebar: Sidebar hidden, content is full width.
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
+		[ImplementPropertyType("hideSidebar")]
+		public bool HideSidebar => SidebarSection.GetHideSidebar(this);
 
 		///<summary>
 		/// Sidebar Nested Content

@@ -20,49 +20,43 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace U8StarterKit.Web.Models.Umbraco
 {
-	// Mixin Content Type with alias "contentSection"
-	/// <summary>Content Section</summary>
-	public partial interface IContentSection : IPublishedContent
-	{
-		/// <summary>Nested Content</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		IEnumerable<RowElement> NestedContent { get; }
-	}
-
-	/// <summary>Content Section</summary>
-	[PublishedModel("contentSection")]
-	public partial class ContentSection : PublishedContentModel, IContentSection
+	/// <summary>Row Element</summary>
+	[PublishedModel("rowElement")]
+	public partial class RowElement : PublishedElementModel
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		public new const string ModelTypeAlias = "contentSection";
+		public new const string ModelTypeAlias = "rowElement";
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		public new static PublishedContentType GetModelContentType()
 			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<ContentSection, TValue>> selector)
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<RowElement, TValue>> selector)
 			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 #pragma warning restore 0109
 
 		// ctor
-		public ContentSection(IPublishedContent content)
+		public RowElement(IPublishedElement content)
 			: base(content)
 		{ }
 
 		// properties
 
 		///<summary>
-		/// Nested Content
+		/// Column Width: Set the width of the items in this column.
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("nestedContent")]
-		public IEnumerable<RowElement> NestedContent => GetNestedContent(this);
+		[ImplementPropertyType("columnWidth")]
+		public string ColumnWidth => this.Value<string>("columnWidth");
 
-		/// <summary>Static getter for Nested Content</summary>
+		///<summary>
+		/// Row Content
+		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		public static IEnumerable<RowElement> GetNestedContent(IContentSection that) => that.Value<IEnumerable<RowElement>>("nestedContent");
+		[ImplementPropertyType("rowContent")]
+		public IEnumerable<IPublishedElement> RowContent => this.Value<IEnumerable<IPublishedElement>>("rowContent");
 	}
 }

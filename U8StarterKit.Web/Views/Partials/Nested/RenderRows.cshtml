@@ -1,0 +1,46 @@
+﻿@using U8StarterKit.Web.Extensions
+@using U8StarterKit.Web.Models.Umbraco
+@inherits Umbraco.Web.Mvc.UmbracoViewPage<IEnumerable<IPublishedElement>>
+
+@foreach (var node in Model)
+{
+    var row = new RowElement(node);
+    <div class="columns is-variable is-multiline">
+        @foreach (var rowContent in row.RowContent)
+        {
+            switch (rowContent.ContentType.Alias)
+            {
+                case "productsElement":
+                    foreach (var productNode in new ProductsElement(rowContent).Products)
+                    {
+                        @RenderRowItem(row, productNode, "ProductElement")
+                    }
+                    break;
+                case "peopleElement":
+                    foreach (var personNode in new PeopleElement(rowContent).People)
+                    {
+                        @RenderRowItem(row, personNode, "PersonElement") 
+                    }
+                    break;
+
+                default:
+                    @RenderRowItem(row, rowContent)
+                    break;
+            }
+        }
+    </div>
+}
+
+@helper RenderRowItem(RowElement row, IPublishedElement rowContent)
+{
+    <div class="column @(row.ColumnWidth.HasValue() ? $"{row.ColumnWidth}-tablet" : "")">
+        @Html.Partial($"~/Views/Partials/Elements/{rowContent.ContentType.Alias}.cshtml", rowContent)
+    </div>
+}
+
+@helper RenderRowItem(RowElement row, IPublishedContent rowContent, string viewName)
+{
+    <div class="column @(row.ColumnWidth.HasValue() ? $"{row.ColumnWidth}-tablet" : "")">
+        @Html.Partial($"~/Views/Partials/Elements/{viewName}.cshtml", rowContent)
+    </div>
+}

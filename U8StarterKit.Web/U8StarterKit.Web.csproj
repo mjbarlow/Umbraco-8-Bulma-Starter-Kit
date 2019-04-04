@@ -420,6 +420,7 @@
     <Content Include="config\logviewer.searches.config.js" />
     <Content Include="css\main.css" />
     <Content Include="Global.asax" />
+    <Content Include="scripts\bundle.js" />
     <Content Include="uSync\v8\ContentTypes\blog.config" />
     <Content Include="uSync\v8\ContentTypes\blogpost.config" />
     <Content Include="uSync\v8\ContentTypes\blogselement.config" />
@@ -620,6 +621,9 @@
     <Compile Include="Models\Umbraco\ProductsElement.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Umbraco\RowElement.generated.cs">
+      <DependentUpon>Builder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Umbraco\SidebarSection.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
@@ -687,6 +691,7 @@
     <Content Include="Views\Partials\Elements\SingleLineElement.cshtml" />
     <Content Include="Views\Partials\Elements\ProductElement.cshtml" />
     <Content Include="Views\Partials\Elements\PeopleElement.cshtml" />
+    <Content Include="Views\Partials\Nested\RenderRows.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -24,6 +24,10 @@ namespace U8StarterKit.Web.Models.Umbraco
 	/// <summary>Sidebar Section</summary>
 	public partial interface ISidebarSection : IPublishedContent
 	{
+		/// <summary>hideSidebar</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
+		bool HideSidebar { get; }
+
 		/// <summary>Sidebar Nested Content</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		IEnumerable<IPublishedElement> NestedSideBar { get; }
@@ -53,6 +57,17 @@ namespace U8StarterKit.Web.Models.Umbraco
 		{ }
 
 		// properties
+
+		///<summary>
+		/// hideSidebar: Sidebar hidden, content is full width.
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
+		[ImplementPropertyType("hideSidebar")]
+		public bool HideSidebar => GetHideSidebar(this);
+
+		/// <summary>Static getter for hideSidebar</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
+		public static bool GetHideSidebar(ISidebarSection that) => that.Value<bool>("hideSidebar");
 
 		///<summary>
 		/// Sidebar Nested Content

@@ -5,23 +5,26 @@
 <section id="hero" class="hero hero-banner is-medium" style="@(Model.Background.HasValue() ? "background-image: url('" + Model.Background.Url + "')" :"")">
     <div class="hero-body">
         <div class="container">
-            <div class="hero-banner-content">
-                <header class="block">
-                    <h3 class="title">@Model.Title</h3>
-                </header>
-                <div class="block is-size-5">
-                    <p>@Model.Subtitle</p>
-                </div>
-                @if (Model.PrimaryLink.HasValue())
-                {
+            @if (!Model.HideTextPanel)
+            {
+                <div class="hero-banner-content">
+                    <header class="block">
+                        <h3 class="title">@Model.Title</h3>
+                    </header>
+                    <div class="block is-size-5">
+                        <p>@Model.Subtitle</p>
+                    </div>
                     <div class="block hero-bannerbuttons">
-                        <div class="buttons">
-                            <a class="button is-mainbutton is-large" href="@Model.PrimaryLink.Url" target="@Model.PrimaryLink.Target" rel="nofollow">
-                                <span>
-                                    <strong>@Model.PrimaryLink.Name</strong>
-                                </span>
-                            </a>
-                        </div>
+                        @if (Model.PrimaryLink.HasValue())
+                        {
+                            <div class="buttons">
+                                <a class="button is-mainbutton is-large" href="@Model.PrimaryLink.Url" target="@Model.PrimaryLink.Target" rel="nofollow">
+                                    <span>
+                                        <strong>@Model.PrimaryLink.Name</strong>
+                                    </span>
+                                </a>
+                            </div>
+                        }
                         @if (Model.SecondaryLink.HasValue())
                         {
                             <div>
@@ -32,8 +35,8 @@
                             </div>
                         }
                     </div>
-                }
-            </div>
+                </div>
+            }
         </div>
     </div>
 </section>
