@@ -1,0 +1,16 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<TitleElement>
+@using U8StarterKit.Web.Models.Umbraco
+@using U8StarterKit.Web.Extensions
+
+<div class="columns is-centered">
+    <div class="column is-two-thirds has-text-centered">
+        @if (Model.Title.HasValue())
+        {
+            <h2 class="title">@Model.Title</h2>
+        }
+        @if (Model.SubTitle.HasValue())
+        {
+            <div class="subtitle">@Model.SubTitle</div>
+        }
+    </div>
+</div>

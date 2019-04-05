@@ -20,7 +20,7 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace U8StarterKit.Web.Models.Umbraco
 {
-	/// <summary>Row Element</summary>
+	/// <summary>Section</summary>
 	[PublishedModel("rowElement")]
 	public partial class RowElement : PublishedElementModel
 	{
@@ -46,14 +46,14 @@ namespace U8StarterKit.Web.Models.Umbraco
 		// properties
 
 		///<summary>
-		/// Column Width: Set the width of the items in this column.
+		/// Items Width: Set the width of items.
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		[ImplementPropertyType("columnWidth")]
 		public string ColumnWidth => this.Value<string>("columnWidth");
 
 		///<summary>
-		/// Row Content
+		/// Sections
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		[ImplementPropertyType("rowContent")]

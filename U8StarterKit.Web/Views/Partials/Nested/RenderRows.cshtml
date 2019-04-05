@@ -1,34 +1,52 @@
 ﻿@using U8StarterKit.Web.Extensions
 @using U8StarterKit.Web.Models.Umbraco
+@using U8StarterKit.Web.Models.ViewModels
 @inherits Umbraco.Web.Mvc.UmbracoViewPage<IEnumerable<IPublishedElement>>
 
 @foreach (var node in Model)
 {
     var row = new RowElement(node);
-    <div class="columns is-variable is-multiline">
-        @foreach (var rowContent in row.RowContent)
+    foreach (var rowContent in row.RowContent)
+    {
+        switch (rowContent.ContentType.Alias)
         {
-            switch (rowContent.ContentType.Alias)
-            {
-                case "productsElement":
-                    foreach (var productNode in new ProductsElement(rowContent).Products)
-                    {
-                        @RenderRowItem(row, productNode, "ProductElement")
-                    }
-                    break;
-                case "peopleElement":
-                    foreach (var personNode in new PeopleElement(rowContent).People)
-                    {
-                        @RenderRowItem(row, personNode, "PersonElement") 
-                    }
-                    break;
+            case "productsElement":
+                foreach (var productNode in new ProductsElement(rowContent).Products)
+                {
+                    @RenderRowItem(row, productNode, "ProductElement")
+                }
+                break;
+            case "peopleElement":
+                foreach (var personNode in new PeopleElement(rowContent).People)
+                {
+                    @RenderRowItem(row, personNode, "PersonElement")
+                }
+                break;
+            case "blogsElement":
+                var blogsElement = new BlogsElement(rowContent);
+                var blogsNode = blogsElement.Blog.Select(x => new Blog(x)).FirstOrDefault();
+                var blogs = blogsNode.Children.Select(x => new Blogpost(x)).Take((int)blogsElement.ItemsToShow);
+                foreach (var blogNode in blogs)
+                {
+                    @RenderRowItem(row, blogNode, "BlogElement")
+                }
+                break;
+            case "ctaElement":
+                @Html.Partial($"~/Views/Partials/Elements/{rowContent.ContentType.Alias}.cshtml", rowContent);
+                break;
+            case "titleElement":
+                <div class="column is-full">
+                    @Html.Partial($"~/Views/Partials/Elements/{rowContent.ContentType.Alias}.cshtml", rowContent);
+                </div>
+                break;
+
+
 
                 default:
                     @RenderRowItem(row, rowContent)
                     break;
             }
         }
-    </div>
 }
 
 @helper RenderRowItem(RowElement row, IPublishedElement rowContent)

@@ -519,6 +519,8 @@
     <Content Include="uSync\v8\DataTypes\U8SKProductFeaturesNestedContent.config" />
     <Content Include="uSync\v8\DataTypes\U8SKProductPickerMultiple.config" />
     <Content Include="uSync\v8\_Actions\actions_DataTypes.config" />
+    <Content Include="Views\Partials\Elements\CtaElement.cshtml" />
+    <Content Include="Views\Partials\Elements\TitleElement.cshtml" />
     <None Include="Views\Partials\Elements\PersonElement.cshtml" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -562,6 +564,9 @@
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Umbraco\ContentSection.generated.cs">
+      <DependentUpon>Builder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Umbraco\CtaElement.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Umbraco\FeatureElement.generated.cs">
@@ -631,6 +636,9 @@
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Umbraco\SingleLineElement.generated.cs">
+      <DependentUpon>Builder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Umbraco\TitleElement.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\ViewModels\BlogsViewModel.cs" />
