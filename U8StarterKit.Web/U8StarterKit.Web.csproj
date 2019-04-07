@@ -700,6 +700,7 @@
     <Content Include="Views\Partials\Elements\ProductElement.cshtml" />
     <Content Include="Views\Partials\Elements\PeopleElement.cshtml" />
     <Content Include="Views\Partials\Nested\RenderRows.cshtml" />
+    <Content Include="Views\Partials\Nested\RenderSection.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

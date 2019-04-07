@@ -75,18 +75,20 @@
 .image {
     background: $primary;
 }
+
+
 // UTILITY CLASSES
-.has-spacing-bottom {
-    margin-bottom: 1em !important;
-}
 
 .has-small-spacing-bottom {
     margin-bottom: 0.25em !important;
 }
-
-.has-large-spacing-bottom {
-    margin-bottom: 2em !important;
+.has-spacing-bottom {
+    margin-bottom: 1em !important;
 }
+.has-large-spacing-bottom {
+    margin-bottom: 3rem !important;
+}
+
 .is-background {
     object-fit: cover;
     object-position: center center;

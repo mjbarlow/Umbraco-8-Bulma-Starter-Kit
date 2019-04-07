@@ -2,7 +2,7 @@
 @using U8StarterKit.Web.Models.Umbraco
 @using U8StarterKit.Web.Extensions
 
-<section id="hero" class="hero hero-banner is-medium" style="@(Model.Background.HasValue() ? "background-image: url('" + Model.Background.Url + "')" :"")">
+<section id="hero" class="hero hero-banner is-medium has-large-spacing-bottom" style="@(Model.Background.HasValue() ? "background-image: url('" + Model.Background.Url + "')" :"")">
     <div class="hero-body">
         <div class="container">
             @if (!Model.HideTextPanel)

@@ -5,13 +5,10 @@
 }
 
 @Html.Partial("~/Views/Partials/Nested/RenderElements.cshtml", Model.NestedHero)
-<section class="section has-spacing section-gray">
-    <div class="container">
+
         @if (Model.HideSidebar)
-        {
-        <div class="columns is-multiline">
-            @Html.Partial("~/Views/Partials/Nested/RenderRows.cshtml", Model.NestedContent)
-        </div>
+        { 
+            @Html.Partial("~/Views/Partials/Nested/RenderSection.cshtml", Model.NestedContent)
         }
         else
         {
@@ -33,5 +30,3 @@
                     }
                 </div>
         }
-            </div>
-</section>

@@ -3,28 +3,30 @@
 @using U8StarterKit.Web.Extensions
 
 @Html.Raw("</div></div></section>")
-<section class="section hero @(Model.ColorScheme.HasValue() ? Model.ColorScheme : "is-light")">
-    <div class="hero-body">
-        <div class="container" >
-            <div class="columns is-centered">
-                <div class="column is-two-thirds has-text-centered">
-                    @if (Model.Title.HasValue())
-                    {
-                        <h2 class="title">@Model.Title</h2>
-                    }
-                    @if (Model.Content.HasValue())
-                    {
-                        <div class="subtitle">@Model.Content</div>
-                    }
-                    @if (Model.Link.HasValue())
-                    {
-                        <a class="button is-primary @(Model.ColorScheme == "is-primary" ? "is-outlined is-inverted" : "") is-medium" target="@Model.Link.Target" href="@Model.Link.Url">
-                            @Model.Link.Name
-                        </a>
-                    }
+<section class=" is-fullwidth ">
+    <div class="hero is-medium @(Model.ColorScheme.HasValue() ? Model.ColorScheme : "is-light")">
+        <div class="hero-body">
+            <div class="container">
+                <div class="columns is-centered">
+                    <div class="column is-two-thirds has-text-centered">
+                        @if (Model.Title.HasValue())
+                        {
+                            <h2 class="title">@Model.Title</h2>
+                        }
+                        @if (Model.Content.HasValue())
+                        {
+                            <div class="subtitle">@Model.Content</div>
+                        }
+                        @if (Model.Link.HasValue())
+                        {
+                            <a class="button is-primary @(Model.ColorScheme == "is-primary" ? "is-outlined is-inverted" : "") is-medium" target="@Model.Link.Target" href="@Model.Link.Url">
+                                @Model.Link.Name
+                            </a>
+                        }
+                    </div>
                 </div>
             </div>
-            </div>
         </div>
+    </div>
 </section>
 @Html.Raw("<section class='section has-spacing section-gray'><div class='container'><div class='columns is-multiline'>")

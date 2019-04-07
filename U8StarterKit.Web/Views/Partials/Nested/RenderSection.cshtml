@@ -1,0 +1,16 @@
+﻿@using U8StarterKit.Web.Extensions
+@using U8StarterKit.Web.Models.Umbraco
+@using U8StarterKit.Web.Models.ViewModels
+@inherits Umbraco.Web.Mvc.UmbracoViewPage<IEnumerable<RowElement>>
+
+@foreach (var section in Model)
+{
+    <section class="section section-gray">
+        <div class="container">
+            <div class="columns is-multiline">
+                @Html.Partial("~/Views/Partials/Nested/RenderRow.cshtml", section)
+            </div>
+        </div>
+    </section>
+}
+

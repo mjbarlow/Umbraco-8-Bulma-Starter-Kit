@@ -1,11 +1,10 @@
 ﻿@using U8StarterKit.Web.Extensions
 @using U8StarterKit.Web.Models.Umbraco
 @using U8StarterKit.Web.Models.ViewModels
-@inherits Umbraco.Web.Mvc.UmbracoViewPage<IEnumerable<IPublishedElement>>
+@inherits Umbraco.Web.Mvc.UmbracoViewPage<IPublishedElement>
 
-@foreach (var node in Model)
-{
-    var row = new RowElement(node);
+@{
+    var row = new RowElement(Model);
     foreach (var rowContent in row.RowContent)
     {
         switch (rowContent.ContentType.Alias)
@@ -32,11 +31,11 @@
                 }
                 break;
             case "ctaElement":
-                @Html.Partial($"~/Views/Partials/Elements/{rowContent.ContentType.Alias}.cshtml", rowContent);
+                @Html.Partial($"~/Views/Partials/Elements/{rowContent.ContentType.Alias}.cshtml", rowContent)
                 break;
             case "titleElement":
                 <div class="column is-full">
-                    @Html.Partial($"~/Views/Partials/Elements/{rowContent.ContentType.Alias}.cshtml", rowContent);
+                    @Html.Partial($"~/Views/Partials/Elements/{rowContent.ContentType.Alias}.cshtml", rowContent)
                 </div>
                 break;
 
