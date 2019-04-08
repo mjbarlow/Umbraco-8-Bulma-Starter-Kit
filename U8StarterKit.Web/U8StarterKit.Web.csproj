@@ -629,6 +629,9 @@
     <Compile Include="Models\Umbraco\RowElement.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Umbraco\SectionDisplaySettings.generated.cs">
+      <DependentUpon>Builder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Umbraco\SidebarSection.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
@@ -701,6 +704,7 @@
     <Content Include="Views\Partials\Elements\PeopleElement.cshtml" />
     <Content Include="Views\Partials\Nested\RenderRows.cshtml" />
     <Content Include="Views\Partials\Nested\RenderSection.cshtml" />
+    <Content Include="Views\Partials\Nested\RenderRow.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

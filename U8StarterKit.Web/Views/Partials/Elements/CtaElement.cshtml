@@ -2,9 +2,9 @@
 @using U8StarterKit.Web.Models.Umbraco
 @using U8StarterKit.Web.Extensions
 
-@Html.Raw("</div></div></section>")
-<section class=" is-fullwidth ">
-    <div class="hero is-medium @(Model.ColorScheme.HasValue() ? Model.ColorScheme : "is-light")">
+
+<section class="is-fullwidth">
+    <div class="hero @(Model.ColorScheme.HasValue() ? Model.ColorScheme : "is-light")">
         <div class="hero-body">
             <div class="container">
                 <div class="columns is-centered">
@@ -29,4 +29,3 @@
         </div>
     </div>
 </section>
-@Html.Raw("<section class='section has-spacing section-gray'><div class='container'><div class='columns is-multiline'>")

@@ -8,8 +8,8 @@
     {
         Blog = blogNode,
         BlogsPosts = blogNode.Children.Select(x => new Blogpost(x)).ToList(),
-        HasPaging = Model.HasPaging,
-        IsHalfWidth = Model.IsHalfWidth,
+        HasPaging =false,
+        IsHalfWidth =false,
         ItemsToShow = (int)Model.ItemsToShow
     };
 }

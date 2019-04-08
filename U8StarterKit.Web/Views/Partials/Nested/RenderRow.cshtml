@@ -4,60 +4,113 @@
 @inherits Umbraco.Web.Mvc.UmbracoViewPage<IPublishedElement>
 
 @{
-    var row = new RowElement(Model);
-    foreach (var rowContent in row.RowContent)
+    if (Model.HasValue())
     {
-        switch (rowContent.ContentType.Alias)
+        var row = new RowElement(Model);
+
+        if (row.RowContent.HasValue())
         {
-            case "productsElement":
-                foreach (var productNode in new ProductsElement(rowContent).Products)
+            foreach (var rowContent in row.RowContent)
+            {
+                switch (rowContent.ContentType.Alias)
                 {
-                    @RenderRowItem(row, productNode, "ProductElement")
-                }
-                break;
-            case "peopleElement":
-                foreach (var personNode in new PeopleElement(rowContent).People)
-                {
-                    @RenderRowItem(row, personNode, "PersonElement")
-                }
-                break;
-            case "blogsElement":
-                var blogsElement = new BlogsElement(rowContent);
-                var blogsNode = blogsElement.Blog.Select(x => new Blog(x)).FirstOrDefault();
-                var blogs = blogsNode.Children.Select(x => new Blogpost(x)).Take((int)blogsElement.ItemsToShow);
-                foreach (var blogNode in blogs)
-                {
-                    @RenderRowItem(row, blogNode, "BlogElement")
-                }
-                break;
-            case "ctaElement":
-                @Html.Partial($"~/Views/Partials/Elements/{rowContent.ContentType.Alias}.cshtml", rowContent)
-                break;
-            case "titleElement":
-                <div class="column is-full">
-                    @Html.Partial($"~/Views/Partials/Elements/{rowContent.ContentType.Alias}.cshtml", rowContent)
-                </div>
-                break;
+                    case "blogsElement":
+
+                        var blogsElement = new BlogsElement(rowContent);
+                        var blogsNode = blogsElement.Blog.Select(x => new Blog(x)).FirstOrDefault();
+                        var blogs = blogsNode.Children.Select(x => new Blogpost(x)).Take((int)blogsElement.ItemsToShow);
+                        var itemsPerRow = blogsElement.ItemsPerRow.ToString();
 
 
+                        @RenderSectionStart()
+                        @RenderRowItem(new TitleElement(rowContent), "TitleElement", "1")
+                        foreach (var blogNode in blogs)
+                        {
+                            @RenderRowItem(blogNode, "BlogElement", itemsPerRow)
+                        }
+                        @RenderSectionEnd()
+                        break;
 
-                default:
-                    @RenderRowItem(row, rowContent)
-                    break;
+                    case "ctaElement":
+                        @Html.Partial($"~/Views/Partials/Elements/{rowContent.ContentType.Alias}.cshtml", rowContent)
+                        break;
+
+                    case "productsElement":
+                        var productsElement = new ProductsElement(rowContent);
+
+                        @RenderSectionStart()
+                        @RenderRowItem(new TitleElement(rowContent), "TitleElement", "1")
+                        foreach (var productNode in productsElement.Products)
+                        {
+                            @RenderRowItem(productNode, "ProductElement", productsElement.ItemsPerRow.ToString())
+                        }
+                        @RenderSectionEnd()
+                        break;
+
+                    case "peopleElement":
+                        var peopleElement = new PeopleElement(rowContent);
+
+                        @RenderSectionStart()
+                        @RenderRowItem(new TitleElement(rowContent), "TitleElement", "1")
+
+                        foreach (var personNode in peopleElement.People)
+                        {
+                            @RenderRowItem(personNode, "PersonElement",peopleElement.ItemsPerRow.ToString())
+                        }
+                        @RenderSectionEnd()
+                        break;
+
+                    default:
+                        @RenderRowItem(rowContent, rowContent.ContentType.Alias, "1")
+                        break;
+                }
             }
         }
+    }
 }
 
-@helper RenderRowItem(RowElement row, IPublishedElement rowContent)
+@helper RenderRowItem(IPublishedElement rowContent, string itemsPerRow)
 {
-    <div class="column @(row.ColumnWidth.HasValue() ? $"{row.ColumnWidth}-tablet" : "")">
-        @Html.Partial($"~/Views/Partials/Elements/{rowContent.ContentType.Alias}.cshtml", rowContent)
-    </div>
+    @RenderRowItem(rowContent, rowContent.ContentType.Alias, itemsPerRow)
 }
 
-@helper RenderRowItem(RowElement row, IPublishedContent rowContent, string viewName)
+@helper RenderRowItem(IPublishedElement rowContent, string viewName, string itemsPerRow)
 {
-    <div class="column @(row.ColumnWidth.HasValue() ? $"{row.ColumnWidth}-tablet" : "")">
+    <div class="column @ColumnClass(itemsPerRow)">
         @Html.Partial($"~/Views/Partials/Elements/{viewName}.cshtml", rowContent)
     </div>
+}
+
+@functions  {
+    string ColumnClass(string itemsPerRow)
+    {
+        var result = "is-12";
+        switch (itemsPerRow)
+        {
+            case "2":
+                result = "is-6";
+                break;
+            case "3":
+                result = "is-4";
+                break;
+            case "4":
+                result = "is-3";
+                break;
+        }
+        return result;
+    }
+}
+
+@helper RenderSectionStart()
+{
+    @:<section class="section section-gray">
+        @:<div class="container">
+            @:<div class="columns is-multiline">
+}
+
+@helper RenderSectionEnd()
+{
+@:</div>
+@:</div>
+@:</section>
 }

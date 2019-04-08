@@ -20,36 +20,49 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace U8StarterKit.Web.Models.Umbraco
 {
-	/// <summary>Section</summary>
-	[PublishedModel("rowElement")]
-	public partial class RowElement : PublishedElementModel
+	// Mixin Content Type with alias "sectionDisplaySettings"
+	/// <summary>Section Display Settings</summary>
+	public partial interface ISectionDisplaySettings : IPublishedElement
+	{
+		/// <summary>Items Per Row</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
+		object ItemsPerRow { get; }
+	}
+
+	/// <summary>Section Display Settings</summary>
+	[PublishedModel("sectionDisplaySettings")]
+	public partial class SectionDisplaySettings : PublishedElementModel, ISectionDisplaySettings
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		public new const string ModelTypeAlias = "rowElement";
+		public new const string ModelTypeAlias = "sectionDisplaySettings";
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		public new static PublishedContentType GetModelContentType()
 			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<RowElement, TValue>> selector)
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<SectionDisplaySettings, TValue>> selector)
 			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 #pragma warning restore 0109
 
 		// ctor
-		public RowElement(IPublishedElement content)
+		public SectionDisplaySettings(IPublishedElement content)
 			: base(content)
 		{ }
 
 		// properties
 
 		///<summary>
-		/// Sections
+		/// Items Per Row
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("rowContent")]
-		public IEnumerable<IPublishedElement> RowContent => this.Value<IEnumerable<IPublishedElement>>("rowContent");
+		[ImplementPropertyType("itemsPerRow")]
+		public object ItemsPerRow => GetItemsPerRow(this);
+
+		/// <summary>Static getter for Items Per Row</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
+		public static object GetItemsPerRow(ISectionDisplaySettings that) => that.Value("itemsPerRow");
 	}
 }

@@ -22,7 +22,7 @@ namespace U8StarterKit.Web.Models.Umbraco
 {
 	/// <summary>Products Element</summary>
 	[PublishedModel("productsElement")]
-	public partial class ProductsElement : PublishedElementModel
+	public partial class ProductsElement : PublishedElementModel, ISectionDisplaySettings, ITitleElement
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -51,5 +51,26 @@ namespace U8StarterKit.Web.Models.Umbraco
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		[ImplementPropertyType("products")]
 		public IEnumerable<IPublishedContent> Products => this.Value<IEnumerable<IPublishedContent>>("products");
+
+		///<summary>
+		/// Items Per Row
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
+		[ImplementPropertyType("itemsPerRow")]
+		public object ItemsPerRow => SectionDisplaySettings.GetItemsPerRow(this);
+
+		///<summary>
+		/// Subtitle
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
+		[ImplementPropertyType("subTitle")]
+		public IHtmlString SubTitle => TitleElement.GetSubTitle(this);
+
+		///<summary>
+		/// Name
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
+		[ImplementPropertyType("title")]
+		public string Title => TitleElement.GetTitle(this);
 	}
 }

@@ -7,7 +7,7 @@ using Umbraco.Web.Models;
 namespace U8StarterKit.Web.Extensions
 {
     /// <summary>
-    /// A few useful extension methods for Umbraco IpublishedContent
+    /// A few useful extension methods for Umbraco Models
     /// </summary>
     public static partial class UmbracoExtensions
     {
@@ -26,7 +26,10 @@ namespace U8StarterKit.Web.Extensions
         {
             return content != null && content.Url != "";
         }
-    }
 
-   
+        public static bool HasValue(this IPublishedElement content)
+        {
+            return content != null;
+        }
+    }
 }

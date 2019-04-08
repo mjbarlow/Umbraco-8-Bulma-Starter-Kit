@@ -20,9 +20,22 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace U8StarterKit.Web.Models.Umbraco
 {
+	// Mixin Content Type with alias "titleElement"
+	/// <summary>Title Element</summary>
+	public partial interface ITitleElement : IPublishedElement
+	{
+		/// <summary>Subtitle</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
+		IHtmlString SubTitle { get; }
+
+		/// <summary>Name</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
+		string Title { get; }
+	}
+
 	/// <summary>Title Element</summary>
 	[PublishedModel("titleElement")]
-	public partial class TitleElement : PublishedElementModel
+	public partial class TitleElement : PublishedElementModel, ITitleElement
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -50,13 +63,21 @@ namespace U8StarterKit.Web.Models.Umbraco
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		[ImplementPropertyType("subTitle")]
-		public IHtmlString SubTitle => this.Value<IHtmlString>("subTitle");
+		public IHtmlString SubTitle => GetSubTitle(this);
+
+		/// <summary>Static getter for Subtitle</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
+		public static IHtmlString GetSubTitle(ITitleElement that) => that.Value<IHtmlString>("subTitle");
 
 		///<summary>
 		/// Name
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		[ImplementPropertyType("title")]
-		public string Title => this.Value<string>("title");
+		public string Title => GetTitle(this);
+
+		/// <summary>Static getter for Name</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
+		public static string GetTitle(ITitleElement that) => that.Value<string>("title");
 	}
 }

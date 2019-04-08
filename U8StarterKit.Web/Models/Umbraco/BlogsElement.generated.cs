@@ -22,7 +22,7 @@ namespace U8StarterKit.Web.Models.Umbraco
 {
 	/// <summary>Latest Blogs Element</summary>
 	[PublishedModel("blogsElement")]
-	public partial class BlogsElement : PublishedElementModel
+	public partial class BlogsElement : PublishedElementModel, ISectionDisplaySettings, ITitleElement
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -58,5 +58,26 @@ namespace U8StarterKit.Web.Models.Umbraco
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		[ImplementPropertyType("itemsToShow")]
 		public decimal ItemsToShow => this.Value<decimal>("itemsToShow");
+
+		///<summary>
+		/// Items Per Row
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
+		[ImplementPropertyType("itemsPerRow")]
+		public object ItemsPerRow => SectionDisplaySettings.GetItemsPerRow(this);
+
+		///<summary>
+		/// Subtitle
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
+		[ImplementPropertyType("subTitle")]
+		public IHtmlString SubTitle => TitleElement.GetSubTitle(this);
+
+		///<summary>
+		/// Name
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
+		[ImplementPropertyType("title")]
+		public string Title => TitleElement.GetTitle(this);
 	}
 }
