@@ -3,14 +3,14 @@
 @using U8StarterKit.Web.Extensions
 
 
-<div class="card has-large-spacing-bottom">
+<div class="card has-equal-height">
     <div class="image has-spacing image is-3by2">
         @if (Model.Image.HasValue())
         {
             <img src="@Model.Image.Url" class="is-background"/>
         }
     </div>
-    <div class="card-content">
+    <div class="card-content has-equal-height">
         <div class="content">
             @if(Model.ProductName.HasValue())
             {

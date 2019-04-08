@@ -6,42 +6,58 @@
    //todo: hook up form to Umbraco Forms
 }
 
-<section class="is-fullwidth">
-<div class="hero is-medium is-dark">
-    <div class="hero-body">
-        <div class="container">
-            <div class="columns is-centered">
-                <div class="column is-two-thirds">
-                    <article class="tile is-child notification is-light">
-                        @if (Model.Title.HasValue())
-                        {
-                            <p class="title">@Model.Title</p>
-                        }
-                        @if (Model.Subtitle.HasValue())
-                        {
-                            <p class="subtitle">@Model.Subtitle</p>
-                        }
-                        <div class="field">
-                            <label class="label">Name</label>
-                            <div class="control">
-                                <input class="input" type="text" placeholder="e.g Alex Smith">
-                            </div>
-                        </div>
-                        <div class="field">
-                            <label class="label is-light">Email</label>
-                            <div class="control">
-                                <input class="input" type="email" placeholder="e.g. alexsmith@gmail.com">
-                            </div>
-                        </div>
-                        <div class="field">
-                            <div class="control">
-                                <a class="is-link button">Sign up</a>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-            </div>
+        <div class="column is-one-third">
+            <article class="has-no-background">
+                @if (Model.Title.HasValue())
+                {
+                    <p class="title">Stay up to date </p>
+                }
+                @if (Model.Subtitle.HasValue())
+                {
+                    <p class="subtitle">@Model.Subtitle @Model.Subtitle</p>
+                }
+           
+                @if (Model.Subtitle.HasValue())
+                {
+                    <p class="subtitle">@Model.Subtitle</p>
+                }
+           
+            </article>
         </div>
-    </div>
-</div>
-</section>
+        <div class="column is-one-third">
+            <article class="tile is-child notification is-light">
+                @if (Model.Title.HasValue())
+                {
+                    <p class="title is-4">@Model.Title</p>
+                }
+           
+                <div class="field">
+                    <div class="control has-icons-left has-icons-right">
+                        <input class="input is-medium" type="email" placeholder="Name, eg Neils Harvig">
+                        <span class="icon is-left">
+                            <i class="fas fa-user fa-sm"></i>
+                        </span>
+                        <span class="icon is-right">
+                            <i class="fas fa-check fa-sm"></i>
+                        </span>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="control has-icons-left has-icons-right">
+                        <input class="input is-medium" type="email" placeholder="Email, eg. umbraco@Umbraco.com">
+                        <span class="icon is-left">
+                            <i class="fas fa-envelope fa-sm"></i>
+                        </span>
+                        <span class="icon is-right">
+                            <i class="fas fa-check fa-sm"></i>
+                        </span>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="control">
+                        <a class="is-link button is-medium">Sign up</a>
+                    </div>
+                </div>
+            </article>
+        </div>
+

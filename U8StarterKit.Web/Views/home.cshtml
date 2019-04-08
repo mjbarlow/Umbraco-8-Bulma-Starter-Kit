@@ -8,11 +8,11 @@
 
         @if (Model.HideSidebar)
         { 
-            @Html.Partial("~/Views/Partials/Nested/RenderSection.cshtml", Model.NestedContent)
+            @Html.Partial("~/Views/Partials/Nested/RenderRow.cshtml", Model.NestedContent)
         }
         else
         {
-            <div class="columns">
+            @*<div class="columns">
                 <div class="column is-two-thirds-tablet">
                     <div class="columns is-multiline">
                         @Html.Partial("~/Views/Partials/Nested/RenderRows.cshtml", Model.NestedContent)
@@ -28,5 +28,5 @@
                             </div>
                         </div>
                     }
-                </div>
+                </div>*@
         }

@@ -22,7 +22,7 @@ namespace U8StarterKit.Web.Models.Umbraco
 {
 	/// <summary>Sign Up Form Element</summary>
 	[PublishedModel("signUpFormElement")]
-	public partial class SignUpFormElement : PublishedElementModel
+	public partial class SignUpFormElement : PublishedElementModel, IColourSettings
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -58,5 +58,12 @@ namespace U8StarterKit.Web.Models.Umbraco
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		[ImplementPropertyType("title")]
 		public string Title => this.Value<string>("title");
+
+		///<summary>
+		/// Background Color
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
+		[ImplementPropertyType("backgroundColor")]
+		public global::Umbraco.Core.PropertyEditors.ValueConverters.ColorPickerValueConverter.PickedColor BackgroundColor => ColourSettings.GetBackgroundColor(this);
 	}
 }

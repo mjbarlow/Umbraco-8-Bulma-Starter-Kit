@@ -554,6 +554,9 @@
     <Compile Include="Models\Umbraco\CarouselElement.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Umbraco\ColourSettings.generated.cs">
+      <DependentUpon>Builder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Umbraco\Contact.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
@@ -576,6 +579,9 @@
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Umbraco\Folder.generated.cs">
+      <DependentUpon>Builder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Umbraco\FooterLinkSettings.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Umbraco\FooterSection.generated.cs">
@@ -702,9 +708,9 @@
     <Content Include="Views\Partials\Elements\SingleLineElement.cshtml" />
     <Content Include="Views\Partials\Elements\ProductElement.cshtml" />
     <Content Include="Views\Partials\Elements\PeopleElement.cshtml" />
-    <Content Include="Views\Partials\Nested\RenderRows.cshtml" />
     <Content Include="Views\Partials\Nested\RenderSection.cshtml" />
     <Content Include="Views\Partials\Nested\RenderRow.cshtml" />
+    <Content Include="Views\Partials\Elements\FooterLinkElement.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

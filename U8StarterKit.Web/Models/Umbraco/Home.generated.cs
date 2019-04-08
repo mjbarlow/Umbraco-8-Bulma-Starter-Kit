@@ -74,11 +74,11 @@ namespace U8StarterKit.Web.Models.Umbraco
 		public string TwitterUsername => this.Value<string>("twitterUsername");
 
 		///<summary>
-		/// Nested Content
+		/// nestedContent
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		[ImplementPropertyType("nestedContent")]
-		public IEnumerable<RowElement> NestedContent => ContentSection.GetNestedContent(this);
+		public IEnumerable<IPublishedElement> NestedContent => ContentSection.GetNestedContent(this);
 
 		///<summary>
 		/// Nested Footer

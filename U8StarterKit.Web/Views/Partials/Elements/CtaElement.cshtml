@@ -2,30 +2,23 @@
 @using U8StarterKit.Web.Models.Umbraco
 @using U8StarterKit.Web.Extensions
 
-
-<section class="is-fullwidth">
-    <div class="hero @(Model.ColorScheme.HasValue() ? Model.ColorScheme : "is-light")">
-        <div class="hero-body">
-            <div class="container">
-                <div class="columns is-centered">
-                    <div class="column is-two-thirds has-text-centered">
-                        @if (Model.Title.HasValue())
-                        {
-                            <h2 class="title">@Model.Title</h2>
-                        }
-                        @if (Model.Content.HasValue())
-                        {
-                            <div class="subtitle">@Model.Content</div>
-                        }
-                        @if (Model.Link.HasValue())
-                        {
-                            <a class="button is-primary @(Model.ColorScheme == "is-primary" ? "is-outlined is-inverted" : "") is-medium" target="@Model.Link.Target" href="@Model.Link.Url">
-                                @Model.Link.Name
-                            </a>
-                        }
-                    </div>
-                </div>
-            </div>
-        </div>
+<div class="columns is-centered">
+    <div class="column has-no-background is-two-thirds has-text-centered">
+        @if (Model.Title.HasValue())
+        {
+            <h2 class="title is-2">@Model.Title</h2>
+        }
+        @if (Model.Content.HasValue())
+        {
+            <div class="subtitle is-4">@Model.Content</div>
+        }
+        @if (Model.Link.HasValue())
+        {
+            <a class="button is-link is-medium" target="@Model.Link.Target" href="@Model.Link.Url">
+                @Model.Link.Name
+            </a>
+        }
     </div>
-</section>
+</div>
+
+

@@ -22,7 +22,7 @@ namespace U8StarterKit.Web.Models.Umbraco
 {
 	/// <summary>CtaElement</summary>
 	[PublishedModel("ctaElement")]
-	public partial class CtaElement : PublishedElementModel
+	public partial class CtaElement : PublishedElementModel, IColourSettings
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -46,13 +46,6 @@ namespace U8StarterKit.Web.Models.Umbraco
 		// properties
 
 		///<summary>
-		/// Color Scheme
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("colorScheme")]
-		public string ColorScheme => this.Value<string>("colorScheme");
-
-		///<summary>
 		/// Content
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
@@ -72,5 +65,12 @@ namespace U8StarterKit.Web.Models.Umbraco
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		[ImplementPropertyType("title")]
 		public string Title => this.Value<string>("title");
+
+		///<summary>
+		/// Background Color
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
+		[ImplementPropertyType("backgroundColor")]
+		public global::Umbraco.Core.PropertyEditors.ValueConverters.ColorPickerValueConverter.PickedColor BackgroundColor => ColourSettings.GetBackgroundColor(this);
 	}
 }

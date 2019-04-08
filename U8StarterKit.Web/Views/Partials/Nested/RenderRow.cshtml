@@ -1,73 +1,83 @@
 ﻿@using U8StarterKit.Web.Extensions
 @using U8StarterKit.Web.Models.Umbraco
 @using U8StarterKit.Web.Models.ViewModels
-@inherits Umbraco.Web.Mvc.UmbracoViewPage<IPublishedElement>
+@inherits Umbraco.Web.Mvc.UmbracoViewPage<IEnumerable<IPublishedElement>>
 
 @{
     if (Model.HasValue())
     {
-        var row = new RowElement(Model);
-
-        if (row.RowContent.HasValue())
+        foreach (var rowContent in Model)
         {
-            foreach (var rowContent in row.RowContent)
+            var row = new RowElement(rowContent);
+            switch (rowContent.ContentType.Alias)
             {
-                switch (rowContent.ContentType.Alias)
-                {
-                    case "blogsElement":
+                case "blogsElement":
 
-                        var blogsElement = new BlogsElement(rowContent);
-                        var blogsNode = blogsElement.Blog.Select(x => new Blog(x)).FirstOrDefault();
-                        var blogs = blogsNode.Children.Select(x => new Blogpost(x)).Take((int)blogsElement.ItemsToShow);
-                        var itemsPerRow = blogsElement.ItemsPerRow.ToString();
+                    var blogsElement = new BlogsElement(rowContent);
+                    var blogsNode = blogsElement.Blog.Select(x => new Blog(x)).FirstOrDefault();
+                    var blogs = blogsNode.Children.Select(x => new Blogpost(x)).Take((int)blogsElement.ItemsToShow);
+                    var itemsPerRow = blogsElement.ItemsPerRow.ToString();
 
 
-                        @RenderSectionStart()
-                        @RenderRowItem(new TitleElement(rowContent), "TitleElement", "1")
-                        foreach (var blogNode in blogs)
-                        {
-                            @RenderRowItem(blogNode, "BlogElement", itemsPerRow)
-                        }
-                        @RenderSectionEnd()
-                        break;
+                    @RenderSectionStart(blogsElement.BackgroundColor.Label)
+                    @RenderRowItem(new TitleElement(rowContent), "TitleElement", "1")
+                    foreach (var blogNode in blogs)
+                    {
+                        @RenderRowItem(blogNode, "BlogElement", itemsPerRow)
+                    }
+                    @RenderRowItem(new FooterLinkSettings(rowContent), "FooterLinkElement", "1")
+                    @RenderSectionEnd()
+                    break;
 
-                    case "ctaElement":
-                        @Html.Partial($"~/Views/Partials/Elements/{rowContent.ContentType.Alias}.cshtml", rowContent)
-                        break;
+                case "ctaElement":
+                    var ctaElement = new CtaElement(rowContent);
+                    @RenderSectionStart(ctaElement.BackgroundColor.Label, true)
+                    @Html.Partial($"~/Views/Partials/Elements/{rowContent.ContentType.Alias}.cshtml", rowContent)
+                    @RenderSectionEnd()
+                    break;
 
-                    case "productsElement":
-                        var productsElement = new ProductsElement(rowContent);
+                case "productsElement":
+                    var productsElement = new ProductsElement(rowContent);
 
-                        @RenderSectionStart()
-                        @RenderRowItem(new TitleElement(rowContent), "TitleElement", "1")
-                        foreach (var productNode in productsElement.Products)
-                        {
-                            @RenderRowItem(productNode, "ProductElement", productsElement.ItemsPerRow.ToString())
-                        }
-                        @RenderSectionEnd()
-                        break;
+                    @RenderSectionStart(productsElement.BackgroundColor.Label)
+                    @RenderRowItem(new TitleElement(rowContent), "TitleElement", "1")
+                    foreach (var productNode in productsElement.Products)
+                    {
+                        @RenderRowItem(productNode, "ProductElement", productsElement.ItemsPerRow.ToString())
+                    }
+                    @RenderRowItem(new FooterLinkSettings(rowContent), "FooterLinkElement", "1")
+                    @RenderSectionEnd()
 
-                    case "peopleElement":
-                        var peopleElement = new PeopleElement(rowContent);
+                    break;
 
-                        @RenderSectionStart()
-                        @RenderRowItem(new TitleElement(rowContent), "TitleElement", "1")
+                case "peopleElement":
+                    var peopleElement = new PeopleElement(rowContent);
 
-                        foreach (var personNode in peopleElement.People)
-                        {
-                            @RenderRowItem(personNode, "PersonElement",peopleElement.ItemsPerRow.ToString())
-                        }
-                        @RenderSectionEnd()
-                        break;
+                    @RenderSectionStart(peopleElement.BackgroundColor.Label)
+                    @RenderRowItem(new TitleElement(rowContent), "TitleElement", "1")
 
-                    default:
-                        @RenderRowItem(rowContent, rowContent.ContentType.Alias, "1")
-                        break;
-                }
+                    foreach (var personNode in peopleElement.People)
+                    {
+                        @RenderRowItem(personNode, "PersonElement", peopleElement.ItemsPerRow.ToString())
+                    }
+                    @RenderRowItem(new FooterLinkSettings(rowContent), "FooterLinkElement", "1")
+                    @RenderSectionEnd()
+                    break;
+
+                case "signUpFormElement":
+                    var signUpFormElement = new SignUpFormElement(rowContent);
+                    @RenderSectionStart(signUpFormElement.BackgroundColor.Label, true, true)
+                    @Html.Partial($"~/Views/Partials/Elements/{rowContent.ContentType.Alias}.cshtml", rowContent)
+                    @RenderSectionEnd()
+                    break;
+                default:
+                    @RenderRowItem(rowContent, rowContent.ContentType.Alias, "1")
+                    break;
             }
         }
     }
 }
+
 
 @helper RenderRowItem(IPublishedElement rowContent, string itemsPerRow)
 {
@@ -99,13 +109,35 @@
         }
         return result;
     }
+
+    string BackgroundColorClass(string background)
+    {
+        var result = "";
+
+        switch (background)
+        {
+            case "Primary":
+                result = "has-background-primary";
+                break;
+            case "Secondary":
+                result = "has-background-info";
+                break;
+            case "Light":
+                result = "has-background-light";
+                break;
+            case "Dark":
+                result = "has-background-dark";
+                break;
+        }
+        return result;
+    }
 }
 
-@helper RenderSectionStart()
+@helper RenderSectionStart(string backgroundColorClass = "", bool isFullWidth = false, bool isCentered = false)
 {
-    @:<section class="section section-gray">
+    @:<section class="section is-medium @(isFullWidth ? "is-full-width" : "") @BackgroundColorClass(backgroundColorClass)">
         @:<div class="container">
-            @:<div class="columns is-multiline">
+            @:<div class="columns is-multiline @(isCentered ? "is-centered" : "")">
 }
 
 @helper RenderSectionEnd()

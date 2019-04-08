@@ -9,8 +9,6 @@
 
 // 2. Set your own initial variables
 $text-dark-brown: #454547;
-
-
 $grey-section:#f8f9fa;
 $gray-lighter: #f7f7f7;
 $gray-light: #dbdbdd;
@@ -31,12 +29,11 @@ $text: $text-dark-brown;
 $card-shadow: .0 0.25rem 0.125rem 0 rgba(0,0,0,0.1);
 $card-footer-border-top: 1px solid $grey-lighter;
 $footer-background-color: $gray-darker;
-
 $body-background-color: $grey-section;
-
-
+$section-padding-medium: 6rem 1.5rem;
 $panel-item-border: 0;
 $panel-heading-radius:0;
+
 .panel {
     box-shadow: $card-shadow;
     background: $white;

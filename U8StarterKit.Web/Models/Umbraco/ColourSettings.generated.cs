@@ -20,49 +20,49 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace U8StarterKit.Web.Models.Umbraco
 {
-	// Mixin Content Type with alias "contentSection"
-	/// <summary>Content Section</summary>
-	public partial interface IContentSection : IPublishedContent
+	// Mixin Content Type with alias "colourSettings"
+	/// <summary>Colour Settings</summary>
+	public partial interface IColourSettings : IPublishedElement
 	{
-		/// <summary>nestedContent</summary>
+		/// <summary>Background Color</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		IEnumerable<IPublishedElement> NestedContent { get; }
+		global::Umbraco.Core.PropertyEditors.ValueConverters.ColorPickerValueConverter.PickedColor BackgroundColor { get; }
 	}
 
-	/// <summary>Content Section</summary>
-	[PublishedModel("contentSection")]
-	public partial class ContentSection : PublishedContentModel, IContentSection
+	/// <summary>Colour Settings</summary>
+	[PublishedModel("colourSettings")]
+	public partial class ColourSettings : PublishedElementModel, IColourSettings
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		public new const string ModelTypeAlias = "contentSection";
+		public new const string ModelTypeAlias = "colourSettings";
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		public new static PublishedContentType GetModelContentType()
 			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<ContentSection, TValue>> selector)
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<ColourSettings, TValue>> selector)
 			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 #pragma warning restore 0109
 
 		// ctor
-		public ContentSection(IPublishedContent content)
+		public ColourSettings(IPublishedElement content)
 			: base(content)
 		{ }
 
 		// properties
 
 		///<summary>
-		/// nestedContent
+		/// Background Color
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("nestedContent")]
-		public IEnumerable<IPublishedElement> NestedContent => GetNestedContent(this);
+		[ImplementPropertyType("backgroundColor")]
+		public global::Umbraco.Core.PropertyEditors.ValueConverters.ColorPickerValueConverter.PickedColor BackgroundColor => GetBackgroundColor(this);
 
-		/// <summary>Static getter for nestedContent</summary>
+		/// <summary>Static getter for Background Color</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		public static IEnumerable<IPublishedElement> GetNestedContent(IContentSection that) => that.Value<IEnumerable<IPublishedElement>>("nestedContent");
+		public static global::Umbraco.Core.PropertyEditors.ValueConverters.ColorPickerValueConverter.PickedColor GetBackgroundColor(IColourSettings that) => that.Value<global::Umbraco.Core.PropertyEditors.ValueConverters.ColorPickerValueConverter.PickedColor>("backgroundColor");
 	}
 }

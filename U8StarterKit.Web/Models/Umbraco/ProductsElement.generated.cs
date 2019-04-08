@@ -22,7 +22,7 @@ namespace U8StarterKit.Web.Models.Umbraco
 {
 	/// <summary>Products Element</summary>
 	[PublishedModel("productsElement")]
-	public partial class ProductsElement : PublishedElementModel, ISectionDisplaySettings, ITitleElement
+	public partial class ProductsElement : PublishedElementModel, IColourSettings, IFooterLinkSettings, ISectionDisplaySettings, ITitleElement
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -51,6 +51,20 @@ namespace U8StarterKit.Web.Models.Umbraco
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		[ImplementPropertyType("products")]
 		public IEnumerable<IPublishedContent> Products => this.Value<IEnumerable<IPublishedContent>>("products");
+
+		///<summary>
+		/// Background Color
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
+		[ImplementPropertyType("backgroundColor")]
+		public global::Umbraco.Core.PropertyEditors.ValueConverters.ColorPickerValueConverter.PickedColor BackgroundColor => ColourSettings.GetBackgroundColor(this);
+
+		///<summary>
+		/// Footer Link
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
+		[ImplementPropertyType("footerLink")]
+		public global::Umbraco.Web.Models.Link FooterLink => FooterLinkSettings.GetFooterLink(this);
 
 		///<summary>
 		/// Items Per Row

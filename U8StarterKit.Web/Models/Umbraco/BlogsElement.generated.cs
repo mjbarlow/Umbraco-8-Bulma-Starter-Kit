@@ -22,7 +22,7 @@ namespace U8StarterKit.Web.Models.Umbraco
 {
 	/// <summary>Latest Blogs Element</summary>
 	[PublishedModel("blogsElement")]
-	public partial class BlogsElement : PublishedElementModel, ISectionDisplaySettings, ITitleElement
+	public partial class BlogsElement : PublishedElementModel, IColourSettings, IFooterLinkSettings, ISectionDisplaySettings, ITitleElement
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -58,6 +58,20 @@ namespace U8StarterKit.Web.Models.Umbraco
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		[ImplementPropertyType("itemsToShow")]
 		public decimal ItemsToShow => this.Value<decimal>("itemsToShow");
+
+		///<summary>
+		/// Background Color
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
+		[ImplementPropertyType("backgroundColor")]
+		public global::Umbraco.Core.PropertyEditors.ValueConverters.ColorPickerValueConverter.PickedColor BackgroundColor => ColourSettings.GetBackgroundColor(this);
+
+		///<summary>
+		/// Footer Link
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
+		[ImplementPropertyType("footerLink")]
+		public global::Umbraco.Web.Models.Link FooterLink => FooterLinkSettings.GetFooterLink(this);
 
 		///<summary>
 		/// Items Per Row

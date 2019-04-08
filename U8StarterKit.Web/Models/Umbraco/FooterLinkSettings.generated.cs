@@ -20,49 +20,49 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace U8StarterKit.Web.Models.Umbraco
 {
-	// Mixin Content Type with alias "contentSection"
-	/// <summary>Content Section</summary>
-	public partial interface IContentSection : IPublishedContent
+	// Mixin Content Type with alias "footerLinkSettings"
+	/// <summary>Footer Link Settings</summary>
+	public partial interface IFooterLinkSettings : IPublishedElement
 	{
-		/// <summary>nestedContent</summary>
+		/// <summary>Footer Link</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		IEnumerable<IPublishedElement> NestedContent { get; }
+		global::Umbraco.Web.Models.Link FooterLink { get; }
 	}
 
-	/// <summary>Content Section</summary>
-	[PublishedModel("contentSection")]
-	public partial class ContentSection : PublishedContentModel, IContentSection
+	/// <summary>Footer Link Settings</summary>
+	[PublishedModel("footerLinkSettings")]
+	public partial class FooterLinkSettings : PublishedElementModel, IFooterLinkSettings
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		public new const string ModelTypeAlias = "contentSection";
+		public new const string ModelTypeAlias = "footerLinkSettings";
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		public new static PublishedContentType GetModelContentType()
 			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<ContentSection, TValue>> selector)
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<FooterLinkSettings, TValue>> selector)
 			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 #pragma warning restore 0109
 
 		// ctor
-		public ContentSection(IPublishedContent content)
+		public FooterLinkSettings(IPublishedElement content)
 			: base(content)
 		{ }
 
 		// properties
 
 		///<summary>
-		/// nestedContent
+		/// Footer Link
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("nestedContent")]
-		public IEnumerable<IPublishedElement> NestedContent => GetNestedContent(this);
+		[ImplementPropertyType("footerLink")]
+		public global::Umbraco.Web.Models.Link FooterLink => GetFooterLink(this);
 
-		/// <summary>Static getter for nestedContent</summary>
+		/// <summary>Static getter for Footer Link</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		public static IEnumerable<IPublishedElement> GetNestedContent(IContentSection that) => that.Value<IEnumerable<IPublishedElement>>("nestedContent");
+		public static global::Umbraco.Web.Models.Link GetFooterLink(IFooterLinkSettings that) => that.Value<global::Umbraco.Web.Models.Link>("footerLink");
 	}
 }

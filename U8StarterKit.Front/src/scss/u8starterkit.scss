@@ -66,9 +66,29 @@
     }
 }
 
-// PRODUCTS
-.section-gray {
-    background: $grey-section;
+// Section Background
+.section {
+    &.has-background-info {
+        .has-no-background {
+            .title, .subtitle
+            {
+                color: $white;
+            }
+        }
+    }
+    &.has-background-dark {
+        .has-no-background {
+            .title, .subtitle
+            {
+                color: $white;
+            }
+        }   
+    }
+    &.has-background-primary {
+        .image {
+            background: $info;
+        }
+    }
 }
 
 // IMAGES
@@ -80,13 +100,17 @@
 // UTILITY CLASSES
 
 .has-small-spacing-bottom {
-    margin-bottom: 0.25em !important;
+    margin-bottom: 0.25rem !important;
 }
 .has-spacing-bottom {
-    margin-bottom: 1em !important;
+    margin-bottom: 1rem !important;
 }
 .has-large-spacing-bottom {
     margin-bottom: 3rem !important;
+}
+
+.has-spacing-top {
+    margin-top: 1.5rem !important;
 }
 
 .is-background {
@@ -94,6 +118,12 @@
     object-position: center center;
     height: 100%;
     width: 100%;
+}
+
+.has-equal-height {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 // VIDEO WRAPPER
