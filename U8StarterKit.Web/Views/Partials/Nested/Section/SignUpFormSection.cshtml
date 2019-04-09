@@ -6,58 +6,60 @@
    //todo: hook up form to Umbraco Forms
 }
 
-        <div class="column is-one-third">
-            <article class="has-no-background">
-                @if (Model.Title.HasValue())
-                {
-                    <p class="title">Stay up to date </p>
-                }
-                @if (Model.Subtitle.HasValue())
-                {
-                    <p class="subtitle">@Model.Subtitle @Model.Subtitle</p>
-                }
-           
-                @if (Model.Subtitle.HasValue())
-                {
-                    <p class="subtitle">@Model.Subtitle</p>
-                }
-           
-            </article>
+<div class="column is-one-third">
+    <article class="has-no-background">
+        @if (Model.Title.HasValue())
+        {
+            <h3 class="title is-3">Stay up to date </h3>
+        }
+        @if (Model.Subtitle.HasValue())
+        {
+            <div class="subtitle is-5">
+                @Model.Subtitle 
+            </div>
+        }
+   
+        @if (Model.Content.HasValue())
+        {
+            <div class="subtitle is-5">
+                @Model.Content
+            </div>
+        }
+    </article>
+</div>
+<div class="column is-one-third">
+    <article class="tile is-child notification is-light">
+        @if (Model.Title.HasValue())
+        {
+            <p class="title is-4">@Model.Title</p>
+        }
+       <div class="field">
+            <div class="control has-icons-left has-icons-right">
+                <input class="input is-medium" type="email" placeholder="Name, eg Neils Harvig">
+                <span class="icon is-left">
+                    <i class="fas fa-user fa-sm"></i>
+                </span>
+                <span class="icon is-right">
+                    <i class="fas fa-check fa-sm"></i>
+                </span>
+            </div>
         </div>
-        <div class="column is-one-third">
-            <article class="tile is-child notification is-light">
-                @if (Model.Title.HasValue())
-                {
-                    <p class="title is-4">@Model.Title</p>
-                }
-           
-                <div class="field">
-                    <div class="control has-icons-left has-icons-right">
-                        <input class="input is-medium" type="email" placeholder="Name, eg Neils Harvig">
-                        <span class="icon is-left">
-                            <i class="fas fa-user fa-sm"></i>
-                        </span>
-                        <span class="icon is-right">
-                            <i class="fas fa-check fa-sm"></i>
-                        </span>
-                    </div>
-                </div>
-                <div class="field">
-                    <div class="control has-icons-left has-icons-right">
-                        <input class="input is-medium" type="email" placeholder="Email, eg. umbraco@Umbraco.com">
-                        <span class="icon is-left">
-                            <i class="fas fa-envelope fa-sm"></i>
-                        </span>
-                        <span class="icon is-right">
-                            <i class="fas fa-check fa-sm"></i>
-                        </span>
-                    </div>
-                </div>
-                <div class="field">
-                    <div class="control">
-                        <a class="is-link button is-medium">Sign up</a>
-                    </div>
-                </div>
-            </article>
+        <div class="field">
+            <div class="control has-icons-left has-icons-right">
+                <input class="input is-medium" type="email" placeholder="Email, eg. umbraco@Umbraco.com">
+                <span class="icon is-left">
+                    <i class="fas fa-envelope fa-sm"></i>
+                </span>
+                <span class="icon is-right">
+                    <i class="fas fa-check fa-sm"></i>
+                </span>
+            </div>
         </div>
+        <div class="field">
+            <div class="control">
+                <a class="is-link button is-medium">Sign up</a>
+            </div>
+        </div>
+    </article>
+</div>
 
