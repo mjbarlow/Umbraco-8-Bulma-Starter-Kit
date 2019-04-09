@@ -533,6 +533,10 @@
     <Compile Include="Extensions\HtmlStringExtensions.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Extensions\UmbracoExtensions.cs" />
+    <Compile Include="Helpers\RazorHelper.cs" />
+    <Compile Include="Models\Umbraco\BannerSection.generated.cs">
+      <DependentUpon>Builder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Umbraco\Blog.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
@@ -547,9 +551,9 @@
       <LastGenOutput>Builder.generated.cs</LastGenOutput>
     </Compile>
     <Compile Include="Models\Umbraco\Builder.generated.cs">
-      <DependentUpon>Builder.cs</DependentUpon>
-      <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Umbraco\CallToActionSection.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
@@ -584,13 +588,13 @@
     <Compile Include="Models\Umbraco\Folder.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Umbraco\FontAwesomeComposition.generated.cs">
+      <DependentUpon>Builder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Umbraco\FooterSection.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Umbraco\HeaderSection.generated.cs">
-      <DependentUpon>Builder.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Umbraco\HeroElement.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Umbraco\HeroSection.generated.cs">
@@ -698,7 +702,7 @@
     <Content Include="Views\Partials\NavSection.cshtml" />
     <Content Include="Views\Partials\Footer.cshtml" />
     <Content Include="Views\Partials\Renderers\RenderElements.cshtml" />
-    <Content Include="Views\Partials\Elements\HeroElement.cshtml" />
+    <Content Include="Views\Partials\Nested\Section\BannerSection.cshtml" />
     <Content Include="Views\Partials\Blogs.cshtml" />
     <Content Include="Views\Partials\Nested\Section\SignUpFormSection.cshtml" />
     <Content Include="Views\Partials\Elements\PanelElement.cshtml" />

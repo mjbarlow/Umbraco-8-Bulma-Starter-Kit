@@ -1,6 +1,6 @@
 ﻿@using U8StarterKit.Web.Extensions
 @using U8StarterKit.Web.Models.Umbraco
-@using U8StarterKit.Web.Models.ViewModels
+@using U8StarterKit.Web.Helpers
 @inherits Umbraco.Web.Mvc.UmbracoViewPage<IEnumerable<IPublishedElement>>
 
 @{
@@ -76,6 +76,13 @@
                         @Html.Partial($"~/Views/Partials/Nested/Section/{rowContent.ContentType.Alias}.cshtml", rowContent)
                     @RenderSectionEnd()
                     break;
+
+                case "bannerSection":
+                    var bannerSection = new BannerSection(rowContent);
+                    @Html.Partial($"~/Views/Partials/Nested/Section/{rowContent.ContentType.Alias}.cshtml", rowContent)
+                    break;
+
+
                 default:
                     @RenderRowItem(rowContent, rowContent.ContentType.Alias, "1")
                     break;
@@ -103,16 +110,16 @@
 
 @helper RenderRowItem(IPublishedElement rowContent, string viewName, string itemsPerRow, string folder = "Section")
 {
-    <div class="column @ColumnClass(itemsPerRow)">
+    <div class="column @RazorHelper.ColumnClass(itemsPerRow)">
         @Html.Partial($"~/Views/Partials/Nested/{folder}/{viewName}.cshtml", rowContent)
     </div>
 }
 
 @helper RenderSectionStart(string backgroundColorClass = "", bool isFullWidth = false, bool isCentered = false)
 {
-    @:<section class="section is-medium @(isFullWidth ? "is-full-width" : "") @BackgroundColorClass(backgroundColorClass)">
-        @:<div class="container">
-            @:<div class="columns is-multiline @(isCentered ? "is-centered" : "")">
+@:<section class="section is-medium @(isFullWidth ? "is-full-width" : "") @RazorHelper.BackgroundColorClass(backgroundColorClass)">
+@:<div class="container">
+@:<div class="columns is-multiline @(isCentered ? "is-centered" : "")">
 }
 
 @helper RenderSectionEnd()
@@ -121,49 +128,3 @@
 @:</div>
 @:</section>
 }
-
-@functions  {
-    string ColumnClass(string itemsPerRow)
-    {
-        var result = "is-12";
-        switch (itemsPerRow)
-        {
-            case "2":
-                result = "is-6";
-                break;
-            case "3":
-                result = "is-4";
-                break;
-            case "4":
-                result = "is-3";
-                break;
-        }
-        return result;
-    }
-
-    string BackgroundColorClass(string background)
-    {
-        var result = "";
-
-        switch (background)
-        {
-            case "Primary":
-                result = "has-background-primary";
-                break;
-            case "Secondary":
-                result = "has-background-info";
-                break;
-            case "Light":
-                result = "has-background-light";
-                break;
-            case "Dark":
-                result = "has-background-dark";
-                break;
-            case "White":
-                result = "has-background-white";
-                break;
-        }
-        return result;
-    }
-}
-

@@ -1,0 +1,56 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<BannerSection>
+@using U8StarterKit.Web.Models.Umbraco
+@using U8StarterKit.Web.Extensions
+@using U8StarterKit.Web.Helpers
+
+<div class="hero hero-banner @RazorHelper.BackgroundColorClass(Model.BackgroundColor?.Label) is-medium" style="@(Model.Background.HasValue() ? "background-image: url('" + Model.Background.Url + "')" :"")">
+    <div class="hero-body">
+        <div class="container">
+            <div class="columns">
+                <div class="column">
+                    <div class="hero-banner-content">
+                        <header class="block">
+                            <h3 class="title is-1">@Model.Title</h3>
+                        </header>
+                        <div class="block is-size-4">
+                            <p>@Model.Subtitle</p>
+                        </div>
+                        <div class="block hero-bannerbuttons">
+                            @if (Model.PrimaryLink.HasValue())
+                            {
+                                <div class="buttons">
+                                    <a class="button is-mainbutton is-large" href="@Model.PrimaryLink.Url" target="@Model.PrimaryLink.Target" rel="nofollow">
+                                        <span>
+                                            <strong>@Model.PrimaryLink.Name</strong>
+                                        </span>
+                                    </a>
+                                </div>
+                            }
+                            @if (Model.SecondaryLink.HasValue())
+                            {
+                                <div class="is-size-5">
+                                    @Model.SecondaryLinkBeforeText
+                                    <a href="@Model.SecondaryLink.Url" target="@Model.SecondaryLink.Target" class="is-info" rel="nofollow">
+                                        @Model.SecondaryLink.Name
+                                    </a>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+                @if (Model.FontAwesomeClass.HasValue())
+                {
+                    <div class="column is-hidden-mobile">
+                        <div class="icon is-circle" style="font-size:@(Model.FontAwesomeSize + "px"); height:100%; width:100%;">
+                            <i class="@Model.FontAwesomeClass"></i>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+    @if (Model.Background.HasValue())
+    {
+        <div class="image-overlay"></div>
+    }
+</div>

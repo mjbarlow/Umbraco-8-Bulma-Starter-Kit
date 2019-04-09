@@ -20,26 +20,26 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace U8StarterKit.Web.Models.Umbraco
 {
-	/// <summary>Hero Element</summary>
-	[PublishedModel("heroElement")]
-	public partial class HeroElement : PublishedElementModel
+	/// <summary>Banner</summary>
+	[PublishedModel("bannerSection")]
+	public partial class BannerSection : PublishedElementModel, IColourSettingsComposition, IFontAwesomeComposition
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		public new const string ModelTypeAlias = "heroElement";
+		public new const string ModelTypeAlias = "bannerSection";
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		public new static PublishedContentType GetModelContentType()
 			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<HeroElement, TValue>> selector)
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<BannerSection, TValue>> selector)
 			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 #pragma warning restore 0109
 
 		// ctor
-		public HeroElement(IPublishedElement content)
+		public BannerSection(IPublishedElement content)
 			: base(content)
 		{ }
 
@@ -51,13 +51,6 @@ namespace U8StarterKit.Web.Models.Umbraco
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		[ImplementPropertyType("background")]
 		public IPublishedContent Background => this.Value<IPublishedContent>("background");
-
-		///<summary>
-		/// Hide Text Panel: Hide the text panel, shows the background image only.
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("hideTextPanel")]
-		public bool HideTextPanel => this.Value<bool>("hideTextPanel");
 
 		///<summary>
 		/// Primary Link
@@ -93,5 +86,26 @@ namespace U8StarterKit.Web.Models.Umbraco
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		[ImplementPropertyType("title")]
 		public string Title => this.Value<string>("title");
+
+		///<summary>
+		/// Background Color
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
+		[ImplementPropertyType("backgroundColor")]
+		public global::Umbraco.Core.PropertyEditors.ValueConverters.ColorPickerValueConverter.PickedColor BackgroundColor => ColourSettingsComposition.GetBackgroundColor(this);
+
+		///<summary>
+		/// Font Awesome Class: See the font awesome icon class name. Eg. "fas fa-cube"
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
+		[ImplementPropertyType("fontAwesomeClass")]
+		public string FontAwesomeClass => FontAwesomeComposition.GetFontAwesomeClass(this);
+
+		///<summary>
+		/// Font Awesome Size
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
+		[ImplementPropertyType("fontAwesomeSize")]
+		public string FontAwesomeSize => FontAwesomeComposition.GetFontAwesomeSize(this);
 	}
 }

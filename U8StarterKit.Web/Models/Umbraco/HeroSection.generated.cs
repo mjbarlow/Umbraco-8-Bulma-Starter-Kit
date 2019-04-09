@@ -20,18 +20,9 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace U8StarterKit.Web.Models.Umbraco
 {
-	// Mixin Content Type with alias "heroSection"
-	/// <summary>Hero Section</summary>
-	public partial interface IHeroSection : IPublishedContent
-	{
-		/// <summary>Hero Nested Content</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		IEnumerable<IPublishedElement> NestedHero { get; }
-	}
-
 	/// <summary>Hero Section</summary>
 	[PublishedModel("heroSection")]
-	public partial class HeroSection : PublishedContentModel, IHeroSection
+	public partial class HeroSection : PublishedContentModel
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -59,10 +50,6 @@ namespace U8StarterKit.Web.Models.Umbraco
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		[ImplementPropertyType("nestedHero")]
-		public IEnumerable<IPublishedElement> NestedHero => GetNestedHero(this);
-
-		/// <summary>Static getter for Hero Nested Content</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		public static IEnumerable<IPublishedElement> GetNestedHero(IHeroSection that) => that.Value<IEnumerable<IPublishedElement>>("nestedHero");
+		public IEnumerable<IPublishedElement> NestedHero => this.Value<IEnumerable<IPublishedElement>>("nestedHero");
 	}
 }

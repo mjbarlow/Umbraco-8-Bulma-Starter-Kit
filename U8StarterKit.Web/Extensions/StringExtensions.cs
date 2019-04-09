@@ -8,26 +8,10 @@ namespace U8StarterKit.Web.Extensions
 {
     public static class StringExtensions
     {
-        public static string JsonToLogString(this string value)
-        {
-            return value.Replace("\":\"", ": ").Replace("\",\"", ", ").Replace('"', ' ').Replace("{", string.Empty)
-                .Replace("}", string.Empty)
-                .Replace("[", string.Empty).Replace("]", string.Empty).Replace("  ", string.Empty).Trim();
-        }
 
         public static bool Contains(this string source, string toCheck, StringComparison comp)
         {
             return source.IndexOf(toCheck, comp) >= 0;
-        }
-
-        public static bool IsPictureUrl(this string value)
-        {
-            if (string.IsNullOrEmpty(value))
-            {
-                return false;
-            }
-
-            return Contains(value, ".jpg", StringComparison.CurrentCultureIgnoreCase);
         }
 
         public static bool HasValue(this string value)
@@ -59,8 +43,7 @@ namespace U8StarterKit.Web.Extensions
             return (T)Enum.Parse(typeof(T), value);
         }
 
-
-        public static string UrlFriendly(this string text, int maxLength = 0)
+       public static string UrlFriendly(this string text, int maxLength = 0)
         {
             // Return empty value if text is null
             if (text == null) return "";
@@ -114,7 +97,6 @@ namespace U8StarterKit.Web.Extensions
             // Remove any excess character to meet maxlength criteria
             return maxLength <= 0 || result.Length <= maxLength ? result : result.Substring(0, maxLength);
         }
-
-    
+        
     }
 }

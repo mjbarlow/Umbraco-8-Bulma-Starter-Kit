@@ -7,17 +7,23 @@
             font-weight:700;
             font-size:1.1rem;
             span {
-                background: $gray-logo;
+                background: $grey-lighter;
                 border-radius: 3em;        
             }
         }
     }
 }
+.navbar-item {
+    color: $grey-darker;
+}
 // HERO HOME
 .hero-banner {
-    background-color: $primary;
     background-repeat: no-repeat;
     background-size: cover;
+    position: relative;
+    .hero-body {
+        z-index: 115;
+    }
     .hero-bannerbuttons {
         .button {
             > span {
@@ -44,27 +50,48 @@
             padding-top: calc(1em - 1px)
             
         }
-
     }
-    .hero-banner-content {
-        background-color: $white;
-        border-radius: 6px;
-        box-shadow: 0 1.5rem 1.5rem -1.25rem rgba(10,10,10,.05);
-        display: block;
-        box-shadow: 0 3rem 3rem -1rem rgba(10,10,10,.2);
-        max-width: 520px;
-        padding: 1.5rem;
+    &.has-background-info {
+        .block , .title, strong{
+            color: $white;
+        }
+        .hero-bannerbuttons {
+            .button.is-mainbutton{
+                background-color:$primary;
+            }
+        }
+        a, i, .icon {
+            color: $primary;
+        }
     }
-   
-}
-
-@media screen and (min-width: $tablet) {
-    .hero-banner {
-        .hero-banner-content {
-            padding: 3rem;
+    &.has-background-dark {
+        .block , .title, strong{
+            color: $white;
+        }
+        .hero-bannerbuttons {
+            .button.is-mainbutton{
+                background-color:$primary;
+            }
+        }
+        a, i, .icon {
+            color: $primary;
+        }
+    }
+    &.has-background-light,
+    &.has-background-white {
+        .icon {
+            color: $primary;
         }
     }
 }
+  
+
+
+
+.subtitle {
+    color: $grey-darker;
+}
+
 
 // Section Background
 .section {
@@ -98,6 +125,17 @@
 
 
 // UTILITY CLASSES
+.image-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0,.62);
+    padding: 25px;
+    cursor: default;
+    z-index: 110;
+}
 
 .has-small-spacing-bottom {
     margin-bottom: 0.25rem !important;
