@@ -37,7 +37,7 @@
             {
                 var post = new Blogpost(postNode);
                 @Html.Raw(Model.IsHalfWidth ? "<div class=\"column is-half-tablet\">" : "")
-                    @Html.Partial("~/Views/Partials/Elements/BlogElement.cshtml", post)
+                    @Html.Partial("~/Views/Partials/Nested/Item/BlogItem.cshtml", post)
                 @Html.Raw(Model.IsHalfWidth ? "</div>" : "")
             }
         @Html.Raw(Model.IsHalfWidth ? "</div>" : "") 

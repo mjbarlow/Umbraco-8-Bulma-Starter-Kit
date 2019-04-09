@@ -3,24 +3,5 @@
 @{
     Layout = "master.cshtml";
 }
-
 @Html.Partial("~/Views/Partials/Renderers/RenderSections.cshtml", Model.NestedContent)
-       
-            @*<div class="columns">
-                <div class="column is-two-thirds-tablet">
-                    <div class="columns is-multiline">
-                        @Html.Partial("~/Views/Partials/Nested/RenderRows.cshtml", Model.NestedContent)
-                    </div>
-                </div>
-                @if (!Model.HideSidebar)
-                    {
-                        <div class="column is-one-third-tablet">
-                            <div class="tile is-ancestor">
-                                <div class="tile is-parent is-vertical">
-                                    @Html.Partial("~/Views/Partials/Nested/RenderElements.cshtml", Model.NestedSideBar)
-                                </div>
-                            </div>
-                        </div>
-                    }
-                </div>*@
        

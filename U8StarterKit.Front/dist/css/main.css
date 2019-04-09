@@ -6981,6 +6981,17 @@ label.panel-block {
   .hero-banner.has-background-light .icon, .hero-banner.has-background-white .icon {
     color: #00d1b2; }
 
+.hero-footer.has-background-info .block, .hero-footer.has-background-info .title, .hero-footer.has-background-info .subtitle, .hero-footer.has-background-info strong, .hero-footer.has-background-info p, .hero-footer.has-background-primary .block, .hero-footer.has-background-primary .title, .hero-footer.has-background-primary .subtitle, .hero-footer.has-background-primary strong, .hero-footer.has-background-primary p, .hero-footer.has-background-dark .block, .hero-footer.has-background-dark .title, .hero-footer.has-background-dark .subtitle, .hero-footer.has-background-dark strong, .hero-footer.has-background-dark p, .footer.has-background-info .block, .footer.has-background-info .title, .footer.has-background-info .subtitle, .footer.has-background-info strong, .footer.has-background-info p, .footer.has-background-primary .block, .footer.has-background-primary .title, .footer.has-background-primary .subtitle, .footer.has-background-primary strong, .footer.has-background-primary p, .footer.has-background-dark .block, .footer.has-background-dark .title, .footer.has-background-dark .subtitle, .footer.has-background-dark strong, .footer.has-background-dark p {
+  color: white; }
+
+.hero-footer.has-background-info .button, .hero-footer.has-background-primary .button, .hero-footer.has-background-dark .button, .footer.has-background-info .button, .footer.has-background-primary .button, .footer.has-background-dark .button {
+  border-color: white;
+  color: white; }
+
+.hero-footer.has-background-light .button, .hero-footer.has-background-white .button, .hero-footer.has-background-grey-lighter .button, .footer.has-background-light .button, .footer.has-background-white .button, .footer.has-background-grey-lighter .button {
+  border-color: #454547;
+  color: #454547; }
+
 .subtitle {
   color: #454547; }
 
@@ -7050,10 +7061,11 @@ label.panel-block {
   overflow: hidden;
   padding-top: 56.25%;
   position: relative; }
-  .iframe-container .iframe-container iframe {
-    border: 0;
-    height: 100%;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 100%; }
+
+.iframe-container iframe {
+  border: 0;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%; }

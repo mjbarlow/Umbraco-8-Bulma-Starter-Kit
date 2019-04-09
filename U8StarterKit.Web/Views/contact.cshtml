@@ -9,12 +9,12 @@
 
 @if (Model.MapEmbedLink.HasValue())
 {
-    <section class="section is-paddingless section-gray">
+    <section class="section is-paddingless is-fullwidth">
         <div class="container is-fluid is-marginless">
             <div class="columns">
                 <div class="column is-paddingless is-full">
                     <div class="iframe-container image is-3by1">
-                        <iframe
+                        <iframe class="iframe has-background-light"
                             frameborder="0"
                             scrolling="no"
                             marginheight="0"
@@ -26,13 +26,13 @@
             </div>
         </div>
     </section>
-    <section class="hero section is-light">
+    <section class="section has-background-dark">
         <div class="container">
             <div class="columns">
                 <div class="column">
-                    <p class="buttons">
-                        <a class="button is-outlined is-primary is-medium" href="#">View Larger Map</a>
-                        <a class="button is-medium is-primary" href="#">Get Directions</a>
+                    <p class="buttons is-centered">
+                        <a class="button is-outlined is-primary is-large" href="#">View Larger Map</a>
+                        <a class="button is-large is-primary" href="#">Get Directions</a>
                     </p>
                 </div>
             </div>

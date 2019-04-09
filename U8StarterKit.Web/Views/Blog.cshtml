@@ -12,8 +12,8 @@
         ItemsToShow = 4
     };
 }
-@Html.Partial("~/Views/Partials/SectionHeader.cshtml", new U8StarterKit.Web.Models.Umbraco.HeaderSection(Model))
-<section class="section has-spacing section-gray">
+@Html.Partial("~/Views/Partials/SectionHeader.cshtml", new HeaderSection(Model))
+<section class="section">
     <div class="container">
             @Html.Partial("~/Views/Partials/Blogs.cshtml", blog)
     </div>

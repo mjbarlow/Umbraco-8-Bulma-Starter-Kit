@@ -82,6 +82,17 @@
                     @Html.Partial($"~/Views/Partials/Nested/Section/{rowContent.ContentType.Alias}.cshtml", rowContent)
                     break;
 
+                case "bannerStripSection":
+                    var bannerStripSection = new BannerStripSection(rowContent);
+                    @Html.Partial($"~/Views/Partials/Nested/Section/{rowContent.ContentType.Alias}.cshtml", rowContent)
+                    break;
+                
+                case "singleLineSection":
+                    var singleLineSection = new SingleLineSection(rowContent);
+                    @Html.Partial($"~/Views/Partials/Nested/Section/{rowContent.ContentType.Alias}.cshtml", rowContent)
+                    break;
+
+
 
                 default:
                     @RenderRowItem(rowContent, rowContent.ContentType.Alias, "1")

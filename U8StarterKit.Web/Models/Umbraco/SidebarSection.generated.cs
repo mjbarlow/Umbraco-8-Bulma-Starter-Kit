@@ -20,22 +20,9 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace U8StarterKit.Web.Models.Umbraco
 {
-	// Mixin Content Type with alias "sidebarSection"
-	/// <summary>Sidebar Section</summary>
-	public partial interface ISidebarSection : IPublishedContent
-	{
-		/// <summary>hideSidebar</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		bool HideSidebar { get; }
-
-		/// <summary>Sidebar Nested Content</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		IEnumerable<IPublishedElement> NestedSideBar { get; }
-	}
-
 	/// <summary>Sidebar Section</summary>
 	[PublishedModel("sidebarSection")]
-	public partial class SidebarSection : PublishedContentModel, ISidebarSection
+	public partial class SidebarSection : PublishedContentModel
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -63,21 +50,13 @@ namespace U8StarterKit.Web.Models.Umbraco
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		[ImplementPropertyType("hideSidebar")]
-		public bool HideSidebar => GetHideSidebar(this);
-
-		/// <summary>Static getter for hideSidebar</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		public static bool GetHideSidebar(ISidebarSection that) => that.Value<bool>("hideSidebar");
+		public bool HideSidebar => this.Value<bool>("hideSidebar");
 
 		///<summary>
 		/// Sidebar Nested Content
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		[ImplementPropertyType("nestedSideBar")]
-		public IEnumerable<IPublishedElement> NestedSideBar => GetNestedSideBar(this);
-
-		/// <summary>Static getter for Sidebar Nested Content</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		public static IEnumerable<IPublishedElement> GetNestedSideBar(ISidebarSection that) => that.Value<IEnumerable<IPublishedElement>>("nestedSideBar");
+		public IEnumerable<IPublishedElement> NestedSideBar => this.Value<IEnumerable<IPublishedElement>>("nestedSideBar");
 	}
 }

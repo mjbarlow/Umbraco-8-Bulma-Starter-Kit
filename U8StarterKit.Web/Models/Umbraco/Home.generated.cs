@@ -22,7 +22,7 @@ namespace U8StarterKit.Web.Models.Umbraco
 {
 	/// <summary>Home</summary>
 	[PublishedModel("home")]
-	public partial class Home : PublishedContentModel, IContentSection, IFooterSection, ISidebarSection
+	public partial class Home : PublishedContentModel, IContentSection, IFooterSection
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -86,19 +86,5 @@ namespace U8StarterKit.Web.Models.Umbraco
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		[ImplementPropertyType("nestedFooter")]
 		public IEnumerable<IPublishedElement> NestedFooter => FooterSection.GetNestedFooter(this);
-
-		///<summary>
-		/// hideSidebar: Sidebar hidden, content is full width.
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("hideSidebar")]
-		public bool HideSidebar => SidebarSection.GetHideSidebar(this);
-
-		///<summary>
-		/// Sidebar Nested Content
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("nestedSideBar")]
-		public IEnumerable<IPublishedElement> NestedSideBar => SidebarSection.GetNestedSideBar(this);
 	}
 }

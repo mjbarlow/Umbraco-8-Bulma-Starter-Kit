@@ -1,11 +1,11 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<FeatureElement>
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<BannerStripSection>
 @using U8StarterKit.Web.Models.Umbraco
 @using U8StarterKit.Web.Extensions
+@using U8StarterKit.Web.Helpers
 
 
-
-<section class="section hero is-primary is-spaced hero-footer">
-    <div class="container">
+<section class="section hero @RazorHelper.BackgroundColorClass(Model.BackgroundColor.Label.ToString()) is-spaced hero-footer">
+    <div class="container has-no-background">
         @if (Model.Title.HasValue())
         {
             <h2 class="title">@Model.Title</h2>
@@ -16,7 +16,7 @@
         }
         @if (Model.Link.HasValue())
         {
-            <a class="button is-outlined is-primary is-inverted is-medium" target="@Model.Link.Target"  href="@Model.Link.Url">
+            <a class="button is-outlined is-link is-medium" target="@Model.Link.Target" href="@Model.Link.Url">
                 @Model.Link.Name
             </a>
         }

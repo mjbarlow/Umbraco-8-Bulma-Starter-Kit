@@ -1,0 +1,15 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<SingleLineSection>
+@using U8StarterKit.Web.Models.Umbraco
+@using U8StarterKit.Web.Extensions
+@using U8StarterKit.Web.Helpers
+
+@if (Model.Text.HasValue())
+{
+    <footer class="footer @RazorHelper.BackgroundColorClass(Model.BackgroundColor?.Label.ToString())">
+        <div class="container has-no-background">
+            <div class="content has-text-centered">
+                @Model.Text
+            </div>
+        </div>
+    </footer>
+}

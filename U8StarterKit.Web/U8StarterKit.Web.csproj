@@ -537,6 +537,9 @@
     <Compile Include="Models\Umbraco\BannerSection.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Umbraco\BannerStripSection.generated.cs">
+      <DependentUpon>Builder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Umbraco\Blog.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
@@ -551,9 +554,9 @@
       <LastGenOutput>Builder.generated.cs</LastGenOutput>
     </Compile>
     <Compile Include="Models\Umbraco\Builder.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>Builder.cs</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="Models\Umbraco\CallToActionSection.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
@@ -577,9 +580,6 @@
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Umbraco\ContentSection.generated.cs">
-      <DependentUpon>Builder.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Umbraco\FeatureElement.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Umbraco\File.generated.cs">
@@ -648,7 +648,7 @@
     <Compile Include="Models\Umbraco\SignUpFormSection.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\Umbraco\SingleLineElement.generated.cs">
+    <Compile Include="Models\Umbraco\SingleLineSection.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Umbraco\TitleComponent.generated.cs">
@@ -700,7 +700,6 @@
     <Content Include="Views\Partials\HomeHero.cshtml" />
     <Content Include="Views\Partials\Grid\Bulma-Fluid-Home.cshtml" />
     <Content Include="Views\Partials\NavSection.cshtml" />
-    <Content Include="Views\Partials\Footer.cshtml" />
     <Content Include="Views\Partials\Renderers\RenderElements.cshtml" />
     <Content Include="Views\Partials\Nested\Section\BannerSection.cshtml" />
     <Content Include="Views\Partials\Blogs.cshtml" />
@@ -708,8 +707,8 @@
     <Content Include="Views\Partials\Elements\PanelElement.cshtml" />
     <Content Include="Views\Partials\Nested\Section\ProductListSection.cshtml" />
     <Content Include="Views\Partials\Nested\Item\BlogItem.cshtml" />
-    <Content Include="Views\Partials\Elements\FeatureElement.cshtml" />
-    <Content Include="Views\Partials\Elements\SingleLineElement.cshtml" />
+    <Content Include="Views\Partials\Nested\Section\BannerStripSection.cshtml" />
+    <Content Include="Views\Partials\Nested\Section\SingleLineSection.cshtml" />
     <Content Include="Views\Partials\Nested\Item\ProductItem.cshtml" />
     <Content Include="Views\Partials\Nested\Section\PeopleListSection.cshtml" />
     <Content Include="Views\Partials\Renderers\RenderSections.cshtml" />

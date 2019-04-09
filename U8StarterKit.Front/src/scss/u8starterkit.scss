@@ -85,13 +85,32 @@
     }
 }
   
-
-
+// HERO FOOTER
+.hero-footer, .footer {
+    &.has-background-info, 
+    &.has-background-primary,
+    &.has-background-dark {
+        .block , .title, .subtitle, strong, p{
+            color: $white;
+        }
+        .button {
+            border-color: $white;
+            color: $white;
+        }
+    }
+    &.has-background-light,
+    &.has-background-white,
+    &.has-background-grey-lighter {
+        .button {
+            border-color: $dark;
+            color: $dark;
+        }
+    }
+}
 
 .subtitle {
     color: $grey-darker;
 }
-
 
 // Section Background
 .section {
@@ -186,7 +205,7 @@
     overflow: hidden;
     padding-top: 56.25%;
     position: relative;
-
+}
     .iframe-container iframe {
         border: 0;
         height: 100%;
@@ -195,4 +214,3 @@
         top: 0;
         width: 100%;
     }
-}
