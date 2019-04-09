@@ -20,49 +20,57 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace U8StarterKit.Web.Models.Umbraco
 {
-	// Mixin Content Type with alias "sectionDisplaySettings"
-	/// <summary>Section Display Settings</summary>
-	public partial interface ISectionDisplaySettings : IPublishedElement
-	{
-		/// <summary>Items Per Row</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		object ItemsPerRow { get; }
-	}
-
-	/// <summary>Section Display Settings</summary>
-	[PublishedModel("sectionDisplaySettings")]
-	public partial class SectionDisplaySettings : PublishedElementModel, ISectionDisplaySettings
+	/// <summary>Call To Action</summary>
+	[PublishedModel("callToActionSection")]
+	public partial class CallToActionSection : PublishedElementModel, IColourSettingsComposition
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		public new const string ModelTypeAlias = "sectionDisplaySettings";
+		public new const string ModelTypeAlias = "callToActionSection";
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		public new static PublishedContentType GetModelContentType()
 			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<SectionDisplaySettings, TValue>> selector)
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<CallToActionSection, TValue>> selector)
 			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 #pragma warning restore 0109
 
 		// ctor
-		public SectionDisplaySettings(IPublishedElement content)
+		public CallToActionSection(IPublishedElement content)
 			: base(content)
 		{ }
 
 		// properties
 
 		///<summary>
-		/// Items Per Row
+		/// Content
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("itemsPerRow")]
-		public object ItemsPerRow => GetItemsPerRow(this);
+		[ImplementPropertyType("content")]
+		public IHtmlString Content => this.Value<IHtmlString>("content");
 
-		/// <summary>Static getter for Items Per Row</summary>
+		///<summary>
+		/// Link
+		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		public static object GetItemsPerRow(ISectionDisplaySettings that) => that.Value("itemsPerRow");
+		[ImplementPropertyType("link")]
+		public global::Umbraco.Web.Models.Link Link => this.Value<global::Umbraco.Web.Models.Link>("link");
+
+		///<summary>
+		/// Title
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
+		[ImplementPropertyType("title")]
+		public string Title => this.Value<string>("title");
+
+		///<summary>
+		/// Background Color
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
+		[ImplementPropertyType("backgroundColor")]
+		public global::Umbraco.Core.PropertyEditors.ValueConverters.ColorPickerValueConverter.PickedColor BackgroundColor => ColourSettingsComposition.GetBackgroundColor(this);
 	}
 }

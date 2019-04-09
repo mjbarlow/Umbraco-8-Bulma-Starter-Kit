@@ -20,71 +20,64 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace U8StarterKit.Web.Models.Umbraco
 {
-	/// <summary>People Element</summary>
-	[PublishedModel("peopleElement")]
-	public partial class PeopleElement : PublishedElementModel, IColourSettings, IFooterLinkSettings, ISectionDisplaySettings, ITitleElement
+	// Mixin Content Type with alias "titleComponent"
+	/// <summary>Title Component</summary>
+	public partial interface ITitleComponent : IPublishedElement
+	{
+		/// <summary>Subtitle</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
+		IHtmlString SubTitle { get; }
+
+		/// <summary>Name</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
+		string Title { get; }
+	}
+
+	/// <summary>Title Component</summary>
+	[PublishedModel("titleComponent")]
+	public partial class TitleComponent : PublishedElementModel, ITitleComponent
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		public new const string ModelTypeAlias = "peopleElement";
+		public new const string ModelTypeAlias = "titleComponent";
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		public new static PublishedContentType GetModelContentType()
 			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<PeopleElement, TValue>> selector)
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<TitleComponent, TValue>> selector)
 			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 #pragma warning restore 0109
 
 		// ctor
-		public PeopleElement(IPublishedElement content)
+		public TitleComponent(IPublishedElement content)
 			: base(content)
 		{ }
 
 		// properties
 
 		///<summary>
-		/// People: Pick the products to display.
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("people")]
-		public IEnumerable<IPublishedContent> People => this.Value<IEnumerable<IPublishedContent>>("people");
-
-		///<summary>
-		/// Background Color
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("backgroundColor")]
-		public global::Umbraco.Core.PropertyEditors.ValueConverters.ColorPickerValueConverter.PickedColor BackgroundColor => ColourSettings.GetBackgroundColor(this);
-
-		///<summary>
-		/// Footer Link
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("footerLink")]
-		public global::Umbraco.Web.Models.Link FooterLink => FooterLinkSettings.GetFooterLink(this);
-
-		///<summary>
-		/// Items Per Row
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("itemsPerRow")]
-		public object ItemsPerRow => SectionDisplaySettings.GetItemsPerRow(this);
-
-		///<summary>
 		/// Subtitle
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		[ImplementPropertyType("subTitle")]
-		public IHtmlString SubTitle => TitleElement.GetSubTitle(this);
+		public IHtmlString SubTitle => GetSubTitle(this);
+
+		/// <summary>Static getter for Subtitle</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
+		public static IHtmlString GetSubTitle(ITitleComponent that) => that.Value<IHtmlString>("subTitle");
 
 		///<summary>
 		/// Name
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		[ImplementPropertyType("title")]
-		public string Title => TitleElement.GetTitle(this);
+		public string Title => GetTitle(this);
+
+		/// <summary>Static getter for Name</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
+		public static string GetTitle(ITitleComponent that) => that.Value<string>("title");
 	}
 }

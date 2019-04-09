@@ -4,14 +4,9 @@
     Layout = "master.cshtml";
 }
 
-@Html.Partial("~/Views/Partials/Nested/RenderElements.cshtml", Model.NestedHero)
-
-        @if (Model.HideSidebar)
-        { 
-            @Html.Partial("~/Views/Partials/Nested/RenderRow.cshtml", Model.NestedContent)
-        }
-        else
-        {
+@Html.Partial("~/Views/Partials/Renderers/RenderElements.cshtml", Model.NestedHero)
+@Html.Partial("~/Views/Partials/Renderers/RenderSections.cshtml", Model.NestedContent)
+       
             @*<div class="columns">
                 <div class="column is-two-thirds-tablet">
                     <div class="columns is-multiline">
@@ -29,4 +24,4 @@
                         </div>
                     }
                 </div>*@
-        }
+       

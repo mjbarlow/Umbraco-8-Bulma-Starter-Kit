@@ -507,7 +507,7 @@
     <Content Include="uSync\v8\Templates\person.config" />
     <Content Include="uSync\v8\Templates\product.config" />
     <Content Include="uSync\v8\Templates\products.config" />
-    <Content Include="Views\Partials\Elements\BlogsElement.cshtml" />
+    <Content Include="Views\Partials\Nested\Section\BlogListSection.cshtml" />
     <Content Include="uSync\v8\ContentTypes\featureelement.config" />
     <Content Include="uSync\v8\ContentTypes\footersection.config" />
     <Content Include="uSync\v8\ContentTypes\peopleelement.config" />
@@ -519,9 +519,9 @@
     <Content Include="uSync\v8\DataTypes\U8SKProductFeaturesNestedContent.config" />
     <Content Include="uSync\v8\DataTypes\U8SKProductPickerMultiple.config" />
     <Content Include="uSync\v8\_Actions\actions_DataTypes.config" />
-    <Content Include="Views\Partials\Elements\CtaElement.cshtml" />
-    <Content Include="Views\Partials\Elements\TitleElement.cshtml" />
-    <None Include="Views\Partials\Elements\PersonElement.cshtml" />
+    <Content Include="Views\Partials\Nested\Section\CallToActionSection.cshtml" />
+    <Content Include="Views\Partials\Nested\Component\TitleComponent.cshtml" />
+    <None Include="Views\Partials\Nested\Item\PersonItem.cshtml" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -536,10 +536,10 @@
     <Compile Include="Models\Umbraco\Blog.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\Umbraco\Blogpost.generated.cs">
+    <Compile Include="Models\Umbraco\BlogListSection.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\Umbraco\BlogsElement.generated.cs">
+    <Compile Include="Models\Umbraco\Blogpost.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Umbraco\Builder.cs">
@@ -551,10 +551,16 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
+    <Compile Include="Models\Umbraco\CallToActionSection.generated.cs">
+      <DependentUpon>Builder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Umbraco\CarouselElement.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\Umbraco\ColourSettings.generated.cs">
+    <Compile Include="Models\Umbraco\ColourSettingsComposition.generated.cs">
+      <DependentUpon>Builder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Umbraco\ColumnSettingsComposition.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Umbraco\Contact.generated.cs">
@@ -569,9 +575,6 @@
     <Compile Include="Models\Umbraco\ContentSection.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\Umbraco\CtaElement.generated.cs">
-      <DependentUpon>Builder.cs</DependentUpon>
-    </Compile>
     <Compile Include="Models\Umbraco\FeatureElement.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
@@ -579,9 +582,6 @@
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Umbraco\Folder.generated.cs">
-      <DependentUpon>Builder.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Umbraco\FooterLinkSettings.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Umbraco\FooterSection.generated.cs">
@@ -602,6 +602,9 @@
     <Compile Include="Models\Umbraco\Image.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Umbraco\LinkComponent.generated.cs">
+      <DependentUpon>Builder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Umbraco\Member.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
@@ -614,7 +617,7 @@
     <Compile Include="Models\Umbraco\People.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\Umbraco\PeopleElement.generated.cs">
+    <Compile Include="Models\Umbraco\PeopleListSection.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Umbraco\Person.generated.cs">
@@ -626,28 +629,25 @@
     <Compile Include="Models\Umbraco\ProductFeatureElement.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\Umbraco\Products.generated.cs">
+    <Compile Include="Models\Umbraco\ProductListSection.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\Umbraco\ProductsElement.generated.cs">
+    <Compile Include="Models\Umbraco\Products.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Umbraco\RowElement.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\Umbraco\SectionDisplaySettings.generated.cs">
-      <DependentUpon>Builder.cs</DependentUpon>
-    </Compile>
     <Compile Include="Models\Umbraco\SidebarSection.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\Umbraco\SignUpFormElement.generated.cs">
+    <Compile Include="Models\Umbraco\SignUpFormSection.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Umbraco\SingleLineElement.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\Umbraco\TitleElement.generated.cs">
+    <Compile Include="Models\Umbraco\TitleComponent.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\ViewModels\BlogsViewModel.cs" />
@@ -697,20 +697,19 @@
     <Content Include="Views\Partials\Grid\Bulma-Fluid-Home.cshtml" />
     <Content Include="Views\Partials\NavSection.cshtml" />
     <Content Include="Views\Partials\Footer.cshtml" />
-    <Content Include="Views\Partials\Nested\RenderElements.cshtml" />
+    <Content Include="Views\Partials\Renderers\RenderElements.cshtml" />
     <Content Include="Views\Partials\Elements\HeroElement.cshtml" />
     <Content Include="Views\Partials\Blogs.cshtml" />
-    <Content Include="Views\Partials\Elements\SignUpFormElement.cshtml" />
+    <Content Include="Views\Partials\Nested\Section\SignUpFormSection.cshtml" />
     <Content Include="Views\Partials\Elements\PanelElement.cshtml" />
-    <Content Include="Views\Partials\Elements\ProductsElement.cshtml" />
-    <Content Include="Views\Partials\Elements\BlogElement.cshtml" />
+    <Content Include="Views\Partials\Nested\Section\ProductListSection.cshtml" />
+    <Content Include="Views\Partials\Nested\Item\BlogItem.cshtml" />
     <Content Include="Views\Partials\Elements\FeatureElement.cshtml" />
     <Content Include="Views\Partials\Elements\SingleLineElement.cshtml" />
-    <Content Include="Views\Partials\Elements\ProductElement.cshtml" />
-    <Content Include="Views\Partials\Elements\PeopleElement.cshtml" />
-    <Content Include="Views\Partials\Nested\RenderSection.cshtml" />
-    <Content Include="Views\Partials\Nested\RenderRow.cshtml" />
-    <Content Include="Views\Partials\Elements\FooterLinkElement.cshtml" />
+    <Content Include="Views\Partials\Nested\Item\ProductItem.cshtml" />
+    <Content Include="Views\Partials\Nested\Section\PeopleListSection.cshtml" />
+    <Content Include="Views\Partials\Renderers\RenderSections.cshtml" />
+    <Content Include="Views\Partials\Nested\Component\LinkComponent.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

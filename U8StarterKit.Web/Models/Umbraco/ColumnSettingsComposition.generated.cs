@@ -20,50 +20,49 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace U8StarterKit.Web.Models.Umbraco
 {
-	/// <summary>Sign Up Form Element</summary>
-	[PublishedModel("signUpFormElement")]
-	public partial class SignUpFormElement : PublishedElementModel, IColourSettings
+	// Mixin Content Type with alias "columnSettingsComposition"
+	/// <summary>Column Settings Composition</summary>
+	public partial interface IColumnSettingsComposition : IPublishedElement
+	{
+		/// <summary>Items Per Row</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
+		object ItemsPerRow { get; }
+	}
+
+	/// <summary>Column Settings Composition</summary>
+	[PublishedModel("columnSettingsComposition")]
+	public partial class ColumnSettingsComposition : PublishedElementModel, IColumnSettingsComposition
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		public new const string ModelTypeAlias = "signUpFormElement";
+		public new const string ModelTypeAlias = "columnSettingsComposition";
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		public new static PublishedContentType GetModelContentType()
 			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<SignUpFormElement, TValue>> selector)
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<ColumnSettingsComposition, TValue>> selector)
 			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 #pragma warning restore 0109
 
 		// ctor
-		public SignUpFormElement(IPublishedElement content)
+		public ColumnSettingsComposition(IPublishedElement content)
 			: base(content)
 		{ }
 
 		// properties
 
 		///<summary>
-		/// Subtitle
+		/// Items Per Row
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("subtitle")]
-		public string Subtitle => this.Value<string>("subtitle");
+		[ImplementPropertyType("itemsPerRow")]
+		public object ItemsPerRow => GetItemsPerRow(this);
 
-		///<summary>
-		/// Title
-		///</summary>
+		/// <summary>Static getter for Items Per Row</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("title")]
-		public string Title => this.Value<string>("title");
-
-		///<summary>
-		/// Background Color
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("backgroundColor")]
-		public global::Umbraco.Core.PropertyEditors.ValueConverters.ColorPickerValueConverter.PickedColor BackgroundColor => ColourSettings.GetBackgroundColor(this);
+		public static object GetItemsPerRow(IColumnSettingsComposition that) => that.Value("itemsPerRow");
 	}
 }

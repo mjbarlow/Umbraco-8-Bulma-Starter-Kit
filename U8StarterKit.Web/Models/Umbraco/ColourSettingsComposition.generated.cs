@@ -20,35 +20,35 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace U8StarterKit.Web.Models.Umbraco
 {
-	// Mixin Content Type with alias "colourSettings"
-	/// <summary>Colour Settings</summary>
-	public partial interface IColourSettings : IPublishedElement
+	// Mixin Content Type with alias "colourSettingsComposition"
+	/// <summary>Colour Settings Composition</summary>
+	public partial interface IColourSettingsComposition : IPublishedElement
 	{
 		/// <summary>Background Color</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		global::Umbraco.Core.PropertyEditors.ValueConverters.ColorPickerValueConverter.PickedColor BackgroundColor { get; }
 	}
 
-	/// <summary>Colour Settings</summary>
-	[PublishedModel("colourSettings")]
-	public partial class ColourSettings : PublishedElementModel, IColourSettings
+	/// <summary>Colour Settings Composition</summary>
+	[PublishedModel("colourSettingsComposition")]
+	public partial class ColourSettingsComposition : PublishedElementModel, IColourSettingsComposition
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		public new const string ModelTypeAlias = "colourSettings";
+		public new const string ModelTypeAlias = "colourSettingsComposition";
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		public new static PublishedContentType GetModelContentType()
 			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<ColourSettings, TValue>> selector)
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<ColourSettingsComposition, TValue>> selector)
 			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 #pragma warning restore 0109
 
 		// ctor
-		public ColourSettings(IPublishedElement content)
+		public ColourSettingsComposition(IPublishedElement content)
 			: base(content)
 		{ }
 
@@ -63,6 +63,6 @@ namespace U8StarterKit.Web.Models.Umbraco
 
 		/// <summary>Static getter for Background Color</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		public static global::Umbraco.Core.PropertyEditors.ValueConverters.ColorPickerValueConverter.PickedColor GetBackgroundColor(IColourSettings that) => that.Value<global::Umbraco.Core.PropertyEditors.ValueConverters.ColorPickerValueConverter.PickedColor>("backgroundColor");
+		public static global::Umbraco.Core.PropertyEditors.ValueConverters.ColorPickerValueConverter.PickedColor GetBackgroundColor(IColourSettingsComposition that) => that.Value<global::Umbraco.Core.PropertyEditors.ValueConverters.ColorPickerValueConverter.PickedColor>("backgroundColor");
 	}
 }
