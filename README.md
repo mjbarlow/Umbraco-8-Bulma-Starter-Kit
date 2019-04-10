@@ -13,6 +13,12 @@ It has the following content templates:
 * Contact page
  
 ## Release Notes:
+**v1.0.3** (09/04/2019)
+* Made nested content simpler
+* Updated homepage template and sections
+* Fixed install issue
+* Added JS responsive menu
+* Add a "columns picker" property editor
 
 **v1.0.2** (31.03.2019):
 * New contact page template
