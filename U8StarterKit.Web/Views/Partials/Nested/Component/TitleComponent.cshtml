@@ -2,15 +2,17 @@
 @using U8StarterKit.Web.Models.Umbraco
 @using U8StarterKit.Web.Extensions
 
-<div class="columns is-centered">
-    <div class="column is-two-thirds has-text-centered has-spacing-bottom has-no-background">
-        @if (Model.Title.HasValue())
-        {
-            <h2 class="title is-size-3 is-size-1-tablet">@Model.Title</h2>
-        }
-        @if (Model.SubTitle.HasValue())
-        {
-            <div class="subtitle is-size-5 is-size-4-tablet">@Model.SubTitle</div>
-        }
+<div class="column is-12">
+    <div class="columns is-centered">
+        <div class="column is-two-thirds has-text-centered has-spacing-bottom has-no-background">
+            @if (Model.Title.HasValue())
+            {
+                <h2 class="title is-size-3 is-size-1-tablet">@Model.Title</h2>
+            }
+            @if (Model.SubTitle.HasValue())
+            {
+                <div class="subtitle is-size-5 is-size-4-tablet">@Model.SubTitle</div>
+            }
+        </div>
     </div>
 </div>

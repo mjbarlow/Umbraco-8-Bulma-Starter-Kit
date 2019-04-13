@@ -2,6 +2,8 @@
 @using U8StarterKit.Web.Models.Umbraco
 @using U8StarterKit.Web.Extensions
 
+
+@SectionHelper.RenderSectionStart(Model.BackgroundColor.Label, true)
 <div class="columns is-centered">
     <div class="column has-no-background is-two-thirds has-text-centered">
         @if (Model.Title.HasValue())
@@ -20,5 +22,6 @@
         }
     </div>
 </div>
+@SectionHelper.RenderSectionEnd()
 
 

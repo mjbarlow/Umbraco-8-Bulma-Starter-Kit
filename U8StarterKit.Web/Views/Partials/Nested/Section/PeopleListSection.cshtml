@@ -1,8 +1,18 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<PeopleListSection>
 @using U8StarterKit.Web.Models.Umbraco
 
+
+@SectionHelper.RenderSectionStart(Model.BackgroundColor.Label)
+@Html.Partial($"~/Views/Partials/Nested/Component/TitleComponent.cshtml", new TitleComponent(Model))
+
 @foreach (var personNode in Model.People)
 {
-    var person = new Person(personNode);
-    @Html.Partial("~/Views/Partials/Elements/PersonElement.cshtml", person)
+    <div class="column @RazorHelper.ColumnClass(Model.ItemsPerRow?.ToString())">
+        @Html.Partial($"~/Views/Partials/Nested/Item/PersonItem.cshtml", personNode)
+    </div>
 }
+
+@Html.Partial($"~/Views/Partials/Nested/Component/LinkComponent.cshtml", new LinkComponent(Model))
+@SectionHelper.RenderSectionEnd()
+
+

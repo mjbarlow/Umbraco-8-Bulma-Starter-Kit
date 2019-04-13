@@ -20,57 +20,64 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace U8StarterKit.Web.Models.Umbraco
 {
-	/// <summary>Panel Element</summary>
-	[PublishedModel("panelElement")]
-	public partial class PanelElement : PublishedElementModel
+	// Mixin Content Type with alias "navigation"
+	/// <summary>Navigation</summary>
+	public partial interface INavigation : IPublishedContent
+	{
+		/// <summary>Left Navigation</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
+		IEnumerable<global::Umbraco.Web.Models.Link> LeftNavigation { get; }
+
+		/// <summary>Right Navigation</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
+		IEnumerable<global::Umbraco.Web.Models.Link> RightNavigation { get; }
+	}
+
+	/// <summary>Navigation</summary>
+	[PublishedModel("navigation")]
+	public partial class Navigation : PublishedContentModel, INavigation
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		public new const string ModelTypeAlias = "panelElement";
+		public new const string ModelTypeAlias = "navigation";
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		public new static PublishedContentType GetModelContentType()
 			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<PanelElement, TValue>> selector)
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Navigation, TValue>> selector)
 			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 #pragma warning restore 0109
 
 		// ctor
-		public PanelElement(IPublishedElement content)
+		public Navigation(IPublishedContent content)
 			: base(content)
 		{ }
 
 		// properties
 
 		///<summary>
-		/// Content
+		/// Left Navigation: Pick links for the left navigation.
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("content")]
-		public IHtmlString Content => this.Value<IHtmlString>("content");
+		[ImplementPropertyType("leftNavigation")]
+		public IEnumerable<global::Umbraco.Web.Models.Link> LeftNavigation => GetLeftNavigation(this);
+
+		/// <summary>Static getter for Left Navigation</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
+		public static IEnumerable<global::Umbraco.Web.Models.Link> GetLeftNavigation(INavigation that) => that.Value<IEnumerable<global::Umbraco.Web.Models.Link>>("leftNavigation");
 
 		///<summary>
-		/// Link
+		/// Right Navigation: Pick links for the right navigation.
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("link")]
-		public global::Umbraco.Web.Models.Link Link => this.Value<global::Umbraco.Web.Models.Link>("link");
+		[ImplementPropertyType("rightNavigation")]
+		public IEnumerable<global::Umbraco.Web.Models.Link> RightNavigation => GetRightNavigation(this);
 
-		///<summary>
-		/// Subtitle
-		///</summary>
+		/// <summary>Static getter for Right Navigation</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("subtitle")]
-		public string Subtitle => this.Value<string>("subtitle");
-
-		///<summary>
-		/// Title
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("title")]
-		public string Title => this.Value<string>("title");
+		public static IEnumerable<global::Umbraco.Web.Models.Link> GetRightNavigation(INavigation that) => that.Value<IEnumerable<global::Umbraco.Web.Models.Link>>("rightNavigation");
 	}
 }

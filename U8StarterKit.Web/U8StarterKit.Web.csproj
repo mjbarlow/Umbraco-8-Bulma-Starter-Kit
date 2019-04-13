@@ -521,6 +521,8 @@
     <Content Include="uSync\v8\_Actions\actions_DataTypes.config" />
     <Content Include="Views\Partials\Nested\Section\CallToActionSection.cshtml" />
     <Content Include="Views\Partials\Nested\Component\TitleComponent.cshtml" />
+    <Content Include="App_Code\RazorHelper.cshtml" />
+    <Content Include="App_Code\SectionHelper.cshtml" />
     <None Include="Views\Partials\Nested\Item\PersonItem.cshtml" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -533,7 +535,9 @@
     <Compile Include="Extensions\HtmlStringExtensions.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Extensions\UmbracoExtensions.cs" />
-    <Compile Include="Helpers\RazorHelper.cs" />
+    <Compile Include="Models\Umbraco\AppConfig.generated.cs">
+      <DependentUpon>Builder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Umbraco\BannerSection.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
@@ -559,9 +563,6 @@
       <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="Models\Umbraco\CallToActionSection.generated.cs">
-      <DependentUpon>Builder.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Umbraco\CarouselElement.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Umbraco\ColourSettingsComposition.generated.cs">
@@ -612,10 +613,10 @@
     <Compile Include="Models\Umbraco\Member.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\Umbraco\NavigationBase.generated.cs">
+    <Compile Include="Models\Umbraco\Navigation.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\Umbraco\PanelElement.generated.cs">
+    <Compile Include="Models\Umbraco\NavigationBase.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Umbraco\People.generated.cs">
@@ -630,16 +631,10 @@
     <Compile Include="Models\Umbraco\Product.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\Umbraco\ProductFeatureElement.generated.cs">
-      <DependentUpon>Builder.cs</DependentUpon>
-    </Compile>
     <Compile Include="Models\Umbraco\ProductListSection.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Umbraco\Products.generated.cs">
-      <DependentUpon>Builder.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Umbraco\RowElement.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Umbraco\SidebarSection.generated.cs">
@@ -654,6 +649,7 @@
     <Compile Include="Models\Umbraco\TitleComponent.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\ViewModels\BlogItemViewModel.cs" />
     <Compile Include="Models\ViewModels\BlogsViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -676,8 +672,6 @@
     <Content Include="Views\contact.cshtml" />
     <Content Include="Views\contentPage.cshtml" />
     <Content Include="Views\home.cshtml" />
-    <Content Include="Views\MacroPartials\FeaturedProducts.cshtml" />
-    <Content Include="Views\MacroPartials\LatestBlogposts.cshtml" />
     <Content Include="Views\master.cshtml" />
     <Content Include="Views\Partials\CategoryLinks.cshtml" />
     <Content Include="Views\Partials\Grid\Bulma-Fluid.cshtml" />
@@ -724,7 +718,9 @@
     <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.2.6.1\analyzers\dotnet\cs\Microsoft.CodeAnalysis.Analyzers.dll" />
     <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.2.6.1\analyzers\dotnet\cs\Microsoft.CodeAnalysis.CSharp.Analyzers.dll" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Views\MacroPartials\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

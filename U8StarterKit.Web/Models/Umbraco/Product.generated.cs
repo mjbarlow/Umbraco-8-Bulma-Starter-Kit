@@ -60,13 +60,6 @@ namespace U8StarterKit.Web.Models.Umbraco
 		public string Description => this.Value<string>("description");
 
 		///<summary>
-		/// Features
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("features")]
-		public IEnumerable<ProductFeatureElement> Features => this.Value<IEnumerable<ProductFeatureElement>>("features");
-
-		///<summary>
 		/// Full Description
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]

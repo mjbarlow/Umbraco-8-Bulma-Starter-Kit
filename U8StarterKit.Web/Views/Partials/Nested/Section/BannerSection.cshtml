@@ -1,18 +1,14 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<BannerSection>
 @using U8StarterKit.Web.Models.Umbraco
 @using U8StarterKit.Web.Extensions
-@using U8StarterKit.Web.Helpers
+@using System.Linq
 
 <div class="hero hero-banner @RazorHelper.BackgroundColorClass(Model.BackgroundColor?.Label) is-medium image is-3by1">
-   @if (Model.Background.HasValue())
-   {
-       <img srcset="@Model.Background.GetCropUrl(480) 480w, 
-             @Model.Background.GetCropUrl(640) 640w, 
-             @Model.Background.GetCropUrl(960) 960w,
-             @Model.Background.GetCropUrl(1280) 1280w"
-            src="@Model.Background.Url" alt="@Model.Title" class="is-background">
-   }
-   <div class="hero-body">
+    @if (Model.Background.HasValue())
+    {
+        @RazorHelper.ResponsiveImage(Model.Background, Model.Title, "is-background")
+    }
+    <div class="hero-body">
         <div class="container">
             <div class="columns">
                 <div class="column">

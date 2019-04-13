@@ -1,32 +1,33 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<Blogpost>
-@using U8StarterKit.Web.Models.Umbraco
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<BlogItemViewModel>
 @using U8StarterKit.Web.Extensions
+@using U8StarterKit.Web.Models.ViewModels
+
+
 
 <div class="card has-equal-height">
     <div class="image-card">
         <div class="image has-spacing image is-16by9">
-            @if(Model.PostImage.HasValue())
+            @if (Model.BlogItem.PostImage.HasValue())
             {
-                <img src="@Model.PostImage.Url" class="is-background" />
+                @RazorHelper.ResponsiveImage(Model.BlogItem.PostImage, Model.BlogItem.PageTitle, "is-background", Model.ItemsPerRow)
             }
         </div>
     </div>
     <div class="card-content">
         <div class="content">
-            @if (Model.PageTitle.HasValue())
+            @if (Model.BlogItem.PageTitle.HasValue())
             {
-                <h3 class="title">@Model.PageTitle</h3>
+                <h3 class="title">@Model.BlogItem.PageTitle</h3>
             }
-            <p class="subtitle">@Model.CreateDate.ToShortDateString()</p>
+            <p class="subtitle">@Model.BlogItem.CreateDate.ToShortDateString()</p>
             <div class="has-spacing-bottom">
-                @Html.Partial("~/Views/Partials/CategoryLinks.cshtml", Model.Categories)
+                @Html.Partial("~/Views/Partials/CategoryLinks.cshtml", Model.BlogItem.Categories)
             </div>
-            @if (Model.Excerpt.HasValue())
+            @if (Model.BlogItem.Excerpt.HasValue())
             {
-                <p>@Model.Excerpt</p>
+                <p>@Model.BlogItem.Excerpt</p>
             }
-            <a href="@Model.Url" class="button is-link">Read more</a>
+            <a href="@Model.BlogItem.Url" class="button is-link">Read more</a>
         </div>
     </div>
 </div>
-                   

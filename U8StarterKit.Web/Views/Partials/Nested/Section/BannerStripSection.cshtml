@@ -1,14 +1,12 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<BannerStripSection>
 @using U8StarterKit.Web.Models.Umbraco
 @using U8StarterKit.Web.Extensions
-@using U8StarterKit.Web.Helpers
-
 
 <section class="section hero @RazorHelper.BackgroundColorClass(Model.BackgroundColor.Label.ToString()) is-spaced hero-footer">
     <div class="container has-no-background">
         @if (Model.Title.HasValue())
         {
-            <h2 class="title is-size-3 is-size-1-tablet">@Model.Title</h2>
+            <h2 class="title is-size-3 is-size-2-tablet">@Model.Title</h2>
         }
         @if (Model.Content.HasValue())
         {

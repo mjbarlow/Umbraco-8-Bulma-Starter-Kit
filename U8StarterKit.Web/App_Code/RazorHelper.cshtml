@@ -1,0 +1,75 @@
+﻿@using Umbraco.Core.Models.PublishedContent
+@using Umbraco.Web
+
+
+@helper ResponsiveImage(IPublishedContent image, string alt = "", string classList = "", string itemsPerRow = "1")
+{
+    var srcSet = "";
+    switch (itemsPerRow)
+    {
+        case "4":
+        case "3":
+        case "2":
+            srcSet = image.GetCropUrl(480) + " 480w, " +
+                     image.GetCropUrl(769) + " 1480w";
+            break;
+
+        default:
+        srcSet = image.GetCropUrl(480) + " 480w, " +
+                 image.GetCropUrl(769) + " 769w, " +
+                 image.GetCropUrl(1024) + " 1024w, " +
+                 image.GetCropUrl(1216) + " 1216w, " +
+                 image.GetCropUrl(1408) + " 1408w";
+        break;
+    }
+    <img srcset="@srcSet" alt="@alt" class="@classList">
+}
+
+@functions
+{
+    public static string BackgroundColorClass(string background)
+    {
+        var result = "";
+
+        switch (background)
+        {
+            case "Primary":
+                result = "has-background-primary";
+                break;
+            case "Secondary":
+                result = "has-background-info";
+                break;
+            case "Light":
+                result = "has-background-light";
+                break;
+            case "Dark":
+                result = "has-background-dark";
+                break;
+            case "White":
+                result = "has-background-white";
+                break;
+            case "Gray":
+                result = "has-background-grey-lighter";
+                break;
+        }
+        return result;
+    }
+
+    public static string ColumnClass(string itemsPerRow)
+    {
+        var result = "is-12";
+        switch (itemsPerRow)
+        {
+            case "2":
+                result = "is-6";
+                break;
+            case "3":
+                result = "is-4";
+                break;
+            case "4":
+                result = "is-6-tablet is-3-desktop";
+                break;
+        }
+        return result;
+    }
+}

@@ -44,12 +44,5 @@ namespace U8StarterKit.Web.Models.Umbraco
 		{ }
 
 		// properties
-
-		///<summary>
-		/// Hero Nested Content
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("nestedHero")]
-		public IEnumerable<IPublishedElement> NestedHero => this.Value<IEnumerable<IPublishedElement>>("nestedHero");
 	}
 }

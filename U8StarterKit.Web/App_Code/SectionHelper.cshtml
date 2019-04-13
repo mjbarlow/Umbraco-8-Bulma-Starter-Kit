@@ -1,0 +1,19 @@
+﻿@using Umbraco.Core.Models.PublishedContent
+@using Umbraco.Web
+@using U8StarterKit.Web.Models.Umbraco
+@using Umbraco.Web.Mvc
+@using System.Web.Mvc.Html
+
+@helper RenderSectionStart(string backgroundColorClass = "", bool isFullWidth = false, bool isCentered = false)
+{
+    @:<section class="section is-medium @(isFullWidth ? "is-full-width" : "") @RazorHelper.BackgroundColorClass(backgroundColorClass)">
+        @:<div class="container">
+            @:<div class="columns is-multiline @(isCentered ? "is-centered" : "")">
+}
+
+@helper RenderSectionEnd()
+{
+@:</div>
+@:</div>
+@:</section>
+}

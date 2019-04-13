@@ -20,36 +20,50 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace U8StarterKit.Web.Models.Umbraco
 {
-	/// <summary>Section</summary>
-	[PublishedModel("rowElement")]
-	public partial class RowElement : PublishedElementModel
+	/// <summary>Application Configuration</summary>
+	[PublishedModel("appConfig")]
+	public partial class AppConfig : PublishedContentModel, INavigation
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		public new const string ModelTypeAlias = "rowElement";
+		public new const string ModelTypeAlias = "appConfig";
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		public new static PublishedContentType GetModelContentType()
 			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<RowElement, TValue>> selector)
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<AppConfig, TValue>> selector)
 			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 #pragma warning restore 0109
 
 		// ctor
-		public RowElement(IPublishedElement content)
+		public AppConfig(IPublishedContent content)
 			: base(content)
 		{ }
 
 		// properties
 
 		///<summary>
-		/// Sections
+		/// Font Awesome
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("rowContent")]
-		public IEnumerable<IPublishedElement> RowContent => this.Value<IEnumerable<IPublishedElement>>("rowContent");
+		[ImplementPropertyType("fontAwesome")]
+		public string FontAwesome => this.Value<string>("fontAwesome");
+
+		///<summary>
+		/// Left Navigation: Pick links for the left navigation.
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
+		[ImplementPropertyType("leftNavigation")]
+		public IEnumerable<global::Umbraco.Web.Models.Link> LeftNavigation => Navigation.GetLeftNavigation(this);
+
+		///<summary>
+		/// Right Navigation: Pick links for the right navigation.
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
+		[ImplementPropertyType("rightNavigation")]
+		public IEnumerable<global::Umbraco.Web.Models.Link> RightNavigation => Navigation.GetRightNavigation(this);
 	}
 }
