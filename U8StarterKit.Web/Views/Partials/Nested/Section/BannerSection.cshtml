@@ -3,16 +3,24 @@
 @using U8StarterKit.Web.Extensions
 @using U8StarterKit.Web.Helpers
 
-<div class="hero hero-banner @RazorHelper.BackgroundColorClass(Model.BackgroundColor?.Label) is-medium" style="@(Model.Background.HasValue() ? "background-image: url('" + Model.Background.Url + "')" :"")">
-    <div class="hero-body">
+<div class="hero hero-banner @RazorHelper.BackgroundColorClass(Model.BackgroundColor?.Label) is-medium image is-3by1">
+   @if (Model.Background.HasValue())
+   {
+       <img srcset="@Model.Background.GetCropUrl(480) 480w, 
+             @Model.Background.GetCropUrl(640) 640w, 
+             @Model.Background.GetCropUrl(960) 960w,
+             @Model.Background.GetCropUrl(1280) 1280w"
+            src="@Model.Background.Url" alt="@Model.Title" class="is-background">
+   }
+   <div class="hero-body">
         <div class="container">
             <div class="columns">
                 <div class="column">
                     <div class="hero-banner-content">
                         <header class="block">
-                            <h3 class="title is-1">@Model.Title</h3>
+                            <h3 class="title is-size-3 is-size-1-tablet">@Model.Title</h3>
                         </header>
-                        <div class="block is-size-4">
+                        <div class="block is-size-5 is-size-4-tablet">
                             <p>@Model.Subtitle</p>
                         </div>
                         <div class="block hero-bannerbuttons">
@@ -28,7 +36,7 @@
                             }
                             @if (Model.SecondaryLink.HasValue())
                             {
-                                <div class="is-size-5">
+                                <div class="is-size-5 is-size-4-tablet">
                                     @Model.SecondaryLinkBeforeText
                                     <a href="@Model.SecondaryLink.Url" target="@Model.SecondaryLink.Target" class="is-info" rel="nofollow">
                                         @Model.SecondaryLink.Name

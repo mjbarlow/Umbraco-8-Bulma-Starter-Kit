@@ -6942,44 +6942,56 @@ label.panel-block {
 .navbar-item {
   color: #454547; }
 
-.hero-banner {
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative; }
-  .hero-banner .hero-body {
-    z-index: 115; }
-  .hero-banner .hero-bannerbuttons .button {
+.hero-banner.is-medium {
+  min-height: 500px; }
+  .hero-banner.is-medium .hero-body {
+    z-index: 115;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    display: flex; }
+    @media screen and (min-width: 769px) and (max-width: 1087px) {
+      .hero-banner.is-medium .hero-body {
+        padding-top: 6rem;
+        padding-bottom: 6rem; } }
+  .hero-banner.is-medium .hero-bannerbuttons .button {
     height: auto;
     padding-bottom: calc(1em - 1px);
     padding-top: calc(1em - 1px); }
-    .hero-banner .hero-bannerbuttons .button > span > em {
+    .hero-banner.is-medium .hero-bannerbuttons .button > span > em {
       display: block;
       font-size: .5em;
       font-style: normal;
       line-height: 1em;
       margin-bottom: .5em;
       opacity: .5; }
-    .hero-banner .hero-bannerbuttons .button img {
+    .hero-banner.is-medium .hero-bannerbuttons .button img {
       display: block;
       max-height: 24px; }
-    .hero-banner .hero-bannerbuttons .button.is-mainbutton {
+    .hero-banner.is-medium .hero-bannerbuttons .button.is-mainbutton {
       background-color: #3273dc;
       border-color: transparent;
       color: #ffffff; }
-  .hero-banner.has-background-info .block, .hero-banner.has-background-info .title, .hero-banner.has-background-info strong {
+  .hero-banner.is-medium.has-background-info .block, .hero-banner.is-medium.has-background-info .title, .hero-banner.is-medium.has-background-info strong {
     color: white; }
-  .hero-banner.has-background-info .hero-bannerbuttons .button.is-mainbutton {
+  .hero-banner.is-medium.has-background-info .hero-bannerbuttons .button.is-mainbutton {
     background-color: #00d1b2; }
-  .hero-banner.has-background-info a, .hero-banner.has-background-info i, .hero-banner.has-background-info .icon {
+  .hero-banner.is-medium.has-background-info a, .hero-banner.is-medium.has-background-info i, .hero-banner.is-medium.has-background-info .icon {
     color: #00d1b2; }
-  .hero-banner.has-background-dark .block, .hero-banner.has-background-dark .title, .hero-banner.has-background-dark strong {
+  .hero-banner.is-medium.has-background-dark .block, .hero-banner.is-medium.has-background-dark .title, .hero-banner.is-medium.has-background-dark strong {
     color: white; }
-  .hero-banner.has-background-dark .hero-bannerbuttons .button.is-mainbutton {
+  .hero-banner.is-medium.has-background-dark .hero-bannerbuttons .button.is-mainbutton {
     background-color: #00d1b2; }
-  .hero-banner.has-background-dark a, .hero-banner.has-background-dark i, .hero-banner.has-background-dark .icon {
+  .hero-banner.is-medium.has-background-dark a, .hero-banner.is-medium.has-background-dark i, .hero-banner.is-medium.has-background-dark .icon {
     color: #00d1b2; }
-  .hero-banner.has-background-light .icon, .hero-banner.has-background-white .icon {
+  .hero-banner.is-medium.has-background-light .icon, .hero-banner.is-medium.has-background-white .icon {
     color: #00d1b2; }
+  @media screen and (min-width: 769px), print {
+    .hero-banner.is-medium {
+      min-height: 670px; } }
 
 .hero-footer.has-background-info .block, .hero-footer.has-background-info .title, .hero-footer.has-background-info .subtitle, .hero-footer.has-background-info strong, .hero-footer.has-background-info p, .hero-footer.has-background-primary .block, .hero-footer.has-background-primary .title, .hero-footer.has-background-primary .subtitle, .hero-footer.has-background-primary strong, .hero-footer.has-background-primary p, .hero-footer.has-background-dark .block, .hero-footer.has-background-dark .title, .hero-footer.has-background-dark .subtitle, .hero-footer.has-background-dark strong, .hero-footer.has-background-dark p, .footer.has-background-info .block, .footer.has-background-info .title, .footer.has-background-info .subtitle, .footer.has-background-info strong, .footer.has-background-info p, .footer.has-background-primary .block, .footer.has-background-primary .title, .footer.has-background-primary .subtitle, .footer.has-background-primary strong, .footer.has-background-primary p, .footer.has-background-dark .block, .footer.has-background-dark .title, .footer.has-background-dark .subtitle, .footer.has-background-dark strong, .footer.has-background-dark p {
   color: white; }
