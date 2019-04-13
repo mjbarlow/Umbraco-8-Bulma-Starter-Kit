@@ -4,11 +4,11 @@ using System.Linq;
 using System.Web;
 using U8StarterKit.Web.Models.Umbraco;
 
-namespace U8StarterKit.Web.Models.ViewModels
+
+namespace U8StarterKit.Web.Models.Umbraco
 {
-    public class BlogItemViewModel
+    public partial class Blogpost : ISectionSettings
     {
-        public Blogpost BlogItem { get; set; }
         public string ItemsPerRow { get; set; }
     }
 }

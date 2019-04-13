@@ -71,7 +71,7 @@ namespace U8StarterKit.Web.Models.Umbraco
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		[ImplementPropertyType("image")]
-		public Image Image => this.Value<Image>("image");
+		public IPublishedContent Image => this.Value<IPublishedContent>("image");
 
 		///<summary>
 		/// Price

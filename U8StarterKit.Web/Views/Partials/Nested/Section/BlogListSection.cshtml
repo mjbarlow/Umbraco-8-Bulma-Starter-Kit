@@ -1,6 +1,5 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<BlogListSection>
 @using U8StarterKit.Web.Models.Umbraco
-@using U8StarterKit.Web.Models.ViewModels
 
 @{
     // get the list of blogs
@@ -14,13 +13,9 @@
 
 @foreach (var blogItem in blogs)
 {
-    var blogItemViewModel = new BlogItemViewModel()
-    {
-        BlogItem = blogItem,
-        ItemsPerRow = itemsPerRow
-    };
+    blogItem.ItemsPerRow = itemsPerRow;
     <div class="column @RazorHelper.ColumnClass(itemsPerRow)">
-        @Html.Partial($"~/Views/Partials/Nested/Item/BlogItem.cshtml", blogItemViewModel)
+        @Html.Partial($"~/Views/Partials/Nested/Item/BlogItem.cshtml", blogItem)
     </div>
 }
 @Html.Partial($"~/Views/Partials/Nested/Component/LinkComponent.cshtml", new LinkComponent(Model))

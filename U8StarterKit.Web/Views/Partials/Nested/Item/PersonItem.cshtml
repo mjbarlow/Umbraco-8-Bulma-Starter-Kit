@@ -4,10 +4,10 @@
 
 <div class="card has-equal-height">
     <div class="image-card" style="position:relative;">
-        <figure class="image image is-3by2 ">
+        <figure class="image image is-3by2">
             @if (Model.Photo.HasValue())
             {
-                <img class="is-background" src="@Model.Photo.Url" alt="@Model.Name">
+                @RazorHelper.ResponsiveImage(Model.Photo, Model.Name, "is-background", Model.ItemsPerRow)
             }
         </figure>
     </div>
