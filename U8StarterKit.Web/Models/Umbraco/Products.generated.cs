@@ -22,7 +22,7 @@ namespace U8StarterKit.Web.Models.Umbraco
 {
 	/// <summary>Products</summary>
 	[PublishedModel("products")]
-	public partial class Products : PublishedContentModel, IHeaderSection, INavigationBase
+	public partial class Products : PublishedContentModel, IHeaderSection, IListingPageBase, INavigationBase
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -65,6 +65,20 @@ namespace U8StarterKit.Web.Models.Umbraco
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		[ImplementPropertyType("headerTitle")]
 		public string HeaderTitle => HeaderSection.GetHeaderTitle(this);
+
+		///<summary>
+		/// Background Color
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
+		[ImplementPropertyType("backgroundColor")]
+		public global::Umbraco.Core.PropertyEditors.ValueConverters.ColorPickerValueConverter.PickedColor BackgroundColor => ListingPageBase.GetBackgroundColor(this);
+
+		///<summary>
+		/// Items Per Row
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
+		[ImplementPropertyType("itemsPerRow")]
+		public object ItemsPerRow => ListingPageBase.GetItemsPerRow(this);
 
 		///<summary>
 		/// Keywords: Keywords that describe the content of the page. This is considered optional since most modern search engines don't use this anymore

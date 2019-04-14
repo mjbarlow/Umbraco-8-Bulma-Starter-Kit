@@ -22,7 +22,7 @@ namespace U8StarterKit.Web.Models.Umbraco
 {
 	/// <summary>Blog</summary>
 	[PublishedModel("blog")]
-	public partial class Blog : PublishedContentModel, IContentBase, IHeaderSection, INavigationBase
+	public partial class Blog : PublishedContentModel, IContentBase, IHeaderSection, IListingPageBase, INavigationBase
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -56,8 +56,8 @@ namespace U8StarterKit.Web.Models.Umbraco
 		/// How many posts should be shown?
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("howManyPostsShouldBeShown")]
-		public decimal HowManyPostsShouldBeShown => this.Value<decimal>("howManyPostsShouldBeShown");
+		[ImplementPropertyType("itemsToShow")]
+		public decimal ItemsToShow => this.Value<decimal>("itemsToShow");
 
 		///<summary>
 		/// Content
@@ -79,6 +79,20 @@ namespace U8StarterKit.Web.Models.Umbraco
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		[ImplementPropertyType("headerTitle")]
 		public string HeaderTitle => HeaderSection.GetHeaderTitle(this);
+
+		///<summary>
+		/// Background Color
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
+		[ImplementPropertyType("backgroundColor")]
+		public global::Umbraco.Core.PropertyEditors.ValueConverters.ColorPickerValueConverter.PickedColor BackgroundColor => ListingPageBase.GetBackgroundColor(this);
+
+		///<summary>
+		/// Items Per Row
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
+		[ImplementPropertyType("itemsPerRow")]
+		public object ItemsPerRow => ListingPageBase.GetItemsPerRow(this);
 
 		///<summary>
 		/// Keywords: Keywords that describe the content of the page. This is considered optional since most modern search engines don't use this anymore

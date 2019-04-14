@@ -6,18 +6,14 @@
     var products = Model.Children.Select(x => new Product(x));
 }
 @Html.Partial("~/Views/Partials/SectionHeader.cshtml", new U8StarterKit.Web.Models.Umbraco.HeaderSection(Model))
-<section class="section">
-    <div class="container">
-        <div class="columns is-multiline">
-            @if (products.HasValue())
-            {
-                foreach (Product product in products)
-                {
-                    <div class="column is-3">
-                        @Html.Partial("~/Views/Partials/Nested/Item/ProductItem.cshtml", product)
-                    </div>
-                }
-            }
+@SectionHelper.RenderSectionStart(Model.BackgroundColor?.Label, true)
+@if (products.HasValue())
+{
+    foreach (Product product in products)
+    {
+        <div class="column @RazorHelper.ColumnClass(Model.ItemsPerRow?.ToString())">
+            @Html.Partial("~/Views/Partials/Nested/Item/ProductItem.cshtml", product)
         </div>
-    </div>
-</section>
+    }
+}
+@SectionHelper.RenderSectionEnd()

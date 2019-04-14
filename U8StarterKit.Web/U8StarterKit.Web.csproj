@@ -564,6 +564,11 @@
       <Generator>UmbracoModelsBuilder</Generator>
       <LastGenOutput>Builder.generated.cs</LastGenOutput>
     </Compile>
+    <Compile Include="Models\Models\Product.cs" />
+    <Compile Include="Models\Models\Person.cs" />
+    <Compile Include="Models\Models\ISectionSettings.cs" />
+    <Compile Include="Models\Models\BlogPost.cs" />
+    <Compile Include="Models\Models\BlogsViewModel.cs" />
     <Compile Include="Models\Umbraco\Builder.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
       <DesignTime>True</DesignTime>
@@ -617,6 +622,9 @@
     <Compile Include="Models\Umbraco\LinkComponent.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Umbraco\ListingPageBase.generated.cs">
+      <DependentUpon>Builder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Umbraco\Member.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
@@ -656,11 +664,6 @@
     <Compile Include="Models\Umbraco\TitleComponent.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\ViewModels\Product.cs" />
-    <Compile Include="Models\ViewModels\Person.cs" />
-    <Compile Include="Models\ViewModels\ISectionSettings.cs" />
-    <Compile Include="Models\ViewModels\BlogPost.cs" />
-    <Compile Include="Models\ViewModels\BlogsViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -701,12 +704,10 @@
     <Content Include="Views\Partials\Grid\Editors\Base.cshtml" />
     <Content Include="Views\Partials\Grid\Bootstrap3.cshtml" />
     <Content Include="Views\Partials\Grid\Bootstrap3-Fluid.cshtml" />
-    <Content Include="Views\Partials\HomeHero.cshtml" />
     <Content Include="Views\Partials\Grid\Bulma-Fluid-Home.cshtml" />
     <Content Include="Views\Partials\NavSection.cshtml" />
     <Content Include="Views\Partials\Renderers\RenderElements.cshtml" />
     <Content Include="Views\Partials\Nested\Section\BannerSection.cshtml" />
-    <Content Include="Views\Partials\Blogs.cshtml" />
     <Content Include="Views\Partials\Nested\Section\SignUpFormSection.cshtml" />
     <Content Include="Views\Partials\Elements\PanelElement.cshtml" />
     <Content Include="Views\Partials\Nested\Section\ProductListSection.cshtml" />
