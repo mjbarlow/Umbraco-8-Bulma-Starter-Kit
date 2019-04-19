@@ -1,8 +1,9 @@
-﻿
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using Umbraco.Core.Models.PublishedContent;
 using Umbraco.Web.Models;
+using FaLinksPropertyEditor.PropertyValueConverters;
+
 
 namespace U8StarterKit.Web.Extensions
 {
@@ -30,6 +31,11 @@ namespace U8StarterKit.Web.Extensions
         public static bool HasValue(this IPublishedElement content)
         {
             return content != null;
+        }
+
+        public static bool HasValue(this FaLink content)
+        {
+            return content != null; 
         }
     }
 }

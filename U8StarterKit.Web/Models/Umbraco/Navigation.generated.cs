@@ -24,13 +24,21 @@ namespace U8StarterKit.Web.Models.Umbraco
 	/// <summary>Navigation</summary>
 	public partial interface INavigation : IPublishedContent
 	{
-		/// <summary>Left Navigation</summary>
+		/// <summary>Brand Logo</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		IEnumerable<global::Umbraco.Web.Models.Link> LeftNavigation { get; }
+		IEnumerable<FaLinksPropertyEditor.PropertyValueConverters.FaLink> BrandLogo { get; }
 
-		/// <summary>Right Navigation</summary>
+		/// <summary>Left Nav</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		IEnumerable<global::Umbraco.Web.Models.Link> RightNavigation { get; }
+		IEnumerable<FaLinksPropertyEditor.PropertyValueConverters.FaLink> LeftNav { get; }
+
+		/// <summary>Right Nav</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
+		IEnumerable<FaLinksPropertyEditor.PropertyValueConverters.FaLink> RightNav { get; }
+
+		/// <summary>Utility Links</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
+		IEnumerable<FaLinksPropertyEditor.PropertyValueConverters.FaLink> UtilityLinks { get; }
 	}
 
 	/// <summary>Navigation</summary>
@@ -59,25 +67,47 @@ namespace U8StarterKit.Web.Models.Umbraco
 		// properties
 
 		///<summary>
-		/// Left Navigation: Pick links for the left navigation.
+		/// Brand Logo: Pick Font Awesome Logo
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("leftNavigation")]
-		public IEnumerable<global::Umbraco.Web.Models.Link> LeftNavigation => GetLeftNavigation(this);
+		[ImplementPropertyType("brandLogo")]
+		public IEnumerable<FaLinksPropertyEditor.PropertyValueConverters.FaLink> BrandLogo => GetBrandLogo(this);
 
-		/// <summary>Static getter for Left Navigation</summary>
+		/// <summary>Static getter for Brand Logo</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		public static IEnumerable<global::Umbraco.Web.Models.Link> GetLeftNavigation(INavigation that) => that.Value<IEnumerable<global::Umbraco.Web.Models.Link>>("leftNavigation");
+		public static IEnumerable<FaLinksPropertyEditor.PropertyValueConverters.FaLink> GetBrandLogo(INavigation that) => that.Value<IEnumerable<FaLinksPropertyEditor.PropertyValueConverters.FaLink>>("brandLogo");
 
 		///<summary>
-		/// Right Navigation: Pick links for the right navigation.
+		/// Left Nav
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("rightNavigation")]
-		public IEnumerable<global::Umbraco.Web.Models.Link> RightNavigation => GetRightNavigation(this);
+		[ImplementPropertyType("leftNav")]
+		public IEnumerable<FaLinksPropertyEditor.PropertyValueConverters.FaLink> LeftNav => GetLeftNav(this);
 
-		/// <summary>Static getter for Right Navigation</summary>
+		/// <summary>Static getter for Left Nav</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		public static IEnumerable<global::Umbraco.Web.Models.Link> GetRightNavigation(INavigation that) => that.Value<IEnumerable<global::Umbraco.Web.Models.Link>>("rightNavigation");
+		public static IEnumerable<FaLinksPropertyEditor.PropertyValueConverters.FaLink> GetLeftNav(INavigation that) => that.Value<IEnumerable<FaLinksPropertyEditor.PropertyValueConverters.FaLink>>("leftNav");
+
+		///<summary>
+		/// Right Nav
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
+		[ImplementPropertyType("rightNav")]
+		public IEnumerable<FaLinksPropertyEditor.PropertyValueConverters.FaLink> RightNav => GetRightNav(this);
+
+		/// <summary>Static getter for Right Nav</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
+		public static IEnumerable<FaLinksPropertyEditor.PropertyValueConverters.FaLink> GetRightNav(INavigation that) => that.Value<IEnumerable<FaLinksPropertyEditor.PropertyValueConverters.FaLink>>("rightNav");
+
+		///<summary>
+		/// Utility Links: Add utility links, eg. "sign up", "log in"
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
+		[ImplementPropertyType("utilityLinks")]
+		public IEnumerable<FaLinksPropertyEditor.PropertyValueConverters.FaLink> UtilityLinks => GetUtilityLinks(this);
+
+		/// <summary>Static getter for Utility Links</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
+		public static IEnumerable<FaLinksPropertyEditor.PropertyValueConverters.FaLink> GetUtilityLinks(INavigation that) => that.Value<IEnumerable<FaLinksPropertyEditor.PropertyValueConverters.FaLink>>("utilityLinks");
 	}
 }

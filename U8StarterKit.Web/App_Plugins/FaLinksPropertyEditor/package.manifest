@@ -1,0 +1,38 @@
+﻿{
+	propertyEditors: [
+	{
+		alias: "FaLinksPropertyEditor",
+		name: "Font Awesome Links",
+		icon: "icon-columns",
+		group: "lists",
+		editor: {
+			valueType: "TEXT",
+			view: "~/App_Plugins/FaLinksPropertyEditor/falinks.propertyeditor.html"
+		},
+		prevalues: {
+			   "fields": [
+          {
+            "label": "Primary Class Dropdown",
+            "description": "Add key/value pairs for primary class dropdown",
+            "key": "primaryClassItems",
+            "view": "~/App_Plugins/FaLinksPropertyEditor/falinks.prevalues.html"
+		  },
+		  {
+            "label": "Secondary Class Dropdown",
+            "description": "Add key/value pairs for secondary class dropdown",
+            "key": "secondaryClassItems",
+            "view": "~/App_Plugins/FaLinksPropertyEditor/falinks.prevalues.html"
+		  },
+		  ]
+		  }
+		}
+	],
+	javascript: [
+		'~/App_Plugins/FaLinksPropertyEditor/js/falinks.propertyeditor.controller.js',
+		'~/App_Plugins/FaLinksPropertyEditor/js/falinks.picker.controller.js',
+		'~/App_Plugins/FaLinksPropertyEditor/js/falinks.prevalues.controller.js',
+	],
+	css: [
+		'~/App_Plugins/FaLinksPropertyEditor/css/falinks.style.css'
+	]
+}	

@@ -22,7 +22,7 @@ namespace U8StarterKit.Web.Models.Umbraco
 {
 	/// <summary>Application Configuration</summary>
 	[PublishedModel("appConfig")]
-	public partial class AppConfig : PublishedContentModel, INavigation
+	public partial class AppConfig : PublishedContentModel, IFooterSection, INavigation
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -46,24 +46,38 @@ namespace U8StarterKit.Web.Models.Umbraco
 		// properties
 
 		///<summary>
-		/// Font Awesome
+		/// Nested Footer
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("fontAwesome")]
-		public string FontAwesome => this.Value<string>("fontAwesome");
+		[ImplementPropertyType("nestedFooter")]
+		public IEnumerable<IPublishedElement> NestedFooter => FooterSection.GetNestedFooter(this);
 
 		///<summary>
-		/// Left Navigation: Pick links for the left navigation.
+		/// Brand Logo: Pick Font Awesome Logo
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("leftNavigation")]
-		public IEnumerable<global::Umbraco.Web.Models.Link> LeftNavigation => Navigation.GetLeftNavigation(this);
+		[ImplementPropertyType("brandLogo")]
+		public IEnumerable<FaLinksPropertyEditor.PropertyValueConverters.FaLink> BrandLogo => Navigation.GetBrandLogo(this);
 
 		///<summary>
-		/// Right Navigation: Pick links for the right navigation.
+		/// Left Nav
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("rightNavigation")]
-		public IEnumerable<global::Umbraco.Web.Models.Link> RightNavigation => Navigation.GetRightNavigation(this);
+		[ImplementPropertyType("leftNav")]
+		public IEnumerable<FaLinksPropertyEditor.PropertyValueConverters.FaLink> LeftNav => Navigation.GetLeftNav(this);
+
+		///<summary>
+		/// Right Nav
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
+		[ImplementPropertyType("rightNav")]
+		public IEnumerable<FaLinksPropertyEditor.PropertyValueConverters.FaLink> RightNav => Navigation.GetRightNav(this);
+
+		///<summary>
+		/// Utility Links: Add utility links, eg. "sign up", "log in"
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
+		[ImplementPropertyType("utilityLinks")]
+		public IEnumerable<FaLinksPropertyEditor.PropertyValueConverters.FaLink> UtilityLinks => Navigation.GetUtilityLinks(this);
 	}
 }
