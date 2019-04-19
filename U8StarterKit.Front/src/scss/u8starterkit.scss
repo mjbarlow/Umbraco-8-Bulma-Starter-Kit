@@ -131,7 +131,7 @@
 .section {
     &.has-background-info {
         .has-no-background {
-            .title, .subtitle
+            .title, .subtitle, ul, li
             {
                 color: $white;
             }
@@ -139,7 +139,7 @@
     }
     &.has-background-dark {
         .has-no-background {
-            .title, .subtitle
+            .title, .subtitle, ul, li
             {
                 color: $white;
             }

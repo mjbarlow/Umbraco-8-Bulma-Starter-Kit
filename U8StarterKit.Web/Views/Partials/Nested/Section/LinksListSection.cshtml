@@ -1,0 +1,16 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<LinksListSection>
+@using U8StarterKit.Web.Models.Umbraco
+@using U8StarterKit.Web.Extensions
+
+
+
+@SectionHelper.RenderSectionStart(Model.BackgroundColor.Label)
+
+@foreach (var linksList in Model.Links)
+{
+    <div class="column @RazorHelper.ColumnClass(Model.ItemsPerRow?.ToString())">
+        @Html.Partial($"~/Views/Partials/Nested/Item/LinksList.cshtml", linksList)
+    </div>
+}
+
+@SectionHelper.RenderSectionEnd()

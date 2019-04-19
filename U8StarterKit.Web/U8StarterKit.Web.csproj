@@ -535,6 +535,7 @@
     <Content Include="uSync\v8\_Actions\actions_ContentTypes.config" />
     <Content Include="uSync\v8\_Actions\actions_Macros.config" />
     <Content Include="Views\ListingPageBase.cshtml" />
+    <Content Include="Views\Partials\Nested\Item\LinksList.cshtml" />
     <None Include="Views\Partials\Nested\Item\PersonItem.cshtml" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -600,6 +601,9 @@
     <Compile Include="Models\Umbraco\ContentSection.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Umbraco\FaLinkComponent.generated.cs">
+      <DependentUpon>Builder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Umbraco\File.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
@@ -625,6 +629,12 @@
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Umbraco\LinkComponent.generated.cs">
+      <DependentUpon>Builder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Umbraco\LinksListComposition.generated.cs">
+      <DependentUpon>Builder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Umbraco\LinksListSection.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Umbraco\ListingPageBase.generated.cs">
@@ -722,6 +732,7 @@
     <Content Include="Views\Partials\Nested\Section\PeopleListSection.cshtml" />
     <Content Include="Views\Partials\Renderers\RenderSections.cshtml" />
     <Content Include="Views\Partials\Nested\Component\LinkComponent.cshtml" />
+    <Content Include="Views\Partials\Nested\Section\LinksListSection.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

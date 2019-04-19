@@ -15,7 +15,9 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="stylesheet" href="@Url.Content("~/css/main.css")" />
-    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script src="@Url.Content("~/js/all.min.js")"></script>
+    
+
     @RenderSection("Header", required: false)
 </head>
 <body>
@@ -28,6 +30,6 @@
 
 @*<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
     <script src="https://ajax.aspnetcdn.com/ajax/mvc/5.2.3/jquery.validate.unobtrusive.min.js"></script>*@
-    <script src="@Url.Content("~/scripts/bundle.js")"></script>
+    <script src="@Url.Content("~/js/bundle.js")"></script>
 </body>
 </html>

@@ -1,0 +1,13 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<TitleComponent>
+@using U8StarterKit.Web.Models.Umbraco
+@using U8StarterKit.Web.Extensions
+
+
+@if (Model.Title.HasValue())
+{
+    <h2 class="title is-size-4 has-text-light">@Model.Title</h2>
+}   
+@if (Model.SubTitle.HasValue())
+{
+    <div class="subtitle is-size-6 has-text-light">@Model.SubTitle</div>
+}

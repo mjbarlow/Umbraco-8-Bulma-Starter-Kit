@@ -1,6 +1,7 @@
 ﻿@using Umbraco.Core.Models.PublishedContent
 @using Umbraco.Web
-
+@using FaLinksPropertyEditor.PropertyValueConverters;
+@using U8StarterKit.Web.Extensions
 
 @helper ResponsiveImage(IPublishedContent image, string alt = "", string classList = "", string itemsPerRow = "1")
 {
@@ -23,6 +24,20 @@
         break;
     }
     <img srcset="@srcSet" alt="@alt" class="@classList">
+}
+
+@helper RenderFaLink(FaLink faLink)
+{
+    <a href="@faLink.Link.Url" class="@faLink.PrimaryClass @faLink.SecondaryClass" target="@faLink.Link.Target">
+        @if (faLink.ClassName.HasValue())
+        {
+            <span class="icon has-text-link">
+                 <i class="@faLink.ClassName"></i>
+            </span>@:&nbsp;
+        }
+        @faLink.Link.Name
+    </a>
+
 }
 
 @functions
