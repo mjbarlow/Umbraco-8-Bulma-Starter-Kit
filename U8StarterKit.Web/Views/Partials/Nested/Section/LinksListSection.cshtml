@@ -8,7 +8,7 @@
 
 @foreach (var linksList in Model.Links)
 {
-    <div class="column @RazorHelper.ColumnClass(Model.ItemsPerRow?.ToString())">
+    <div class="column has-no-background @RazorHelper.ColumnClass(Model.ItemsPerRow?.ToString())">
         @Html.Partial($"~/Views/Partials/Nested/Item/LinksList.cshtml", linksList)
     </div>
 }

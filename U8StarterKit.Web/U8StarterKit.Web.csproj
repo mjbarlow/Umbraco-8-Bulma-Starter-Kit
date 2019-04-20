@@ -424,7 +424,8 @@
     <Content Include="config\logviewer.searches.config.js" />
     <Content Include="css\main.css" />
     <Content Include="Global.asax" />
-    <Content Include="scripts\bundle.js" />
+    <Content Include="js\all.min.js" />
+    <Content Include="js\bundle.js" />
     <Content Include="uSync\v8\ContentTypes\blog.config" />
     <Content Include="uSync\v8\ContentTypes\blogpost.config" />
     <Content Include="uSync\v8\ContentTypes\contact.config" />
@@ -536,6 +537,7 @@
     <Content Include="uSync\v8\_Actions\actions_Macros.config" />
     <Content Include="Views\ListingPageBase.cshtml" />
     <Content Include="Views\Partials\Nested\Item\LinksList.cshtml" />
+    <Content Include="Views\Partials\Nested\Component\SectionTitleComponent.cshtml" />
     <None Include="Views\Partials\Nested\Item\PersonItem.cshtml" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>

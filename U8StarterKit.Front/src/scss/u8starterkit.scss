@@ -96,10 +96,6 @@
     } 
 }
 
-
-
-
-  
 // HERO FOOTER
 .hero-footer, .footer {
     &.has-background-info, 
@@ -131,17 +127,27 @@
 .section {
     &.has-background-info {
         .has-no-background {
-            .title, .subtitle, ul, li
+            .title, .subtitle, ul, li, a, strong
             {
                 color: $white;
+            }
+            svg {
+                color: $grey-lighter !important;
             }
         }
     }
     &.has-background-dark {
         .has-no-background {
-            .title, .subtitle, ul, li
+            .title, .subtitle, ul, li, a, strong
             {
                 color: $white;
+            }
+          
+            a:hover {
+                color: $primary;
+            }
+            svg {
+                color: $grey-lighter !important;
             }
         }   
     }
@@ -149,7 +155,28 @@
         .image {
             background: $info;
         }
+        .has-no-background {
+            .title, .subtitle, ul, li, a, strong
+            {
+                color: $white;
+            }
+            svg {
+                color: $grey-lighter !important;
+            }
+        }   
     }
+    &.has-background-white, &.has-background-light, &.has-background-grey-lighter {
+        .has-no-background {
+        .title, .subtitle, ul, li, a, strong
+        {
+            color: $grey-darker;
+        }
+        svg {
+            color: $grey-darker !important;
+        }
+    }
+    }
+
 }
 
 // IMAGES
@@ -221,11 +248,21 @@
     padding-top: 56.25%;
     position: relative;
 }
-    .iframe-container iframe {
-        border: 0;
-        height: 100%;
-        left: 0;
-        position: absolute;
-        top: 0;
-        width: 100%;
-    }
+.iframe-container iframe {
+    border: 0;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+// FONT AWESOME LISTs
+.content { 
+        ul {
+            &.faLinks {
+                list-style: none;
+                margin-left: 0;
+            }
+        }   
+}
