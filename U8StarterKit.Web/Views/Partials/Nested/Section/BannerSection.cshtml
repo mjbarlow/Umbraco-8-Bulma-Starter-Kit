@@ -42,12 +42,20 @@
                         </div>
                     </div>
                 </div>
-                @if (Model.FontAwesomeClass.HasValue())
+                @if (Model.FontAwesomeLink.HasValue())
                 {
                     <div class="column is-hidden-mobile">
+                      
+                        @if (Model.FontAwesomeLink.FirstOrDefault().Link.HasValue()) { 
+                                @:<a href="@Model.FontAwesomeLink.FirstOrDefault().Link.Url" target="@Model.FontAwesomeLink.FirstOrDefault().Link.Target">
+                            }
                         <div class="icon is-circle" style="font-size:@(Model.FontAwesomeSize + "px"); height:100%; width:100%;">
-                            <i class="@Model.FontAwesomeClass"></i>
+                            <i class="@Model.FontAwesomeLink.FirstOrDefault().ClassName"></i>
                         </div>
+                            @if (Model.FontAwesomeLink.FirstOrDefault().Link.HasValue()) { 
+                                @:</a>
+                              }
+                       
                     </div>
                 }
             </div>
