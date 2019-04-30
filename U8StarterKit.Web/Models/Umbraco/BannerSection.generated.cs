@@ -99,7 +99,7 @@ namespace U8StarterKit.Web.Models.Umbraco
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		[ImplementPropertyType("fontAwesomeLink")]
-		public IEnumerable<FaLinksPropertyEditor.PropertyValueConverters.FaLink> FontAwesomeLink => FontAwesomeComposition.GetFontAwesomeLink(this);
+		public IEnumerable<FaLinksPropertyEditor.Models.FaLink> FontAwesomeLink => FontAwesomeComposition.GetFontAwesomeLink(this);
 
 		///<summary>
 		/// Font Awesome Size: Choose the size of the panel icon.

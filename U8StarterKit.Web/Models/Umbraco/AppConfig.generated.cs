@@ -57,27 +57,27 @@ namespace U8StarterKit.Web.Models.Umbraco
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		[ImplementPropertyType("brandLogo")]
-		public IEnumerable<FaLinksPropertyEditor.PropertyValueConverters.FaLink> BrandLogo => Navigation.GetBrandLogo(this);
+		public IEnumerable<FaLinksPropertyEditor.Models.FaLink> BrandLogo => Navigation.GetBrandLogo(this);
 
 		///<summary>
 		/// Left Nav
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		[ImplementPropertyType("leftNav")]
-		public IEnumerable<FaLinksPropertyEditor.PropertyValueConverters.FaLink> LeftNav => Navigation.GetLeftNav(this);
+		public IEnumerable<FaLinksPropertyEditor.Models.FaLink> LeftNav => Navigation.GetLeftNav(this);
 
 		///<summary>
 		/// Right Nav
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		[ImplementPropertyType("rightNav")]
-		public IEnumerable<FaLinksPropertyEditor.PropertyValueConverters.FaLink> RightNav => Navigation.GetRightNav(this);
+		public IEnumerable<FaLinksPropertyEditor.Models.FaLink> RightNav => Navigation.GetRightNav(this);
 
 		///<summary>
 		/// Utility Links: Add utility links, eg. "sign up", "log in"
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		[ImplementPropertyType("utilityLinks")]
-		public IEnumerable<FaLinksPropertyEditor.PropertyValueConverters.FaLink> UtilityLinks => Navigation.GetUtilityLinks(this);
+		public IEnumerable<FaLinksPropertyEditor.Models.FaLink> UtilityLinks => Navigation.GetUtilityLinks(this);
 	}
 }

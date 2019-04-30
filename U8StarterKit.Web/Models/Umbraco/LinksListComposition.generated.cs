@@ -50,7 +50,7 @@ namespace U8StarterKit.Web.Models.Umbraco
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		[ImplementPropertyType("faLinks")]
-		public IEnumerable<FaLinksPropertyEditor.PropertyValueConverters.FaLink> FaLinks => FaLinkComponent.GetFaLinks(this);
+		public IEnumerable<FaLinksPropertyEditor.Models.FaLink> FaLinks => FaLinkComponent.GetFaLinks(this);
 
 		///<summary>
 		/// Subtitle

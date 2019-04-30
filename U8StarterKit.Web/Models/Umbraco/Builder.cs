@@ -8,4 +8,4 @@ namespace U8StarterKit.Web.Models.Umbraco
     public class Builder
     {
     }
-}
+}   

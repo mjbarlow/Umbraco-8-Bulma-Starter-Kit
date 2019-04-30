@@ -24,11 +24,15 @@
     background: #f3f3f5;
     margin-bottom: 1px;
 }
+.ui-sortable-disabled .list-view-falink__sort-handle { 
+    cursor: default;
+}
 
 .list-view-falink__sort-handle {
     font-size: 14px;
     color: #d8d7d9;
     margin-right: 15px;
+    cursor: move;
 }
 
 .list-view-falink__icon-add,
@@ -115,9 +119,22 @@
     height: 100%;
 }
 
+.list-view-falink__icon-view i {
+
+}
+
 .list-view-falink__link,
 .list-view-falink__dropdown {
     margin-right: 15px;
+}
+
+.list-view-falink__icon-view-wide {
+    flex: 0 1 30%;
+}
+
+.list-view-falink__icon-view-wide label {
+    margin-bottom: 0;
+    margin-left: 15px;
 }
 
 .list-view-falink__dropdown {
@@ -136,6 +153,10 @@
     font-size: 14px;
 }
 
+.list-view-falink__link .umb-node-preview-add i {
+   
+}
+
 .list-view-falink__link .umb-node-preview{
     border: 1px dashed #bbbabf;
     padding: 5px 10px;
@@ -152,14 +173,10 @@
 
 .list-view-falink__link .umb-node-preview__name {
     margin-top:0;
-    font-size: 13px;
-    font-weight: 700;
-    margin-right: 10px;
 }
 
 .list-view-falink__link .umb-node-preview__description {
-    font-size: 13px;
-    display: none;
+    display:none;
 }
 
 .list-view-falink__link .umb-node-preview__icon {
@@ -167,7 +184,3 @@
     margin-top:2px;
 }
 
-.list-view-falink__link .umb-node-preview__content {
-    display: flex;
-    align-items: center;
-}

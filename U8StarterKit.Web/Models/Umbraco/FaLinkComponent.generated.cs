@@ -26,7 +26,7 @@ namespace U8StarterKit.Web.Models.Umbraco
 	{
 		/// <summary>Fa Links</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		IEnumerable<FaLinksPropertyEditor.PropertyValueConverters.FaLink> FaLinks { get; }
+		IEnumerable<FaLinksPropertyEditor.Models.FaLink> FaLinks { get; }
 	}
 
 	/// <summary>Fa Links Component</summary>
@@ -59,10 +59,10 @@ namespace U8StarterKit.Web.Models.Umbraco
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		[ImplementPropertyType("faLinks")]
-		public IEnumerable<FaLinksPropertyEditor.PropertyValueConverters.FaLink> FaLinks => GetFaLinks(this);
+		public IEnumerable<FaLinksPropertyEditor.Models.FaLink> FaLinks => GetFaLinks(this);
 
 		/// <summary>Static getter for Fa Links</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		public static IEnumerable<FaLinksPropertyEditor.PropertyValueConverters.FaLink> GetFaLinks(IFaLinkComponent that) => that.Value<IEnumerable<FaLinksPropertyEditor.PropertyValueConverters.FaLink>>("faLinks");
+		public static IEnumerable<FaLinksPropertyEditor.Models.FaLink> GetFaLinks(IFaLinkComponent that) => that.Value<IEnumerable<FaLinksPropertyEditor.Models.FaLink>>("faLinks");
 	}
 }

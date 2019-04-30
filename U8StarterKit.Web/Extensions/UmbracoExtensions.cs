@@ -2,7 +2,7 @@
 using System.Linq;
 using Umbraco.Core.Models.PublishedContent;
 using Umbraco.Web.Models;
-using FaLinksPropertyEditor.PropertyValueConverters;
+using FaLinksPropertyEditor.Models;
 
 
 namespace U8StarterKit.Web.Extensions

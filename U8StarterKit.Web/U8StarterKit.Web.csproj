@@ -61,8 +61,7 @@
       <HintPath>..\packages\Examine.1.0.0\lib\net452\Examine.dll</HintPath>
     </Reference>
     <Reference Include="FaLinksPropertyEditor, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\dependencies\FaLinksPropertyEditor.dll</HintPath>
+      <HintPath>..\packages\FontAwesomePropertyEditor.1.0.1\lib\net472\FaLinksPropertyEditor.dll</HintPath>
     </Reference>
     <Reference Include="HtmlAgilityPack, Version=1.8.14.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
       <HintPath>..\packages\HtmlAgilityPack.1.8.14\lib\Net45\HtmlAgilityPack.dll</HintPath>
@@ -399,6 +398,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Plugins\FaLinksPropertyEditor\css\falinks.style.css" />
+    <Content Include="App_Plugins\FaLinksPropertyEditor\faicon.propertyeditor.html" />
+    <Content Include="App_Plugins\FaLinksPropertyEditor\falinks.picker.html" />
+    <Content Include="App_Plugins\FaLinksPropertyEditor\falinks.prevalues.html" />
+    <Content Include="App_Plugins\FaLinksPropertyEditor\falinks.propertyeditor.html" />
+    <Content Include="App_Plugins\FaLinksPropertyEditor\js\faicon.propertyeditor.controller.js" />
+    <Content Include="App_Plugins\FaLinksPropertyEditor\js\falinks.picker.controller.js" />
+    <Content Include="App_Plugins\FaLinksPropertyEditor\js\falinks.prevalues.controller.js" />
+    <Content Include="App_Plugins\FaLinksPropertyEditor\js\falinks.propertyeditor.controller.js" />
     <Content Include="App_Plugins\ModelsBuilder\modelsbuilder.controller.js" />
     <Content Include="App_Plugins\ModelsBuilder\modelsbuilder.html" />
     <Content Include="App_Plugins\ModelsBuilder\modelsbuilder.resource.js" />
@@ -547,6 +555,8 @@
     <Content Include="uSync\v8\DataTypes\U8SKLinksListNestedContent.config" />
     <Content Include="uSync\v8\DataTypes\U8SKSlider50400.config" />
     <Content Include="uSync\v8\Templates\listingpagebase.config" />
+    <Content Include="App_Plugins\FaLinksPropertyEditor\icons.json" />
+    <Content Include="App_Plugins\FaLinksPropertyEditor\package.manifest" />
     <None Include="Views\Partials\Nested\Item\PersonItem.cshtml" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -757,6 +767,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\MacroPartials\" />
+    <Folder Include="Views\Test\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
