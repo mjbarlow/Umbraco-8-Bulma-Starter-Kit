@@ -37,8 +37,17 @@
         }
         @faLink.Link.Name
     </a>
-
 }
+
+
+
+@helper RenderFaIcon(FaIcon faIcon)
+{
+    <span class="icon">
+        <i class="@faIcon.ClassName"></i>
+    </span>
+}
+
 
 @functions
 {

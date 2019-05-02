@@ -3,40 +3,45 @@
 @using U8StarterKit.Web.Extensions
 @using System.Linq
 
-<div class="hero hero-banner @RazorHelper.BackgroundColorClass(Model.BackgroundColor?.Label) is-medium image is-3by1">
+<div class="hero hero-banner section @RazorHelper.BackgroundColorClass(Model.BackgroundColor?.Label) is-medium image is-3by1">
     @if (Model.Background.HasValue())
     {
         @RazorHelper.ResponsiveImage(Model.Background, Model.Title, "is-background")
     }
-    <div class="hero-body">
+    <div class="hero-body has-no-background">
         <div class="container">
             <div class="columns">
                 <div class="column">
                     <div class="hero-banner-content">
-                        <header class="block">
-                            <h3 class="title is-size-3 is-size-1-tablet">@Model.Title</h3>
-                        </header>
-                        <div class="block is-size-5 is-size-4-tablet">
-                            <p>@Model.Subtitle</p>
-                        </div>
+                        @if (Model.Title.HasValue())
+                        {
+                            <header class="block">
+                                <h3 class="title is-size-3 is-size-1-tablet">@Model.Title</h3>
+                            </header>
+                        }
+                        @if (Model.Subtitle.HasValue())
+                        {
+                            <div class="block is-size-5 is-size-4-tablet">
+                                <p>@Model.Subtitle</p>
+                            </div>
+                        }
                         <div class="block hero-bannerbuttons">
                             @if (Model.PrimaryLink.HasValue())
                             {
                                 <div class="buttons">
                                     <a class="button is-mainbutton is-large" href="@Model.PrimaryLink.Url" target="@Model.PrimaryLink.Target" rel="nofollow">
-                                        <span>
-                                            <strong>@Model.PrimaryLink.Name</strong>
-                                        </span>
+                                        @Model.PrimaryLink.Name
                                     </a>
                                 </div>
                             }
                             @if (Model.SecondaryLink.HasValue())
                             {
                                 <div class="is-size-5 is-size-4-tablet">
-                                    @Model.SecondaryLinkBeforeText
-                                    <a href="@Model.SecondaryLink.Url" target="@Model.SecondaryLink.Target" class="is-info" rel="nofollow">
-                                        @Model.SecondaryLink.Name
-                                    </a>
+                                    <p>@Model.SecondaryLinkBeforeText
+                                        <a href="@Model.SecondaryLink.Url" target="@Model.SecondaryLink.Target" class="is-info" rel="nofollow">
+                                            @Model.SecondaryLink.Name
+                                        </a>
+                                    </p>
                                 </div>
                             }
                         </div>
@@ -49,7 +54,7 @@
                         @if (Model.FontAwesomeLink.FirstOrDefault().Link.HasValue()) { 
                                 @:<a href="@Model.FontAwesomeLink.FirstOrDefault().Link.Url" target="@Model.FontAwesomeLink.FirstOrDefault().Link.Target">
                             }
-                        <div class="icon is-circle" style="font-size:@(Model.FontAwesomeSize + "px"); height:100%; width:100%;">
+                        <div class="icon" style="font-size:@(Model.FontAwesomeSize + "px"); height:100%; width:100%;">
                             <i class="@Model.FontAwesomeLink.FirstOrDefault().ClassName"></i>
                         </div>
                             @if (Model.FontAwesomeLink.FirstOrDefault().Link.HasValue()) { 

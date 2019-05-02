@@ -434,109 +434,6 @@
     <Content Include="Global.asax" />
     <Content Include="js\all.min.js" />
     <Content Include="js\bundle.js" />
-    <Content Include="uSync\v8\ContentTypes\appconfig.config" />
-    <Content Include="uSync\v8\ContentTypes\bannersection.config" />
-    <Content Include="uSync\v8\ContentTypes\bannerstripsection.config" />
-    <Content Include="uSync\v8\ContentTypes\blog.config" />
-    <Content Include="uSync\v8\ContentTypes\bloglistsection.config" />
-    <Content Include="uSync\v8\ContentTypes\blogpost.config" />
-    <Content Include="uSync\v8\ContentTypes\calltoactionsection.config" />
-    <Content Include="uSync\v8\ContentTypes\coloursettingscomposition.config" />
-    <Content Include="uSync\v8\ContentTypes\columnsettingscomposition.config" />
-    <Content Include="uSync\v8\ContentTypes\contact.config" />
-    <Content Include="uSync\v8\ContentTypes\contentbase.config" />
-    <Content Include="uSync\v8\ContentTypes\contentpage.config" />
-    <Content Include="uSync\v8\ContentTypes\contentsection.config" />
-    <Content Include="uSync\v8\ContentTypes\fontawesomecomposition.config" />
-    <Content Include="uSync\v8\ContentTypes\footersection.config" />
-    <Content Include="uSync\v8\ContentTypes\headersection.config" />
-    <Content Include="uSync\v8\ContentTypes\herosection.config" />
-    <Content Include="uSync\v8\ContentTypes\home.config" />
-    <Content Include="uSync\v8\ContentTypes\linkcomponent.config" />
-    <Content Include="uSync\v8\ContentTypes\navigation.config" />
-    <Content Include="uSync\v8\ContentTypes\navigationbase.config" />
-    <Content Include="uSync\v8\ContentTypes\people.config" />
-    <Content Include="uSync\v8\ContentTypes\peoplelistsection.config" />
-    <Content Include="uSync\v8\ContentTypes\person.config" />
-    <Content Include="uSync\v8\ContentTypes\product.config" />
-    <Content Include="uSync\v8\ContentTypes\productlistsection.config" />
-    <Content Include="uSync\v8\ContentTypes\products.config" />
-    <Content Include="uSync\v8\ContentTypes\sidebarsection.config" />
-    <Content Include="uSync\v8\ContentTypes\signupformsection.config" />
-    <Content Include="uSync\v8\ContentTypes\singlelinesection.config" />
-    <Content Include="uSync\v8\ContentTypes\titlecomponent.config" />
-    <Content Include="uSync\v8\DataTypes\ApprovedColor.config" />
-    <Content Include="uSync\v8\DataTypes\CheckboxList.config" />
-    <Content Include="uSync\v8\DataTypes\ContentPicker.config" />
-    <Content Include="uSync\v8\DataTypes\DatePicker.config" />
-    <Content Include="uSync\v8\DataTypes\DatePickerWithTime.config" />
-    <Content Include="uSync\v8\DataTypes\Dropdown.config" />
-    <Content Include="uSync\v8\DataTypes\DropdownMultiple.config" />
-    <Content Include="uSync\v8\DataTypes\ImageCropper.config" />
-    <Content Include="uSync\v8\DataTypes\Label.config" />
-    <Content Include="uSync\v8\DataTypes\LabelBigint.config" />
-    <Content Include="uSync\v8\DataTypes\LabelDatetime.config" />
-    <Content Include="uSync\v8\DataTypes\LabelDecimal.config" />
-    <Content Include="uSync\v8\DataTypes\LabelInteger.config" />
-    <Content Include="uSync\v8\DataTypes\LabelTime.config" />
-    <Content Include="uSync\v8\DataTypes\ListViewContent.config" />
-    <Content Include="uSync\v8\DataTypes\ListViewMedia.config" />
-    <Content Include="uSync\v8\DataTypes\ListViewMembers.config" />
-    <Content Include="uSync\v8\DataTypes\MediaPicker.config" />
-    <Content Include="uSync\v8\DataTypes\MemberPicker.config" />
-    <Content Include="uSync\v8\DataTypes\MultiURLPicker.config" />
-    <Content Include="uSync\v8\DataTypes\Numeric.config" />
-    <Content Include="uSync\v8\DataTypes\Radiobox.config" />
-    <Content Include="uSync\v8\DataTypes\RichtextEditor.config" />
-    <Content Include="uSync\v8\DataTypes\Tags.config" />
-    <Content Include="uSync\v8\DataTypes\Textarea.config" />
-    <Content Include="uSync\v8\DataTypes\Textstring.config" />
-    <Content Include="uSync\v8\DataTypes\TrueFalse.config" />
-    <Content Include="uSync\v8\DataTypes\U8SKBlogPickerSingle.config" />
-    <Content Include="uSync\v8\DataTypes\U8SKColorPicker.config" />
-    <Content Include="uSync\v8\DataTypes\U8SKColorSchemeDropdown.config" />
-    <Content Include="uSync\v8\DataTypes\U8SKContentNestedContent.config" />
-    <Content Include="uSync\v8\DataTypes\U8SKContentPicker.config" />
-    <Content Include="uSync\v8\DataTypes\U8SKCurrencyDropdown.config" />
-    <Content Include="uSync\v8\DataTypes\U8SKDecimal.config" />
-    <Content Include="uSync\v8\DataTypes\U8SKFooterNestedContent.config" />
-    <Content Include="uSync\v8\DataTypes\U8SKGridLayout.config" />
-    <Content Include="uSync\v8\DataTypes\U8SKHomeContentNestedContent.config" />
-    <Content Include="uSync\v8\DataTypes\U8SKHomeGridLayout.config" />
-    <Content Include="uSync\v8\DataTypes\U8SKItemsPerRow.config" />
-    <Content Include="uSync\v8\DataTypes\U8SKLabelFormPicker.config" />
-    <Content Include="uSync\v8\DataTypes\U8SKLinkSingle.config" />
-    <Content Include="uSync\v8\DataTypes\U8SKMediaPickerMultiple.config" />
-    <Content Include="uSync\v8\DataTypes\U8SKMediaPickerSingle.config" />
-    <Content Include="uSync\v8\DataTypes\U8SKOpenStreetMaps.config" />
-    <Content Include="uSync\v8\DataTypes\U8SKPersonPickerMultiple.config" />
-    <Content Include="uSync\v8\DataTypes\U8SKProductPickerMultiple.config" />
-    <Content Include="uSync\v8\DataTypes\U8SKRTESimple.config" />
-    <Content Include="uSync\v8\DataTypes\U8SKRTEStandard.config" />
-    <Content Include="uSync\v8\DataTypes\U8SKSidebarNestedContent.config" />
-    <Content Include="uSync\v8\DataTypes\U8SKSlider.config" />
-    <Content Include="uSync\v8\DataTypes\U8SKSlider112.config" />
-    <Content Include="uSync\v8\DataTypes\U8SKTagsCsv.config" />
-    <Content Include="uSync\v8\DataTypes\U8SKTagsJSON.config" />
-    <Content Include="uSync\v8\DataTypes\Upload.config" />
-    <Content Include="uSync\v8\Languages\en-us.config" />
-    <Content Include="uSync\v8\MediaTypes\file.config" />
-    <Content Include="uSync\v8\MediaTypes\folder.config" />
-    <Content Include="uSync\v8\MediaTypes\image.config" />
-    <Content Include="uSync\v8\MemberTypes\member.config" />
-    <Content Include="uSync\v8\Templates\blog.config" />
-    <Content Include="uSync\v8\Templates\blogpost.config" />
-    <Content Include="uSync\v8\Templates\contact.config" />
-    <Content Include="uSync\v8\Templates\contentpage.config" />
-    <Content Include="uSync\v8\Templates\home.config" />
-    <Content Include="uSync\v8\Templates\master.config" />
-    <Content Include="uSync\v8\Templates\people.config" />
-    <Content Include="uSync\v8\Templates\person.config" />
-    <Content Include="uSync\v8\Templates\product.config" />
-    <Content Include="uSync\v8\Templates\products.config" />
-    <Content Include="uSync\v8\_Actions\actions_ContentTypes.config" />
-    <Content Include="uSync\v8\_Actions\actions_DataTypes.config" />
-    <Content Include="uSync\v8\_Actions\actions_Macros.config" />
     <Content Include="Views\Partials\Nested\Section\BlogListSection.cshtml" />
     <Content Include="Views\Partials\Nested\Section\CallToActionSection.cshtml" />
     <Content Include="Views\Partials\Nested\Component\TitleComponent.cshtml" />
@@ -545,16 +442,6 @@
     <Content Include="Views\ListingPageBase.cshtml" />
     <Content Include="Views\Partials\Nested\Item\LinksList.cshtml" />
     <Content Include="Views\Partials\Nested\Component\SectionTitleComponent.cshtml" />
-    <Content Include="uSync\v8\ContentTypes\falinkcomponent.config" />
-    <Content Include="uSync\v8\ContentTypes\linkslistcomposition.config" />
-    <Content Include="uSync\v8\ContentTypes\linkslistsection.config" />
-    <Content Include="uSync\v8\ContentTypes\listingpagebase.config" />
-    <Content Include="uSync\v8\DataTypes\U8SKFaLinksButtonDropdowns.config" />
-    <Content Include="uSync\v8\DataTypes\U8SKFaLinksNoDropdowns.config" />
-    <Content Include="uSync\v8\DataTypes\U8SKFaLinksSocialMedia.config" />
-    <Content Include="uSync\v8\DataTypes\U8SKLinksListNestedContent.config" />
-    <Content Include="uSync\v8\DataTypes\U8SKSlider50400.config" />
-    <Content Include="uSync\v8\Templates\listingpagebase.config" />
     <Content Include="App_Plugins\FaLinksPropertyEditor\icons.json" />
     <Content Include="App_Plugins\FaLinksPropertyEditor\package.manifest" />
     <Content Include="Views\Partials\Grid\Editors\Textstring.cshtml" />
@@ -572,6 +459,7 @@
     <Content Include="config\serilog.config" />
     <Content Include="config\HealthChecks.config" />
     <Content Include="config\BackOfficeTours\getting-started.json" />
+    <Content Include="Views\Partials\Nested\Item\IconItem.cshtml" />
     <None Include="Views\Partials\Nested\Item\PersonItem.cshtml" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -612,9 +500,9 @@
     <Compile Include="Models\Models\BlogPost.cs" />
     <Compile Include="Models\Models\BlogsViewModel.cs" />
     <Compile Include="Models\Umbraco\Builder.generated.cs">
-      <DependentUpon>Builder.cs</DependentUpon>
-      <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Umbraco\CallToActionSection.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
@@ -659,6 +547,15 @@
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Umbraco\Home.generated.cs">
+      <DependentUpon>Builder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Umbraco\IconComponent.generated.cs">
+      <DependentUpon>Builder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Umbraco\IconComposition.generated.cs">
+      <DependentUpon>Builder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Umbraco\IconsSection.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Umbraco\Image.generated.cs">
@@ -754,6 +651,7 @@
     <Content Include="Views\Partials\Renderers\RenderSections.cshtml" />
     <Content Include="Views\Partials\Nested\Component\LinkComponent.cshtml" />
     <Content Include="Views\Partials\Nested\Section\LinksListSection.cshtml" />
+    <Content Include="Views\Partials\Nested\Section\IconsSection.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
