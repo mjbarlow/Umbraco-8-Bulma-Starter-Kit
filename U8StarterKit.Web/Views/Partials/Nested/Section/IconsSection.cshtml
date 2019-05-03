@@ -6,7 +6,7 @@
 @SectionHelper.RenderSectionStart(Model.BackgroundColor.Label, className: "icon-section")
     @foreach (var icon in Model.Icons)
     {
-        <div class="column has-no-background @RazorHelper.ColumnClass(Model.ItemsPerRow?.ToString())">
+        <div class="column has-no-background has-large-spacing-bottom @RazorHelper.ColumnClass(Model.ItemsPerRow?.ToString())">
             @Html.Partial($"~/Views/Partials/Nested/Item/IconItem.cshtml", icon)
         </div>
     }

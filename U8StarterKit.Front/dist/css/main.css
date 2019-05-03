@@ -6976,7 +6976,7 @@ label.panel-block {
       border-color: transparent;
       color: #ffffff;
       font-weight: 700; }
-  .section.hero-banner.is-medium.has-background-info .block, .section.hero-banner.is-medium.has-background-info .title, .section.hero-banner.is-medium.has-background-info strong {
+  .section.hero-banner.is-medium.has-background-info .block, .section.hero-banner.is-medium.has-background-info .title, .section.hero-banner.is-medium.has-background-info strong, .section.hero-banner.is-medium.has-background-info span {
     color: white; }
   .section.hero-banner.is-medium.has-background-info .hero-bannerbuttons .button.is-mainbutton {
     background-color: #00d1b2; }
@@ -7014,35 +7014,62 @@ label.panel-block {
 .subtitle {
   color: #454547; }
 
-.section.has-background-info .has-no-background .title, .section.has-background-info .has-no-background .subtitle, .section.has-background-info .has-no-background ul, .section.has-background-info .has-no-background li, .section.has-background-info .has-no-background a, .section.has-background-info .has-no-background strong {
+.section.has-background-info .has-no-background .title, .section.has-background-info .has-no-background .subtitle, .section.has-background-info .has-no-background ul, .section.has-background-info .has-no-background li, .section.has-background-info .has-no-background a:not(.button), .section.has-background-info .has-no-background strong, .section.has-background-info .has-no-background svg,
+.section.has-background-info .has-no-background span:not(.icon), .section.has-background-info .has-no-background p {
   color: white; }
 
-.section.has-background-info .has-no-background svg {
+.section.has-background-info .has-no-background .button.is-outlined {
+  border-color: white; }
+  .section.has-background-info .has-no-background .button.is-outlined span.icon-text, .section.has-background-info .has-no-background .button.is-outlined span.icon, .section.has-background-info .has-no-background .button.is-outlined svg {
+    color: white; }
+
+.section.has-background-info .has-no-background .button.is-outlined:hover {
+  border-color: #3273dc; }
+  .section.has-background-info .has-no-background .button.is-outlined:hover span.icon-text, .section.has-background-info .has-no-background .button.is-outlined:hover span.icon, .section.has-background-info .has-no-background .button.is-outlined:hover svg {
+    color: white; }
+
+.section.has-background-dark .has-no-background .title, .section.has-background-dark .has-no-background .subtitle, .section.has-background-dark .has-no-background ul, .section.has-background-dark .has-no-background li, .section.has-background-dark .has-no-background a:not(.button), .section.has-background-dark .has-no-background strong, .section.has-background-dark .has-no-background svg,
+.section.has-background-dark .has-no-background span:not(.icon), .section.has-background-dark .has-no-background p {
   color: white; }
 
-.section.has-background-dark .has-no-background .title, .section.has-background-dark .has-no-background .subtitle, .section.has-background-dark .has-no-background ul, .section.has-background-dark .has-no-background li, .section.has-background-dark .has-no-background a, .section.has-background-dark .has-no-background strong, .section.has-background-dark .has-no-background span, .section.has-background-dark .has-no-background p {
-  color: white; }
+.section.has-background-dark .has-no-background .button.is-outlined {
+  border-color: white; }
+  .section.has-background-dark .has-no-background .button.is-outlined span.icon-text, .section.has-background-dark .has-no-background .button.is-outlined span.icon, .section.has-background-dark .has-no-background .button.is-outlined svg {
+    color: white; }
 
-.section.has-background-dark .has-no-background a:hover {
-  color: #00d1b2; }
-
-.section.has-background-dark .has-no-background svg {
-  color: white; }
+.section.has-background-dark .has-no-background .button.is-outlined:hover {
+  border-color: #3273dc; }
+  .section.has-background-dark .has-no-background .button.is-outlined:hover span.icon-text, .section.has-background-dark .has-no-background .button.is-outlined:hover span.icon, .section.has-background-dark .has-no-background .button.is-outlined:hover svg {
+    color: white; }
 
 .section.has-background-primary .image {
   background: #209cee; }
 
-.section.has-background-primary .has-no-background .title, .section.has-background-primary .has-no-background .subtitle, .section.has-background-primary .has-no-background ul, .section.has-background-primary .has-no-background li, .section.has-background-primary .has-no-background a, .section.has-background-primary .has-no-background strong, .section.has-background-primary .has-no-background span, .section.has-background-primary .has-no-background p {
+.section.has-background-primary .has-no-background .title, .section.has-background-primary .has-no-background .subtitle, .section.has-background-primary .has-no-background ul, .section.has-background-primary .has-no-background li, .section.has-background-primary .has-no-background a:not(.button), .section.has-background-primary .has-no-background strong, .section.has-background-primary .has-no-background svg,
+.section.has-background-primary .has-no-background span:not(.icon), .section.has-background-primary .has-no-background p {
   color: white; }
 
-.section.has-background-primary .has-no-background svg {
+.section.has-background-primary .has-no-background .button.is-outlined {
+  border-color: white; }
+  .section.has-background-primary .has-no-background .button.is-outlined span.icon-text, .section.has-background-primary .has-no-background .button.is-outlined span.icon, .section.has-background-primary .has-no-background .button.is-outlined svg {
+    color: white; }
+
+.section.has-background-primary .has-no-background .button.is-outlined:hover {
+  border-color: #3273dc; }
+  .section.has-background-primary .has-no-background .button.is-outlined:hover span.icon-text, .section.has-background-primary .has-no-background .button.is-outlined:hover span.icon, .section.has-background-primary .has-no-background .button.is-outlined:hover svg {
+    color: white; }
+
+.section.has-background-white .has-no-background .title, .section.has-background-white .has-no-background .subtitle, .section.has-background-white .has-no-background ul, .section.has-background-white .has-no-background li, .section.has-background-white .has-no-background a:not(.button), .section.has-background-white .has-no-background strong, .section.has-background-white .has-no-background svg,
+.section.has-background-white .has-no-background span:not(.icon), .section.has-background-white .has-no-background p, .section.has-background-light .has-no-background .title, .section.has-background-light .has-no-background .subtitle, .section.has-background-light .has-no-background ul, .section.has-background-light .has-no-background li, .section.has-background-light .has-no-background a:not(.button), .section.has-background-light .has-no-background strong, .section.has-background-light .has-no-background svg,
+.section.has-background-light .has-no-background span:not(.icon), .section.has-background-light .has-no-background p, .section.has-background-grey-lighter .has-no-background .title, .section.has-background-grey-lighter .has-no-background .subtitle, .section.has-background-grey-lighter .has-no-background ul, .section.has-background-grey-lighter .has-no-background li, .section.has-background-grey-lighter .has-no-background a:not(.button), .section.has-background-grey-lighter .has-no-background strong, .section.has-background-grey-lighter .has-no-background svg,
+.section.has-background-grey-lighter .has-no-background span:not(.icon), .section.has-background-grey-lighter .has-no-background p {
+  color: #454547; }
+
+.section.has-background-white .has-no-background .button.is-outlined span.icon-text, .section.has-background-white .has-no-background .button.is-outlined span.icon, .section.has-background-white .has-no-background .button.is-outlined svg, .section.has-background-light .has-no-background .button.is-outlined span.icon-text, .section.has-background-light .has-no-background .button.is-outlined span.icon, .section.has-background-light .has-no-background .button.is-outlined svg, .section.has-background-grey-lighter .has-no-background .button.is-outlined span.icon-text, .section.has-background-grey-lighter .has-no-background .button.is-outlined span.icon, .section.has-background-grey-lighter .has-no-background .button.is-outlined svg {
+  color: #3273dc; }
+
+.section.has-background-white .has-no-background .button.is-outlined:hover span.icon-text, .section.has-background-white .has-no-background .button.is-outlined:hover span.icon, .section.has-background-white .has-no-background .button.is-outlined:hover svg, .section.has-background-light .has-no-background .button.is-outlined:hover span.icon-text, .section.has-background-light .has-no-background .button.is-outlined:hover span.icon, .section.has-background-light .has-no-background .button.is-outlined:hover svg, .section.has-background-grey-lighter .has-no-background .button.is-outlined:hover span.icon-text, .section.has-background-grey-lighter .has-no-background .button.is-outlined:hover span.icon, .section.has-background-grey-lighter .has-no-background .button.is-outlined:hover svg {
   color: white; }
-
-.section.has-background-white .has-no-background .title, .section.has-background-white .has-no-background .subtitle, .section.has-background-white .has-no-background ul, .section.has-background-white .has-no-background li, .section.has-background-white .has-no-background strong, .section.has-background-light .has-no-background .title, .section.has-background-light .has-no-background .subtitle, .section.has-background-light .has-no-background ul, .section.has-background-light .has-no-background li, .section.has-background-light .has-no-background strong, .section.has-background-grey-lighter .has-no-background .title, .section.has-background-grey-lighter .has-no-background .subtitle, .section.has-background-grey-lighter .has-no-background ul, .section.has-background-grey-lighter .has-no-background li, .section.has-background-grey-lighter .has-no-background strong {
-  color: #454547; }
-
-.section.has-background-white .has-no-background svg, .section.has-background-light .has-no-background svg, .section.has-background-grey-lighter .has-no-background svg {
-  color: #454547; }
 
 .section.has-background-white .is-line-circle, .section.has-background-light .is-line-circle {
   border-color: #454547; }
@@ -7093,6 +7120,19 @@ label.panel-block {
   justify-content: center;
   flex-direction: column;
   text-align: center; }
+
+.is-circle {
+  border-radius: 290486px; }
+
+.is-85-percent {
+  max-width: 85%;
+  margin: 0 auto; }
+
+.is-60-percent {
+  max-width: 60%;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto; }
 
 .video-wrapper {
   position: relative;
