@@ -46,28 +46,21 @@ namespace U8StarterKit.Web.Models.Umbraco
 		// properties
 
 		///<summary>
-		/// image
+		/// Nested Content
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("image")]
-		public IPublishedContent Image => this.Value<IPublishedContent>("image");
+		[ImplementPropertyType("nestedContent")]
+		public IEnumerable<IPublishedElement> NestedContent => ContentBase.GetNestedContent(this);
 
 		///<summary>
-		/// Content
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("bodyText")]
-		public Newtonsoft.Json.Linq.JToken BodyText => ContentBase.GetBodyText(this);
-
-		///<summary>
-		/// Header Subtitle
+		/// Subtitle
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		[ImplementPropertyType("headerSubtitle")]
-		public string HeaderSubtitle => HeaderSection.GetHeaderSubtitle(this);
+		public IHtmlString HeaderSubtitle => HeaderSection.GetHeaderSubtitle(this);
 
 		///<summary>
-		/// Header Title
+		/// Title
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		[ImplementPropertyType("headerTitle")]

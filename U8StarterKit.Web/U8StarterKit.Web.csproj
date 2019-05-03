@@ -439,7 +439,6 @@
     <Content Include="Views\Partials\Nested\Component\TitleComponent.cshtml" />
     <Content Include="App_Code\RazorHelper.cshtml" />
     <Content Include="App_Code\SectionHelper.cshtml" />
-    <Content Include="Views\ListingPageBase.cshtml" />
     <Content Include="Views\Partials\Nested\Item\LinksList.cshtml" />
     <Content Include="Views\Partials\Nested\Component\SectionTitleComponent.cshtml" />
     <Content Include="App_Plugins\FaLinksPropertyEditor\icons.json" />
@@ -460,6 +459,10 @@
     <Content Include="config\HealthChecks.config" />
     <Content Include="config\BackOfficeTours\getting-started.json" />
     <Content Include="Views\Partials\Nested\Item\IconItem.cshtml" />
+    <Content Include="Views\Partials\Nested\Content\TitleComponent.cshtml" />
+    <Content Include="Views\Partials\Nested\Content\RichTextContent.cshtml" />
+    <Content Include="Views\Partials\Nested\Content\ImageContent.cshtml" />
+    <Content Include="Views\Partials\Nested\Content\QuoteContent.cshtml" />
     <None Include="Views\Partials\Nested\Item\PersonItem.cshtml" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -500,9 +503,9 @@
     <Compile Include="Models\Models\BlogPost.cs" />
     <Compile Include="Models\Models\BlogsViewModel.cs" />
     <Compile Include="Models\Umbraco\Builder.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>Builder.cs</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="Models\Umbraco\CallToActionSection.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
@@ -561,6 +564,9 @@
     <Compile Include="Models\Umbraco\Image.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Umbraco\ImageContent.generated.cs">
+      <DependentUpon>Builder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Umbraco\LinkComponent.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
@@ -598,6 +604,12 @@
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Umbraco\Products.generated.cs">
+      <DependentUpon>Builder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Umbraco\QuoteContent.generated.cs">
+      <DependentUpon>Builder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Umbraco\RichTextContent.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Umbraco\SidebarSection.generated.cs">
@@ -638,7 +650,6 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\Partials\Grid\Bulma-Fluid-Home.cshtml" />
     <Content Include="Views\Partials\NavSection.cshtml" />
-    <Content Include="Views\Partials\Renderers\RenderElements.cshtml" />
     <Content Include="Views\Partials\Nested\Section\BannerSection.cshtml" />
     <Content Include="Views\Partials\Nested\Section\SignUpFormSection.cshtml" />
     <Content Include="Views\Partials\Elements\PanelElement.cshtml" />
@@ -652,6 +663,7 @@
     <Content Include="Views\Partials\Nested\Component\LinkComponent.cshtml" />
     <Content Include="Views\Partials\Nested\Section\LinksListSection.cshtml" />
     <Content Include="Views\Partials\Nested\Section\IconsSection.cshtml" />
+    <Content Include="Views\Partials\Renderers\RenderContent.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -665,7 +677,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\MacroPartials\" />
-    <Folder Include="Views\Test\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -60,21 +60,21 @@ namespace U8StarterKit.Web.Models.Umbraco
 		public decimal ItemsToShow => this.Value<decimal>("itemsToShow");
 
 		///<summary>
-		/// Content
+		/// Nested Content
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("bodyText")]
-		public Newtonsoft.Json.Linq.JToken BodyText => ContentBase.GetBodyText(this);
+		[ImplementPropertyType("nestedContent")]
+		public IEnumerable<IPublishedElement> NestedContent => ContentBase.GetNestedContent(this);
 
 		///<summary>
-		/// Header Subtitle
+		/// Subtitle
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		[ImplementPropertyType("headerSubtitle")]
-		public string HeaderSubtitle => HeaderSection.GetHeaderSubtitle(this);
+		public IHtmlString HeaderSubtitle => HeaderSection.GetHeaderSubtitle(this);
 
 		///<summary>
-		/// Header Title
+		/// Title
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		[ImplementPropertyType("headerTitle")]

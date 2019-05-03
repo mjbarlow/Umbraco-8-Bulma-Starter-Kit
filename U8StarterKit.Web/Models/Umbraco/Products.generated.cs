@@ -53,14 +53,14 @@ namespace U8StarterKit.Web.Models.Umbraco
 		public string DefaultCurrency => this.Value<string>("defaultCurrency");
 
 		///<summary>
-		/// Header Subtitle
+		/// Subtitle
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		[ImplementPropertyType("headerSubtitle")]
-		public string HeaderSubtitle => HeaderSection.GetHeaderSubtitle(this);
+		public IHtmlString HeaderSubtitle => HeaderSection.GetHeaderSubtitle(this);
 
 		///<summary>
-		/// Header Title
+		/// Title
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		[ImplementPropertyType("headerTitle")]

@@ -1,5 +1,5 @@
 
-// Navbar
+// Nav-bar
 .navbar {
     &-brand {
         margin-right:2em;
@@ -366,4 +366,11 @@
     }
 }
 
-//
+// Side-menu
+.menu-label {
+    a {
+        color:$dark;
+        font-weight:700;
+        font-size:1rem;
+    }   
+}

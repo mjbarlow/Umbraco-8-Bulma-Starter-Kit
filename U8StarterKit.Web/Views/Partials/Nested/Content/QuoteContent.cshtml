@@ -1,0 +1,10 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<QuoteContent>
+@using U8StarterKit.Web.Models.Umbraco
+@using U8StarterKit.Web.Extensions
+
+@if (Model.Quote.HasValue())
+{
+    <blockquote class="is-size-4">
+        @Model.Quote
+    </blockquote>
+}

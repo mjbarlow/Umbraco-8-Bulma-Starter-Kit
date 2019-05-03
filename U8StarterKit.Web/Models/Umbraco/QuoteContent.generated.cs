@@ -20,49 +20,36 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace U8StarterKit.Web.Models.Umbraco
 {
-	// Mixin Content Type with alias "contentBase"
-	/// <summary>Content Base</summary>
-	public partial interface IContentBase : IPublishedContent
-	{
-		/// <summary>Nested Content</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		IEnumerable<IPublishedElement> NestedContent { get; }
-	}
-
-	/// <summary>Content Base</summary>
-	[PublishedModel("contentBase")]
-	public partial class ContentBase : PublishedContentModel, IContentBase
+	/// <summary>Quote</summary>
+	[PublishedModel("quoteContent")]
+	public partial class QuoteContent : PublishedElementModel
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		public new const string ModelTypeAlias = "contentBase";
+		public new const string ModelTypeAlias = "quoteContent";
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		public new static PublishedContentType GetModelContentType()
 			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<ContentBase, TValue>> selector)
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<QuoteContent, TValue>> selector)
 			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 #pragma warning restore 0109
 
 		// ctor
-		public ContentBase(IPublishedContent content)
+		public QuoteContent(IPublishedElement content)
 			: base(content)
 		{ }
 
 		// properties
 
 		///<summary>
-		/// Nested Content
+		/// Quote
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("nestedContent")]
-		public IEnumerable<IPublishedElement> NestedContent => GetNestedContent(this);
-
-		/// <summary>Static getter for Nested Content</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		public static IEnumerable<IPublishedElement> GetNestedContent(IContentBase that) => that.Value<IEnumerable<IPublishedElement>>("nestedContent");
+		[ImplementPropertyType("quote")]
+		public string Quote => this.Value<string>("quote");
 	}
 }

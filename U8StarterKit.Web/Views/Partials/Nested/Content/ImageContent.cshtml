@@ -1,0 +1,11 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ImageContent>
+@using U8StarterKit.Web.Models.Umbraco
+@using U8StarterKit.Web.Extensions
+
+@if (Model.Image.HasValue())
+{
+    <div class="image is-2by1 has-spacing-bottom">
+        <hr/>
+        @RazorHelper.ResponsiveImage(Model.Image, classList: "is-background")
+    </div>
+}

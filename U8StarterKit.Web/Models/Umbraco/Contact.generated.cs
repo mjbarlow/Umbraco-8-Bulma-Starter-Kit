@@ -88,14 +88,14 @@ namespace U8StarterKit.Web.Models.Umbraco
 		public global::Umbraco.Web.Models.Link MapLargerLink => this.Value<global::Umbraco.Web.Models.Link>("mapLargerLink");
 
 		///<summary>
-		/// Header Subtitle
+		/// Subtitle
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		[ImplementPropertyType("headerSubtitle")]
-		public string HeaderSubtitle => HeaderSection.GetHeaderSubtitle(this);
+		public IHtmlString HeaderSubtitle => HeaderSection.GetHeaderSubtitle(this);
 
 		///<summary>
-		/// Header Title
+		/// Title
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		[ImplementPropertyType("headerTitle")]
