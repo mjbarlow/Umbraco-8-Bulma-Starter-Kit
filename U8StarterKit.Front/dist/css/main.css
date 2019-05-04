@@ -7071,7 +7071,7 @@ label.panel-block {
 .section.has-background-white .has-no-background .button.is-outlined:hover span.icon-text, .section.has-background-white .has-no-background .button.is-outlined:hover span.icon, .section.has-background-white .has-no-background .button.is-outlined:hover svg, .section.has-background-light .has-no-background .button.is-outlined:hover span.icon-text, .section.has-background-light .has-no-background .button.is-outlined:hover span.icon, .section.has-background-light .has-no-background .button.is-outlined:hover svg, .section.has-background-grey-lighter .has-no-background .button.is-outlined:hover span.icon-text, .section.has-background-grey-lighter .has-no-background .button.is-outlined:hover span.icon, .section.has-background-grey-lighter .has-no-background .button.is-outlined:hover svg {
   color: white; }
 
-.section.has-background-white .has-no-background .button.is-link svg, .section.has-background-light .has-no-background .button.is-link svg, .section.has-background-grey-lighter .has-no-background .button.is-link svg {
+.section.has-background-white .has-no-background .button.is-link:not(.is-outlined) svg, .section.has-background-light .has-no-background .button.is-link:not(.is-outlined) svg, .section.has-background-grey-lighter .has-no-background .button.is-link:not(.is-outlined) svg {
   color: white; }
 
 .section.has-background-white .is-line-circle, .section.has-background-light .is-line-circle {
@@ -7099,6 +7099,9 @@ label.panel-block {
 
 .has-large-spacing-bottom {
   margin-bottom: 3rem !important; }
+
+.has-large-spacing-top {
+  margin-top: 3rem !important; }
 
 .has-spacing-top {
   margin-top: 1.5rem !important; }
