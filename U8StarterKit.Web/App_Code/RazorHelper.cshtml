@@ -50,6 +50,19 @@
     </span>
 }
 
+@helper RenderCategories(IEnumerable<string> categories, string classList = "")
+{
+    if (categories.HasValue())
+    {
+        <div class="has-spacing-bottom">
+            @foreach (var category in categories)
+            {
+                <span class="tag @classList">@category</span>
+            }
+        </div>
+    }
+}
+
 @functions
 {
     public static string BackgroundColorClass(string background)

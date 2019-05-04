@@ -7100,11 +7100,14 @@ label.panel-block {
 .has-large-spacing-bottom {
   margin-bottom: 3rem !important; }
 
-.has-large-spacing-top {
-  margin-top: 3rem !important; }
+.has-small-spacing-top {
+  margin-bottom: 0.25rem !important; }
 
 .has-spacing-top {
   margin-top: 1.5rem !important; }
+
+.has-large-spacing-top {
+  margin-top: 3rem !important; }
 
 .is-background {
   object-fit: cover;

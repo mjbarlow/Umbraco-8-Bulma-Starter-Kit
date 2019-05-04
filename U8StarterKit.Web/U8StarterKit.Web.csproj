@@ -536,6 +536,9 @@
     <Compile Include="Models\Umbraco\FaLinkComponent.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Umbraco\FeatureComponent.generated.cs">
+      <DependentUpon>Builder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Umbraco\File.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>

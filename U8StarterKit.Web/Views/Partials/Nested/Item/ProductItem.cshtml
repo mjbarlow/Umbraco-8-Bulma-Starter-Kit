@@ -18,7 +18,7 @@
             }
             @if(Model.Categories.HasValue())
             {
-                @Html.Partial("~/Views/Partials/CategoryLinks.cshtml", Model.Categories)
+                @RazorHelper.RenderCategories(Model.Categories, classList: "has-small-spacing-top")
             }
             @if(Model.Description.HasValue())
             {

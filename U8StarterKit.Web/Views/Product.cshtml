@@ -5,6 +5,8 @@
     Layout = "master.cshtml";
 }
 @Html.Partial("~/Views/Partials/SectionHeader.cshtml", new HeaderSection(Model.Parent))
+@Html.Partial("~/Views/Partials/Renderers/RenderSections.cshtml", Model.NestedContentBefore)
+
 <section class="section has-spacing section-gray">
     <div class="container">
         <div class="columns">
@@ -12,7 +14,7 @@
                 <div class="image is-5by4">
                     @if (Model.Image.HasValue())
                     {
-                        <img class="product-image" src="@Model.Image.Url"/>
+                        <img class="product-image" src="@Model.Image.Url" />
                     }
                 </div>
             </div>
@@ -22,14 +24,12 @@
                         <h1 class="title">@Model.ProductName</h1>
                         <div class="content">
                             <p class="is-size-5">@Model.Parent.GetProperty("DefaultCurrency").Value() @Model.Price.ToString("F")</p>
-                            @if (Model.Categories.HasValue())
+
+                            @if(Model.Categories.HasValue())
                             {
-                                @Html.Partial("~/Views/Partials/CategoryLinks.cshtml", Model.Categories)
+                                @RazorHelper.RenderCategories(Model.Categories, classList:"is-medium")
                             }
-                            @if (Model.Description.HasValue())
-                            {
-                                <p>@Model.Description</p>
-                            }
+                           
                             @if (Model.FullDescription.HasValue())
                             {
                                 @Model.FullDescription
@@ -42,20 +42,27 @@
                                     <span>Add to basket</span>
                                 </a>
                             </p>
-                             @*@if (Model.Features.HasValue())
+                            @if (Model.Features.HasValue())
                             {
                                 <hr />
                                 foreach (var feature in Model.Features)
                                 {
-                                    <p class="title is-5">@feature.Feature</p>
-                                    <p class="subtitle is-5">@feature.Description</p>
+                                    <div class="media">
+                                        <div class="media-left">
+                                            @RazorHelper.RenderFaIcon(feature.Icon)
+                                        </div>
+                                        <div class="media-content">
+                                            <p class="title is-5"> @feature.Feature</p>
+                                            <p class="subtitle is-5">@feature.Description</p>
+                                        </div>
+                                    </div>
                                     if (Model.Features.IndexOf(feature) != Model.Features.Count() - 1)
                                     {
                                         <hr />
                                     }
 
                                 }
-                            }*@
+                            }
                         </div>
                     </div>
                 </div>
@@ -63,3 +70,5 @@
         </div>
     </div>
 </section>
+
+@Html.Partial("~/Views/Partials/Renderers/RenderSections.cshtml", Model.NestedContentAfter)
