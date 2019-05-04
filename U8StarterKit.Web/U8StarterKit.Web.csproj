@@ -464,6 +464,7 @@
     <Content Include="Views\Partials\Nested\Content\ImageContent.cshtml" />
     <Content Include="Views\Partials\Nested\Content\QuoteContent.cshtml" />
     <Content Include="Views\Partials\Nested\Content\CallToActionSection.cshtml" />
+    <Content Include="Views\Partials\Nested\Content\IconsSection.cshtml" />
     <None Include="Views\Partials\Nested\Item\PersonItem.cshtml" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -523,6 +524,9 @@
     <Compile Include="Models\Umbraco\ContentBase.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Umbraco\ContentBeforeAfterBase.generated.cs">
+      <DependentUpon>Builder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Umbraco\ContentPage.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
@@ -545,9 +549,6 @@
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Umbraco\HeaderSection.generated.cs">
-      <DependentUpon>Builder.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Umbraco\HeroSection.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Umbraco\Home.generated.cs">
@@ -611,9 +612,6 @@
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Umbraco\RichTextContent.generated.cs">
-      <DependentUpon>Builder.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Umbraco\SidebarSection.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Umbraco\SignUpFormSection.generated.cs">

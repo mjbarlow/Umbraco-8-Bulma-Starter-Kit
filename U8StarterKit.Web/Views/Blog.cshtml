@@ -15,6 +15,9 @@
 }
 
 @Html.Partial("~/Views/Partials/SectionHeader.cshtml", new HeaderSection(Model))
+
+@Html.Partial("~/Views/Partials/Renderers/RenderSections.cshtml", Model.NestedContentBefore)
+
 @if (!blogItems.HasValue())
 {
     <div class="column has-text-centered">
@@ -46,8 +49,12 @@
         </div>
     }
     @SectionHelper.RenderSectionEnd()
-
 }
+@Html.Partial("~/Views/Partials/Renderers/RenderSections.cshtml", Model.NestedContentAfter)
+
+
+
+
 @functions {
     //gets the page from the querystring and sets it to one if it is out of range
     int SetPageNumber(int pageCount)

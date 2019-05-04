@@ -24,17 +24,9 @@ namespace U8StarterKit.Web.Models.Umbraco
 	/// <summary>Navigation Base</summary>
 	public partial interface INavigationBase : IPublishedContent
 	{
-		/// <summary>Keywords</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		IEnumerable<string> Keywords { get; }
-
 		/// <summary>Description</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		string SeoMetaDescription { get; }
-
-		/// <summary>Hide in Navigation</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		bool UmbracoNavihide { get; }
 	}
 
 	/// <summary>Navigation Base</summary>
@@ -63,17 +55,6 @@ namespace U8StarterKit.Web.Models.Umbraco
 		// properties
 
 		///<summary>
-		/// Keywords: Keywords that describe the content of the page. This is considered optional since most modern search engines don't use this anymore
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("keywords")]
-		public IEnumerable<string> Keywords => GetKeywords(this);
-
-		/// <summary>Static getter for Keywords</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		public static IEnumerable<string> GetKeywords(INavigationBase that) => that.Value<IEnumerable<string>>("keywords");
-
-		///<summary>
 		/// Description: A brief description of the content on your page. This text is shown below the title in a google search result and also used for Social Sharing Cards. The ideal length is between 130 and 155 characters
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
@@ -83,16 +64,5 @@ namespace U8StarterKit.Web.Models.Umbraco
 		/// <summary>Static getter for Description</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		public static string GetSeoMetaDescription(INavigationBase that) => that.Value<string>("seoMetaDescription");
-
-		///<summary>
-		/// Hide in Navigation: If you don't want this page to appear in the navigation, check this box
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("umbracoNavihide")]
-		public bool UmbracoNavihide => GetUmbracoNavihide(this);
-
-		/// <summary>Static getter for Hide in Navigation</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		public static bool GetUmbracoNavihide(INavigationBase that) => that.Value<bool>("umbracoNavihide");
 	}
 }

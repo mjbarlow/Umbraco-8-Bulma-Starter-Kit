@@ -20,57 +20,64 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace U8StarterKit.Web.Models.Umbraco
 {
-	/// <summary>Content Page</summary>
-	[PublishedModel("contentPage")]
-	public partial class ContentPage : PublishedContentModel, IContentBase, IHeaderSection, INavigationBase
+	// Mixin Content Type with alias "contentBeforeAfterBase"
+	/// <summary>Content Before After Base</summary>
+	public partial interface IContentBeforeAfterBase : IPublishedContent
+	{
+		/// <summary>Post Listing Content</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
+		IEnumerable<IPublishedElement> NestedContentAfter { get; }
+
+		/// <summary>Pre Listing Content</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
+		IEnumerable<IPublishedElement> NestedContentBefore { get; }
+	}
+
+	/// <summary>Content Before After Base</summary>
+	[PublishedModel("contentBeforeAfterBase")]
+	public partial class ContentBeforeAfterBase : PublishedContentModel, IContentBeforeAfterBase
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		public new const string ModelTypeAlias = "contentPage";
+		public new const string ModelTypeAlias = "contentBeforeAfterBase";
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		public new static PublishedContentType GetModelContentType()
 			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<ContentPage, TValue>> selector)
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<ContentBeforeAfterBase, TValue>> selector)
 			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 #pragma warning restore 0109
 
 		// ctor
-		public ContentPage(IPublishedContent content)
+		public ContentBeforeAfterBase(IPublishedContent content)
 			: base(content)
 		{ }
 
 		// properties
 
 		///<summary>
-		/// Nested Content
+		/// Post Listing Content
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("nestedContent")]
-		public IEnumerable<IPublishedElement> NestedContent => ContentBase.GetNestedContent(this);
+		[ImplementPropertyType("nestedContentAfter")]
+		public IEnumerable<IPublishedElement> NestedContentAfter => GetNestedContentAfter(this);
+
+		/// <summary>Static getter for Post Listing Content</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
+		public static IEnumerable<IPublishedElement> GetNestedContentAfter(IContentBeforeAfterBase that) => that.Value<IEnumerable<IPublishedElement>>("nestedContentAfter");
 
 		///<summary>
-		/// Subtitle
+		/// Pre Listing Content
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("headerSubtitle")]
-		public IHtmlString HeaderSubtitle => HeaderSection.GetHeaderSubtitle(this);
+		[ImplementPropertyType("nestedContentBefore")]
+		public IEnumerable<IPublishedElement> NestedContentBefore => GetNestedContentBefore(this);
 
-		///<summary>
-		/// Title
-		///</summary>
+		/// <summary>Static getter for Pre Listing Content</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("headerTitle")]
-		public string HeaderTitle => HeaderSection.GetHeaderTitle(this);
-
-		///<summary>
-		/// Description: A brief description of the content on your page. This text is shown below the title in a google search result and also used for Social Sharing Cards. The ideal length is between 130 and 155 characters
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("seoMetaDescription")]
-		public string SeoMetaDescription => NavigationBase.GetSeoMetaDescription(this);
+		public static IEnumerable<IPublishedElement> GetNestedContentBefore(IContentBeforeAfterBase that) => that.Value<IEnumerable<IPublishedElement>>("nestedContentBefore");
 	}
 }

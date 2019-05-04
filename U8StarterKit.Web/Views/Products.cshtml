@@ -6,6 +6,9 @@
     var products = Model.Children.Select(x => new Product(x));
 }
 @Html.Partial("~/Views/Partials/SectionHeader.cshtml", new U8StarterKit.Web.Models.Umbraco.HeaderSection(Model))
+
+@Html.Partial("~/Views/Partials/Renderers/RenderSections.cshtml", Model.NestedContentBefore)
+
 @SectionHelper.RenderSectionStart(Model.BackgroundColor?.Label, true)
 @if (products.HasValue())
 {
@@ -17,3 +20,5 @@
     }
 }
 @SectionHelper.RenderSectionEnd()
+
+@Html.Partial("~/Views/Partials/Renderers/RenderSections.cshtml", Model.NestedContentAfter)
