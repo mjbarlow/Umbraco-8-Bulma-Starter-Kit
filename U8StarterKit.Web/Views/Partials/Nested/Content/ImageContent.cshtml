@@ -2,9 +2,8 @@
 @using U8StarterKit.Web.Models.Umbraco
 @using U8StarterKit.Web.Extensions
 
-@if (Model.Image.HasValue())
-{
-    if (Model.ImageAlignment == "Left" || Model.ImageAlignment == "Right") { 
+
+    @if (Model.ImageAlignment == "Left" || Model.ImageAlignment == "Right") { 
 
          <div class="columns has-spacing-top">
              <div class="column">
@@ -37,16 +36,18 @@
     else
     {
         @RenderImage()
-        <div class="buttons">
-            @RenderImageText()
-        </div>
+        @RenderImageText()
+
     }
-}
+
 
 @helper RenderImage()
 {
     <div class="image is-2by1 has-spacing-bottom">
-        @RazorHelper.ResponsiveImage(Model.Image, classList: "is-background")
+        @if (Model.Image.HasValue())
+        {
+            @RazorHelper.ResponsiveImage(Model.Image, classList: "is-background")
+        }
     </div>
 }
 
@@ -56,13 +57,14 @@
      {
          <h3 class="title is-size-4">@Model.Title</h3>
      }
-
      if (Model.SubTitle.HasValue())
      {
-         @Model.SubTitle
+         <p class="subtitle is-size-5">
+             @Model.SubTitle
+         </p>
      }
      if (Model.Link.HasValue())
      {
-        @RazorHelper.RenderFaLink(Model.Link, classList:"button is-link")
+        @RazorHelper.RenderFaLink(Model.Link, classList:"button is-link is-medium")
      }
 }

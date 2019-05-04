@@ -9,23 +9,23 @@
         <div class="image has-spacing image is-16by9">
             @if (Model.PostImage.HasValue())
             {
-                @RazorHelper.ResponsiveImage(Model.PostImage, Model.PageTitle, "is-background", Model.ItemsPerRow)
+                @RazorHelper.ResponsiveImage(Model.PostImage, Model.HeaderTitle, "is-background", Model.ItemsPerRow)
             }
         </div>
     </div>
     <div class="card-content">
         <div class="content">
-            @if (Model.PageTitle.HasValue())
+            @if (Model.HeaderTitle.HasValue())
             {
-                <h3 class="title">@Model.PageTitle</h3>
+                <h3 class="title">@Model.HeaderTitle</h3>
             }
             <p class="subtitle">@Model.CreateDate.ToShortDateString()</p>
-            <div class="has-spacing-bottom">
-                @Html.Partial("~/Views/Partials/CategoryLinks.cshtml", Model.Categories)
-            </div>
-            @if (Model.Excerpt.HasValue())
+                <div class="has-spacing-bottom">
+                    @Html.Partial("~/Views/Partials/CategoryLinks.cshtml", Model.Categories)
+                </div>
+            @if (Model.HeaderSubtitle.HasValue())
             {
-                <p>@Model.Excerpt</p>
+                <p>@Model.HeaderSubtitle</p>
             }
             <a href="@Model.Url" class="button is-link">Read more</a>
         </div>

@@ -3,7 +3,7 @@
 @using U8StarterKit.Web.Extensions
 
 <div class="has-equal-height has-no-background ">
-    <div class="is-60-percent has-spacing-bottom">
+    <div class="is-60-percent has-margin-auto has-spacing-bottom">
         <figure class="image is-square is-circle">
             @if (Model.Photo.HasValue())
             {
@@ -11,7 +11,7 @@
             }
         </figure>
     </div>
-    <div class="content has-text-centered is-85-percent has-large-spacing-bottom">
+    <div class="content has-text-centered is-85-percent has-margin-auto has-large-spacing-bottom">
         <h4 class="title has-small-spacing-bottom is-size-4">@Model.Name</h4>
         @if (Model.Bio.HasValue())
         {

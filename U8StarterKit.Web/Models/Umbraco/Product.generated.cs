@@ -49,8 +49,8 @@ namespace U8StarterKit.Web.Models.Umbraco
 		/// Categories
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("categories")]
-		public IEnumerable<string> Categories => this.Value<IEnumerable<string>>("categories");
+		[ImplementPropertyType("Categories")]
+		public IEnumerable<string> Categories => this.Value<IEnumerable<string>>("Categories");
 
 		///<summary>
 		/// Description

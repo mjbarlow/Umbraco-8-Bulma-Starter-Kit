@@ -15,11 +15,23 @@
     <div class="hero-body">
         <div class="container">
             <div class="column is-8-tablet is-offset-2-tablet is-paddingless">
-                <h1 class="title is-2">@Model.HeaderTitle</h1>
+                @if (Model.HeaderTitle.HasValue())
+                {
+                    <h1 class="title is-2">@Model.HeaderTitle</h1>
+                }
                 <h2 class="subtitle is-4">@Model.CreateDate.ToShortDateString()</h2>
+                @if(Model.Categories.HasValue())
+                {
+                    <div class="has-spacing-bottom">
+                        @foreach (var category in Model.Categories)
+                        {
+                            <span class="button is-dark is-inverted is-outlined">@category</span>
+                        }
+                    </div>
+                }
                 @if (Model.HeaderSubtitle.HasValue())
                 {
-                    <p class="is-size-4">@Model.HeaderSubtitle</p>
+                    <h2 class="subtitle is-size-4">@Model.HeaderSubtitle</h2>
                 }
             </div>
         </div>
@@ -31,7 +43,7 @@
             <div class="column is-large is-8-tablet is-offset-2-tablet">
                 <article>
                     <div class="content is-large">
-                        @Html.GetGridHtml(Model, "bodyText", "bulma-fluid")
+                        @Html.Partial("~/Views/Partials/Renderers/RenderContent.cshtml", Model.NestedContent)     
                     </div>
                 </article>
             </div>
