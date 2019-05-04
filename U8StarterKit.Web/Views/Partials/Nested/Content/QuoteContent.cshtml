@@ -4,7 +4,9 @@
 
 @if (Model.Quote.HasValue())
 {
-    <blockquote class="is-size-4">
-        @Model.Quote
-    </blockquote>
+    <div class="has-spacing-top has-spacing-bottom">
+        <blockquote class="is-size-4">
+            @Model.Quote
+        </blockquote>
+    </div>
 }

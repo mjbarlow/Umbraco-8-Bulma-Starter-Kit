@@ -463,6 +463,7 @@
     <Content Include="Views\Partials\Nested\Content\RichTextContent.cshtml" />
     <Content Include="Views\Partials\Nested\Content\ImageContent.cshtml" />
     <Content Include="Views\Partials\Nested\Content\QuoteContent.cshtml" />
+    <Content Include="Views\Partials\Nested\Content\CallToActionSection.cshtml" />
     <None Include="Views\Partials\Nested\Item\PersonItem.cshtml" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>

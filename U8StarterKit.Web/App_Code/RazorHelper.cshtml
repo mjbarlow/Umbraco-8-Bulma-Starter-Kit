@@ -26,20 +26,22 @@
     <img srcset="@srcSet" alt="@alt" class="@classList">
 }
 
-@helper RenderFaLink(FaLink faLink)
+@helper RenderFaLink(FaLink faLink, string classList = "", string classListIcon ="")
 {
-    <a href="@faLink.Link.Url" class="@faLink.PrimaryClass @faLink.SecondaryClass" target="@faLink.Link.Target">
-        @if (faLink.ClassName.HasValue())
-        {
-            <span class="icon has-text-link">
-                 <i class="@faLink.ClassName"></i>
-            </span>@:&nbsp;
-        }
-        @faLink.Link.Name
-    </a>
+    if (faLink.Link.HasValue())
+     {
+         <a href="@faLink.Link.Url" class="@faLink.PrimaryClass @faLink.SecondaryClass @classList" target="@faLink.Link.Target">
+             @if (faLink.ClassName.HasValue())
+             {
+                 <span class="icon @classListIcon">
+                     <i class="@faLink.ClassName"></i>
+                 </span>
+                 @:&nbsp;
+             }
+             @faLink.Link.Name
+         </a>
+     }
 }
-
-
 
 @helper RenderFaIcon(FaIcon faIcon)
 {
@@ -47,7 +49,6 @@
         <i class="@faIcon.ClassName"></i>
     </span>
 }
-
 
 @functions
 {

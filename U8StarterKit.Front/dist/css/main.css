@@ -275,7 +275,7 @@ th {
   text-align: left; }
 
 html {
-  background-color: #f8f9fa;
+  background-color: white;
   font-size: 16px;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -7069,6 +7069,9 @@ label.panel-block {
   color: #3273dc; }
 
 .section.has-background-white .has-no-background .button.is-outlined:hover span.icon-text, .section.has-background-white .has-no-background .button.is-outlined:hover span.icon, .section.has-background-white .has-no-background .button.is-outlined:hover svg, .section.has-background-light .has-no-background .button.is-outlined:hover span.icon-text, .section.has-background-light .has-no-background .button.is-outlined:hover span.icon, .section.has-background-light .has-no-background .button.is-outlined:hover svg, .section.has-background-grey-lighter .has-no-background .button.is-outlined:hover span.icon-text, .section.has-background-grey-lighter .has-no-background .button.is-outlined:hover span.icon, .section.has-background-grey-lighter .has-no-background .button.is-outlined:hover svg {
+  color: white; }
+
+.section.has-background-white .has-no-background .button.is-link svg, .section.has-background-light .has-no-background .button.is-link svg, .section.has-background-grey-lighter .has-no-background .button.is-link svg {
   color: white; }
 
 .section.has-background-white .is-line-circle, .section.has-background-light .is-line-circle {

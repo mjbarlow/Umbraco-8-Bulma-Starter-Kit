@@ -17,3 +17,15 @@
     @:</div>
     @:</section>
 }
+
+@helper RenderContentSectionStart(string backgroundColorClass = "", bool isFullWidth = false, bool isCentered = false, string className ="")
+{
+    @:<section class="section @className @(isFullWidth ? "is-full-width" : "") @RazorHelper.BackgroundColorClass(backgroundColorClass)">
+    @:<div class="columns is-multiline @(isCentered ? "is-centered" : "")">
+}
+    
+@helper RenderContentSectionEnd()
+{
+    @:</div>
+    @:</section>
+}

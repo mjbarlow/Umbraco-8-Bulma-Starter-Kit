@@ -16,9 +16,7 @@
         }
         @if (Model.Link.HasValue())
         {
-            <a class="button is-link is-medium" target="@Model.Link.Target" href="@Model.Link.Url">
-                @Model.Link.Name
-            </a>
+            @RazorHelper.RenderFaLink(Model.Link, classList: "button is-link is-medium")
         }
     </div>
 </div>

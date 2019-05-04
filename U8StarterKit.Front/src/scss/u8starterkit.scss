@@ -225,6 +225,9 @@
                     color: $white;
                 }
             }
+            .button.is-link svg{
+                color:$white;
+            }
         }
     }
     &.has-background-white,
