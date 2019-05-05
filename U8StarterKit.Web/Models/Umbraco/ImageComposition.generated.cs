@@ -20,26 +20,43 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace U8StarterKit.Web.Models.Umbraco
 {
-	/// <summary>Image</summary>
-	[PublishedModel("imageContent")]
-	public partial class ImageContent : PublishedElementModel, IImageComposition, ITitleComponent
+	// Mixin Content Type with alias "imageComposition"
+	/// <summary>Image Composition</summary>
+	public partial interface IImageComposition : IPublishedElement
+	{
+		/// <summary>Image</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
+		IPublishedContent Image { get; }
+
+		/// <summary>Image Alignment</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
+		string ImageAlignment { get; }
+
+		/// <summary>Link</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
+		FaLinksPropertyEditor.Models.FaLink Link { get; }
+	}
+
+	/// <summary>Image Composition</summary>
+	[PublishedModel("imageComposition")]
+	public partial class ImageComposition : PublishedElementModel, IImageComposition
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		public new const string ModelTypeAlias = "imageContent";
+		public new const string ModelTypeAlias = "imageComposition";
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		public new static PublishedContentType GetModelContentType()
 			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<ImageContent, TValue>> selector)
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<ImageComposition, TValue>> selector)
 			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 #pragma warning restore 0109
 
 		// ctor
-		public ImageContent(IPublishedElement content)
+		public ImageComposition(IPublishedElement content)
 			: base(content)
 		{ }
 
@@ -50,34 +67,32 @@ namespace U8StarterKit.Web.Models.Umbraco
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		[ImplementPropertyType("image")]
-		public IPublishedContent Image => ImageComposition.GetImage(this);
+		public IPublishedContent Image => GetImage(this);
+
+		/// <summary>Static getter for Image</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
+		public static IPublishedContent GetImage(IImageComposition that) => that.Value<IPublishedContent>("image");
 
 		///<summary>
 		/// Image Alignment
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		[ImplementPropertyType("imageAlignment")]
-		public string ImageAlignment => ImageComposition.GetImageAlignment(this);
+		public string ImageAlignment => GetImageAlignment(this);
+
+		/// <summary>Static getter for Image Alignment</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
+		public static string GetImageAlignment(IImageComposition that) => that.Value<string>("imageAlignment");
 
 		///<summary>
 		/// Link
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		[ImplementPropertyType("link")]
-		public FaLinksPropertyEditor.Models.FaLink Link => ImageComposition.GetLink(this);
+		public FaLinksPropertyEditor.Models.FaLink Link => GetLink(this);
 
-		///<summary>
-		/// Subtitle
-		///</summary>
+		/// <summary>Static getter for Link</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("subTitle")]
-		public IHtmlString SubTitle => TitleComponent.GetSubTitle(this);
-
-		///<summary>
-		/// Title
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("title")]
-		public string Title => TitleComponent.GetTitle(this);
+		public static FaLinksPropertyEditor.Models.FaLink GetLink(IImageComposition that) => that.Value<FaLinksPropertyEditor.Models.FaLink>("link");
 	}
 }

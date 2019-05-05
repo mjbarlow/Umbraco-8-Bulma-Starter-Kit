@@ -569,7 +569,13 @@
     <Compile Include="Models\Umbraco\Image.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Umbraco\ImageComposition.generated.cs">
+      <DependentUpon>Builder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Umbraco\ImageContent.generated.cs">
+      <DependentUpon>Builder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Umbraco\ImageSection.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Umbraco\LinkComponent.generated.cs">
@@ -666,6 +672,7 @@
     <Content Include="Views\Partials\Nested\Section\LinksListSection.cshtml" />
     <Content Include="Views\Partials\Nested\Section\IconsSection.cshtml" />
     <Content Include="Views\Partials\Renderers\RenderContent.cshtml" />
+    <Content Include="Views\Partials\Nested\Section\ImageSection.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

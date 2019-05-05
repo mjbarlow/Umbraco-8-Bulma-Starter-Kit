@@ -386,3 +386,40 @@
         font-size:1rem;
     }   
 }
+
+.image-section {
+    .column {
+        margin:0;
+        padding:0 0 0.75rem 0;
+        @include tablet{
+           
+        }
+    }
+    .is-hidden-mobile {
+        height:100%;
+    }
+    .text-content {
+        width:100%;
+        height: 100%;
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 3rem 2.25rem;
+        .text-inner {
+            @include desktop {
+                max-width:80%;
+            }
+        }
+    }
+    .image.is-2by1 {
+        height:100%;
+    }
+    &.image-full {
+        .image.is-2by1,
+        .text-content {
+            height:auto;
+        }
+    }
+
+}
