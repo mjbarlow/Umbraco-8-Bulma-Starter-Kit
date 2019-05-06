@@ -16,16 +16,37 @@
   "deprecated": false,
   "description": "Start package for Bulma",
   "devDependencies": {
+    "@babel/core": "^7.4.4",
+    "@babel/preset-env": "^7.4.4",
     "autoprefixer": "^9.4.7",
     "babel-cli": "^6.26.0",
+    "babel-loader": "^8.0.5",
     "babel-preset-env": "^1.7.0",
     "babel-preset-es2015-ie": "^6.7.0",
     "bulma": "^0.7.2",
-    "node-sass": "^4.11.0",
+    "clean-webpack-plugin": "^2.0.1",
+    "compile-ejs-loader": "0.0.2",
+    "copy-webpack-plugin": "^5.0.3",
+    "css-loader": "^2.1.1",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "filemanager-webpack-plugin": "^2.0.5",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.6.0",
+    "node-sass": "^4.12.0",
     "npm-run-all": "^4.1.5",
     "postcss-cli": "^6.1.1",
+    "postcss-loader": "^3.0.0",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "vue-loader": "^15.7.0",
+    "vue-template-compiler": "^2.6.10",
     "webpack": "^4.29.6",
-    "webpack-cli": "^3.3.0"
+    "webpack-cli": "^3.3.2",
+    "webpack-dev-middleware": "^3.6.2",
+    "webpack-hot-middleware": "^2.24.4",
+    "webpack-merge": "^4.2.1"
   },
   "homepage": "https://github.com/jgthms/bulma-start#readme",
   "keywords": [
@@ -40,14 +61,30 @@
     "type": "git",
     "url": "git+https://github.com/jgthms/bulma-start.git"
   },
+  "eslintConfig": {
+    "env": {
+      "browser": true,
+      "node": true
+    },
+    "parserOptions": {
+      "ecmaVersion": 6,
+      "sourceType": "module"
+    },
+    "rules": {
+      "semi": 2
+    }
+  },
   "scripts": {
-    "css-build": "node-sass src/scss/main.scss dist/css/main.css",
-    "css-deploy": "npm run css-build && npm run css-postcss",
-    "css-postcss": "postcss dist/css/main.css --use autoprefixer --output ../U8StarterKit.Web/css/main.css",
-    "js-deploy": "webpack"
+    "start": "node server.js",
+    "build": "webpack --config webpack.config.prod.js  --colors",
+    "dev": "webpack --config webpack.config.dev.js && npm start"
   },
   "version": "0.0.3",
   "dependencies": {
-    "@babel/polyfill": "^7.4.0"
+    "@babel/polyfill": "^7.4.0",
+    "axios": "^0.18.0",
+    "jquery": "^3.4.1",
+    "vee-validate": "^2.2.6",
+    "vue": "^2.6.10"
   }
 }
