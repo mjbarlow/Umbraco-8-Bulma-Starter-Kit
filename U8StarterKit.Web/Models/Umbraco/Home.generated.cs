@@ -22,7 +22,7 @@ namespace U8StarterKit.Web.Models.Umbraco
 {
 	/// <summary>Home</summary>
 	[PublishedModel("home")]
-	public partial class Home : PublishedContentModel, IContentSection, IFooterSection
+	public partial class Home : PublishedContentModel, IContentSection
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -46,45 +46,10 @@ namespace U8StarterKit.Web.Models.Umbraco
 		// properties
 
 		///<summary>
-		/// githubRepo: Add gihub repo for social links,
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("githubRepo")]
-		public string GithubRepo => this.Value<string>("githubRepo");
-
-		///<summary>
-		/// Logo: Optional. If you add a logo it'll be used in the upper left corner instead of the site name. Make sure to use a transparent logo for best results
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("siteLogo")]
-		public IPublishedContent SiteLogo => this.Value<IPublishedContent>("siteLogo");
-
-		///<summary>
-		/// Sitename: Used on the homepage as well as the title and social cards
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("sitename")]
-		public string Sitename => this.Value<string>("sitename");
-
-		///<summary>
-		/// twitterUsername: Add twitter username for social links.
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("twitterUsername")]
-		public string TwitterUsername => this.Value<string>("twitterUsername");
-
-		///<summary>
 		/// nestedContent
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		[ImplementPropertyType("nestedContent")]
 		public IEnumerable<IPublishedElement> NestedContent => ContentSection.GetNestedContent(this);
-
-		///<summary>
-		/// Nested Footer
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("nestedFooter")]
-		public IEnumerable<IPublishedElement> NestedFooter => FooterSection.GetNestedFooter(this);
 	}
 }

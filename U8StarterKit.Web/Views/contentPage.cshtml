@@ -8,21 +8,19 @@
     <div class="container">
         <div class="columns">
             <div class="column is-one-quarter-tablet">
-                <nav class="panel">
-                    <p class="panel-heading">
-                        <a class="title is-link is-5" href="@(Model.Level == 2 ? Model.Url : Model.Parent.Url)">@(Model.Level == 2 ? Model.Name : Model.Parent.Name)</a>
+                <aside class="menu">
+                    <p class="menu-label">
+                        <a href="@(Model.Level == 2 ? Model.Url : Model.Parent.Url)">@(Model.Level == 2 ? Model.Name : Model.Parent.Name)</a>
                     </p>
-                    @Html.Partial("~/Views/Partials/Navigation/SubNavigation.cshtml")
-                </nav>
+                    <ul class="menu-list">
+                        @Html.Partial("~/Views/Partials/Navigation/SubNavigation.cshtml")
+                    </ul>
+                </aside>
             </div>
             <div class="column is-three-quarter-tablet">
-                <div class="card">
-                    <div class="card-content">
-                        <div class="content">
-                            @Html.GetGridHtml(Model, "bodyText", "Bulma-fluid")
-                        </div>
-                    </div>
-                </div>
+               <div class="content is-medium">
+                    @Html.Partial("~/Views/Partials/Renderers/RenderContent.cshtml", Model.NestedContent)     
+               </div>
             </div>
         </div>
     </div>

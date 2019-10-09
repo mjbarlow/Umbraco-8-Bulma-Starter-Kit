@@ -81,7 +81,7 @@ namespace U8StarterKit.Web.Models.Umbraco
 		public IHtmlString SubTitle => TitleComponent.GetSubTitle(this);
 
 		///<summary>
-		/// Name
+		/// Title
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		[ImplementPropertyType("title")]

@@ -28,7 +28,7 @@ namespace U8StarterKit.Web.Models.Umbraco
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		IHtmlString SubTitle { get; }
 
-		/// <summary>Name</summary>
+		/// <summary>Title</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		string Title { get; }
 	}
@@ -70,13 +70,13 @@ namespace U8StarterKit.Web.Models.Umbraco
 		public static IHtmlString GetSubTitle(ITitleComponent that) => that.Value<IHtmlString>("subTitle");
 
 		///<summary>
-		/// Name
+		/// Title
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		[ImplementPropertyType("title")]
 		public string Title => GetTitle(this);
 
-		/// <summary>Static getter for Name</summary>
+		/// <summary>Static getter for Title</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		public static string GetTitle(ITitleComponent that) => that.Value<string>("title");
 	}

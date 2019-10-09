@@ -1,13 +1,9 @@
 @charset "utf-8";
 
-// Customization
-// You can easily customize Bulma with your own variables.
-// Just uncomment the following block to see the result.
-
-// 1. Import the initial variables 
+// Import the initial variables 
 @import "../../node_modules/bulma/sass/utilities/initial-variables";
 
-// 2. Set your own initial variables
+// Initial variables
 $grey-section:#f8f9fa;
 $grey-light: #dbdbdd;
 $grey-dark: #aeafb3;
@@ -16,7 +12,7 @@ $pink: #e89d93;
 $yellow: #eec71a;
 $grey-lighter: #e8e8e8;
 
-// 3. Set the derived variables
+// Derived variables
 $link: $blue;
 $info: $cyan;
 $success: $green;
@@ -27,12 +23,9 @@ $text: $grey-darker;
 $card-shadow: .0 0.25rem 0.125rem 0 rgba(0,0,0,0.1);
 $card-footer-border-top: 1px solid $grey-lighter;
 $footer-background-color: $grey-darker;
-$body-background-color: $grey-section;
 $section-padding-medium: 6rem 1.5rem;
 $panel-item-border: 0;
 $panel-heading-radius:0;
-
-
 
 .panel {
     box-shadow: $card-shadow;

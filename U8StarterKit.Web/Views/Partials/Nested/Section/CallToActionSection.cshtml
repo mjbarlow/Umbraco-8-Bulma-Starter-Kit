@@ -1,24 +1,25 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<CallToActionSection>
 @using U8StarterKit.Web.Models.Umbraco
 @using U8StarterKit.Web.Extensions
+    
 
-<div class="columns is-centered">
+@SectionHelper.RenderSectionStart(Model.BackgroundColor.Label, true)
+<div class="columns is-centered has-margin-auto">
     <div class="column has-no-background is-two-thirds has-text-centered">
         @if (Model.Title.HasValue())
         {
-            <h2 class="title is-2">@Model.Title</h2>
+            <h2 class="title is-size-3 is-size-1-tablet">@Model.Title</h2>
         }
         @if (Model.Content.HasValue())
         {
-            <div class="subtitle is-4">@Model.Content</div>
+            <div class="subtitle is-size-5 is-size-4-tablet">@Model.Content</div>
         }
         @if (Model.Link.HasValue())
         {
-            <a class="button is-link is-medium" target="@Model.Link.Target" href="@Model.Link.Url">
-                @Model.Link.Name
-            </a>
+            @RazorHelper.RenderFaLink(Model.Link, classList: "button is-link is-medium")
         }
     </div>
 </div>
+@SectionHelper.RenderSectionEnd()
 
 

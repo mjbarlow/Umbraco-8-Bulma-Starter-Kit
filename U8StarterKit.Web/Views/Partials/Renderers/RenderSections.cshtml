@@ -1,6 +1,5 @@
 ﻿@using U8StarterKit.Web.Extensions
 @using U8StarterKit.Web.Models.Umbraco
-@using U8StarterKit.Web.Helpers
 @inherits Umbraco.Web.Mvc.UmbracoViewPage<IEnumerable<IPublishedElement>>
 
 @{
@@ -8,134 +7,10 @@
     {
         foreach (var rowContent in Model)
         {
-            var row = new RowElement(rowContent);
-            switch (rowContent.ContentType.Alias)
-            {
-                case "blogListSection":
-
-                    var blogListSection = new BlogListSection(rowContent);
-                    var blogsNode = blogListSection.Blog.Select(x => new Blog(x)).FirstOrDefault();
-                    var blogs = blogsNode.Children.Select(x => new Blogpost(x)).Take((int)blogListSection.ItemsToShow);
-                    var itemsPerRow = blogListSection.ItemsPerRow?.ToString();
-
-                    @RenderSectionStart(blogListSection.BackgroundColor.Label)
-                    @RenderComponent(new TitleComponent(rowContent), "TitleComponent")
-
-                    foreach (var blogItem in blogs)
-                    {
-                        @RenderItem(blogItem, "BlogItem", itemsPerRow)
-                    }
-
-                    @RenderComponent(new LinkComponent(rowContent), "LinkComponent")
-                    @RenderSectionEnd()
-                    break;
-
-                case "callToActionSection":
-
-                    var callToActionSection = new CallToActionSection(rowContent);
-
-                    @RenderSectionStart(callToActionSection.BackgroundColor.Label, true)
-                    @Html.Partial($"~/Views/Partials/Nested/Section/{rowContent.ContentType.Alias}.cshtml", rowContent)
-                    @RenderSectionEnd()
-                    break;
-
-                case "productListSection":
-                    var productListSection = new ProductListSection(rowContent);
-
-                    @RenderSectionStart(productListSection.BackgroundColor.Label)
-                    @RenderComponent(new TitleComponent(rowContent), "TitleComponent")
-
-                    foreach (var productNode in productListSection.Products)
-                    {
-                        @RenderItem(productNode, "ProductItem", productListSection.ItemsPerRow?.ToString())
-                    }
-
-                    @RenderComponent(new LinkComponent(rowContent), "LinkComponent")
-                    @RenderSectionEnd()
-
-                    break;
-
-                case "peopleListSection":
-                    var peopleListSection = new PeopleListSection(rowContent);
-
-                    @RenderSectionStart(peopleListSection.BackgroundColor.Label)
-                    @RenderComponent(new TitleComponent(rowContent), "TitleComponent")
-
-                    foreach (var personNode in peopleListSection.People)
-                    {
-                        @RenderItem(personNode, "PersonItem", peopleListSection.ItemsPerRow?.ToString())
-                    }
-
-                    @RenderComponent(new LinkComponent(rowContent), "LinkComponent")
-                    @RenderSectionEnd()
-                    break;
-
-                case "signUpFormSection":
-                    var signUpFormSection = new SignUpFormSection(rowContent);
-                    @RenderSectionStart(signUpFormSection.BackgroundColor.Label, true, true)
-                        @Html.Partial($"~/Views/Partials/Nested/Section/{rowContent.ContentType.Alias}.cshtml", rowContent)
-                    @RenderSectionEnd()
-                    break;
-
-                case "bannerSection":
-                    var bannerSection = new BannerSection(rowContent);
-                    @Html.Partial($"~/Views/Partials/Nested/Section/{rowContent.ContentType.Alias}.cshtml", rowContent)
-                    break;
-
-                case "bannerStripSection":
-                    var bannerStripSection = new BannerStripSection(rowContent);
-                    @Html.Partial($"~/Views/Partials/Nested/Section/{rowContent.ContentType.Alias}.cshtml", rowContent)
-                    break;
-                
-                case "singleLineSection":
-                    var singleLineSection = new SingleLineSection(rowContent);
-                    @Html.Partial($"~/Views/Partials/Nested/Section/{rowContent.ContentType.Alias}.cshtml", rowContent)
-                    break;
-
-
-
-                default:
-                    @RenderRowItem(rowContent, rowContent.ContentType.Alias, "1")
-                    break;
-            }
+            @Html.Partial($"~/Views/Partials/Nested/Section/{rowContent.ContentType.Alias}.cshtml", rowContent)
         }
     }
 }
 
 
-@helper RenderItem(IPublishedElement rowContent, string viewName, string itemsPerRow = "1")
-{
-    @RenderRowItem(rowContent, viewName, itemsPerRow, "Item")
-}
 
-@helper RenderComponent(IPublishedElement rowContent, string viewName, string itemsPerRow = "1")
-{
-    @RenderRowItem(rowContent, viewName, itemsPerRow, "Component")
-}
-
-
-@helper RenderRowItem(IPublishedElement rowContent, string itemsPerRow)
-{
-    @RenderRowItem(rowContent, rowContent.ContentType.Alias, itemsPerRow)
-}
-
-@helper RenderRowItem(IPublishedElement rowContent, string viewName, string itemsPerRow, string folder = "Section")
-{
-    <div class="column @RazorHelper.ColumnClass(itemsPerRow)">
-        @Html.Partial($"~/Views/Partials/Nested/{folder}/{viewName}.cshtml", rowContent)
-    </div>
-}
-
-@helper RenderSectionStart(string backgroundColorClass = "", bool isFullWidth = false, bool isCentered = false)
-{
-@:<section class="section is-medium @(isFullWidth ? "is-full-width" : "") @RazorHelper.BackgroundColorClass(backgroundColorClass)">
-@:<div class="container">
-@:<div class="columns is-multiline @(isCentered ? "is-centered" : "")">
-}
-
-@helper RenderSectionEnd()
-{
-@:</div>
-@:</div>
-@:</section>
-}

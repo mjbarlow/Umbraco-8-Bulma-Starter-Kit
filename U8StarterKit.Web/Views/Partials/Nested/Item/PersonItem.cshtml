@@ -2,54 +2,52 @@
 @using U8StarterKit.Web.Models.Umbraco
 @using U8StarterKit.Web.Extensions
 
-<div class="card has-equal-height">
-    <div class="image-card" style="position:relative;">
-        <figure class="image image is-3by2 ">
+<div class="has-equal-height has-no-background ">
+    <div class="is-60-percent has-margin-auto has-spacing-bottom">
+        <figure class="image is-square is-circle">
             @if (Model.Photo.HasValue())
             {
-                <img class="is-background" src="@Model.Photo.Url" alt="@Model.Name">
+                @RazorHelper.ResponsiveImage(Model.Photo, Model.Name, "is-background is-rounded", Model.ItemsPerRow)
             }
         </figure>
     </div>
-    <div class="card-content">
-        <div class="content">
-            <h4 class="title has-small-spacing-bottom">@Model.Name</h4>
-            @if (Model.Bio.HasValue())
+    <div class="content has-text-centered is-85-percent has-margin-auto has-large-spacing-bottom">
+        <h4 class="title has-small-spacing-bottom is-size-4">@Model.Name</h4>
+        @if (Model.Bio.HasValue())
+        {
+            @Model.Bio
+        }
+        <div class="buttons is-centered">
+            @if (Model.Email.HasValue())
             {
-                @Model.Bio
+                @RenderSocialLink($"mailto:{Model.Email}", "fas fa-envelope", Model.Email)
             }
-            <div class="buttons">
-                @if (Model.Email.HasValue())
-                {
-                    @RenderSocialLink($"mailto:{Model.Email}", "fas fa-envelope", Model.Email)
-                }
-                @if (Model.FacebookUsername.HasValue())
-                {
-                    @RenderSocialLink($"http://facebook.com/{Model.Email}", "fab fa-facebook-f", $"@{Model.FacebookUsername}")
-                }
-                @if (Model.TwitterUsername.HasValue())
-                {
-                    @RenderSocialLink($"http://twitter.com/{Model.TwitterUsername}", "fab fa-twitter", $"@{Model.TwitterUsername}")
-                }
-                @if (Model.LinkedInUsername.HasValue())
-                {
-                    @RenderSocialLink($"http://linkedin.com/{Model.LinkedInUsername}", "fab fa-linkedin", $"@{Model.LinkedInUsername}")
-                }
-                @if (Model.InstagramUsername.HasValue())
-                {
-                    @RenderSocialLink($"http://linkedin.com/{Model.InstagramUsername}", "fab fa-instagram", $"@{Model.InstagramUsername}")
-                }
-            </div>
+            @if (Model.FacebookUsername.HasValue())
+            {
+                @RenderSocialLink($"http://facebook.com/{Model.Email}", "fab fa-facebook-f", $"@{Model.FacebookUsername}")
+            }
+            @if (Model.TwitterUsername.HasValue())
+            {
+                @RenderSocialLink($"http://twitter.com/{Model.TwitterUsername}", "fab fa-twitter", $"@{Model.TwitterUsername}")
+            }
+            @if (Model.LinkedInUsername.HasValue())
+            {
+                @RenderSocialLink($"http://linkedin.com/{Model.LinkedInUsername}", "fab fa-linkedin", $"@{Model.LinkedInUsername}")
+            }
+            @if (Model.InstagramUsername.HasValue())
+            {
+                @RenderSocialLink($"http://linkedin.com/{Model.InstagramUsername}", "fab fa-instagram", $"@{Model.InstagramUsername}")
+            }
         </div>
     </div>
 </div>
 
 @helper RenderSocialLink(string href, string iconClass, string value)
 {
-    <a href="@href" class="button is-light has-icons-left">
+    <a href="@href" target="_blank" class="button is-outlined is-link has-icons-left">
         <span class="icon">
             <i class="@iconClass"></i>
         </span>
-        <span>@value</span>
+        <span class="icon-text">@value</span>
     </a>
 }

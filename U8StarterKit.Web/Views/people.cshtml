@@ -1,20 +1,26 @@
 ﻿@inherits UmbracoViewPage<People>
 @using U8StarterKit.Web.Models.Umbraco
+@using U8StarterKit.Web.Extensions
+
 @{
     Layout = "master.cshtml";
+    var people = Model.Children.Select(x => new Person(x));
 }
 @Html.Partial("~/Views/Partials/SectionHeader.cshtml", new HeaderSection(Model))
-<section class="section">
-    <div class="container">
-        <div class="columns is-multiline">
-            @foreach (var person in Model.Children.Select(x => new Person(x)))
-            {
-                <div class="column is-one-third">
-                    @Html.Partial("~/Views/Partials/Nested/Item/PersonItem.cshtml", person) 
-                </div>
-            }
-        </div>
-    </div>
-</section>
 
+@Html.Partial("~/Views/Partials/Renderers/RenderSections.cshtml", Model.NestedContentBefore)
+
+@SectionHelper.RenderSectionStart(Model.BackgroundColor?.Label, true)
+@if (people.HasValue())
+{
+    foreach (var person in people)
+    {
+        <div class="column @RazorHelper.ColumnClass(Model.ItemsPerRow?.ToString())">
+            @Html.Partial("~/Views/Partials/Nested/Item/PersonItem.cshtml", person)
+        </div>
+    }
+}
+@SectionHelper.RenderSectionEnd()
+
+@Html.Partial("~/Views/Partials/Renderers/RenderSections.cshtml", Model.NestedContentAfter)
 

@@ -7,7 +7,7 @@
     <div class="image has-spacing image is-3by2">
         @if (Model.Image.HasValue())
         {
-            <img src="@Model.Image.Url" class="is-background"/>
+            @RazorHelper.ResponsiveImage(Model.Image, Model.ProductName, "is-background", Model.ItemsPerRow)
         }
     </div>
     <div class="card-content has-equal-height">
@@ -18,7 +18,7 @@
             }
             @if(Model.Categories.HasValue())
             {
-                @Html.Partial("~/Views/Partials/CategoryLinks.cshtml", Model.Categories)
+                @RazorHelper.RenderCategories(Model.Categories, classList: "has-small-spacing-top is-medium")
             }
             @if(Model.Description.HasValue())
             {

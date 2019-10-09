@@ -1,0 +1,78 @@
+﻿{
+	propertyEditors: [
+	{
+		alias: "FaLinksPropertyEditor",
+		name: "Font Awesome Links",
+		icon: "icon-link",
+		group: "pickers",
+		editor: {
+			valueType: "TEXT",
+			view: "~/App_Plugins/FaLinksPropertyEditor/falinks.propertyeditor.html"
+		},
+		prevalues: {
+			   "fields": [
+				  {
+				  	"label": "Minimum number of items",
+					"description": "",
+					"key": "minNumber",
+					"view": "number"
+				  },
+				    {
+				  	"label": "Maximum number of items",
+					"description": "",
+					"key": "maxNumber",
+					"view": "number"
+				  },
+				  {
+					"label": "Primary Class Dropdown",
+					"description": "Add key/value pairs for primary class dropdown",
+					"key": "primaryClassItems",
+					"view": "~/App_Plugins/FaLinksPropertyEditor/falinks.prevalues.html"
+				  },
+				  {
+					"label": "Secondary Class Dropdown",
+					"description": "Add key/value pairs for secondary class dropdown",
+					"key": "secondaryClassItems",
+					"view": "~/App_Plugins/FaLinksPropertyEditor/falinks.prevalues.html"
+				  },
+			   ]
+		}
+	},
+	{
+		alias: "FaIconPropertyEditor",
+		name: "Font Awesome Icon",
+		icon: "icon-colorpicker",
+		group: "pickers",
+		editor: {
+			valueType: "TEXT",
+			view: "~/App_Plugins/FaLinksPropertyEditor/faicon.propertyeditor.html"
+		},
+		prevalues: {
+			   "fields": [
+				  {
+				  	"label": "Minimum number of items",
+					"description": "",
+					"key": "minNumber",
+					"view": "number"
+				  },
+				    {
+				  	"label": "Maximum number of items",
+					"description": "",
+					"key": "maxNumber",
+					"view": "number"
+				  }
+			   ]
+		}
+	}
+	],
+	javascript: [
+		'~/App_Plugins/FaLinksPropertyEditor/js/falinks.propertyeditor.controller.js',
+		'~/App_Plugins/FaLinksPropertyEditor/js/falinks.picker.controller.js',
+		'~/App_Plugins/FaLinksPropertyEditor/js/falinks.prevalues.controller.js',
+		'~/App_Plugins/FaLinksPropertyEditor/js/faicon.propertyeditor.controller.js'
+
+	],
+	css: [
+		'~/App_Plugins/FaLinksPropertyEditor/css/falinks.style.css'
+	]
+}	

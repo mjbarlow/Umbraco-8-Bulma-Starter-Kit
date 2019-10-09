@@ -1,17 +1,22 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<BlogListSection>
 @using U8StarterKit.Web.Models.Umbraco
-@using U8StarterKit.Web.Extensions
-@using U8StarterKit.Web.Models.ViewModels
+
 @{
-    var blogNode = Model.Blog.Select(x => new Blog(x)).FirstOrDefault();
-    var blog = new BlogsViewModel()
-    {
-        Blog = blogNode,
-        BlogsPosts = blogNode.Children.Select(x => new Blogpost(x)).ToList(),
-        HasPaging =false,
-        IsHalfWidth =false,
-        ItemsToShow = (int)Model.ItemsToShow
-    };
+    // get the list of blogs
+    var blogsNode = Model.Blog.Select(x => new Blog(x)).FirstOrDefault();
+    var blogs = blogsNode.Children.Select(x => new Blogpost(x)).Take((int)Model.ItemsToShow);
+    var itemsPerRow = Model.ItemsPerRow?.ToString();
 }
-@Html.Partial("~/Views/Partials/Blogs.cshtml", blog)
-                   
+
+@SectionHelper.RenderSectionStart(Model.BackgroundColor.Label)
+@Html.Partial($"~/Views/Partials/Nested/Component/TitleComponent.cshtml", new TitleComponent(Model))
+
+@foreach (var blogItem in blogs)
+{
+    blogItem.ItemsPerRow = itemsPerRow;
+    <div class="column @RazorHelper.ColumnClass(itemsPerRow)">
+        @Html.Partial($"~/Views/Partials/Nested/Item/BlogItem.cshtml", blogItem)
+    </div>
+}
+@Html.Partial($"~/Views/Partials/Nested/Component/LinkComponent.cshtml", new LinkComponent(Model))
+@SectionHelper.RenderSectionEnd()

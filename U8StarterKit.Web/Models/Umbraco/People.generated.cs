@@ -22,7 +22,7 @@ namespace U8StarterKit.Web.Models.Umbraco
 {
 	/// <summary>People</summary>
 	[PublishedModel("people")]
-	public partial class People : PublishedContentModel, IHeaderSection, INavigationBase
+	public partial class People : PublishedContentModel, IContentBeforeAfterBase, IHeaderSection, IListingPageBase, INavigationBase
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -46,25 +46,46 @@ namespace U8StarterKit.Web.Models.Umbraco
 		// properties
 
 		///<summary>
-		/// Header Subtitle
+		/// Post Listing Content
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
+		[ImplementPropertyType("nestedContentAfter")]
+		public IEnumerable<IPublishedElement> NestedContentAfter => ContentBeforeAfterBase.GetNestedContentAfter(this);
+
+		///<summary>
+		/// Pre Listing Content
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
+		[ImplementPropertyType("nestedContentBefore")]
+		public IEnumerable<IPublishedElement> NestedContentBefore => ContentBeforeAfterBase.GetNestedContentBefore(this);
+
+		///<summary>
+		/// Subtitle
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		[ImplementPropertyType("headerSubtitle")]
-		public string HeaderSubtitle => HeaderSection.GetHeaderSubtitle(this);
+		public IHtmlString HeaderSubtitle => HeaderSection.GetHeaderSubtitle(this);
 
 		///<summary>
-		/// Header Title
+		/// Title
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		[ImplementPropertyType("headerTitle")]
 		public string HeaderTitle => HeaderSection.GetHeaderTitle(this);
 
 		///<summary>
-		/// Keywords: Keywords that describe the content of the page. This is considered optional since most modern search engines don't use this anymore
+		/// Background Color
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("keywords")]
-		public IEnumerable<string> Keywords => NavigationBase.GetKeywords(this);
+		[ImplementPropertyType("backgroundColor")]
+		public global::Umbraco.Core.PropertyEditors.ValueConverters.ColorPickerValueConverter.PickedColor BackgroundColor => ListingPageBase.GetBackgroundColor(this);
+
+		///<summary>
+		/// Items Per Row
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
+		[ImplementPropertyType("itemsPerRow")]
+		public object ItemsPerRow => ListingPageBase.GetItemsPerRow(this);
 
 		///<summary>
 		/// Description: A brief description of the content on your page. This text is shown below the title in a google search result and also used for Social Sharing Cards. The ideal length is between 130 and 155 characters
@@ -72,12 +93,5 @@ namespace U8StarterKit.Web.Models.Umbraco
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		[ImplementPropertyType("seoMetaDescription")]
 		public string SeoMetaDescription => NavigationBase.GetSeoMetaDescription(this);
-
-		///<summary>
-		/// Hide in Navigation: If you don't want this page to appear in the navigation, check this box
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("umbracoNavihide")]
-		public bool UmbracoNavihide => NavigationBase.GetUmbracoNavihide(this);
 	}
 }

@@ -22,7 +22,7 @@ namespace U8StarterKit.Web.Models.Umbraco
 {
 	/// <summary>Product</summary>
 	[PublishedModel("product")]
-	public partial class Product : PublishedContentModel
+	public partial class Product : PublishedContentModel, IContentBeforeAfterBase
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -49,8 +49,8 @@ namespace U8StarterKit.Web.Models.Umbraco
 		/// Categories
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("categories")]
-		public IEnumerable<string> Categories => this.Value<IEnumerable<string>>("categories");
+		[ImplementPropertyType("Categories")]
+		public IEnumerable<string> Categories => this.Value<IEnumerable<string>>("Categories");
 
 		///<summary>
 		/// Description
@@ -64,7 +64,7 @@ namespace U8StarterKit.Web.Models.Umbraco
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		[ImplementPropertyType("features")]
-		public IEnumerable<ProductFeatureElement> Features => this.Value<IEnumerable<ProductFeatureElement>>("features");
+		public IEnumerable<FeatureComponent> Features => this.Value<IEnumerable<FeatureComponent>>("features");
 
 		///<summary>
 		/// Full Description
@@ -78,7 +78,7 @@ namespace U8StarterKit.Web.Models.Umbraco
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		[ImplementPropertyType("image")]
-		public Image Image => this.Value<Image>("image");
+		public IPublishedContent Image => this.Value<IPublishedContent>("image");
 
 		///<summary>
 		/// Price
@@ -100,5 +100,19 @@ namespace U8StarterKit.Web.Models.Umbraco
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		[ImplementPropertyType("sku")]
 		public string Sku => this.Value<string>("sku");
+
+		///<summary>
+		/// Post Listing Content
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
+		[ImplementPropertyType("nestedContentAfter")]
+		public IEnumerable<IPublishedElement> NestedContentAfter => ContentBeforeAfterBase.GetNestedContentAfter(this);
+
+		///<summary>
+		/// Pre Listing Content
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
+		[ImplementPropertyType("nestedContentBefore")]
+		public IEnumerable<IPublishedElement> NestedContentBefore => ContentBeforeAfterBase.GetNestedContentBefore(this);
 	}
 }

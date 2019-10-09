@@ -2,24 +2,26 @@
 @using U8StarterKit.Web.Models.Umbraco
 @using U8StarterKit.Web.Extensions
 @{
-   //todo: hook up form to Umbraco Forms
+    //todo: hook up form to Umbraco Forms
 }
+
+@SectionHelper.RenderSectionStart(Model.BackgroundColor.Label, true, true)
 <div class="column is-one-third">
     <article class="has-no-background">
         @if (Model.Title.HasValue())
         {
-            <h3 class="title is-3">Stay up to date </h3>
+            <h3 class="title is-size-3 is-size-2-tablet">Stay up to date </h3>
         }
         @if (Model.Subtitle.HasValue())
         {
-            <div class="subtitle is-5">
-                @Model.Subtitle 
+            <div class="subtitle is-size-5 is-size-4-tablet">
+                @Model.Subtitle
             </div>
         }
-   
+
         @if (Model.Content.HasValue())
         {
-            <div class="subtitle is-5">
+            <div class="subtitle is-size-5 is-size-4-tablet">
                 @Model.Content
             </div>
         }
@@ -31,7 +33,7 @@
         {
             <p class="title is-4">@Model.Title</p>
         }
-       <div class="field">
+        <div class="field">
             <div class="control has-icons-left has-icons-right">
                 <input class="input is-medium" type="email" placeholder="Name, eg Neils Harvig">
                 <span class="icon is-left">
@@ -61,4 +63,4 @@
         </div>
     </article>
 </div>
-
+@SectionHelper.RenderSectionEnd()

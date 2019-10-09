@@ -24,11 +24,11 @@ namespace U8StarterKit.Web.Models.Umbraco
 	/// <summary>Header Section</summary>
 	public partial interface IHeaderSection : IPublishedContent
 	{
-		/// <summary>Header Subtitle</summary>
+		/// <summary>Subtitle</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		string HeaderSubtitle { get; }
+		IHtmlString HeaderSubtitle { get; }
 
-		/// <summary>Header Title</summary>
+		/// <summary>Title</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		string HeaderTitle { get; }
 	}
@@ -59,24 +59,24 @@ namespace U8StarterKit.Web.Models.Umbraco
 		// properties
 
 		///<summary>
-		/// Header Subtitle
+		/// Subtitle
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		[ImplementPropertyType("headerSubtitle")]
-		public string HeaderSubtitle => GetHeaderSubtitle(this);
+		public IHtmlString HeaderSubtitle => GetHeaderSubtitle(this);
 
-		/// <summary>Static getter for Header Subtitle</summary>
+		/// <summary>Static getter for Subtitle</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		public static string GetHeaderSubtitle(IHeaderSection that) => that.Value<string>("headerSubtitle");
+		public static IHtmlString GetHeaderSubtitle(IHeaderSection that) => that.Value<IHtmlString>("headerSubtitle");
 
 		///<summary>
-		/// Header Title
+		/// Title
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		[ImplementPropertyType("headerTitle")]
 		public string HeaderTitle => GetHeaderTitle(this);
 
-		/// <summary>Static getter for Header Title</summary>
+		/// <summary>Static getter for Title</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		public static string GetHeaderTitle(IHeaderSection that) => that.Value<string>("headerTitle");
 	}

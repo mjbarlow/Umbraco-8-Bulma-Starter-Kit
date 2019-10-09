@@ -1,0 +1,15 @@
+﻿@using U8StarterKit.Web.Extensions
+@inherits Umbraco.Web.Mvc.UmbracoViewPage<IEnumerable<IPublishedElement>>
+
+@{
+    if (Model.HasValue())
+    {
+        foreach (var rowContent in Model)
+        {
+            @Html.Partial($"~/Views/Partials/Nested/Content/{rowContent.ContentType.Alias}.cshtml", rowContent)
+        }
+    }
+}
+
+
+

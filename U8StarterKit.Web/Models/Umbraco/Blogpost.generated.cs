@@ -20,9 +20,9 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace U8StarterKit.Web.Models.Umbraco
 {
-	/// <summary>Blogpost</summary>
+	/// <summary>Blog Post</summary>
 	[PublishedModel("blogpost")]
-	public partial class Blogpost : PublishedContentModel, IHeaderSection, INavigationBase
+	public partial class Blogpost : PublishedContentModel, IContentBase, IHeaderSection, INavigationBase
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -46,32 +46,11 @@ namespace U8StarterKit.Web.Models.Umbraco
 		// properties
 
 		///<summary>
-		/// Content
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("bodyText")]
-		public Newtonsoft.Json.Linq.JToken BodyText => this.Value<Newtonsoft.Json.Linq.JToken>("bodyText");
-
-		///<summary>
 		/// Categories
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		[ImplementPropertyType("categories")]
 		public IEnumerable<string> Categories => this.Value<IEnumerable<string>>("categories");
-
-		///<summary>
-		/// Excerpt: Introduction to your blog post. This is also used in the summaries on the front of the blog as well as the homepage
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("excerpt")]
-		public string Excerpt => this.Value<string>("excerpt");
-
-		///<summary>
-		/// Page Title: The title of the page, this is also the first text in a google search result. The ideal length is between 40 and 60 characters
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("pageTitle")]
-		public string PageTitle => this.Value<string>("pageTitle");
 
 		///<summary>
 		/// Post Image
@@ -81,25 +60,25 @@ namespace U8StarterKit.Web.Models.Umbraco
 		public IPublishedContent PostImage => this.Value<IPublishedContent>("postImage");
 
 		///<summary>
-		/// Header Subtitle
+		/// Nested Content
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
+		[ImplementPropertyType("nestedContent")]
+		public IEnumerable<IPublishedElement> NestedContent => ContentBase.GetNestedContent(this);
+
+		///<summary>
+		/// Subtitle
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		[ImplementPropertyType("headerSubtitle")]
-		public string HeaderSubtitle => HeaderSection.GetHeaderSubtitle(this);
+		public IHtmlString HeaderSubtitle => HeaderSection.GetHeaderSubtitle(this);
 
 		///<summary>
-		/// Header Title
+		/// Title
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		[ImplementPropertyType("headerTitle")]
 		public string HeaderTitle => HeaderSection.GetHeaderTitle(this);
-
-		///<summary>
-		/// Keywords: Keywords that describe the content of the page. This is considered optional since most modern search engines don't use this anymore
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("keywords")]
-		public IEnumerable<string> Keywords => NavigationBase.GetKeywords(this);
 
 		///<summary>
 		/// Description: A brief description of the content on your page. This text is shown below the title in a google search result and also used for Social Sharing Cards. The ideal length is between 130 and 155 characters
@@ -107,12 +86,5 @@ namespace U8StarterKit.Web.Models.Umbraco
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		[ImplementPropertyType("seoMetaDescription")]
 		public string SeoMetaDescription => NavigationBase.GetSeoMetaDescription(this);
-
-		///<summary>
-		/// Hide in Navigation: If you don't want this page to appear in the navigation, check this box
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("umbracoNavihide")]
-		public bool UmbracoNavihide => NavigationBase.GetUmbracoNavihide(this);
 	}
 }

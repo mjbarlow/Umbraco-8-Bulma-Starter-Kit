@@ -22,7 +22,7 @@ namespace U8StarterKit.Web.Models.Umbraco
 {
 	/// <summary>Blog</summary>
 	[PublishedModel("blog")]
-	public partial class Blog : PublishedContentModel, IContentBase, IHeaderSection, INavigationBase
+	public partial class Blog : PublishedContentModel, IContentBeforeAfterBase, IHeaderSection, IListingPageBase, INavigationBase
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -46,46 +46,53 @@ namespace U8StarterKit.Web.Models.Umbraco
 		// properties
 
 		///<summary>
-		/// Disqus Shortname: To use comments, you'll need to sign up for Disqus and enter your shortname here (more info: https://help.disqus.com/customer/portal/articles/472097-universal-embed-code)
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("disqusShortname")]
-		public string DisqusShortname => this.Value<string>("disqusShortname");
-
-		///<summary>
 		/// How many posts should be shown?
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("howManyPostsShouldBeShown")]
-		public decimal HowManyPostsShouldBeShown => this.Value<decimal>("howManyPostsShouldBeShown");
+		[ImplementPropertyType("itemsToShow")]
+		public decimal ItemsToShow => this.Value<decimal>("itemsToShow");
 
 		///<summary>
-		/// Content
+		/// Post Listing Content
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("bodyText")]
-		public Newtonsoft.Json.Linq.JToken BodyText => ContentBase.GetBodyText(this);
+		[ImplementPropertyType("nestedContentAfter")]
+		public IEnumerable<IPublishedElement> NestedContentAfter => ContentBeforeAfterBase.GetNestedContentAfter(this);
 
 		///<summary>
-		/// Header Subtitle
+		/// Pre Listing Content
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
+		[ImplementPropertyType("nestedContentBefore")]
+		public IEnumerable<IPublishedElement> NestedContentBefore => ContentBeforeAfterBase.GetNestedContentBefore(this);
+
+		///<summary>
+		/// Subtitle
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		[ImplementPropertyType("headerSubtitle")]
-		public string HeaderSubtitle => HeaderSection.GetHeaderSubtitle(this);
+		public IHtmlString HeaderSubtitle => HeaderSection.GetHeaderSubtitle(this);
 
 		///<summary>
-		/// Header Title
+		/// Title
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		[ImplementPropertyType("headerTitle")]
 		public string HeaderTitle => HeaderSection.GetHeaderTitle(this);
 
 		///<summary>
-		/// Keywords: Keywords that describe the content of the page. This is considered optional since most modern search engines don't use this anymore
+		/// Background Color
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("keywords")]
-		public IEnumerable<string> Keywords => NavigationBase.GetKeywords(this);
+		[ImplementPropertyType("backgroundColor")]
+		public global::Umbraco.Core.PropertyEditors.ValueConverters.ColorPickerValueConverter.PickedColor BackgroundColor => ListingPageBase.GetBackgroundColor(this);
+
+		///<summary>
+		/// Items Per Row
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
+		[ImplementPropertyType("itemsPerRow")]
+		public object ItemsPerRow => ListingPageBase.GetItemsPerRow(this);
 
 		///<summary>
 		/// Description: A brief description of the content on your page. This text is shown below the title in a google search result and also used for Social Sharing Cards. The ideal length is between 130 and 155 characters
@@ -93,12 +100,5 @@ namespace U8StarterKit.Web.Models.Umbraco
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		[ImplementPropertyType("seoMetaDescription")]
 		public string SeoMetaDescription => NavigationBase.GetSeoMetaDescription(this);
-
-		///<summary>
-		/// Hide in Navigation: If you don't want this page to appear in the navigation, check this box
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("umbracoNavihide")]
-		public bool UmbracoNavihide => NavigationBase.GetUmbracoNavihide(this);
 	}
 }

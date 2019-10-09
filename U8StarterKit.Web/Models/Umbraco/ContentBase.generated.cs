@@ -24,9 +24,9 @@ namespace U8StarterKit.Web.Models.Umbraco
 	/// <summary>Content Base</summary>
 	public partial interface IContentBase : IPublishedContent
 	{
-		/// <summary>Content</summary>
+		/// <summary>Nested Content</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		Newtonsoft.Json.Linq.JToken BodyText { get; }
+		IEnumerable<IPublishedElement> NestedContent { get; }
 	}
 
 	/// <summary>Content Base</summary>
@@ -55,14 +55,14 @@ namespace U8StarterKit.Web.Models.Umbraco
 		// properties
 
 		///<summary>
-		/// Content
+		/// Nested Content
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("bodyText")]
-		public Newtonsoft.Json.Linq.JToken BodyText => GetBodyText(this);
+		[ImplementPropertyType("nestedContent")]
+		public IEnumerable<IPublishedElement> NestedContent => GetNestedContent(this);
 
-		/// <summary>Static getter for Content</summary>
+		/// <summary>Static getter for Nested Content</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		public static Newtonsoft.Json.Linq.JToken GetBodyText(IContentBase that) => that.Value<Newtonsoft.Json.Linq.JToken>("bodyText");
+		public static IEnumerable<IPublishedElement> GetNestedContent(IContentBase that) => that.Value<IEnumerable<IPublishedElement>>("nestedContent");
 	}
 }

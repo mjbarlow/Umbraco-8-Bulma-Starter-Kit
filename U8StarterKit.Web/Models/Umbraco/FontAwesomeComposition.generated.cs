@@ -24,13 +24,13 @@ namespace U8StarterKit.Web.Models.Umbraco
 	/// <summary>Font Awesome Composition</summary>
 	public partial interface IFontAwesomeComposition : IPublishedElement
 	{
-		/// <summary>Font Awesome Class</summary>
+		/// <summary>Font Awesome Link</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		string FontAwesomeClass { get; }
+		IEnumerable<FaLinksPropertyEditor.Models.FaLink> FontAwesomeLink { get; }
 
 		/// <summary>Font Awesome Size</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		string FontAwesomeSize { get; }
+		decimal FontAwesomeSize { get; }
 	}
 
 	/// <summary>Font Awesome Composition</summary>
@@ -59,25 +59,25 @@ namespace U8StarterKit.Web.Models.Umbraco
 		// properties
 
 		///<summary>
-		/// Font Awesome Class: See the font awesome icon class name. Eg. "fas fa-cube"
+		/// Font Awesome Link: See the font awesome icon class name. Eg. "fas fa-cube"
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("fontAwesomeClass")]
-		public string FontAwesomeClass => GetFontAwesomeClass(this);
+		[ImplementPropertyType("fontAwesomeLink")]
+		public IEnumerable<FaLinksPropertyEditor.Models.FaLink> FontAwesomeLink => GetFontAwesomeLink(this);
 
-		/// <summary>Static getter for Font Awesome Class</summary>
+		/// <summary>Static getter for Font Awesome Link</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		public static string GetFontAwesomeClass(IFontAwesomeComposition that) => that.Value<string>("fontAwesomeClass");
+		public static IEnumerable<FaLinksPropertyEditor.Models.FaLink> GetFontAwesomeLink(IFontAwesomeComposition that) => that.Value<IEnumerable<FaLinksPropertyEditor.Models.FaLink>>("fontAwesomeLink");
 
 		///<summary>
-		/// Font Awesome Size
+		/// Font Awesome Size: Choose the size of the panel icon.
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		[ImplementPropertyType("fontAwesomeSize")]
-		public string FontAwesomeSize => GetFontAwesomeSize(this);
+		public decimal FontAwesomeSize => GetFontAwesomeSize(this);
 
 		/// <summary>Static getter for Font Awesome Size</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		public static string GetFontAwesomeSize(IFontAwesomeComposition that) => that.Value<string>("fontAwesomeSize");
+		public static decimal GetFontAwesomeSize(IFontAwesomeComposition that) => that.Value<decimal>("fontAwesomeSize");
 	}
 }

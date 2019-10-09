@@ -95,17 +95,17 @@ namespace U8StarterKit.Web.Models.Umbraco
 		public global::Umbraco.Core.PropertyEditors.ValueConverters.ColorPickerValueConverter.PickedColor BackgroundColor => ColourSettingsComposition.GetBackgroundColor(this);
 
 		///<summary>
-		/// Font Awesome Class: See the font awesome icon class name. Eg. "fas fa-cube"
+		/// Font Awesome Link: See the font awesome icon class name. Eg. "fas fa-cube"
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
-		[ImplementPropertyType("fontAwesomeClass")]
-		public string FontAwesomeClass => FontAwesomeComposition.GetFontAwesomeClass(this);
+		[ImplementPropertyType("fontAwesomeLink")]
+		public IEnumerable<FaLinksPropertyEditor.Models.FaLink> FontAwesomeLink => FontAwesomeComposition.GetFontAwesomeLink(this);
 
 		///<summary>
-		/// Font Awesome Size
+		/// Font Awesome Size: Choose the size of the panel icon.
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		[ImplementPropertyType("fontAwesomeSize")]
-		public string FontAwesomeSize => FontAwesomeComposition.GetFontAwesomeSize(this);
+		public decimal FontAwesomeSize => FontAwesomeComposition.GetFontAwesomeSize(this);
 	}
 }

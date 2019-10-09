@@ -3,6 +3,7 @@
 @{
     Layout = null;
     var home = (Home)Model.Root();
+    var appSettings = (AppConfig) Model.Root().DescendantOfType(AppConfig.ModelTypeAlias);
 }
 <!doctype html>
 <html>
@@ -10,23 +11,25 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>@Model.Name - @home.Sitename</title>
+    <title>@Model.Name - @appSettings.BrandLogo.FirstOrDefault()?.Link.Name</title>
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="stylesheet" href="@Url.Content("~/css/main.css")" />
-    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script src="@Url.Content("~/js/all.min.js")"></script>
+    
+
     @RenderSection("Header", required: false)
 </head>
 <body>
-    @Html.Partial("~/Views/Partials/NavSection.cshtml", home)
+    @Html.Partial("~/Views/Partials/NavSection.cshtml", appSettings)
     <main>
         @RenderBody()
     </main>
-     @Html.Partial("~/Views/Partials/Renderers/RenderSections.cshtml", home.NestedFooter)
+     @Html.Partial("~/Views/Partials/Renderers/RenderSections.cshtml", appSettings.NestedFooter)
     <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
 
 @*<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
     <script src="https://ajax.aspnetcdn.com/ajax/mvc/5.2.3/jquery.validate.unobtrusive.min.js"></script>*@
-    <script src="@Url.Content("~/scripts/bundle.js")"></script>
+    <script src="@Url.Content("~/js/bundle.js")"></script>
 </body>
 </html>

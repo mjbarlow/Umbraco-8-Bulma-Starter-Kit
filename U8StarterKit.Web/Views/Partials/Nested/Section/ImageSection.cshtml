@@ -1,0 +1,77 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ImageSection>
+@using U8StarterKit.Web.Models.Umbraco
+@using U8StarterKit.Web.Extensions
+
+
+@SectionHelper.RenderContentSectionStart(Model.BackgroundColor.Label, isFullWidth:true, className: "image-section is-paddingless")
+@if (Model.ImageAlignment == "Left" || Model.ImageAlignment == "Right")
+{
+            if (Model.ImageAlignment == "Left")
+            {
+                
+                <div class="column">
+                    @RenderImage()
+                </div>
+            }
+            else
+            {
+                <div class="column is-hidden-mobile">
+                    @RenderImageText()
+                </div>
+            }
+
+        <div class="column">
+            @if (Model.ImageAlignment == "Left")
+            {
+                @RenderImageText()
+            }
+            else
+            {
+                @RenderImage()
+                <div class="is-hidden-tablet">
+                    @RenderImageText()
+                </div>
+            }
+        </div>}
+else
+{   
+    <div class="column image-full">
+        @RenderImage()
+        @RenderImageText()
+    </div>
+
+}
+@SectionHelper.RenderContentSectionEnd()
+
+@helper RenderImage()
+{
+
+    <div class="image is-2by1">
+        @if (Model.Image.HasValue())
+        {
+            @RazorHelper.ResponsiveImage(Model.Image, classList: "is-background")
+        }
+    </div>
+}
+
+@helper RenderImageText()
+{
+    <div class="text-content has-text-centered  has-no-background">
+        <div class="text-inner">
+            @if (Model.Title.HasValue())
+            {
+                <h3 class="title is-size-3 is-size-2-tablet">@Model.Title</h3>
+            }
+            @if (Model.SubTitle.HasValue())
+            {
+                <div class="subtitle is-size-5 is-size-4-tablet">
+                    @Model.SubTitle
+                </div>
+            }
+            @if (Model.Link.HasValue())
+            {
+                @RazorHelper.RenderFaLink(Model.Link, classList: "button is-link is-medium")
+            }
+        </div>
+    </div>
+}

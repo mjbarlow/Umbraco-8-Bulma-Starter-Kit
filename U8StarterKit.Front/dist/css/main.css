@@ -275,7 +275,7 @@ th {
   text-align: left; }
 
 html {
-  background-color: #f8f9fa;
+  background-color: white;
   font-size: 16px;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -6942,44 +6942,63 @@ label.panel-block {
 .navbar-item {
   color: #454547; }
 
-.hero-banner {
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative; }
-  .hero-banner .hero-body {
-    z-index: 115; }
-  .hero-banner .hero-bannerbuttons .button {
+.section.hero-banner.is-medium {
+  min-height: 500px; }
+  .section.hero-banner.is-medium .hero-body {
+    z-index: 115;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    display: flex; }
+    @media screen and (min-width: 769px) and (max-width: 1087px) {
+      .section.hero-banner.is-medium .hero-body {
+        padding-top: 6rem;
+        padding-bottom: 6rem; } }
+  .section.hero-banner.is-medium .hero-bannerbuttons .button {
     height: auto;
     padding-bottom: calc(1em - 1px);
     padding-top: calc(1em - 1px); }
-    .hero-banner .hero-bannerbuttons .button > span > em {
+    .section.hero-banner.is-medium .hero-bannerbuttons .button > span > em {
       display: block;
       font-size: .5em;
       font-style: normal;
       line-height: 1em;
       margin-bottom: .5em;
       opacity: .5; }
-    .hero-banner .hero-bannerbuttons .button img {
+    .section.hero-banner.is-medium .hero-bannerbuttons .button img {
       display: block;
       max-height: 24px; }
-    .hero-banner .hero-bannerbuttons .button.is-mainbutton {
+    .section.hero-banner.is-medium .hero-bannerbuttons .button.is-mainbutton {
       background-color: #3273dc;
       border-color: transparent;
-      color: #ffffff; }
-  .hero-banner.has-background-info .block, .hero-banner.has-background-info .title, .hero-banner.has-background-info strong {
+      color: #ffffff;
+      font-weight: 700; }
+  .section.hero-banner.is-medium.has-background-info .block, .section.hero-banner.is-medium.has-background-info .title, .section.hero-banner.is-medium.has-background-info strong, .section.hero-banner.is-medium.has-background-info span {
     color: white; }
-  .hero-banner.has-background-info .hero-bannerbuttons .button.is-mainbutton {
+  .section.hero-banner.is-medium.has-background-info .hero-bannerbuttons .button.is-mainbutton {
     background-color: #00d1b2; }
-  .hero-banner.has-background-info a, .hero-banner.has-background-info i, .hero-banner.has-background-info .icon {
+  .section.hero-banner.is-medium.has-background-info a, .section.hero-banner.is-medium.has-background-info i, .section.hero-banner.is-medium.has-background-info .icon svg {
     color: #00d1b2; }
-  .hero-banner.has-background-dark .block, .hero-banner.has-background-dark .title, .hero-banner.has-background-dark strong {
+  .section.hero-banner.is-medium.has-background-dark .block, .section.hero-banner.is-medium.has-background-dark .title, .section.hero-banner.is-medium.has-background-dark strong {
     color: white; }
-  .hero-banner.has-background-dark .hero-bannerbuttons .button.is-mainbutton {
+  .section.hero-banner.is-medium.has-background-dark .hero-bannerbuttons .button.is-mainbutton {
     background-color: #00d1b2; }
-  .hero-banner.has-background-dark a, .hero-banner.has-background-dark i, .hero-banner.has-background-dark .icon {
+  .section.hero-banner.is-medium.has-background-dark a, .section.hero-banner.is-medium.has-background-dark i, .section.hero-banner.is-medium.has-background-dark .icon svg {
     color: #00d1b2; }
-  .hero-banner.has-background-light .icon, .hero-banner.has-background-white .icon {
+  .section.hero-banner.is-medium.has-background-light .icon svg, .section.hero-banner.is-medium.has-background-white .icon svg, .section.hero-banner.is-medium.has-background-grey-lighter .icon svg {
     color: #00d1b2; }
+  .section.hero-banner.is-medium.has-background-light a, .section.hero-banner.is-medium.has-background-white a, .section.hero-banner.is-medium.has-background-grey-lighter a {
+    color: #3273dc; }
+  .section.hero-banner.is-medium.has-background-primary .icon svg, .section.hero-banner.is-medium.has-background-primary .title, .section.hero-banner.is-medium.has-background-primary .subtitle, .section.hero-banner.is-medium.has-background-primary p, .section.hero-banner.is-medium.has-background-primary span, .section.hero-banner.is-medium.has-background-primary strong {
+    color: #454547; }
+  .section.hero-banner.is-medium.has-background-primary a {
+    color: #3273dc; }
+  @media screen and (min-width: 769px), print {
+    .section.hero-banner.is-medium {
+      min-height: 670px; } }
 
 .hero-footer.has-background-info .block, .hero-footer.has-background-info .title, .hero-footer.has-background-info .subtitle, .hero-footer.has-background-info strong, .hero-footer.has-background-info p, .hero-footer.has-background-primary .block, .hero-footer.has-background-primary .title, .hero-footer.has-background-primary .subtitle, .hero-footer.has-background-primary strong, .hero-footer.has-background-primary p, .hero-footer.has-background-dark .block, .hero-footer.has-background-dark .title, .hero-footer.has-background-dark .subtitle, .hero-footer.has-background-dark strong, .hero-footer.has-background-dark p, .footer.has-background-info .block, .footer.has-background-info .title, .footer.has-background-info .subtitle, .footer.has-background-info strong, .footer.has-background-info p, .footer.has-background-primary .block, .footer.has-background-primary .title, .footer.has-background-primary .subtitle, .footer.has-background-primary strong, .footer.has-background-primary p, .footer.has-background-dark .block, .footer.has-background-dark .title, .footer.has-background-dark .subtitle, .footer.has-background-dark strong, .footer.has-background-dark p {
   color: white; }
@@ -6995,14 +7014,68 @@ label.panel-block {
 .subtitle {
   color: #454547; }
 
-.section.has-background-info .has-no-background .title, .section.has-background-info .has-no-background .subtitle {
+.section.has-background-info .has-no-background .title, .section.has-background-info .has-no-background .subtitle, .section.has-background-info .has-no-background ul, .section.has-background-info .has-no-background li, .section.has-background-info .has-no-background a:not(.button), .section.has-background-info .has-no-background strong, .section.has-background-info .has-no-background svg,
+.section.has-background-info .has-no-background span:not(.icon), .section.has-background-info .has-no-background p {
   color: white; }
 
-.section.has-background-dark .has-no-background .title, .section.has-background-dark .has-no-background .subtitle {
+.section.has-background-info .has-no-background .button.is-outlined {
+  border-color: white; }
+  .section.has-background-info .has-no-background .button.is-outlined span.icon-text, .section.has-background-info .has-no-background .button.is-outlined span.icon, .section.has-background-info .has-no-background .button.is-outlined svg {
+    color: white; }
+
+.section.has-background-info .has-no-background .button.is-outlined:hover {
+  border-color: #3273dc; }
+  .section.has-background-info .has-no-background .button.is-outlined:hover span.icon-text, .section.has-background-info .has-no-background .button.is-outlined:hover span.icon, .section.has-background-info .has-no-background .button.is-outlined:hover svg {
+    color: white; }
+
+.section.has-background-dark .has-no-background .title, .section.has-background-dark .has-no-background .subtitle, .section.has-background-dark .has-no-background ul, .section.has-background-dark .has-no-background li, .section.has-background-dark .has-no-background a:not(.button), .section.has-background-dark .has-no-background strong, .section.has-background-dark .has-no-background svg,
+.section.has-background-dark .has-no-background span:not(.icon), .section.has-background-dark .has-no-background p {
   color: white; }
+
+.section.has-background-dark .has-no-background .button.is-outlined {
+  border-color: white; }
+  .section.has-background-dark .has-no-background .button.is-outlined span.icon-text, .section.has-background-dark .has-no-background .button.is-outlined span.icon, .section.has-background-dark .has-no-background .button.is-outlined svg {
+    color: white; }
+
+.section.has-background-dark .has-no-background .button.is-outlined:hover {
+  border-color: #3273dc; }
+  .section.has-background-dark .has-no-background .button.is-outlined:hover span.icon-text, .section.has-background-dark .has-no-background .button.is-outlined:hover span.icon, .section.has-background-dark .has-no-background .button.is-outlined:hover svg {
+    color: white; }
 
 .section.has-background-primary .image {
   background: #209cee; }
+
+.section.has-background-primary .has-no-background .title, .section.has-background-primary .has-no-background .subtitle, .section.has-background-primary .has-no-background ul, .section.has-background-primary .has-no-background li, .section.has-background-primary .has-no-background a:not(.button), .section.has-background-primary .has-no-background strong, .section.has-background-primary .has-no-background svg,
+.section.has-background-primary .has-no-background span:not(.icon), .section.has-background-primary .has-no-background p {
+  color: white; }
+
+.section.has-background-primary .has-no-background .button.is-outlined {
+  border-color: white; }
+  .section.has-background-primary .has-no-background .button.is-outlined span.icon-text, .section.has-background-primary .has-no-background .button.is-outlined span.icon, .section.has-background-primary .has-no-background .button.is-outlined svg {
+    color: white; }
+
+.section.has-background-primary .has-no-background .button.is-outlined:hover {
+  border-color: #3273dc; }
+  .section.has-background-primary .has-no-background .button.is-outlined:hover span.icon-text, .section.has-background-primary .has-no-background .button.is-outlined:hover span.icon, .section.has-background-primary .has-no-background .button.is-outlined:hover svg {
+    color: white; }
+
+.section.has-background-white .has-no-background .title, .section.has-background-white .has-no-background .subtitle, .section.has-background-white .has-no-background ul, .section.has-background-white .has-no-background li, .section.has-background-white .has-no-background a:not(.button), .section.has-background-white .has-no-background strong, .section.has-background-white .has-no-background svg,
+.section.has-background-white .has-no-background span:not(.icon), .section.has-background-white .has-no-background p, .section.has-background-light .has-no-background .title, .section.has-background-light .has-no-background .subtitle, .section.has-background-light .has-no-background ul, .section.has-background-light .has-no-background li, .section.has-background-light .has-no-background a:not(.button), .section.has-background-light .has-no-background strong, .section.has-background-light .has-no-background svg,
+.section.has-background-light .has-no-background span:not(.icon), .section.has-background-light .has-no-background p, .section.has-background-grey-lighter .has-no-background .title, .section.has-background-grey-lighter .has-no-background .subtitle, .section.has-background-grey-lighter .has-no-background ul, .section.has-background-grey-lighter .has-no-background li, .section.has-background-grey-lighter .has-no-background a:not(.button), .section.has-background-grey-lighter .has-no-background strong, .section.has-background-grey-lighter .has-no-background svg,
+.section.has-background-grey-lighter .has-no-background span:not(.icon), .section.has-background-grey-lighter .has-no-background p {
+  color: #454547; }
+
+.section.has-background-white .has-no-background .button.is-outlined span.icon-text, .section.has-background-white .has-no-background .button.is-outlined span.icon, .section.has-background-white .has-no-background .button.is-outlined svg, .section.has-background-light .has-no-background .button.is-outlined span.icon-text, .section.has-background-light .has-no-background .button.is-outlined span.icon, .section.has-background-light .has-no-background .button.is-outlined svg, .section.has-background-grey-lighter .has-no-background .button.is-outlined span.icon-text, .section.has-background-grey-lighter .has-no-background .button.is-outlined span.icon, .section.has-background-grey-lighter .has-no-background .button.is-outlined svg {
+  color: #3273dc; }
+
+.section.has-background-white .has-no-background .button.is-outlined:hover span.icon-text, .section.has-background-white .has-no-background .button.is-outlined:hover span.icon, .section.has-background-white .has-no-background .button.is-outlined:hover svg, .section.has-background-light .has-no-background .button.is-outlined:hover span.icon-text, .section.has-background-light .has-no-background .button.is-outlined:hover span.icon, .section.has-background-light .has-no-background .button.is-outlined:hover svg, .section.has-background-grey-lighter .has-no-background .button.is-outlined:hover span.icon-text, .section.has-background-grey-lighter .has-no-background .button.is-outlined:hover span.icon, .section.has-background-grey-lighter .has-no-background .button.is-outlined:hover svg {
+  color: white; }
+
+.section.has-background-white .has-no-background .button.is-link:not(.is-outlined) svg, .section.has-background-light .has-no-background .button.is-link:not(.is-outlined) svg, .section.has-background-grey-lighter .has-no-background .button.is-link:not(.is-outlined) svg {
+  color: white; }
+
+.section.has-background-white .is-line-circle, .section.has-background-light .is-line-circle {
+  border-color: #454547; }
 
 .image {
   background: #00d1b2; }
@@ -7027,8 +7100,14 @@ label.panel-block {
 .has-large-spacing-bottom {
   margin-bottom: 3rem !important; }
 
+.has-small-spacing-top {
+  margin-bottom: 0.25rem !important; }
+
 .has-spacing-top {
   margin-top: 1.5rem !important; }
+
+.has-large-spacing-top {
+  margin-top: 3rem !important; }
 
 .is-background {
   object-fit: cover;
@@ -7040,6 +7119,30 @@ label.panel-block {
   height: 100%;
   display: flex;
   flex-direction: column; }
+
+.is-line-circle {
+  border: 4px solid white;
+  height: 130px;
+  width: 130px;
+  border-radius: 50%;
+  margin: 0 auto 20px auto;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center; }
+
+.is-circle {
+  border-radius: 290486px; }
+
+.has-margin-auto {
+  margin: 0 auto; }
+
+.is-85-percent {
+  max-width: 85%; }
+
+.is-60-percent {
+  max-width: 60%;
+  width: 100%;
+  height: 100%; }
 
 .video-wrapper {
   position: relative;
@@ -7069,3 +7172,46 @@ label.panel-block {
   position: absolute;
   top: 0;
   width: 100%; }
+
+.content ul.faLinks {
+  list-style: none;
+  margin-left: 0; }
+
+.icon-section .icon-item {
+  max-width: 90%;
+  margin: 0 auto; }
+  .icon-section .icon-item .icon {
+    font-size: 3.5rem;
+    width: 100%;
+    height: 100%; }
+
+.menu-label a {
+  color: #454547;
+  font-weight: 700;
+  font-size: 1rem; }
+
+.image-section .column {
+  margin: 0;
+  padding: 0 0 0.75rem 0; }
+
+.image-section .is-hidden-mobile {
+  height: 100%; }
+
+.image-section .text-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 2.25rem; }
+  @media screen and (min-width: 1088px) {
+    .image-section .text-content .text-inner {
+      max-width: 80%; } }
+
+.image-section .image.is-2by1 {
+  height: 100%; }
+
+.image-section.image-full .image.is-2by1,
+.image-section.image-full .text-content {
+  height: auto; }

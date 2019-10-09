@@ -1,5 +1,5 @@
-// OVERRIDES
-// NAVBAR
+
+// Nav-bar
 .navbar {
     &-brand {
         margin-right:2em;
@@ -13,16 +13,27 @@
         }
     }
 }
+
 .navbar-item {
     color: $grey-darker;
 }
-// HERO HOME
-.hero-banner {
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
+
+// Hero-home
+.section.hero-banner.is-medium {
+    min-height:500px;
     .hero-body {
         z-index: 115;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        display: flex;
+        @include tablet-only {
+            padding-top:6rem;
+            padding-bottom:6rem;
+        }
     }
     .hero-bannerbuttons {
         .button {
@@ -44,15 +55,15 @@
                 background-color:$blue;
                 border-color: transparent;
                 color: #ffffff;
+                font-weight: 700;
             }
             height: auto;
             padding-bottom: calc(1em - 1px);
             padding-top: calc(1em - 1px)
-            
         }
     }
     &.has-background-info {
-        .block , .title, strong{
+        .block , .title, strong, span {
             color: $white;
         }
         .hero-bannerbuttons {
@@ -60,7 +71,7 @@
                 background-color:$primary;
             }
         }
-        a, i, .icon {
+        a, i, .icon svg {
             color: $primary;
         }
     }
@@ -73,19 +84,34 @@
                 background-color:$primary;
             }
         }
-        a, i, .icon {
+        a, i, .icon svg {
             color: $primary;
         }
     }
     &.has-background-light,
-    &.has-background-white {
-        .icon {
+    &.has-background-white,
+    &.has-background-grey-lighter {
+        .icon svg {
             color: $primary;
         }
+        a {
+            color:$link;
+        }
     }
+    &.has-background-primary {
+        .icon svg, .title, .subtitle, p, span, strong {
+            color: $dark;
+        }
+        a {
+            color: $link;
+        }
+    }
+    @include tablet{
+        min-height: 670px;
+    } 
 }
-  
-// HERO FOOTER
+
+// Hero-footer
 .hero-footer, .footer {
     &.has-background-info, 
     &.has-background-primary,
@@ -112,21 +138,47 @@
     color: $grey-darker;
 }
 
-// Section Background
+// Section
 .section {
     &.has-background-info {
         .has-no-background {
-            .title, .subtitle
+            .title, .subtitle, ul, li, a:not(.button), strong, svg, 
+            span:not(.icon), p
             {
                 color: $white;
+            }
+            .button.is-outlined {
+                border-color: $white;
+                span.icon-text, span.icon, svg {
+                    color: $white;
+                }
+            }
+            .button.is-outlined:hover {
+                border-color: $link;
+                span.icon-text, span.icon, svg {
+                    color: $white;
+                }
             }
         }
     }
     &.has-background-dark {
         .has-no-background {
-            .title, .subtitle
+            .title, .subtitle, ul, li, a:not(.button), strong, svg, 
+            span:not(.icon), p
             {
                 color: $white;
+            }
+            .button.is-outlined {
+                border-color: $white;
+                span.icon-text, span.icon, svg {
+                    color: $white;
+                }
+            }
+            .button.is-outlined:hover {
+                border-color: $link;
+                span.icon-text, span.icon, svg {
+                    color: $white;
+                }
             }
         }   
     }
@@ -134,16 +186,66 @@
         .image {
             background: $info;
         }
+        .has-no-background {
+            .title, .subtitle, ul, li, a:not(.button), strong, svg, 
+            span:not(.icon), p
+            {
+                color: $white;
+            }
+            .button.is-outlined {
+                border-color: $white;
+                span.icon-text, span.icon, svg {
+                    color: $white;
+                }
+            }
+            .button.is-outlined:hover {
+                border-color: $link;
+                span.icon-text, span.icon, svg {
+                    color: $white;
+                }
+            }
+        }
     }
+    &.has-background-white, 
+    &.has-background-light, 
+    &.has-background-grey-lighter {
+        .has-no-background {
+            .title, .subtitle, ul, li, a:not(.button), strong, svg, 
+            span:not(.icon), p
+            {
+                color: $grey-darker;
+            }
+            .button.is-outlined {
+                span.icon-text, span.icon, svg {
+                    color: $link;
+                }
+            }
+            .button.is-outlined:hover {
+                span.icon-text, span.icon, svg {
+                    color: $white;
+                }
+            }
+            .button.is-link:not(.is-outlined) svg{
+                color:$white;
+            }
+        }
+    }
+    &.has-background-white,
+    &.has-background-light{
+        .is-line-circle {
+            border-color: $dark;
+        }
+    }
+
 }
 
-// IMAGES
+// Image
 .image {
     background: $primary;
 }
 
 
-// UTILITY CLASSES
+// Utility-classes
 .image-overlay {
     position: absolute;
     top: 0;
@@ -159,15 +261,24 @@
 .has-small-spacing-bottom {
     margin-bottom: 0.25rem !important;
 }
+
 .has-spacing-bottom {
     margin-bottom: 1rem !important;
 }
+
 .has-large-spacing-bottom {
     margin-bottom: 3rem !important;
 }
 
+.has-small-spacing-top {
+    margin-bottom: 0.25rem !important;
+}
 .has-spacing-top {
     margin-top: 1.5rem !important;
+}
+
+.has-large-spacing-top {
+    margin-top: 3rem !important;
 }
 
 .is-background {
@@ -183,7 +294,36 @@
     flex-direction: column;
 }
 
-// VIDEO WRAPPER
+.is-line-circle {
+    border:4px solid $white;    
+    height:130px;
+    width:130px;
+    border-radius:50%;
+    margin: 0 auto 20px auto;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.is-circle {
+    border-radius: 290486px;
+}
+
+.has-margin-auto {
+    margin: 0 auto;
+}
+
+.is-85-percent {
+    max-width: 85%;
+}
+
+.is-60-percent {
+    max-width: 60%;
+    width:100%;
+    height:100%;
+}
+
+// Video
 .video-wrapper {
     position: relative;
     padding-bottom: 56.25%; /* 16:9 */
@@ -192,6 +332,7 @@
     margin-top:2em;
     margin-bottom:2em;
 }
+
 .video-wrapper iframe {
     position: absolute;
     top: 0;
@@ -200,17 +341,85 @@
     height: 100%;
 }
 
-// MAP IFRAME
+// Map
 .iframe-container {
     overflow: hidden;
     padding-top: 56.25%;
     position: relative;
 }
-    .iframe-container iframe {
-        border: 0;
-        height: 100%;
-        left: 0;
-        position: absolute;
-        top: 0;
-        width: 100%;
+.iframe-container iframe {
+    border: 0;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+// Font-awesome-lists
+.content { 
+        ul {
+            &.faLinks {
+                list-style: none;
+                margin-left: 0;
+            }
+        }   
+}
+
+.icon-section {
+    .icon-item {
+        max-width: 90%;
+        margin:0 auto;
+        .icon {
+            font-size: 3.5rem;
+            width: 100%;
+            height: 100%;
+        }
     }
+}
+
+// Side-menu
+.menu-label {
+    a {
+        color:$dark;
+        font-weight:700;
+        font-size:1rem;
+    }   
+}
+
+.image-section {
+    .column {
+        margin:0;
+        padding:0 0 0.75rem 0;
+        @include tablet{
+           
+        }
+    }
+    .is-hidden-mobile {
+        height:100%;
+    }
+    .text-content {
+        width:100%;
+        height: 100%;
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 3rem 2.25rem;
+        .text-inner {
+            @include desktop {
+                max-width:80%;
+            }
+        }
+    }
+    .image.is-2by1 {
+        height:100%;
+    }
+    &.image-full {
+        .image.is-2by1,
+        .text-content {
+            height:auto;
+        }
+    }
+
+}

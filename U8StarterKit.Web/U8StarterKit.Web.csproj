@@ -1,5 +1,5 @@
 ﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\packages\UmbracoCms.8.0.1\build\UmbracoCms.props" Condition="Exists('..\packages\UmbracoCms.8.0.1\build\UmbracoCms.props')" />
+  <Import Project="..\packages\UmbracoCms.8.0.2\build\UmbracoCms.props" Condition="Exists('..\packages\UmbracoCms.8.0.2\build\UmbracoCms.props')" />
   <Import Project="..\packages\Microsoft.Net.Compilers.2.10.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.10.0\build\Microsoft.Net.Compilers.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
@@ -59,6 +59,9 @@
     </Reference>
     <Reference Include="Examine, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Examine.1.0.0\lib\net452\Examine.dll</HintPath>
+    </Reference>
+    <Reference Include="FaLinksPropertyEditor, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FontAwesomePropertyEditor.1.0.1\lib\net472\FaLinksPropertyEditor.dll</HintPath>
     </Reference>
     <Reference Include="HtmlAgilityPack, Version=1.8.14.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
       <HintPath>..\packages\HtmlAgilityPack.1.8.14\lib\Net45\HtmlAgilityPack.dll</HintPath>
@@ -376,10 +379,10 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Umbraco.Core, Version=8.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\UmbracoCms.Core.8.0.1\lib\net472\Umbraco.Core.dll</HintPath>
+      <HintPath>..\packages\UmbracoCms.Core.8.0.2\lib\net472\Umbraco.Core.dll</HintPath>
     </Reference>
     <Reference Include="Umbraco.Examine, Version=8.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\UmbracoCms.Web.8.0.1\lib\net472\Umbraco.Examine.dll</HintPath>
+      <HintPath>..\packages\UmbracoCms.Web.8.0.2\lib\net472\Umbraco.Examine.dll</HintPath>
     </Reference>
     <Reference Include="Umbraco.ModelsBuilder, Version=8.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Umbraco.ModelsBuilder.8.0.4\lib\net472\Umbraco.ModelsBuilder.dll</HintPath>
@@ -388,13 +391,22 @@
       <HintPath>..\packages\Umbraco.ModelsBuilder.Api.8.0.4\lib\net472\Umbraco.ModelsBuilder.Api.dll</HintPath>
     </Reference>
     <Reference Include="Umbraco.Web, Version=8.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\UmbracoCms.Web.8.0.1\lib\net472\Umbraco.Web.dll</HintPath>
+      <HintPath>..\packages\UmbracoCms.Web.8.0.2\lib\net472\Umbraco.Web.dll</HintPath>
     </Reference>
     <Reference Include="Umbraco.Web.UI, Version=8.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\UmbracoCms.Web.8.0.1\lib\net472\Umbraco.Web.UI.dll</HintPath>
+      <HintPath>..\packages\UmbracoCms.Web.8.0.2\lib\net472\Umbraco.Web.UI.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Plugins\FaLinksPropertyEditor\css\falinks.style.css" />
+    <Content Include="App_Plugins\FaLinksPropertyEditor\faicon.propertyeditor.html" />
+    <Content Include="App_Plugins\FaLinksPropertyEditor\falinks.picker.html" />
+    <Content Include="App_Plugins\FaLinksPropertyEditor\falinks.prevalues.html" />
+    <Content Include="App_Plugins\FaLinksPropertyEditor\falinks.propertyeditor.html" />
+    <Content Include="App_Plugins\FaLinksPropertyEditor\js\faicon.propertyeditor.controller.js" />
+    <Content Include="App_Plugins\FaLinksPropertyEditor\js\falinks.picker.controller.js" />
+    <Content Include="App_Plugins\FaLinksPropertyEditor\js\falinks.prevalues.controller.js" />
+    <Content Include="App_Plugins\FaLinksPropertyEditor\js\falinks.propertyeditor.controller.js" />
     <Content Include="App_Plugins\ModelsBuilder\modelsbuilder.controller.js" />
     <Content Include="App_Plugins\ModelsBuilder\modelsbuilder.html" />
     <Content Include="App_Plugins\ModelsBuilder\modelsbuilder.resource.js" />
@@ -420,107 +432,39 @@
     <Content Include="config\logviewer.searches.config.js" />
     <Content Include="css\main.css" />
     <Content Include="Global.asax" />
-    <Content Include="scripts\bundle.js" />
-    <Content Include="uSync\v8\ContentTypes\blog.config" />
-    <Content Include="uSync\v8\ContentTypes\blogpost.config" />
-    <Content Include="uSync\v8\ContentTypes\blogselement.config" />
-    <Content Include="uSync\v8\ContentTypes\carouselelement.config" />
-    <Content Include="uSync\v8\ContentTypes\contact.config" />
-    <Content Include="uSync\v8\ContentTypes\contentbase.config" />
-    <Content Include="uSync\v8\ContentTypes\contentpage.config" />
-    <Content Include="uSync\v8\ContentTypes\contentsection.config" />
-    <Content Include="uSync\v8\ContentTypes\headersection.config" />
-    <Content Include="uSync\v8\ContentTypes\heroelement.config" />
-    <Content Include="uSync\v8\ContentTypes\herosection.config" />
-    <Content Include="uSync\v8\ContentTypes\home.config" />
-    <Content Include="uSync\v8\ContentTypes\navigationbase.config" />
-    <Content Include="uSync\v8\ContentTypes\panelelement.config" />
-    <Content Include="uSync\v8\ContentTypes\people.config" />
-    <Content Include="uSync\v8\ContentTypes\person.config" />
-    <Content Include="uSync\v8\ContentTypes\product.config" />
-    <Content Include="uSync\v8\ContentTypes\products.config" />
-    <Content Include="uSync\v8\ContentTypes\sidebarsection.config" />
-    <Content Include="uSync\v8\ContentTypes\signupformelement.config" />
-    <Content Include="uSync\v8\DataTypes\ApprovedColor.config" />
-    <Content Include="uSync\v8\DataTypes\CheckboxList.config" />
-    <Content Include="uSync\v8\DataTypes\ContentPicker.config" />
-    <Content Include="uSync\v8\DataTypes\DatePicker.config" />
-    <Content Include="uSync\v8\DataTypes\DatePickerWithTime.config" />
-    <Content Include="uSync\v8\DataTypes\Dropdown.config" />
-    <Content Include="uSync\v8\DataTypes\DropdownMultiple.config" />
-    <Content Include="uSync\v8\DataTypes\ImageCropper.config" />
-    <Content Include="uSync\v8\DataTypes\Label.config" />
-    <Content Include="uSync\v8\DataTypes\LabelBigint.config" />
-    <Content Include="uSync\v8\DataTypes\LabelDatetime.config" />
-    <Content Include="uSync\v8\DataTypes\LabelDecimal.config" />
-    <Content Include="uSync\v8\DataTypes\LabelInteger.config" />
-    <Content Include="uSync\v8\DataTypes\LabelTime.config" />
-    <Content Include="uSync\v8\DataTypes\ListViewContent.config" />
-    <Content Include="uSync\v8\DataTypes\ListViewMedia.config" />
-    <Content Include="uSync\v8\DataTypes\ListViewMembers.config" />
-    <Content Include="uSync\v8\DataTypes\MediaPicker.config" />
-    <Content Include="uSync\v8\DataTypes\MemberPicker.config" />
-    <Content Include="uSync\v8\DataTypes\MultiURLPicker.config" />
-    <Content Include="uSync\v8\DataTypes\Numeric.config" />
-    <Content Include="uSync\v8\DataTypes\Radiobox.config" />
-    <Content Include="uSync\v8\DataTypes\RichtextEditor.config" />
-    <Content Include="uSync\v8\DataTypes\Tags.config" />
-    <Content Include="uSync\v8\DataTypes\Textarea.config" />
-    <Content Include="uSync\v8\DataTypes\Textstring.config" />
-    <Content Include="uSync\v8\DataTypes\TrueFalse.config" />
-    <Content Include="uSync\v8\DataTypes\U8SKBlogPickerSingle.config" />
-    <Content Include="uSync\v8\DataTypes\U8SKContentNestedContent.config" />
-    <Content Include="uSync\v8\DataTypes\U8SKContentPicker.config" />
-    <Content Include="uSync\v8\DataTypes\U8SKCurrencyDropdown.config" />
-    <Content Include="uSync\v8\DataTypes\U8SKDecimal.config" />
-    <Content Include="uSync\v8\DataTypes\U8SKGridLayout.config" />
-    <Content Include="uSync\v8\DataTypes\U8SKHeroNestedContent.config" />
-    <Content Include="uSync\v8\DataTypes\U8SKHomeGridLayout.config" />
-    <Content Include="uSync\v8\DataTypes\U8SKLabelFormPicker.config" />
-    <Content Include="uSync\v8\DataTypes\U8SKLinkSingle.config" />
-    <Content Include="uSync\v8\DataTypes\U8SKMediaPickerMultiple.config" />
-    <Content Include="uSync\v8\DataTypes\U8SKMediaPickerSingle.config" />
-    <Content Include="uSync\v8\DataTypes\U8SKOpenStreetMaps.config" />
-    <Content Include="uSync\v8\DataTypes\U8SKPersonPickerMultiple.config" />
-    <Content Include="uSync\v8\DataTypes\U8SKRTESimple.config" />
-    <Content Include="uSync\v8\DataTypes\U8SKRTEStandard.config" />
-    <Content Include="uSync\v8\DataTypes\U8SKSidebarNestedContent.config" />
-    <Content Include="uSync\v8\DataTypes\U8SKSlider.config" />
-    <Content Include="uSync\v8\DataTypes\U8SKSlider110.config" />
-    <Content Include="uSync\v8\DataTypes\U8SKTagsCsv.config" />
-    <Content Include="uSync\v8\DataTypes\U8SKTagsJSON.config" />
-    <Content Include="uSync\v8\DataTypes\Upload.config" />
-    <Content Include="uSync\v8\Languages\en-us.config" />
-    <Content Include="uSync\v8\Macros\featuredProduct.config" />
-    <Content Include="uSync\v8\Macros\latestBlogposts.config" />
-    <Content Include="uSync\v8\MediaTypes\file.config" />
-    <Content Include="uSync\v8\MediaTypes\folder.config" />
-    <Content Include="uSync\v8\MediaTypes\image.config" />
-    <Content Include="uSync\v8\MemberTypes\member.config" />
-    <Content Include="uSync\v8\Templates\blog.config" />
-    <Content Include="uSync\v8\Templates\blogpost.config" />
-    <Content Include="uSync\v8\Templates\contact.config" />
-    <Content Include="uSync\v8\Templates\contentpage.config" />
-    <Content Include="uSync\v8\Templates\home.config" />
-    <Content Include="uSync\v8\Templates\master.config" />
-    <Content Include="uSync\v8\Templates\people.config" />
-    <Content Include="uSync\v8\Templates\person.config" />
-    <Content Include="uSync\v8\Templates\product.config" />
-    <Content Include="uSync\v8\Templates\products.config" />
+    <Content Include="js\all.min.js" />
+    <Content Include="js\bundle.js" />
     <Content Include="Views\Partials\Nested\Section\BlogListSection.cshtml" />
-    <Content Include="uSync\v8\ContentTypes\featureelement.config" />
-    <Content Include="uSync\v8\ContentTypes\footersection.config" />
-    <Content Include="uSync\v8\ContentTypes\peopleelement.config" />
-    <Content Include="uSync\v8\ContentTypes\productfeatureelement.config" />
-    <Content Include="uSync\v8\ContentTypes\productselement.config" />
-    <Content Include="uSync\v8\ContentTypes\singlelineelement.config" />
-    <Content Include="uSync\v8\DataTypes\U8SKFooterNestedContent.config" />
-    <Content Include="uSync\v8\DataTypes\U8SKHomeContentNestedContent.config" />
-    <Content Include="uSync\v8\DataTypes\U8SKProductFeaturesNestedContent.config" />
-    <Content Include="uSync\v8\DataTypes\U8SKProductPickerMultiple.config" />
-    <Content Include="uSync\v8\_Actions\actions_DataTypes.config" />
     <Content Include="Views\Partials\Nested\Section\CallToActionSection.cshtml" />
     <Content Include="Views\Partials\Nested\Component\TitleComponent.cshtml" />
+    <Content Include="App_Code\RazorHelper.cshtml" />
+    <Content Include="App_Code\SectionHelper.cshtml" />
+    <Content Include="Views\Partials\Nested\Item\LinksList.cshtml" />
+    <Content Include="Views\Partials\Nested\Component\SectionTitleComponent.cshtml" />
+    <Content Include="App_Plugins\FaLinksPropertyEditor\icons.json" />
+    <Content Include="App_Plugins\FaLinksPropertyEditor\package.manifest" />
+    <Content Include="Views\Partials\Grid\Editors\Textstring.cshtml" />
+    <Content Include="Views\Partials\Grid\Editors\Rte.cshtml" />
+    <Content Include="Views\Partials\Grid\Editors\Media.cshtml" />
+    <Content Include="Views\Partials\Grid\Editors\Macro.cshtml" />
+    <Content Include="Views\Partials\Grid\Editors\Embed.cshtml" />
+    <Content Include="Views\Partials\Grid\Editors\Base.cshtml" />
+    <Content Include="Views\Partials\Grid\Bootstrap3.cshtml" />
+    <Content Include="Views\Partials\Grid\Bootstrap3-Fluid.cshtml" />
+    <Content Include="Media\Web.config" />
+    <Content Include="config\umbracoSettings.config" />
+    <Content Include="config\tinyMceConfig.config" />
+    <Content Include="config\serilog.user.config" />
+    <Content Include="config\serilog.config" />
+    <Content Include="config\HealthChecks.config" />
+    <Content Include="config\BackOfficeTours\getting-started.json" />
+    <Content Include="Views\Partials\Nested\Item\IconItem.cshtml" />
+    <Content Include="Views\Partials\Nested\Content\TitleComponent.cshtml" />
+    <Content Include="Views\Partials\Nested\Content\RichTextContent.cshtml" />
+    <Content Include="Views\Partials\Nested\Content\ImageContent.cshtml" />
+    <Content Include="Views\Partials\Nested\Content\QuoteContent.cshtml" />
+    <Content Include="Views\Partials\Nested\Content\CallToActionSection.cshtml" />
+    <Content Include="Views\Partials\Nested\Content\IconsSection.cshtml" />
     <None Include="Views\Partials\Nested\Item\PersonItem.cshtml" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -533,7 +477,9 @@
     <Compile Include="Extensions\HtmlStringExtensions.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Extensions\UmbracoExtensions.cs" />
-    <Compile Include="Helpers\RazorHelper.cs" />
+    <Compile Include="Models\Umbraco\AppConfig.generated.cs">
+      <DependentUpon>Builder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Umbraco\BannerSection.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
@@ -553,15 +499,17 @@
       <Generator>UmbracoModelsBuilder</Generator>
       <LastGenOutput>Builder.generated.cs</LastGenOutput>
     </Compile>
+    <Compile Include="Models\Models\Product.cs" />
+    <Compile Include="Models\Models\Person.cs" />
+    <Compile Include="Models\Models\ISectionSettings.cs" />
+    <Compile Include="Models\Models\BlogPost.cs" />
+    <Compile Include="Models\Models\BlogsViewModel.cs" />
     <Compile Include="Models\Umbraco\Builder.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="Models\Umbraco\CallToActionSection.generated.cs">
-      <DependentUpon>Builder.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Umbraco\CarouselElement.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Umbraco\ColourSettingsComposition.generated.cs">
@@ -576,10 +524,19 @@
     <Compile Include="Models\Umbraco\ContentBase.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Umbraco\ContentBeforeAfterBase.generated.cs">
+      <DependentUpon>Builder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Umbraco\ContentPage.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Umbraco\ContentSection.generated.cs">
+      <DependentUpon>Builder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Umbraco\FaLinkComponent.generated.cs">
+      <DependentUpon>Builder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Umbraco\FeatureComponent.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Umbraco\File.generated.cs">
@@ -597,25 +554,49 @@
     <Compile Include="Models\Umbraco\HeaderSection.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\Umbraco\HeroSection.generated.cs">
+    <Compile Include="Models\Umbraco\Home.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\Umbraco\Home.generated.cs">
+    <Compile Include="Models\Umbraco\IconComponent.generated.cs">
+      <DependentUpon>Builder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Umbraco\IconComposition.generated.cs">
+      <DependentUpon>Builder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Umbraco\IconsSection.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Umbraco\Image.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Umbraco\ImageComposition.generated.cs">
+      <DependentUpon>Builder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Umbraco\ImageContent.generated.cs">
+      <DependentUpon>Builder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Umbraco\ImageSection.generated.cs">
+      <DependentUpon>Builder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Umbraco\LinkComponent.generated.cs">
+      <DependentUpon>Builder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Umbraco\LinksListComposition.generated.cs">
+      <DependentUpon>Builder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Umbraco\LinksListSection.generated.cs">
+      <DependentUpon>Builder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Umbraco\ListingPageBase.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Umbraco\Member.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\Umbraco\NavigationBase.generated.cs">
+    <Compile Include="Models\Umbraco\Navigation.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\Umbraco\PanelElement.generated.cs">
+    <Compile Include="Models\Umbraco\NavigationBase.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Umbraco\People.generated.cs">
@@ -630,19 +611,16 @@
     <Compile Include="Models\Umbraco\Product.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\Umbraco\ProductFeatureElement.generated.cs">
-      <DependentUpon>Builder.cs</DependentUpon>
-    </Compile>
     <Compile Include="Models\Umbraco\ProductListSection.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Umbraco\Products.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\Umbraco\RowElement.generated.cs">
+    <Compile Include="Models\Umbraco\QuoteContent.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\Umbraco\SidebarSection.generated.cs">
+    <Compile Include="Models\Umbraco\RichTextContent.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Umbraco\SignUpFormSection.generated.cs">
@@ -654,7 +632,6 @@
     <Compile Include="Models\Umbraco\TitleComponent.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\ViewModels\BlogsViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -663,46 +640,25 @@
     <Content Include="config\imageprocessor\cache.config" />
     <Content Include="config\ClientDependency.config" />
     <Content Include="App_Plugins\ModelsBuilder\package.manifest" />
-    <Content Include="Media\Web.config" />
-    <Content Include="config\umbracoSettings.config" />
-    <Content Include="config\tinyMceConfig.config" />
-    <Content Include="config\serilog.user.config" />
-    <Content Include="config\serilog.config" />
-    <Content Include="config\HealthChecks.config" />
-    <Content Include="config\BackOfficeTours\getting-started.json" />
     <None Include="packages.config" />
     <Content Include="Views\blog.cshtml" />
     <Content Include="Views\blogPost.cshtml" />
     <Content Include="Views\contact.cshtml" />
     <Content Include="Views\contentPage.cshtml" />
     <Content Include="Views\home.cshtml" />
-    <Content Include="Views\MacroPartials\FeaturedProducts.cshtml" />
-    <Content Include="Views\MacroPartials\LatestBlogposts.cshtml" />
     <Content Include="Views\master.cshtml" />
     <Content Include="Views\Partials\CategoryLinks.cshtml" />
     <Content Include="Views\Partials\Grid\Bulma-Fluid.cshtml" />
     <Content Include="Views\Partials\Navigation\SubNavigation.cshtml" />
-    <Content Include="Views\Partials\Navigation\TopNavigation.cshtml" />
     <Content Include="Views\Partials\SectionHeader.cshtml" />
     <Content Include="Views\people.cshtml" />
     <Content Include="Views\person.cshtml" />
     <Content Include="Views\product.cshtml" />
     <Content Include="Views\products.cshtml" />
     <Content Include="Views\Web.config" />
-    <Content Include="Views\Partials\Grid\Editors\Textstring.cshtml" />
-    <Content Include="Views\Partials\Grid\Editors\Rte.cshtml" />
-    <Content Include="Views\Partials\Grid\Editors\Media.cshtml" />
-    <Content Include="Views\Partials\Grid\Editors\Macro.cshtml" />
-    <Content Include="Views\Partials\Grid\Editors\Embed.cshtml" />
-    <Content Include="Views\Partials\Grid\Editors\Base.cshtml" />
-    <Content Include="Views\Partials\Grid\Bootstrap3.cshtml" />
-    <Content Include="Views\Partials\Grid\Bootstrap3-Fluid.cshtml" />
-    <Content Include="Views\Partials\HomeHero.cshtml" />
     <Content Include="Views\Partials\Grid\Bulma-Fluid-Home.cshtml" />
     <Content Include="Views\Partials\NavSection.cshtml" />
-    <Content Include="Views\Partials\Renderers\RenderElements.cshtml" />
     <Content Include="Views\Partials\Nested\Section\BannerSection.cshtml" />
-    <Content Include="Views\Partials\Blogs.cshtml" />
     <Content Include="Views\Partials\Nested\Section\SignUpFormSection.cshtml" />
     <Content Include="Views\Partials\Elements\PanelElement.cshtml" />
     <Content Include="Views\Partials\Nested\Section\ProductListSection.cshtml" />
@@ -713,6 +669,10 @@
     <Content Include="Views\Partials\Nested\Section\PeopleListSection.cshtml" />
     <Content Include="Views\Partials\Renderers\RenderSections.cshtml" />
     <Content Include="Views\Partials\Nested\Component\LinkComponent.cshtml" />
+    <Content Include="Views\Partials\Nested\Section\LinksListSection.cshtml" />
+    <Content Include="Views\Partials\Nested\Section\IconsSection.cshtml" />
+    <Content Include="Views\Partials\Renderers\RenderContent.cshtml" />
+    <Content Include="Views\Partials\Nested\Section\ImageSection.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -724,7 +684,9 @@
     <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.2.6.1\analyzers\dotnet\cs\Microsoft.CodeAnalysis.Analyzers.dll" />
     <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.2.6.1\analyzers\dotnet\cs\Microsoft.CodeAnalysis.CSharp.Analyzers.dll" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Views\MacroPartials\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -757,11 +719,11 @@
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
     <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.2.10.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.2.10.0\build\Microsoft.Net.Compilers.props'))" />
     <Error Condition="!Exists('..\packages\Umbraco.SqlServerCE.4.0.0.1\build\Umbraco.SqlServerCE.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Umbraco.SqlServerCE.4.0.0.1\build\Umbraco.SqlServerCE.targets'))" />
-    <Error Condition="!Exists('..\packages\UmbracoCms.8.0.1\build\UmbracoCms.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\UmbracoCms.8.0.1\build\UmbracoCms.props'))" />
-    <Error Condition="!Exists('..\packages\UmbracoCms.8.0.1\build\UmbracoCms.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\UmbracoCms.8.0.1\build\UmbracoCms.targets'))" />
+    <Error Condition="!Exists('..\packages\UmbracoCms.8.0.2\build\UmbracoCms.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\UmbracoCms.8.0.2\build\UmbracoCms.props'))" />
+    <Error Condition="!Exists('..\packages\UmbracoCms.8.0.2\build\UmbracoCms.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\UmbracoCms.8.0.2\build\UmbracoCms.targets'))" />
   </Target>
   <Import Project="..\packages\Umbraco.SqlServerCE.4.0.0.1\build\Umbraco.SqlServerCE.targets" Condition="Exists('..\packages\Umbraco.SqlServerCE.4.0.0.1\build\Umbraco.SqlServerCE.targets')" />
-  <Import Project="..\packages\UmbracoCms.8.0.1\build\UmbracoCms.targets" Condition="Exists('..\packages\UmbracoCms.8.0.1\build\UmbracoCms.targets')" />
+  <Import Project="..\packages\UmbracoCms.8.0.2\build\UmbracoCms.targets" Condition="Exists('..\packages\UmbracoCms.8.0.2\build\UmbracoCms.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
