@@ -1,4 +1,4 @@
-/**
+﻿/**
  * @ngdoc
  * @name uSync8Service
  * @requires $http
@@ -12,7 +12,7 @@
 
     function uSyncServiceController($http) {
 
-        var serviceRoot = 'backoffice/uSync/uSyncDashboardApi/';
+        var serviceRoot = Umbraco.Sys.ServerVariables.uSync.uSyncService;
 
         var service = {
             getSettings: getSettings,
@@ -21,9 +21,14 @@
             report: report,
             exportItems: exportItems,
             importItems: importItems,
+            importItem: importItem,
             saveSettings: saveSettings,
+
             getLoadedHandlers: getLoadedHandlers,
-            getAddOnString: getAddOnString
+            getAddOns: getAddOns,
+            getAddOnSplash: getAddOnSplash,
+
+            getHandlerGroups: getHandlerGroups
         };
 
         return service;
@@ -42,24 +47,42 @@
             return $http.get(serviceRoot + 'GetLoadedHandlers');
         }
 
-        function getAddOnString() {
-            return $http.get(serviceRoot + 'GetAddOnString');
+        function getAddOns() {
+            return $http.get(serviceRoot + 'GetAddOns');
         }
 
-        function report(clientId) {
-            return $http.post(serviceRoot + 'report', { clientId: clientId });
+        function getAddOnSplash() {
+            return $http.get(serviceRoot + 'GetAddOnSplash');
+        }
+
+
+        function report(group, clientId) {
+            return $http.post(serviceRoot + 'report', { clientId: clientId, group: group });
         }
 
         function exportItems (clientId) {
             return $http.post(serviceRoot + 'export', { clientId: clientId });
         }
 
-        function importItems(force, clientId) {
-            return $http.put(serviceRoot + 'import', { force: force, clientId: clientId });
+        function importItems(force, group, clientId) {
+            return $http.put(serviceRoot + 'import',
+                {
+                    force: force,
+                    group: group,
+                    clientId: clientId
+                });
+        }
+
+        function importItem(item) {
+            return $http.put(serviceRoot + 'importItem', item);
         }
 
         function saveSettings(settings) {
             return $http.post(serviceRoot + 'savesettings', settings);
+        }
+
+        function getHandlerGroups() {
+            return $http.get(serviceRoot + 'GetHandlerGroups');
         }
     }
 

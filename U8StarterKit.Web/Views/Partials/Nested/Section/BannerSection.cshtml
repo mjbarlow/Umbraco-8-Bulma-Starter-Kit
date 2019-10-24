@@ -1,7 +1,8 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<BannerSection>
-@using U8StarterKit.Web.Models.Umbraco
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<U8StarterKit.Web.Models.Umbraco.BannerSection>
+
 @using U8StarterKit.Web.Extensions
 @using System.Linq
+
 
 <div class="hero hero-banner section @RazorHelper.BackgroundColorClass(Model.BackgroundColor?.Label) is-medium image is-3by1">
     @if (Model.Background.HasValue())

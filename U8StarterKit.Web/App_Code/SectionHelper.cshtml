@@ -1,9 +1,4 @@
-﻿@using Umbraco.Core.Models.PublishedContent
-@using Umbraco.Web
-@using U8StarterKit.Web.Models.Umbraco
-@using Umbraco.Web.Mvc
-@using System.Web.Mvc.Html
-
+﻿
 @helper RenderSectionStart(string backgroundColorClass = "", bool isFullWidth = false, bool isCentered = false, string className ="")
 {
     @:<section class="section is-medium @className @(isFullWidth ? "is-full-width" : "") @RazorHelper.BackgroundColorClass(backgroundColorClass)">

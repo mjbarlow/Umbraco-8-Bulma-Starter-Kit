@@ -128,7 +128,10 @@
         /*****************************************************************************/
         $scope.exitPreview = function () {
             var culture = $location.search().culture || getParameterByName('culture');
-            var relativeUrl = '/' + $scope.pageId + '?culture=' + culture;
+            var relativeUrl = '/' + $scope.pageId;
+            if (culture) {
+                relativeUrl += '?culture=' + culture;
+            }
             window.top.location.href = '../preview/end?redir=' + encodeURIComponent(relativeUrl);
         };
         $scope.onFrameLoaded = function (iframe) {
@@ -150,6 +153,9 @@
                 $location.search('culture', culture);
                 setPageUrl();
             }
+        };
+        $scope.isCurrentCulture = function (culture) {
+            return $location.search().culture === culture;
         };
     }).component('previewIFrame', {
         template: '<div style=\'width:100%;height:100%;margin:0 auto;overflow:hidden;\'><iframe id=\'resultFrame\' src=\'about:blank\' ng-src="{{vm.src}}" frameborder=\'0\'></iframe></div>',
