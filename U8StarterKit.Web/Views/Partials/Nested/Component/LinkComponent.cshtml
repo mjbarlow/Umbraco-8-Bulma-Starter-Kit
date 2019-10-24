@@ -1,5 +1,5 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<LinkComponent>
-@using U8StarterKit.Web.Models.Umbraco
+@using Umbraco.Web.PublishedModels
 @using U8StarterKit.Web.Extensions
 
 @if (Model.Link.HasValue())
@@ -7,7 +7,7 @@
     <div class="column is-12">
         <div class="columns is-centered">
             <div class="column is-one-third has-text-centered has-spacing-top has-no-background">
-                <div class="buttons are-large is-centered"> 
+                <div class="buttons are-large is-centered">
                     <a href="@Model.Link.Url" target="@Model.Link.Target" class="button is-link">@Model.Link.Name</a>
                 </div>
             </div>

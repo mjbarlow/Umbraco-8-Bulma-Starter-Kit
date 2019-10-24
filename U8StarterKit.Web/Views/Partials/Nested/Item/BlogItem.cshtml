@@ -1,6 +1,6 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<Blogpost>
 @using U8StarterKit.Web.Extensions
-@using U8StarterKit.Web.Models.Umbraco
+@using Umbraco.Web.PublishedModels
 
 
 
@@ -20,9 +20,9 @@
                 <h3 class="title">@Model.HeaderTitle</h3>
             }
             <p class="subtitle">@Model.CreateDate.ToShortDateString()</p>
-                <div class="has-spacing-bottom">
-                    @Html.Partial("~/Views/Partials/CategoryLinks.cshtml", Model.Categories)
-                </div>
+            <div class="has-spacing-bottom">
+                @Html.Partial("~/Views/Partials/CategoryLinks.cshtml", Model.Categories)
+            </div>
             @if (Model.HeaderSubtitle.HasValue())
             {
                 <p>@Model.HeaderSubtitle</p>

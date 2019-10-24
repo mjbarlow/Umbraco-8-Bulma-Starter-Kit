@@ -1,9 +1,10 @@
 ﻿@inherits UmbracoViewPage<ContentPage>
-@using U8StarterKit.Web.Models.Umbraco
+@using Umbraco.Web.PublishedModels
+@using U8StarterKit.Web.Extensions
 @{
     Layout = "master.cshtml";
 }
-@Html.Partial("~/Views/Partials/SectionHeader.cshtml", new U8StarterKit.Web.Models.Umbraco.HeaderSection(Model))
+@Html.Partial("~/Views/Partials/SectionHeader.cshtml", new HeaderSection(Model))
 <section class="section">
     <div class="container">
         <div class="columns">
@@ -18,9 +19,9 @@
                 </aside>
             </div>
             <div class="column is-three-quarter-tablet">
-               <div class="content is-medium">
-                    @Html.Partial("~/Views/Partials/Renderers/RenderContent.cshtml", Model.NestedContent)     
-               </div>
+                <div class="content is-medium">
+                    @Html.Partial("~/Views/Partials/Renderers/RenderContent.cshtml", Model.NestedContent)
+                </div>
             </div>
         </div>
     </div>

@@ -1,11 +1,11 @@
 ﻿@inherits UmbracoViewPage<Products>
-@using U8StarterKit.Web.Models.Umbraco
+@using Umbraco.Web.PublishedModels
 @using U8StarterKit.Web.Extensions
 @{
     Layout = "master.cshtml";
     var products = Model.Children.Select(x => new Product(x));
 }
-@Html.Partial("~/Views/Partials/SectionHeader.cshtml", new U8StarterKit.Web.Models.Umbraco.HeaderSection(Model))
+@Html.Partial("~/Views/Partials/SectionHeader.cshtml", new HeaderSection(Model))
 
 @Html.Partial("~/Views/Partials/Renderers/RenderSections.cshtml", Model.NestedContentBefore)
 

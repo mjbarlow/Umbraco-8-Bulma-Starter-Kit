@@ -1,5 +1,5 @@
 ﻿@inherits UmbracoViewPage<Blogpost>
-@using U8StarterKit.Web.Models.Umbraco
+@using Umbraco.Web.PublishedModels
 @using U8StarterKit.Web.Extensions
 @{
     Layout = "master.cshtml";
@@ -8,7 +8,7 @@
 <section id="hero" class="image has-spacing image is-3by1">
     @if (Model.PostImage.HasValue())
     {
-        <img src="@Model.PostImage.Url" class="is-background"/>
+        <img src="@Model.PostImage.Url" class="is-background" />
     }
 </section>
 <section class="hero is-dark">
@@ -20,7 +20,7 @@
                     <h1 class="title is-2">@Model.HeaderTitle</h1>
                 }
                 <h2 class="subtitle is-4">@Model.CreateDate.ToShortDateString()</h2>
-                @if(Model.Categories.HasValue())
+                @if (Model.Categories.HasValue())
                 {
                     <div class="has-spacing-bottom">
                         @foreach (var category in Model.Categories)
@@ -43,7 +43,7 @@
             <div class="column is-large is-8-tablet is-offset-2-tablet">
                 <article>
                     <div class="content is-large">
-                        @Html.Partial("~/Views/Partials/Renderers/RenderContent.cshtml", Model.NestedContent)     
+                        @Html.Partial("~/Views/Partials/Renderers/RenderContent.cshtml", Model.NestedContent)
                     </div>
                 </article>
             </div>

@@ -1,5 +1,5 @@
 ﻿@inherits UmbracoViewPage<Product>
-@using U8StarterKit.Web.Models.Umbraco
+@using Umbraco.Web.PublishedModels
 @using U8StarterKit.Web.Extensions
 @{
     Layout = "master.cshtml";
@@ -25,11 +25,11 @@
                         <div class="content">
                             <p class="is-size-5">@Model.Parent.GetProperty("DefaultCurrency").Value() @Model.Price.ToString("F")</p>
 
-                            @if(Model.Categories.HasValue())
+                            @if (Model.Categories.HasValue())
                             {
-                                @RazorHelper.RenderCategories(Model.Categories, classList:"is-medium")
+                                @RazorHelper.RenderCategories(Model.Categories, classList: "is-medium")
                             }
-                           
+
                             @if (Model.FullDescription.HasValue())
                             {
                                 @Model.FullDescription

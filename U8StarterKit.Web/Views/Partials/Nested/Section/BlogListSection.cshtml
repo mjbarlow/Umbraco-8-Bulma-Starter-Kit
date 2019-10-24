@@ -1,9 +1,9 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<BlogListSection>
-@using U8StarterKit.Web.Models.Umbraco
+@using Umbraco.Web.PublishedModels;
 
 @{
     // get the list of blogs
-    var blogsNode = Model.Blog.Select(x => new Blog(x)).FirstOrDefault();
+    var blogsNode = new Blog(Model.Blog);
     var blogs = blogsNode.Children.Select(x => new Blogpost(x)).Take((int)Model.ItemsToShow);
     var itemsPerRow = Model.ItemsPerRow?.ToString();
 }
