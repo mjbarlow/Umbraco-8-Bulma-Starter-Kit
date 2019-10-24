@@ -1,5 +1,5 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<LinksListComposition>
-@using U8StarterKit.Web.Models.Umbraco
+@using Umbraco.Web.PublishedModels
 
 @Html.Partial($"~/Views/Partials/Nested/Component/SectionTitleComponent.cshtml", new TitleComponent(Model))
 <div class="content has-no-background">
@@ -7,7 +7,7 @@
         @foreach (var link in Model.FaLinks)
         {
             <li>
-                @RazorHelper.RenderFaLink(link, classListIcon:"has-link-text")
+                @RazorHelper.RenderFaLink(link, classListIcon: "has-link-text")
             </li>
         }
     </ul>

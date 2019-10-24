@@ -1,8 +1,7 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<U8StarterKit.Web.Models.Umbraco.BannerSection>
-
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<BannerSection>
 @using U8StarterKit.Web.Extensions
 @using System.Linq
-
+@using Umbraco.Web.PublishedModels
 
 <div class="hero hero-banner section @RazorHelper.BackgroundColorClass(Model.BackgroundColor?.Label) is-medium image is-3by1">
     @if (Model.Background.HasValue())
@@ -38,30 +37,33 @@
                             @if (Model.SecondaryLink.HasValue())
                             {
                                 <div class="is-size-5 is-size-4-tablet">
-                                    <p>@Model.SecondaryLinkBeforeText
-                                        <a href="@Model.SecondaryLink.Url" target="@Model.SecondaryLink.Target" class="is-info" rel="nofollow">
-                                            @Model.SecondaryLink.Name
-                                        </a>
-                                    </p>
-                                </div>
-                            }
+                                    <p>
+                                        @Model.SecondaryLinkBeforeText
+                                    <a href="@Model.SecondaryLink.Url" target="@Model.SecondaryLink.Target" class="is-info" rel="nofollow">
+                                        @Model.SecondaryLink.Name
+                                    </a>
+                                </p>
+                            </div>
+                        }
                         </div>
                     </div>
                 </div>
                 @if (Model.FontAwesomeLink.HasValue())
                 {
                     <div class="column is-hidden-mobile">
-                      
-                        @if (Model.FontAwesomeLink.FirstOrDefault().Link.HasValue()) { 
-                                @:<a href="@Model.FontAwesomeLink.FirstOrDefault().Link.Url" target="@Model.FontAwesomeLink.FirstOrDefault().Link.Target">
+
+                        @if (Model.FontAwesomeLink.FirstOrDefault().Link.HasValue())
+                        {
+                            @:<a href="@Model.FontAwesomeLink.FirstOrDefault().Link.Url" target="@Model.FontAwesomeLink.FirstOrDefault().Link.Target">
                             }
                         <div class="icon" style="font-size:@(Model.FontAwesomeSize + "px"); height:100%; width:100%;">
                             <i class="@Model.FontAwesomeLink.FirstOrDefault().ClassName"></i>
                         </div>
-                            @if (Model.FontAwesomeLink.FirstOrDefault().Link.HasValue()) { 
-                                @:</a>
-                              }
-                       
+                        @if (Model.FontAwesomeLink.FirstOrDefault().Link.HasValue())
+                        {
+                        @:</a>
+                    }
+
                     </div>
                 }
             </div>

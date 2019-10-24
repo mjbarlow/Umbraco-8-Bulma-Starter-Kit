@@ -400,6 +400,10 @@
     <Reference Include="Umbraco.Web, Version=8.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\UmbracoCms.Web.8.2.0\lib\net472\Umbraco.Web.dll</HintPath>
     </Reference>
+    <Reference Include="Umbraco.Web.PublishedModels, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Umbraco.Web.PublishedModels.dll</HintPath>
+    </Reference>
     <Reference Include="Umbraco.Web.UI, Version=8.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\UmbracoCms.Web.8.2.0\lib\net472\Umbraco.Web.UI.dll</HintPath>
     </Reference>
@@ -411,6 +415,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Code\RazorHelper.cshtml" />
+    <Content Include="App_Code\SectionHelper.cshtml" />
     <Content Include="App_Plugins\FaLinksPropertyEditor\css\falinks.style.css" />
     <Content Include="App_Plugins\FaLinksPropertyEditor\faicon.propertyeditor.html" />
     <Content Include="App_Plugins\FaLinksPropertyEditor\falinks.picker.html" />
@@ -477,155 +483,6 @@
     <Compile Include="Extensions\HtmlStringExtensions.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Extensions\UmbracoExtensions.cs" />
-    <Compile Include="Models\Umbraco\AppConfig.generated.cs">
-      <DependentUpon>Models1.mb</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Umbraco\BannerSection.generated.cs">
-      <DependentUpon>Models1.mb</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Umbraco\BannerStripSection.generated.cs">
-      <DependentUpon>Models1.mb</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Umbraco\Blog.generated.cs">
-      <DependentUpon>Models1.mb</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Umbraco\BlogListSection.generated.cs">
-      <DependentUpon>Models1.mb</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Umbraco\BlogPost.cs" />
-    <Compile Include="Models\Umbraco\Blogpost.generated.cs">
-      <DependentUpon>Models1.mb</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Umbraco\BlogsViewModel.cs" />
-    <Compile Include="Models\Umbraco\CallToActionSection.generated.cs">
-      <DependentUpon>Models1.mb</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Umbraco\ColourSettingsComposition.generated.cs">
-      <DependentUpon>Models1.mb</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Umbraco\ColumnSettingsComposition.generated.cs">
-      <DependentUpon>Models1.mb</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Umbraco\Contact.generated.cs">
-      <DependentUpon>Models1.mb</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Umbraco\ContentBase.generated.cs">
-      <DependentUpon>Models1.mb</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Umbraco\ContentBeforeAfterBase.generated.cs">
-      <DependentUpon>Models1.mb</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Umbraco\ContentPage.generated.cs">
-      <DependentUpon>Models1.mb</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Umbraco\ContentSection.generated.cs">
-      <DependentUpon>Models1.mb</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Umbraco\FaLinkComponent.generated.cs">
-      <DependentUpon>Models1.mb</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Umbraco\FeatureComponent.generated.cs">
-      <DependentUpon>Models1.mb</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Umbraco\File.generated.cs">
-      <DependentUpon>Models1.mb</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Umbraco\Folder.generated.cs">
-      <DependentUpon>Models1.mb</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Umbraco\FontAwesomeComposition.generated.cs">
-      <DependentUpon>Models1.mb</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Umbraco\FooterSection.generated.cs">
-      <DependentUpon>Models1.mb</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Umbraco\HeaderSection.generated.cs">
-      <DependentUpon>Models1.mb</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Umbraco\Home.generated.cs">
-      <DependentUpon>Models1.mb</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Umbraco\IconComponent.generated.cs">
-      <DependentUpon>Models1.mb</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Umbraco\IconComposition.generated.cs">
-      <DependentUpon>Models1.mb</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Umbraco\IconsSection.generated.cs">
-      <DependentUpon>Models1.mb</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Umbraco\Image.generated.cs">
-      <DependentUpon>Models1.mb</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Umbraco\ImageComposition.generated.cs">
-      <DependentUpon>Models1.mb</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Umbraco\ImageContent.generated.cs">
-      <DependentUpon>Models1.mb</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Umbraco\ImageSection.generated.cs">
-      <DependentUpon>Models1.mb</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Umbraco\ISectionSettings.cs" />
-    <Compile Include="Models\Umbraco\LinkComponent.generated.cs">
-      <DependentUpon>Models1.mb</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Umbraco\LinksListComposition.generated.cs">
-      <DependentUpon>Models1.mb</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Umbraco\LinksListSection.generated.cs">
-      <DependentUpon>Models1.mb</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Umbraco\ListingPageBase.generated.cs">
-      <DependentUpon>Models1.mb</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Umbraco\Member.generated.cs">
-      <DependentUpon>Models1.mb</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Umbraco\Navigation.generated.cs">
-      <DependentUpon>Models1.mb</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Umbraco\NavigationBase.generated.cs">
-      <DependentUpon>Models1.mb</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Umbraco\People.generated.cs">
-      <DependentUpon>Models1.mb</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Umbraco\PeopleListSection.generated.cs">
-      <DependentUpon>Models1.mb</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Umbraco\Person.cs" />
-    <Compile Include="Models\Umbraco\Person.generated.cs">
-      <DependentUpon>Models1.mb</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Umbraco\Product.cs" />
-    <Compile Include="Models\Umbraco\Product.generated.cs">
-      <DependentUpon>Models1.mb</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Umbraco\ProductListSection.generated.cs">
-      <DependentUpon>Models1.mb</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Umbraco\Products.generated.cs">
-      <DependentUpon>Models1.mb</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Umbraco\QuoteContent.generated.cs">
-      <DependentUpon>Models1.mb</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Umbraco\RichTextContent.generated.cs">
-      <DependentUpon>Models1.mb</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Umbraco\SignUpFormSection.generated.cs">
-      <DependentUpon>Models1.mb</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Umbraco\SingleLineSection.generated.cs">
-      <DependentUpon>Models1.mb</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Umbraco\Site.generated.cs">
-      <DependentUpon>Models1.mb</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Umbraco\TitleComponent.generated.cs">
-      <DependentUpon>Models1.mb</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -636,11 +493,8 @@
     <Content Include="App_Plugins\OptionButtonsPropertyEditor\package.manifest" />
     <Content Include="App_Plugins\ModelsBuilder\package.manifest" />
     <Content Include="config\umbracoSettings.config" />
-    <Content Include="Models\Umbraco\Models1.mb" />
     <Content Include="App_Plugins\FaLinksPropertyEditor\icons.json" />
     <Content Include="App_Plugins\FaLinksPropertyEditor\package.manifest" />
-    <Content Include="App_Code\RazorHelper.cshtml" />
-    <Content Include="App_Code\SectionHelper.cshtml" />
     <Content Include="Media\Web.config" />
     <Content Include="config\tinyMceConfig.config" />
     <Content Include="config\serilog.user.config" />
@@ -653,10 +507,10 @@
     <None Include="packages.config" />
     <Content Include="Views\Blog.cshtml" />
     <Content Include="Views\Blogpost.cshtml" />
-    <Content Include="Views\contact.cshtml" />
-    <Content Include="Views\contentPage.cshtml" />
-    <Content Include="Views\home.cshtml" />
-    <Content Include="Views\master.cshtml" />
+    <Content Include="Views\Contact.cshtml" />
+    <Content Include="Views\ContentPage.cshtml" />
+    <Content Include="Views\Home.cshtml" />
+    <Content Include="Views\Master.cshtml" />
     <Content Include="Views\Partials\CategoryLinks.cshtml" />
     <Content Include="Views\Partials\Elements\PanelElement.cshtml" />
     <Content Include="Views\Partials\Grid\Bulma-Fluid.cshtml" />
@@ -690,7 +544,7 @@
     <Content Include="Views\Partials\Renderers\RenderContent.cshtml" />
     <Content Include="Views\Partials\Renderers\RenderSections.cshtml" />
     <Content Include="Views\Partials\SectionHeader.cshtml" />
-    <Content Include="Views\people.cshtml" />
+    <Content Include="Views\People.cshtml" />
     <Content Include="Views\Person.cshtml" />
     <Content Include="Views\Product.cshtml" />
     <Content Include="Views\Products.cshtml" />

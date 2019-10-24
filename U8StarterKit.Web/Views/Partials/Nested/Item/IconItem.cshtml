@@ -1,5 +1,5 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<IconComposition>
-@using U8StarterKit.Web.Models.Umbraco
+@using Umbraco.Web.PublishedModels
 
 
 <div class="icon-item has-text-centered">
@@ -7,7 +7,7 @@
         @RazorHelper.RenderFaIcon(Model.Icon)
     </div>
     @Html.Partial($"~/Views/Partials/Nested/Component/SectionTitleComponent.cshtml", new TitleComponent(Model))
-    <div class="buttons is-centered"> 
+    <div class="buttons is-centered">
         <a href="@Model.Link.Url" target="@Model.Link.Target" class="button is-link">@Model.Link.Name</a>
     </div>
 </div>

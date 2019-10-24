@@ -1,5 +1,5 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<Product>
-@using U8StarterKit.Web.Models.Umbraco
+@using Umbraco.Web.PublishedModels
 @using U8StarterKit.Web.Extensions
 
 
@@ -12,15 +12,15 @@
     </div>
     <div class="card-content has-equal-height">
         <div class="content">
-            @if(Model.ProductName.HasValue())
+            @if (Model.ProductName.HasValue())
             {
                 <h4 class="title has-small-spacing-bottom">@Model.ProductName</h4>
             }
-            @if(Model.Categories.HasValue())
+            @if (Model.Categories.HasValue())
             {
                 @RazorHelper.RenderCategories(Model.Categories, classList: "has-small-spacing-top is-medium")
             }
-            @if(Model.Description.HasValue())
+            @if (Model.Description.HasValue())
             {
                 <p>@Model.Description</p>
             }

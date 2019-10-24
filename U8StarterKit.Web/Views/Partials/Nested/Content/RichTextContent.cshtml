@@ -1,8 +1,8 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<RichTextContent>
-@using U8StarterKit.Web.Models.Umbraco
+@using Umbraco.Web.PublishedModels
 @using U8StarterKit.Web.Extensions
 
 @if (Model.Text.HasValue())
 {
-   @Model.Text
+    @Model.Text
 }

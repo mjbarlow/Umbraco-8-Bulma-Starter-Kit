@@ -1,5 +1,5 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ProductListSection>
-@using U8StarterKit.Web.Models.Umbraco
+@using Umbraco.Web.PublishedModels
 
 @SectionHelper.RenderSectionStart(Model.BackgroundColor.Label)
 @Html.Partial($"~/Views/Partials/Nested/Component/TitleComponent.cshtml", new TitleComponent(Model))
