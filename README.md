@@ -11,8 +11,29 @@ It has the following content templates:
 * Blog listing page
 * Blog detail page
 * Contact page
- 
+
 ## Release Notes:
+
+**v1.0.7** (24/10/2019)
+* Changed models mode to DLL (to separate models DLL from the project DLL)
+ 
+**V1.0.6** (24/10/2019)
+* Upgraded for compatibility with Umbraco v8.2.0
+
+**V1.0.5** (06/05/2019)
+* Fixed tags / incorrect title
+* Updated homepage  - added icon CTAs / links / images
+* Updated people section design 
+* Built out content pages  - added title, rich text, images, cta, quote, icons list
+* Added example pages with new content
+* Updated blog posts - same content structure as content pages
+* Added the ability to add nested content before / after main content 
+ 
+**V1.0.4** (22/04/2019)
+* Added responsive images
+* Add new footer section and app settings section
+* Add Font Awesome Links
+
 **v1.0.3** (09/04/2019)
 * Made nested content simpler
 * Updated homepage template and sections
