@@ -50,7 +50,7 @@ namespace Umbraco.Web.PublishedModels
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		[ImplementPropertyType("nestedContent")]
-		public IEnumerable<IPublishedElement> NestedContent => Umbraco.Web.PublishedModels.ContentBase.GetNestedContent(this);
+		public IEnumerable<IPublishedElement> NestedContent => ContentBase.GetNestedContent(this);
 
 		///<summary>
 		/// Subtitle

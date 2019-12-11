@@ -1817,6 +1817,21 @@
             },
             /**
      * @ngdoc method
+     * @name umbraco.resources.dataTypeResource#getReferences
+     * @methodOf umbraco.resources.dataTypeResource
+     *
+     * @description
+     * Retrieves references of a given data type.
+     *
+     * @param {Int} id id of datatype to retrieve references for
+     * @returns {Promise} resourcePromise object.
+     *
+     */
+            getReferences: function getReferences(id) {
+                return umbRequestHelper.resourcePromise($http.get(umbRequestHelper.getApiUrl('dataTypeApiBaseUrl', 'GetReferences', { id: id })), 'Failed to retrieve usages for data type of id ' + id);
+            },
+            /**
+     * @ngdoc method
      * @name umbraco.resources.dataTypeResource#getById
      * @methodOf umbraco.resources.dataTypeResource
      *
@@ -2037,7 +2052,7 @@
             renameContainer: function renameContainer(id, name) {
                 return umbRequestHelper.resourcePromise($http.post(umbRequestHelper.getApiUrl('dataTypeApiBaseUrl', 'PostRenameContainer', {
                     id: id,
-                    name: name
+                    name: encodeURIComponent(name)
                 })), 'Failed to rename the folder with id ' + id);
             }
         };
@@ -3124,6 +3139,12 @@
             },
             getParameterEditors: function getParameterEditors() {
                 return umbRequestHelper.resourcePromise($http.get(umbRequestHelper.getApiUrl('macroApiBaseUrl', 'GetParameterEditors'), 'Failed to get parameter editors'));
+            },
+            getGroupedParameterEditors: function getGroupedParameterEditors() {
+                return umbRequestHelper.resourcePromise($http.get(umbRequestHelper.getApiUrl('macroApiBaseUrl', 'GetGroupedParameterEditors'), 'Failed to get parameter editors'));
+            },
+            getParameterEditorByAlias: function getParameterEditorByAlias(alias) {
+                return umbRequestHelper.resourcePromise($http.get(umbRequestHelper.getApiUrl('macroApiBaseUrl', 'GetParameterEditorByAlias', { 'alias': alias }), 'Failed to get parameter editor'));
             },
             getById: function getById(id) {
                 return umbRequestHelper.resourcePromise($http.get(umbRequestHelper.getApiUrl('macroApiBaseUrl', 'GetById', { 'id': id }), 'Failed to get macro'));
