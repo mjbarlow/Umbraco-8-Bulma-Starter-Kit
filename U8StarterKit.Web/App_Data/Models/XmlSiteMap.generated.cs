@@ -20,57 +20,43 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace Umbraco.Web.PublishedModels
 {
-	/// <summary>Home</summary>
-	[PublishedModel("home")]
-	public partial class Home : PublishedContentModel, IContentSection, IXMlsiteMapSettings
+	/// <summary>Xml Site Map</summary>
+	[PublishedModel("xmlSiteMap")]
+	public partial class XmlSiteMap : PublishedContentModel
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		public new const string ModelTypeAlias = "home";
+		public new const string ModelTypeAlias = "xmlSiteMap";
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		public new static IPublishedContentType GetModelContentType()
 			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Home, TValue>> selector)
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<XmlSiteMap, TValue>> selector)
 			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 #pragma warning restore 0109
 
 		// ctor
-		public Home(IPublishedContent content)
+		public XmlSiteMap(IPublishedContent content)
 			: base(content)
 		{ }
 
 		// properties
 
 		///<summary>
-		/// nestedContent
+		/// Black Listed Document Types: Comma separated list of the document types that should not be included in the XML site map.
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("nestedContent")]
-		public IEnumerable<IPublishedElement> NestedContent => ContentSection.GetNestedContent(this);
+		[ImplementPropertyType("blackListedDocumentTypes")]
+		public string BlackListedDocumentTypes => this.Value<string>("blackListedDocumentTypes");
 
 		///<summary>
-		/// Hide From XML Sitemap
+		/// Max Site Map Depth
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("hideFromXMLSitemap")]
-		public bool HideFromXmlsitemap => XMlsiteMapSettings.GetHideFromXmlsitemap(this);
-
-		///<summary>
-		/// Search Engine Change Frequency
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("searchEngineChangeFrequency")]
-		public string SearchEngineChangeFrequency => XMlsiteMapSettings.GetSearchEngineChangeFrequency(this);
-
-		///<summary>
-		/// Search Engine Relative Priority
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("searchEngineRelativePriority")]
-		public decimal SearchEngineRelativePriority => XMlsiteMapSettings.GetSearchEngineRelativePriority(this);
+		[ImplementPropertyType("maxSiteMapDepth")]
+		public int MaxSiteMapDepth => this.Value<int>("maxSiteMapDepth");
 	}
 }

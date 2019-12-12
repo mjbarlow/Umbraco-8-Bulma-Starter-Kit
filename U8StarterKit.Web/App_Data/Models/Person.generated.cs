@@ -22,7 +22,7 @@ namespace Umbraco.Web.PublishedModels
 {
 	/// <summary>Person</summary>
 	[PublishedModel("person")]
-	public partial class Person : PublishedContentModel, INavigationBase
+	public partial class Person : PublishedContentModel, INavigationBase, IXMlsiteMapSettings
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -100,5 +100,26 @@ namespace Umbraco.Web.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		[ImplementPropertyType("seoMetaDescription")]
 		public string SeoMetaDescription => NavigationBase.GetSeoMetaDescription(this);
+
+		///<summary>
+		/// Hide From XML Sitemap
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("hideFromXMLSitemap")]
+		public bool HideFromXmlsitemap => XMlsiteMapSettings.GetHideFromXmlsitemap(this);
+
+		///<summary>
+		/// Search Engine Change Frequency
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("searchEngineChangeFrequency")]
+		public string SearchEngineChangeFrequency => XMlsiteMapSettings.GetSearchEngineChangeFrequency(this);
+
+		///<summary>
+		/// Search Engine Relative Priority
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("searchEngineRelativePriority")]
+		public decimal SearchEngineRelativePriority => XMlsiteMapSettings.GetSearchEngineRelativePriority(this);
 	}
 }

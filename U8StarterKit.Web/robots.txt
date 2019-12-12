@@ -1,0 +1,3 @@
+﻿Sitemap: https://bulma-starter-kit.s1.umbraco.io/xmlsitemap
+User-agent: *
+Crawl-delay: 10
