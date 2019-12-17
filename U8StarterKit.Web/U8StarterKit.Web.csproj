@@ -474,6 +474,7 @@
     <Content Include="Global.asax" />
     <Content Include="js\all.min.js" />
     <Content Include="js\bundle.js" />
+    <Content Include="robots.txt" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -557,6 +558,7 @@
     <Content Include="Views\Partials\Grid\Editors\Base.cshtml" />
     <Content Include="Views\Partials\Grid\Bootstrap3.cshtml" />
     <Content Include="Views\Partials\Grid\Bootstrap3-Fluid.cshtml" />
+    <Content Include="Views\XmlSiteMap.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
