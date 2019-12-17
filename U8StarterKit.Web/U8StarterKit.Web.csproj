@@ -512,7 +512,6 @@
     <Content Include="Views\ContentPage.cshtml" />
     <Content Include="Views\Home.cshtml" />
     <Content Include="Views\Master.cshtml" />
-    <Content Include="Views\Partials\CategoryLinks.cshtml" />
     <Content Include="Views\Partials\Elements\PanelElement.cshtml" />
     <Content Include="Views\Partials\Grid\Bulma-Fluid.cshtml" />
     <Content Include="Views\Partials\Navigation\SubNavigation.cshtml" />

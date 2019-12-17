@@ -4,8 +4,12 @@
 
 @{
     Layout = "master.cshtml";
-
+    var tag = Request.QueryString["tag"]?.ToLower();
     var blogItems = Model.Children.Select(x => new Blogpost(x)).OrderBy(x => x.CreateDate).ToList();
+    if (tag.HasValue())
+    {
+        blogItems = blogItems.Where(x => x.Categories.Select(y => y.ToLower()).Contains(tag)).ToList();
+    }
     var hasPaging = true;
     var numberOfPosts = (int)Model.ItemsToShow;
     var pageCount = (int)Math.Ceiling((double)blogItems.Count / (double)numberOfPosts);
@@ -19,16 +23,23 @@
 
 @if (!blogItems.HasValue())
 {
-    <div class="column has-text-centered">
-        <p class="is-size-4">There are no posts at this time, try again later.</p>
+    @SectionHelper.RenderSectionStart(Model.BackgroundColor?.Label, true)
+    <div class="column is-12">
+        <p class="is-size-4">There are <strong>no posts at this time,</strong> try again later.</p>
     </div>
+    @SectionHelper.RenderSectionEnd()
     return;
 }
 
 @if (pagedBlogposts.Count > 0)
 {
     @SectionHelper.RenderSectionStart(Model.BackgroundColor?.Label, true)
-
+    if (tag.HasValue())
+    {
+        <div class="column is-12">
+            <p class="is-size-4">Filtered by tag: <strong>@tag</strong></p>
+        </div>
+    }
     foreach (var blogPost in pagedBlogposts)
     {
         <div class="column @RazorHelper.ColumnClass(Model.ItemsPerRow?.ToString())">

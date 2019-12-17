@@ -25,7 +25,7 @@
                     <div class="has-spacing-bottom">
                         @foreach (var category in Model.Categories)
                         {
-                            <span class="button is-dark is-inverted is-outlined">@category</span>
+                            <a class="button is-dark is-inverted is-outlined" href="@(String.Format(Model.Parent.Url + "?tag={0}", category))">@category</a>
                         }
                     </div>
                 }

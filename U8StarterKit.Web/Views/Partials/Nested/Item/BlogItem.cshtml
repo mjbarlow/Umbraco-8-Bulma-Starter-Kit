@@ -2,7 +2,9 @@
 @using U8StarterKit.Web.Extensions
 @using Umbraco.Web.PublishedModels
 
-
+@{ 
+      var blogPage = Model.Root().DescendantOrSelfOfType("blog");
+}
 
 <div class="card has-equal-height">
     <div class="image-card">
@@ -21,7 +23,12 @@
             }
             <p class="subtitle">@Model.CreateDate.ToShortDateString()</p>
             <div class="has-spacing-bottom">
-                @Html.Partial("~/Views/Partials/CategoryLinks.cshtml", Model.Categories)
+                <div class="has-spacing-bottom">
+                    @foreach (var category in Model.Categories)
+                    {
+                        <a class="tag is-medium" href="@(String.Format(blogPage?.Url + "?tag={0}", category))">@category</a>
+                    }
+                </div>
             </div>
             @if (Model.HeaderSubtitle.HasValue())
             {
