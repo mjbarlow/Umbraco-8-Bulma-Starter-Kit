@@ -3,6 +3,7 @@
 @using U8StarterKit.Web.Extensions
 @{
     Layout = "master.cshtml";
+    var sideNav = Model.NestedContent.Where(x => x.ContentType.Alias == "titleComponent");
 }
 
 <section id="hero" class="image has-spacing image is-3by1">
@@ -14,7 +15,7 @@
 <section class="hero is-dark">
     <div class="hero-body">
         <div class="container">
-            <div class="column is-8-tablet is-offset-2-tablet is-paddingless">
+            <div class="column is-8-tablet is-offset-2 is-paddingless">
                 @if (Model.HeaderTitle.HasValue())
                 {
                     <h1 class="title is-2">@Model.HeaderTitle</h1>
@@ -40,7 +41,24 @@
 <section class="section has-spacing section-gray">
     <div class="container">
         <div class="columns">
-            <div class="column is-large is-8-tablet is-offset-2-tablet">
+            @if (sideNav.Any())
+            {
+                <div class="column is-2-tablet">
+                    <aside class="menu">
+                        <p class="menu-label">
+                            <strong>Contents</strong>
+                        </p>
+                        <ul class="menu-list">
+                            @foreach (var titleSection in sideNav)
+                            {
+                                var navItem = titleSection as TitleComponent;
+                                <li><a href="#@navItem.Title.ToUrlSegment()">@navItem.Title</a></li>
+                            }
+                        </ul>
+                    </aside>
+                </div>
+            }
+            <div class="column is-large is-8-tablet @(sideNav.Any() ? "" : "is-offset-2")">
                 <article>
                     <div class="content is-large">
                         @Html.Partial("~/Views/Partials/Renderers/RenderContent.cshtml", Model.NestedContent)

@@ -1,0 +1,12 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<Code>
+@using Umbraco.Web.PublishedModels
+@using U8StarterKit.Web.Extensions
+
+@if (Model.CodeContent.HasValue())
+{
+<pre>
+@Model.CodeContent
+</pre>
+}
+
+
