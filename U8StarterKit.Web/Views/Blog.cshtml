@@ -31,7 +31,7 @@
     return;
 }
 
-@if (pagedBlogposts.Count > 0)
+@if (pagedBlogposts.HasValue())
 {
     @SectionHelper.RenderSectionStart(Model.BackgroundColor?.Label, true)
     if (tag.HasValue())

@@ -4,6 +4,12 @@
 @{
     Layout = "master.cshtml";
     var sideNav = Model.NestedContent.Where(x => x.ContentType.Alias == "titleComponent");
+    var siblings = Model.SiblingsAndSelf().Select(x => new Blogpost(x)).OrderByDescending(y => y.CreateDate).ToList();
+
+    var prev = siblings.SkipWhile(item => item.Id != Model.Id).Skip(1).FirstOrDefault();
+    var siblingsReversed = siblings.OrderBy(y => y.CreateDate).ToList();
+    var next = siblingsReversed.SkipWhile(item => item.Id != Model.Id).Skip(1).FirstOrDefault();
+}
 }
 
 <section id="hero" class="image has-spacing image is-3by1">
@@ -58,13 +64,59 @@
                     </aside>
                 </div>
             }
-            <div class="column is-large is-8-tablet @(sideNav.Any() ? "" : "is-offset-2")">
-                <article>
-                    <div class="content is-large">
-                        @Html.Partial("~/Views/Partials/Renderers/RenderContent.cshtml", Model.NestedContent)
+        <div class="column is-large is-8-tablet @(sideNav.Any() ? "" : "is-offset-2")">
+            <article class="has-large-spacing-bottom">
+                <div class="content is-large">
+                    @Html.Partial("~/Views/Partials/Renderers/RenderContent.cshtml", Model.NestedContent)
+                </div>
+            </article>
+            @if (next.HasValue() || prev.HasValue())
+            {
+                <hr class="has-spacing-top has-spacing-bottom" />
+                <section class="card-section is-full-width has-spacing-top">
+                    <h3 class="title is-size-4">Related articles</h3>
+                    <div class="columns is-multiline ">
+                        @if (prev.HasValue())
+                        {
+                            <div class="column is-6">
+                                <p><strong>Previous</strong></p>
+                                @Html.Partial("~/Views/Partials/Nested/Item/BlogItem.cshtml", prev)
+                            </div>
+                        }
+                        @if (next.HasValue())
+                        {
+                            <div class="column is-6-tablet">
+                                <p><strong>Next</strong></p>
+                                @Html.Partial("~/Views/Partials/Nested/Item/BlogItem.cshtml", next)
+                            </div>
+                        }
                     </div>
-                </article>
-            </div>
+                </section>
+            }
+        </div>
+            @if (next.HasValue() || prev.HasValue())
+            {
+                <section class="column is-2-tablet is-hidden-mobile">
+                    @if (next.HasValue())
+                    {
+                        <aside class="menu has-spacing-bottom">
+                            <p class="menu-label"><strong>Next</strong></p>
+                            <ul class="menu-list">
+                                <li><a href="@next.Url">@next.HeaderTitle</a></li>
+                            </ul>
+                        </aside>
+                    }
+                    @if (prev.HasValue())
+                    {
+                        <aside class="menu">
+                            <p class="menu-label"><strong>Previous</strong></p>
+                            <ul class="menu-list">
+                                <li><a href="@prev.Url">@prev.HeaderTitle</a></li>
+                            </ul>
+                        </aside>
+                    }
+                </section>
+            }
         </div>
     </div>
 </section>

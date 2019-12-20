@@ -3,22 +3,45 @@
 @using U8StarterKit.Web.Extensions
 @{
     Layout = "master.cshtml";
+    var tag = Request.QueryString["tag"]?.ToLower();
     var products = Model.Children.Select(x => new Product(x));
+
+    if (tag.HasValue())
+    {
+        products = products.Where(x => x.Categories.Select(y => y.ToLower()).Contains(tag)).ToList();
+    }
+
 }
 @Html.Partial("~/Views/Partials/SectionHeader.cshtml", new HeaderSection(Model))
 
 @Html.Partial("~/Views/Partials/Renderers/RenderSections.cshtml", Model.NestedContentBefore)
 
-@SectionHelper.RenderSectionStart(Model.BackgroundColor?.Label, true)
+@if (!products.HasValue())
+{
+    @SectionHelper.RenderSectionStart(Model.BackgroundColor?.Label, true)
+    <div class="column is-12">
+        <p class="is-size-4">There are <strong>no products at this time,</strong> try again later.</p>
+    </div>
+    @SectionHelper.RenderSectionEnd()
+    return;
+}
+
 @if (products.HasValue())
 {
+    @SectionHelper.RenderSectionStart(Model.BackgroundColor?.Label, true)
+    if (tag.HasValue())
+    {
+        <div class="column is-12">
+            <p class="is-size-4">Filtered by tag: <strong>@tag</strong></p>
+        </div>
+    }
     foreach (Product product in products)
     {
         <div class="column @RazorHelper.ColumnClass(Model.ItemsPerRow?.ToString())">
             @Html.Partial("~/Views/Partials/Nested/Item/ProductItem.cshtml", product)
         </div>
     }
+    @SectionHelper.RenderSectionEnd()
 }
-@SectionHelper.RenderSectionEnd()
 
 @Html.Partial("~/Views/Partials/Renderers/RenderSections.cshtml", Model.NestedContentAfter)

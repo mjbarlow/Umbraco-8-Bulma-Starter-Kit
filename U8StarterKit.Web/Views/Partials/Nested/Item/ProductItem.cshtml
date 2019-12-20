@@ -2,6 +2,9 @@
 @using Umbraco.Web.PublishedModels
 @using U8StarterKit.Web.Extensions
 
+@{
+    var productsPage = Model.Root().DescendantOrSelfOfType("products");
+}
 
 <div class="card has-equal-height">
     <div class="image has-spacing image is-3by2">
@@ -14,11 +17,17 @@
         <div class="content">
             @if (Model.ProductName.HasValue())
             {
-                <h4 class="title has-small-spacing-bottom">@Model.ProductName</h4>
+                <h4 class="title has-spacing-bottom">@Model.ProductName</h4>
             }
             @if (Model.Categories.HasValue())
             {
-                @RazorHelper.RenderCategories(Model.Categories, classList: "has-small-spacing-top is-medium")
+                <div class="has-spacing-bottom"> 
+                    @foreach (var category in Model.Categories)
+                    {
+                        <a class="tag has-small-spacing-top is-medium" href="@(String.Format(productsPage?.Url + "?tag={0}", category))">@category</a>
+                    }
+                </div>
+                @*@RazorHelper.RenderCategories(Model.Categories, classList: "has-small-spacing-top is-medium")*@
             }
             @if (Model.Description.HasValue())
             {
