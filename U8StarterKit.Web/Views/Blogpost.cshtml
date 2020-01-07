@@ -10,8 +10,6 @@
     var siblingsReversed = siblings.OrderBy(y => y.CreateDate).ToList();
     var next = siblingsReversed.SkipWhile(item => item.Id != Model.Id).Skip(1).FirstOrDefault();
 }
-}
-
 <section id="hero" class="image has-spacing image is-3by1">
     @if (Model.PostImage.HasValue())
     {

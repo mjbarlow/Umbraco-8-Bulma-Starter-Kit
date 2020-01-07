@@ -18,7 +18,6 @@
 }
 
 @Html.Partial("~/Views/Partials/SectionHeader.cshtml", new HeaderSection(Model))
-
 @Html.Partial("~/Views/Partials/Renderers/RenderSections.cshtml", Model.NestedContentBefore)
 
 @if (!blogItems.HasValue())
