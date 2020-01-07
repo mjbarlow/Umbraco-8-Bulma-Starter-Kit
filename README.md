@@ -1,5 +1,5 @@
-# Umbraco-8-Bulma-Starter-Kit
-Starter Kit for Umbraco V8 based on the Bulma Css framework.
+# Bulma Umbraco 8 starter kit / theme
+A free starter kit / theme based on the Bulma CSS framework for Umbraco 8 from Matt Barlow of http://jacker.io. Contains homepage, products, product detail, blog, blog detail, generic and contact page templates. This theme will get you started easily and quickly with developing your own website using Umbraco 8. 
 
 It has the following content templates:
 
@@ -11,6 +11,28 @@ It has the following content templates:
 * Blog listing page
 * Blog detail page
 * Contact page
+
+## Important:
+
+Change the ModelsMode in the web.config to Dll models and allow the site to work.
+
+```
+<add key="Umbraco.ModelsBuilder.Enable" value="true" />
+<add key="Umbraco.ModelsBuilder.ModelsMode" value="Dll" />
+```
+
+Also don't forget to publish the content, the easiest way to do this is to publish the home node with descendants, then check the include drafts, so you don't have to go in and publish it all individually. 
+
+Umbraco-Package-Url:
+https://our.umbraco.com/packages/starter-kits/bulma-starter-kit/
+
+Demonstration:
+http://bulma.jacker.io/
+
+## Preview:
+
+![https://raw.githubusercontent.com/mjbarlow/Umbraco-8-Bulma-Starter-Kit/master/free-umbraco-bulma-theme.jpg](https://raw.githubusercontent.com/mjbarlow/Umbraco-8-Bulma-Starter-Kit/master/free-umbraco-bulma-theme.jpg)
+
 
 ## Release Notes:
 
@@ -57,10 +79,5 @@ It has the following content templates:
 **v1.0.1** (22.03.2019):
 * initial release
 
-## Resources
 
-Umbraco-Package-Url:
-https://our.umbraco.com/packages/starter-kits/bulma-starter-kit/
 
-Demonstration:
-https://bulma-starter-kit.s1.umbraco.io/
