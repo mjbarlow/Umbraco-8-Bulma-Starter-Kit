@@ -14,6 +14,15 @@ It has the following content templates:
 
 ## Release Notes:
 
+**v1.0.8** (07/01/2020)
+* Added XML sitemaps
+* Added next / prev blog navigation 
+* Added related blog articles
+* Added code block type
+* Added blog in-page navigation
+* Added robots.txt
+* Hooked up the category tags
+
 **v1.0.7** (24/10/2019)
 * Changed models mode to DLL (to separate models DLL from the project DLL)
  
