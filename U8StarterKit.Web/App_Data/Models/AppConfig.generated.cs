@@ -22,7 +22,7 @@ namespace Umbraco.Web.PublishedModels
 {
 	/// <summary>Application Configuration</summary>
 	[PublishedModel("appConfig")]
-	public partial class AppConfig : PublishedContentModel, IFooterSection, INavigation, ISite
+	public partial class AppConfig : PublishedContentModel, IFooterSection, INavigation, IScriptsBase, ISite
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -79,6 +79,13 @@ namespace Umbraco.Web.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		[ImplementPropertyType("utilityLinks")]
 		public IEnumerable<FaLinksPropertyEditor.Models.FaLink> UtilityLinks => Navigation.GetUtilityLinks(this);
+
+		///<summary>
+		/// Footer Scripts: Enter your sitewide footer scripts.
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("footerScripts")]
+		public string FooterScripts => ScriptsBase.GetFooterScripts(this);
 
 		///<summary>
 		/// Site name: The web site name
