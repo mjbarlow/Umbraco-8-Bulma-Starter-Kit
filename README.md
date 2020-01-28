@@ -35,6 +35,8 @@ https://bulma.jacker.io/
 
 
 ## Release Notes:
+**v1.0.9** (28/01/2020)
+* Added Markdown editor
 
 **v1.0.8** (07/01/2020)
 * Added XML sitemaps
