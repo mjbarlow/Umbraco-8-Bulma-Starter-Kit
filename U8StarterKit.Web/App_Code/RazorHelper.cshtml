@@ -16,11 +16,7 @@
             break;
 
         default:
-        srcSet = image.GetCropUrl(480) + " 480w, " +
-                 image.GetCropUrl(769) + " 769w, " +
-                 image.GetCropUrl(1024) + " 1024w, " +
-                 image.GetCropUrl(1216) + " 1216w, " +
-                 image.GetCropUrl(1408) + " 1408w";
+        srcSet =  SetImageSrcSet(image.Url);
         break;
     }
     <img srcset="@srcSet" alt="@alt" class="@classList">
@@ -110,4 +106,16 @@
         }
         return result;
     }
+
+    public static string SetImageSrcSet(string url)
+    {
+        var imageSrcSet =  url.GetCropUrl(480) + " 480w, " +
+                     url.GetCropUrl(769) + " 769w, " +
+                     url.GetCropUrl(1024) + " 1024w, " +
+                     url.GetCropUrl(1216) + " 1216w, " +
+                     url.GetCropUrl(1408) + " 1408w";
+
+        return imageSrcSet;
+    }
+
 }
